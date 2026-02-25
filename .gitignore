@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.so
+
+# Variáveis e Segredos
+.env
+.secrets
+
+# IDEs e Obsidian
+.obsidian/workspace
+.obsidian/cache
+.idea/
+.vscode/
+
+# Sistema
+.DS_Store
+Thumbs.db
+.Trash-*/
+.Trash/
+$RECYCLE.BIN/
+
+# Arquivos Pesados (Ignorar no Git, manter no SSD se quiser)
+*.h5
+*.pth
+*.pt
+*.parquet
+*.csv
+/datasets/
+/models/
+/logs/

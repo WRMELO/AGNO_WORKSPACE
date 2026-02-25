@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "task_id": "T001",
+    "task_name": "Legacy_Bootstrap_And_Registry",
+    "timestamp": "2026-02-25T14:45:00Z",
+    "priority": "Critical",
+    "author": "CTO - AGNO Architect"
+  },
+  "context": {
+    "source_files": [
+      "00_Strategy/00_Legacy_Imports/TRANSFER_PACKAGE_ATTEMPT2_PRE_20260224_S001_S008.md",
+      "00_Strategy/00_Legacy_Imports/TRANSFER_PACKAGE_ATTEMPT2_PRE_20260224_S001_S008.json"
+    ],
+    "target_registry": "00_Strategy/TASK_REGISTRY.md",
+    "target_context": "01_Architecture/System_Context.md"
+  },
+  "instruction": {
+    "role": "Governance & DevOps Agent",
+    "step_by_step": [
+      "1. INFRA SETUP: Ensure directory '00_Strategy/Task_History' exists. If this JSON is not inside it, move it there.",
+      "2. REGISTRY CREATION: Create (or reset) '00_Strategy/TASK_REGISTRY.md'. It must contain a Mermaid State Diagram showing T001 as 'In Progress'.",
+      "3. LEGACY INGESTION (JSON): Read the legacy .json file. Extract strict versions of Tech Stack and File Paths.",
+      "4. LEGACY INGESTION (MD): Read the legacy .md file. Extract Business Goals and Constraints.",
+      "5. CONTEXT UPDATE: Populate '01_Architecture/System_Context.md' with the combined data (Narrative + Technical Specs).",
+      "6. COMPLETION: Update '00_Strategy/TASK_REGISTRY.md'. Mark T001 as 'DONE' in the Mermaid chart and add a log entry in the table below the chart."
+    ],
+    "visual_requirements": {
+      "mermaid_template": "stateDiagram-v2\n    [*] --> T001_Bootstrap\n    T001_Bootstrap --> [*]\n    note right of T001_Bootstrap: Ingested Legacy S008"
+    },
+    "definition_of_done": [
+      "TASK_REGISTRY.md exists and renders a Mermaid chart.",
+      "System_Context.md is fully populated from legacy files.",
+      "This JSON file is preserved in 00_Strategy/Task_History/."
+    ]
+  }
+}
