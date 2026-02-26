@@ -1,0 +1,5 @@
+* main           4c84a02 chore: ignore obsidian workspace state
+  master         4c84a02 chore: ignore obsidian workspace state
++ wt/bootstrap   4c84a02 (/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap) chore: ignore obsidian workspace state
++ wt/experiments 4c84a02 (/home/wilson/_wt/CEP_BUNDLE_CORE/experiments) chore: ignore obsidian workspace state
++ wt/ssot        4c84a02 (/home/wilson/_wt/CEP_BUNDLE_CORE/ssot) chore: ignore obsidian workspace state

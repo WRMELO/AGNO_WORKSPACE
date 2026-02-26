@@ -1,0 +1,5 @@
+{
+  "method": "file_mtime_since_baseline_marker_mtime",
+  "why": "fallback por ausencia de diff util no git",
+  "n_changed_raw": 302
+}

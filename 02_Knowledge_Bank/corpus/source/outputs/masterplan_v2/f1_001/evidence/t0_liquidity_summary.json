@@ -1,0 +1,7 @@
+{
+  "sell_days_count": 562,
+  "t0_violation_count": 0,
+  "min_cash_delta_adjusted": 8.712388238564929e-05,
+  "criterion": "No SELL day shows negative adjusted same-day cash response.",
+  "ok": true
+}

@@ -1,0 +1,42 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_F0_001A_INIT_GIT_BASELINE_V1",
+  "generated_at_utc": "2026-02-15T14:09:21Z",
+  "repo_root": "[LEGACY_ROOT]",
+  "git": {
+    "initialized": true,
+    "branch": "master",
+    "commit_sha": "ae7b65763159fb05dc36b84bbea735f274f5b579",
+    "worktree_clean": true
+  },
+  "artifacts": {
+    "report_md": "outputs/governanca/git_init/20260215/report.md",
+    "manifest_json": "outputs/governanca/git_init/20260215/manifest.json",
+    "report_sha256": "6f3ac703a9b43aa1a5393640186844ba50b4f95c969d48f4e952b3d4e114a122"
+  },
+  "tracked_file_sha256": {
+    ".gitignore": "2e140e214e346e7c93fd2827d03806943bae20312d8b8cb7c466a165f332ccd3",
+    ".obsidian/app.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    ".obsidian/appearance.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    ".obsidian/core-plugins.json": "763cf20a921fd9955735b278006820b90b207b2fc04d9e79ca648279c7c14276",
+    ".obsidian/workspace.json": "574f1ee1bb103d642a8aa2a832d4b3ea2c0c1ecae3c56df44a7b9b8e3faba16e",
+    "docs/CONSTITUICAO.md": "100b85e4814c16137670fec41f0d29483736e1b70be82851d8365c174f2c1815",
+    "docs/emendas/.gitkeep": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "pyproject.toml": "50034e2ee827d296f0b1401735bb2f6237bd680661f07f3c7c8d08816d6debd5",
+    "requirements.lock.txt": "69ef2ff678cb27396ca33f5230fde2790e219e38579611c838bd36878790931e",
+    "scripts/run_task.py": "5c6f0b9a8bcb017ce443caf3ad9a82ac40646647efc584aa0c190c8e1d66456b",
+    "scripts/smoke.py": "66b541ba085b8ae76a6571dc7b4a8269d03c9df313ef4034d658ff2ff71c036d"
+  },
+  "gates": {
+    "S1_GATE_ALLOWLIST": "PASS",
+    "S2_VERIFY_GIT_INITIALIZED": "PASS",
+    "S3_VERIFY_COMMIT_CREATED": "PASS",
+    "S4_VERIFY_WORKTREE_CLEAN": "PASS",
+    "S5_WRITE_MANIFEST_HASHES": "PASS"
+  },
+  "acceptance_criteria": {
+    "OVERALL": "PASS",
+    "git_rev_parse_head_valid": true,
+    "working_tree_clean": true,
+    "report_and_manifest_generated": true
+  }
+}

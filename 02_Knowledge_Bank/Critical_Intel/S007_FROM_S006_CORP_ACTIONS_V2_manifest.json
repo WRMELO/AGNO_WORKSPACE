@@ -1,0 +1,12 @@
+{
+  "generated_at_utc": "2026-02-24T19:34:00.093075+00:00",
+  "input_s006": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s006_operational_base_global/20260224/S006_CANONICAL_BASE_WITH_CORP_ACTIONS_V2/base_operacional_canonica.parquet",
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ruleflags_global/20260224/S007_FROM_S006_CORP_ACTIONS_V2/s007_ruleflags.parquet"
+  ],
+  "rows": 900928,
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ruleflags_global/20260224/S007_FROM_S006_CORP_ACTIONS_V2/s007_ruleflags.parquet": "a0b918e3e1e12b2f7d6190685772123651b6b66f76fe1c40215a9135f3e3132b"
+  },
+  "overall": "PASS"
+}

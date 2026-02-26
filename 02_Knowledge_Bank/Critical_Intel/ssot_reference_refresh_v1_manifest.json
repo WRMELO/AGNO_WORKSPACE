@@ -1,0 +1,139 @@
+{
+  "generated_at_utc": "2026-02-22T14:12:39.351278+00:00",
+  "status_final": "PASS_FINAL",
+  "pass_operacional": true,
+  "pass_raciocinio": true,
+  "missing": [],
+  "date_policy_violations": [],
+  "files": [
+    {
+      "path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/ssot_reference_refresh_v1/report.md",
+      "bytes": 3161,
+      "sha256": "ae0e8ade10a99fac61a97c0cc4b5cf7ee208c553d9f285d6b948910c631051f6"
+    },
+    {
+      "path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/ssot_reference_refresh_v1/ssot_ref_acoes.parquet",
+      "bytes": 32896,
+      "sha256": "40668fb4d58a5ab242dd982a394a41b51dae95892f11706dc768521869930b1f",
+      "row_count": 854,
+      "columns": [
+        "ticker",
+        "source",
+        "isin",
+        "code_cvm",
+        "issuing_company",
+        "trading_name",
+        "market"
+      ]
+    },
+    {
+      "path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/ssot_reference_refresh_v1/ssot_ref_bdrs.parquet",
+      "bytes": 6774,
+      "sha256": "d0c3415574560d5d9ebb22767f7775c378a52c50f1169a076652458c1078cfeb",
+      "row_count": 840,
+      "columns": [
+        "ticker",
+        "source"
+      ]
+    },
+    {
+      "path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/ssot_reference_refresh_v1/bvsp_daily.parquet",
+      "bytes": 32773,
+      "sha256": "9cd2d229bae1a57bd2468215b0a39e8b72f40ed5c9cd0e369365dfe5866ff2d9",
+      "row_count": 2011,
+      "columns": [
+        "date",
+        "symbol",
+        "close",
+        "source_tag"
+      ],
+      "min_date": "2018-01-02 00:00:00",
+      "max_date": "2026-02-04 00:00:00"
+    },
+    {
+      "path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/ssot_reference_refresh_v1/cdi_daily.parquet",
+      "bytes": 41130,
+      "sha256": "175d432bd852152deaf80247d4736cf75f86e53972ab4e099efc79b560ee2b04",
+      "row_count": 2043,
+      "columns": [
+        "date",
+        "cdi_index_norm",
+        "cdi_rate_annual_pct",
+        "cdi_ret_t",
+        "source_tag"
+      ],
+      "min_date": "2018-01-02 00:00:00",
+      "max_date": "2026-02-19 00:00:00"
+    },
+    {
+      "path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/ssot_reference_refresh_v1/sp500_daily.parquet",
+      "bytes": 91066,
+      "sha256": "f9840468b7d015ede3ac3f681f49b5c56dee60e7eae70adcac03abb92e53d4bf",
+      "row_count": 2045,
+      "columns": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "source_tag"
+      ],
+      "min_date": "2018-01-02 00:00:00",
+      "max_date": "2026-02-20 00:00:00"
+    },
+    {
+      "path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/ssot_reference_refresh_v1/evidence/acoes_bdrs_alignment_counts.csv",
+      "bytes": 130,
+      "sha256": "585194cfdaa5ad6fd391d7a77b9aa680a1ef69b84ed3d1b123231ea4e73c72dd"
+    },
+    {
+      "path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/ssot_reference_refresh_v1/evidence/cdi_overlap_comparison_internal_vs_sgs4389.json",
+      "bytes": 111,
+      "sha256": "76f166cbcfd3f35e121ab0bb9235d5375f3f11fb6bc8619cb8481a9a1201e91f"
+    },
+    {
+      "path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/ssot_reference_refresh_v1/evidence/discovery_inputs.json",
+      "bytes": 1294,
+      "sha256": "469ba10b9d4c1ba994770a5b6936edb3aa76f263ca2bccb1a0fc9a0e65be9d06"
+    },
+    {
+      "path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/ssot_reference_refresh_v1/evidence/head20_bvsp_daily.csv",
+      "bytes": 1169,
+      "sha256": "934f28605819e9e6dd23c885db8320b869f25e56fe81f2aa1d932245fecc50a1"
+    },
+    {
+      "path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/ssot_reference_refresh_v1/evidence/head20_cdi_daily.csv",
+      "bytes": 1456,
+      "sha256": "18546e139d6089ad89faba898f8d55abc867dabdfb32c481d8d8fbc16d138e66"
+    },
+    {
+      "path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/ssot_reference_refresh_v1/evidence/head20_sp500_daily.csv",
+      "bytes": 1478,
+      "sha256": "08e64c3684b436d6331598473ec4bbde6cd421755d975b5ee4e0aa191ad38a5a"
+    },
+    {
+      "path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/work/external_refs/reference_series/cdi/cdi_sgs_4389_2018_2026_raw.json",
+      "bytes": 113383,
+      "sha256": "f938cfb6f24be789b572888ede270803d46c7d029dd35edca7608ec0e83fe495"
+    },
+    {
+      "path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/work/external_refs/reference_series/bvsp/precos_brutos_ibov_20260204.parquet",
+      "bytes": 25343,
+      "sha256": "62b6ca190a9750ec60ff8d1c1d9f6df96e98872c998242743aded11a1c6b01e2",
+      "row_count": 2011,
+      "columns": [
+        "symbol",
+        "date",
+        "close"
+      ],
+      "min_date": "2018-01-02 00:00:00",
+      "max_date": "2026-02-04 00:00:00"
+    },
+    {
+      "path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/work/external_refs/reference_series/sp500/sp500_daily_raw_stooq.csv",
+      "bytes": 1653235,
+      "sha256": "0949a29543a0b6aae2e9be66652850959f9342d04293b30b69e3870ac1bbe681"
+    }
+  ]
+}

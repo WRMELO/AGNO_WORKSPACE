@@ -1,0 +1,2 @@
+attempt_dir_path=[LEGACY_ROOT]/_tentativa2_reexecucao_completa_20260220
+exists=False

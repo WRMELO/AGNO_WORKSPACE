@@ -1,0 +1,48 @@
+{
+  "task_id": "TASK_CEP_F1_EXP_032_SELL_POLICY_GATE_CEP_RL_V1",
+  "generated_at_utc": "2026-02-24T13:27:08.748819+00:00",
+  "experiment_root_work": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/work/experimentos_on_flight/EXP_002_SELL_POLICY_GATE_CEP_RL_V1",
+  "output_root": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl",
+  "overall": "PASS",
+  "gates": {
+    "S1_COMPARABILITY_HARNESS_IDENTICAL": {
+      "pass": true
+    },
+    "S2_FEATURE_LEAK_AUDIT": {
+      "pass": true,
+      "audit_file": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/evidence/feature_leakage_audit.json"
+    },
+    "S3_REPORT_TRADEOFF_ANALYSIS_PRESENT": {
+      "pass": true
+    },
+    "S4_MAX_METRICS_PACKAGE_PRESENT": {
+      "pass": true
+    }
+  },
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/report.md",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/summary.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/tables/equity_curve_all.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/tables/trades_all.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/tables/sell_decisions_all.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/tables/regime_daily_all.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/tables/metrics_by_regime.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/tables/metrics_by_subperiod.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/evidence/resolved_inputs.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/evidence/feature_leakage_audit.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/manifest.json"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/report.md": "84c5692aefc3f9a2f9f2dd30dfefe614c644597dc28dbc49b1816ff6763df301",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/summary.json": "8f64d8241ab219e1c28a7e934aab65a672f5958453400f635b0ce6f26d73fd7f",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/tables/equity_curve_all.csv": "5c3df4c2b21203de6df8bdb7b0139d92564bfd0ca6c4e2e95a871ae9e614df03",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/tables/trades_all.csv": "989fcc2cfda5a102262fd84581e2609c17e488254b26af0ac5548137f7c1e115",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/tables/sell_decisions_all.csv": "6b435b8fc514f306dc76aa65ad54fef2d87cc34ad91266f42899a2e0a19403f4",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/tables/regime_daily_all.csv": "8b5b28cc76de47ce7fba6005c152fce9eac77270c54832de6caa37da7da5b194",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/tables/metrics_by_regime.csv": "6327c4ac6072c689372793f247b2ffc78991a5188a9d5550608afe14fa866115",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/tables/metrics_by_subperiod.csv": "8f4e130f3ed5a88703a3598d6f83bdaa7a1a608175b833be7cb9c6fd7a1d9f49",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/evidence/resolved_inputs.json": "433e587cbdf10077a9c5b25551ac9e4f0ba44cae5c1307587a45208368c69c94",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/evidence/feature_leakage_audit.json": "29811f371b76a4bccdff40514c7c0ed329bd79c6fb2ad776df2dcf0afe6575cb",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/fase1_calibracao/exp/20260224/exp_002_sell_policy_gate_rl/manifest.json": "376a62b85d9ddd11b34b9e3261d78e262ce32bdab83df14cbd389f6be897bace"
+  }
+}

@@ -1,0 +1,4 @@
+/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220
+/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/ssot_snapshot
+/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/work
+/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs

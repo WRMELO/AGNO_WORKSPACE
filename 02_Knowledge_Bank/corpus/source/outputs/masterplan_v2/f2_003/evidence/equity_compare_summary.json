@@ -1,0 +1,20 @@
+{
+  "rows_after_inner_join": 1864,
+  "equity_final_baseline": 2.3854396269425098,
+  "equity_final_v2": 183.19744460342292,
+  "delta_abs": 180.8120049764804,
+  "delta_pct": 7579.818953885353,
+  "mdd_baseline": -0.6803348624996947,
+  "mdd_v2": -0.17815687632301802,
+  "columns_used": {
+    "baseline_date": "date",
+    "baseline_equity": "equity",
+    "baseline_cash": "cash",
+    "v2_date": "date",
+    "v2_equity": "equity_v2",
+    "v2_cash": "cash_v2",
+    "v2_positions_value": "positions_value_ref"
+  },
+  "baseline_path_used": "/home/wilson/CEP_COMPRA/outputs/reports/task_017/run_20260212_125255/data/daily_portfolio_m3.parquet",
+  "baseline_path_resolution": "fallback_path"
+}

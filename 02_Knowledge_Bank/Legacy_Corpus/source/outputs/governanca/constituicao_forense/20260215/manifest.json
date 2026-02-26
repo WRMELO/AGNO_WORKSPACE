@@ -1,0 +1,53 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_F0_002A_LOCATE_AND_EXTRACT_CONSTITUICAO_REPORT_V1",
+  "generated_at_utc": "2026-02-15T18:07:44Z",
+  "primary_repo_root": "[LEGACY_ROOT]",
+  "bootstrap_worktree_root": "/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap",
+  "legacy_repo_roots": [
+    "/home/wilson/CEP_NA_BOLSA",
+    "/home/wilson/CEP_COMPRA"
+  ],
+  "bootstrap_git": {
+    "head": "7e883fb3fcae95fc93760b525f132aab02490db4",
+    "branch": "wt/bootstrap"
+  },
+  "targets": {
+    "report_real_path": "/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap/outputs/governanca/constituicao/20260215/report.md",
+    "manifest_real_path": "/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap/outputs/governanca/constituicao/20260215/manifest.json",
+    "constitution_real_path": "/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap/docs/CONSTITUICAO.md"
+  },
+  "outputs": {
+    "report_md": "outputs/governanca/constituicao_forense/20260215/report.md",
+    "manifest_json": "outputs/governanca/constituicao_forense/20260215/manifest.json",
+    "evidence_found_paths": "outputs/governanca/constituicao_forense/20260215/evidence/found_paths.txt",
+    "evidence_hashes": "outputs/governanca/constituicao_forense/20260215/evidence/hashes.txt",
+    "extracted_constituicao_md": "outputs/governanca/constituicao_forense/20260215/extract_constituicao_trechos.md",
+    "comparison_legacy_md": "outputs/governanca/constituicao_forense/20260215/legacy_alignment_map.md"
+  },
+  "hashes_sha256": {
+    "/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap/outputs/governanca/constituicao/20260215/report.md": "a901a8fc167ac723afa4cb1ac36ef8a0e7c8fa032e3922080fc771c7ceee8127",
+    "/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap/outputs/governanca/constituicao/20260215/manifest.json": "b9337d62dbcb2ac682e0093adad23e21a88428d622902a09091b2f217bb6b3d6",
+    "/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap/docs/CONSTITUICAO.md": "01c962bba0979e842589e5f8898422c045e43f29d2f970dbfb58147c28605a63",
+    "outputs/governanca/constituicao_forense/20260215/report.md": "018b6f531dec1d8a469a93e0e7d93d09c8e8668e7f34dc290a0d9275f4b361ef",
+    "outputs/governanca/constituicao_forense/20260215/extract_constituicao_trechos.md": "fb2095c863c9fcfd6122e80394464de48dc62fb729a928ccf26836a9f79d12e3",
+    "outputs/governanca/constituicao_forense/20260215/legacy_alignment_map.md": "25cdd9e157ec7408bbfc6ec54c0542474e34f4decd7d681e7562aa5a1f24af2c",
+    "outputs/governanca/constituicao_forense/20260215/evidence/found_paths.txt": "a54e80c19e42f3a937c86e11b4aea29b5bd7b270c83819ac51fe6222a683cb87",
+    "outputs/governanca/constituicao_forense/20260215/evidence/hashes.txt": "adeb3f18cc80c04b8a2351c7b7ebdd2543c019431f3e3d705ca8c8075ede08b1"
+  },
+  "gates": {
+    "S1_GATE_ALLOWLIST": "PASS",
+    "S2_LOCATE_TARGET_REPORT": "PASS",
+    "S3_VERIFY_TARGET_REPORT_NONEMPTY": "PASS",
+    "S4_EXTRACT_CONSTITUICAO_TOPICS": "PASS",
+    "S5_SEARCH_LEGACY_REPOS_TOPICS": "PASS",
+    "S6_VERIFY_EVIDENCE_AND_HASHES": "PASS",
+    "S7_WRITE_MANIFEST_HASHES": "PASS"
+  },
+  "acceptance_criteria": {
+    "OVERALL": "PASS",
+    "target_report_located_hashed_and_real_path_recorded": true,
+    "bootstrap_constitution_topics_extracted": true,
+    "legacy_alignment_map_generated": true,
+    "autocontained_package_generated": true
+  }
+}

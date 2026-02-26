@@ -1,0 +1,54 @@
+{
+  "task_id": "EXPERIMENTO_CEPBC_ATT2_CHAMPIONSHIP_F1_S007V2_2018H2_PLOTLY_V1",
+  "generated_at_utc": "2026-02-23T12:22:21.921276+00:00",
+  "task_spec_path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/work/task_specs/EXPERIMENTO_CEPBC_ATT2_CHAMPIONSHIP_F1_S007V2_2018H2_PLOTLY_V1.json",
+  "output_root": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1",
+  "overall": "PASS",
+  "gates": {
+    "S1_GATE_ALLOWLIST": {
+      "pass": true
+    },
+    "S2_CHECK_COMPILE": {
+      "pass": true
+    },
+    "S3_RUN": {
+      "pass": true,
+      "error": null
+    },
+    "S4_VERIFY_OUTPUTS": {
+      "pass": true,
+      "conditions": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "S5_VERIFY_HASHES": {
+      "pass": true,
+      "checklist_unchanged": true
+    }
+  },
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/artifacts/points_awarded_daily.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/artifacts/points_cumulative_daily.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/artifacts/final_standings_2018.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/evidence/season_context.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/evidence/tie_cutoff_days_count.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/evidence/top10_sample_first5days.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/visual/plotly_championship_2018H2.html",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/report.md",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/manifest.json"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/artifacts/points_awarded_daily.parquet": "891526abf4642c7c963a6e1b87a8fa0c803eb53628d11d51eadc28a5b57bd857",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/artifacts/points_cumulative_daily.parquet": "98f6c3be4579cb4199ada2f8f351d295c322182d496e9421c5aed64ee48b0e33",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/artifacts/final_standings_2018.parquet": "24965e626d557d4274b34955fad455b13710d950a79dfee935faf5bb2dca884c",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/evidence/season_context.csv": "81f726398642089ff405f2c27b12154d5d61bcf8252cd372d2d0013230a759d8",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/evidence/tie_cutoff_days_count.csv": "b78e811ce20448c08557e9b90361afbe695dffd875808afd9b8bb8cb9e241fd5",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/evidence/top10_sample_first5days.csv": "7649adbb958db1c57bedf0836506e3b4b1f752de8a3e0e453780fdbba5388698",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/visual/plotly_championship_2018H2.html": "94b8c1ebe0517dabd08551069bc782463fb3f3947f8ed62dc9799b33a62fb663",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/report.md": "4f51ba4a81c1a48efb517763376fe0267c2435828a2af0c580f4f02fd9cc73c1",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/championship_f1_from_s007v2_2018h2_plotly_v1/manifest.json": "b11339021a7b4f288eef2ddfc95e7a8340b4d1cca17ec228c1226047bff8c079"
+  }
+}

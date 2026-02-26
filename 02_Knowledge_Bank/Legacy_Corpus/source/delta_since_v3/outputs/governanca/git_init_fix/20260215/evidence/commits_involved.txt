@@ -1,0 +1,2 @@
+4c84a02 (HEAD -> master) chore: ignore obsidian workspace state
+ae7b657 chore: initialize CEP_BUNDLE_CORE baseline repository

@@ -1,0 +1,56 @@
+{
+  "corpus": [
+    {
+      "path": "00_Strategy/TASK_REGISTRY.md",
+      "name": "TASK_REGISTRY.md",
+      "size_kb": 0.45,
+      "type": ".md"
+    },
+    {
+      "path": "00_Strategy/00_Legacy_Imports/TRANSFER_PACKAGE_ATTEMPT2_PRE_20260224_S001_S008.md",
+      "name": "TRANSFER_PACKAGE_ATTEMPT2_PRE_20260224_S001_S008.md",
+      "size_kb": 16.24,
+      "type": ".md"
+    }
+  ],
+  "lessons_learned": [
+    {
+      "path": "00_Strategy/00_Legacy_Imports/TRANSFER_PACKAGE_ATTEMPT2_PRE_20260224_S001_S008.json",
+      "name": "TRANSFER_PACKAGE_ATTEMPT2_PRE_20260224_S001_S008.json",
+      "size_kb": 35.36,
+      "type": ".json"
+    },
+    {
+      "path": "00_Strategy/00_Legacy_Imports/corpus_seed_manifest.json",
+      "name": "corpus_seed_manifest.json",
+      "size_kb": 98.88,
+      "type": ".json"
+    },
+    {
+      "path": "00_Strategy/00_Legacy_Imports/manifest_sha256.json",
+      "name": "manifest_sha256.json",
+      "size_kb": 18.13,
+      "type": ".json"
+    },
+    {
+      "path": "00_Strategy/Task_History/T001_Legacy_Bootstrap.json",
+      "name": "T001_Legacy_Bootstrap.json",
+      "size_kb": 1.79,
+      "type": ".json"
+    },
+    {
+      "path": "00_Strategy/Task_History/T001_Legacy_Bootstrap_And_Registry.json",
+      "name": "T001_Legacy_Bootstrap_And_Registry.json",
+      "size_kb": 1.79,
+      "type": ".json"
+    }
+  ],
+  "unknown": [
+    {
+      "path": "00_Strategy/00_Legacy_Imports/artifact_inventory.parquet",
+      "name": "artifact_inventory.parquet",
+      "size_kb": 14.61,
+      "type": ".parquet"
+    }
+  ]
+}

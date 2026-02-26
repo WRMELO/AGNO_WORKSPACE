@@ -1,0 +1,8 @@
+{
+  "branch": "local/integrated-state-20260215",
+  "head": "dfcd9d6866989c18bfdcd2f840850b402f45a92f",
+  "status_porcelain": [
+    " M .obsidian/app.json",
+    "?? planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_AUDITORIA_TECNICA_COMPLETA_CDI_E_EQUITY_V1.json"
+  ]
+}

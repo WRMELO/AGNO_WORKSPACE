@@ -1,0 +1,3 @@
+COMMAND: git push origin main
+STATUS: SKIPPED
+REASON: push real so e executado quando push --dry-run passa. Dry-run falhou por erro de autenticacao SSH (publickey).

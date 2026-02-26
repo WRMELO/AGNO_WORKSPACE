@@ -1,0 +1,6 @@
+{
+  "cash_negative_count": 0,
+  "buy_day_cash_negative_count": 0,
+  "criterion": "No negative cash end-of-day, including BUY days.",
+  "ok": true
+}

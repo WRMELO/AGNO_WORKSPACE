@@ -1,0 +1,81 @@
+{
+  "task_id": "TASK_CEP_DISC_013_REEXEC_EXP_001_FULLPERIOD_CORPACTION_BRAPI_V1",
+  "generated_at_utc": "2026-02-24T16:51:05.792673+00:00",
+  "experiment_root_work": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/work/experimentos_on_flight/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1",
+  "output_root": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1",
+  "overall": "PASS",
+  "gates": {
+    "S0_PREPARE_OVERWRITE_EXP_001": {
+      "pass": true,
+      "purged_work_count": 2,
+      "purged_output_count": 0
+    },
+    "S1_GATE_ALLOWLIST": {
+      "pass": true
+    },
+    "S2_CHECK_COMPILE": {
+      "pass": true
+    },
+    "S3_RUN": {
+      "pass": true,
+      "error": null
+    },
+    "S4_VERIFY_OUTPUTS": {
+      "pass": true,
+      "conditions": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "S5_VERIFY_HASHES": {
+      "pass": true
+    },
+    "S6_VERIFY_LEDGER_AND_EQUITY_DEFINITION": {
+      "pass": true,
+      "checks": {
+        "period_has_rows": true,
+        "last_day_not_after_config_end_date": true,
+        "equity_rule_d_minus_1_applied": true,
+        "integer_shares_only": true,
+        "cash_never_negative": true
+      }
+    },
+    "S7_VERIFY_CEP_ELIGIBILITY_AND_STRESS_REENTRY_RULE": {
+      "pass": true,
+      "checks": {
+        "cep_buy_violations_zero": true,
+        "same_day_reentry_violations_zero": true
+      }
+    }
+  },
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/ledger_daily.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/ledger_entries.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/equity_curve.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/trades.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/positions_daily.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/signals_used.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/corporate_actions_applied.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/report.md",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/manifest.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/evidence"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/ledger_daily.parquet": "5e40ac6a0c165cb18679f92b94eba6eea18f8063a78d06a018d5bdc076f78aa5",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/ledger_entries.parquet": "4506f22e7f04df48724546c506ef6ab9a457fe918c70d434e577008061afc96d",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/equity_curve.parquet": "92bc0e8aea8fecc409523566a33e4d6bcd5e62ef71aa3e7ac78a71c797641c59",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/trades.parquet": "13f52b0c72abd2ce258f5c0271c59f6d0720c8f0eed13f994568c13f20fe361b",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/positions_daily.parquet": "8548fc73e805d36a52bce6f9f7e4e976a63604b6b8311401e7d825d9f7979b88",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/signals_used.parquet": "cc0202134c26d631adffdfedfabee00ad65b862d7dc64b544678efdf9db6b310",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/corporate_actions_applied.parquet": "e0a6e9f654eaed467158ab6c07c8101a3aad59671d8af1606ec0f3c49f46d54b",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/report.md": "b8fd5e96c5c8bf3e89a64d551cc0d0e8d4b2a995be166e34e5684be387e14f31",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1/manifest.json": "f8c07e9f2481b23ff70e77ca836670b8b1658ecf9cc3edb4f3f8e0ddff91b634"
+  }
+}

@@ -1,0 +1,2 @@
+/home/wilson/PortfolioZero/.venv/bin/python
+Python 3.12.12

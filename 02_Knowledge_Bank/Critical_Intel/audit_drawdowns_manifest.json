@@ -1,0 +1,24 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_EXP_001_AUDIT_DRAWDOWN_WINDOWS_V1",
+  "generated_at_utc": "2026-02-23T18:12:11.137082+00:00",
+  "exp_outputs_root": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1",
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_drawdowns/report.md",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_drawdowns/windows_summary.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_drawdowns/trades_in_windows.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_drawdowns/stress_events_in_windows.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_drawdowns/ticker_contrib_in_windows.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_drawdowns/plot_windows_base1.html",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_drawdowns/manifest.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_drawdowns/evidence"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_drawdowns/report.md": "d0ae2f01ba889347ac7ed13e09942fa9982ff1b561b5c91009466ed3dd55529d",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_drawdowns/windows_summary.parquet": "3ccc50ab3de6028dad22a9ac4ac6cbd3a57249754c896b65bbaf54c4779c517f",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_drawdowns/trades_in_windows.parquet": "477c460cb0505bebd94adf05505c3fb4bc3d5b64f1a1df78ce46be109d55c120",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_drawdowns/stress_events_in_windows.parquet": "ca623aaa002e77946f40203ea7138f929af9140da22290b2ad92f477cc82b35c",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_drawdowns/ticker_contrib_in_windows.parquet": "125a6788b28cc5dd4ad393f23ec7ad4dab7c53f85bf02c681a287a38fb754989",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_drawdowns/plot_windows_base1.html": "fa91c00f362133da7e54d5e17add1a2ac052b529575330157dc5bcc3e6874686",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_drawdowns/manifest.json": "e97d3a464a60eb2de9acb557485d2b41ce8358df647c835f7f11018370c7003b"
+  }
+}

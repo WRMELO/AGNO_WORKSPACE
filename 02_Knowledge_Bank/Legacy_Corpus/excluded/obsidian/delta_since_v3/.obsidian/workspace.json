@@ -1,0 +1,221 @@
+{
+  "main": {
+    "id": "ad7c60b13e94e07d",
+    "type": "split",
+    "children": [
+      {
+        "id": "d89caca99e75a33e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8bc7a6ed93b1fd1f",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Nova aba"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3d6d562a0fcdba66",
+    "type": "split",
+    "children": [
+      {
+        "id": "795eb141a73cbe25",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b6f84cb0b59eba5c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de arquivos"
+            }
+          },
+          {
+            "id": "139a1d099e6412b4",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Procurar"
+            }
+          },
+          {
+            "id": "b94bf05d2563d559",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c373e71aea3e7659",
+    "type": "split",
+    "children": [
+      {
+        "id": "ae18495834feabdd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b56f9cb9d5ffc623",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "outputs/governanca/bootstrap_repo/20260215/report.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Links inversos para report"
+            }
+          },
+          {
+            "id": "ea15ad44b6b14fb0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "outputs/governanca/bootstrap_repo/20260215/report.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Links de saída para report"
+            }
+          },
+          {
+            "id": "48154b708bcf28eb",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "b1bd3d31a4d4acfb",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas as propriedades"
+            }
+          },
+          {
+            "id": "f751ca51c05f2811",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "outputs/governanca/bootstrap_repo/20260215/report.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Sumário de report"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir a troca rápida": false,
+      "graph:Abrir visualização em gráfico": false,
+      "canvas:Criar novo canvas": false,
+      "daily-notes:Abrir a nota de hoje": false,
+      "templates:Inserir modelo": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Criar nova base": false
+    }
+  },
+  "active": "b6f84cb0b59eba5c",
+  "lastOpenFiles": [
+    "planning/runs/TASK_CEP_BUNDLE_CORE_RAG_003_APPEND_DELTA_SINCE_V3_AND_REINDEX_V1/run_20260220_165610/run_summary.json",
+    "outputs/governanca/rag/20260220/delta_since_v3/report.json",
+    "outputs/governanca/rag/20260220/delta_since_v3/evidence/reindex_smoke_results.json",
+    "corpus/rag/index/index_v2.json",
+    "corpus/manifests/corpus_manifest_v2.json",
+    "docs/rag/DELTA_SINCE_V3.md",
+    "docs/rag/DELTA_SINCE_V3.json",
+    "docs/rag",
+    "corpus/source/delta_since_v3/tools/rag/query.py",
+    "corpus/source/delta_since_v3/tools/rag/build_index.py",
+    "corpus/source/delta_since_v3/tools/rag",
+    "corpus/source/delta_since_v3/tools",
+    "corpus/source/delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/report.md",
+    "corpus/source/delta_since_v3/outputs/governanca/worktrees/20260215/report.md",
+    "corpus/source/delta_since_v3/outputs/governanca/git_sync/20260215/report.md",
+    "corpus/source/delta_since_v3/outputs/governanca/git_ssh_verify/20260215/report.md",
+    "corpus/source/delta_since_v3/outputs/governanca/git_ssh_fix/20260215/report.md",
+    "corpus/source/delta_since_v3/outputs/governanca/git_init_fix/20260215/report.md",
+    "corpus/source/delta_since_v3/outputs/governanca/constituicao_forense/20260215/report.md",
+    "corpus/source/delta_since_v3/outputs/governanca/constituicao_forense/20260215/legacy_alignment_map.md",
+    "corpus/source/delta_since_v3/outputs/governanca/constituicao_forense/20260215/extract_constituicao_trechos.md",
+    "corpus/source/delta_since_v3/docs/MASTERPLAN_V2.md",
+    "corpus/source/delta_since_v3/docs/LOCAL_DOCUMENT_INDEX.md",
+    "corpus/rag/README.md",
+    "corpus/CORPUS_INDEX.md",
+    "corpus/README.md",
+    "corpus/source/outputs/simulacoes/compare_m3_plotly/20260216/report.md",
+    "corpus/source/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/report.md",
+    "corpus/source/outputs/instrumentation/m3_w1_w2/20260216_cash_cdi_v5/report.md",
+    "corpus/source/outputs/instrumentation/m3_w1_w2/20260215_costs_v3/report.md",
+    "corpus/source/outputs/instrumentation/m3_w1_w2/20260215_cash_cdi_v4/report.md",
+    "corpus/source/outputs/instrumentation/m3_w1_w2/20260215/report.md",
+    "corpus/source/outputs/governanca/worktrees/20260215/report.md",
+    "corpus/source/outputs/governanca/verify_cdi_cash/20260215/report.md",
+    "corpus/source/outputs/governanca/ssot_cdi/20260215/report.md",
+    "corpus/source/outputs/governanca/sprint_003/20260216/report.md"
+  ]
+}

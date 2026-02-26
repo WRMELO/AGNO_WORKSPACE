@@ -1,0 +1,10 @@
+{
+  "generated_at_utc": "2026-02-24T19:48:45.996229+00:00",
+  "overall": "PASS",
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s008_candidates_global/20260224/S008_CANDIDATES_CORP_ACTIONS_V2_COMPAT/candidates/candidates_daily.parquet"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s008_candidates_global/20260224/S008_CANDIDATES_CORP_ACTIONS_V2_COMPAT/candidates/candidates_daily.parquet": "9355622aabab628772397bddcc0b829c38e488c42c0132e2f624f1f75e4765fa"
+  }
+}

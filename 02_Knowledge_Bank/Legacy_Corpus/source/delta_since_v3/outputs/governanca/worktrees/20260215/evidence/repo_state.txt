@@ -1,0 +1,3 @@
+is_inside_work_tree=true
+head_sha=4c84a020fa947401f26f5fd98c551e5f4ae7d59c
+active_branch=master

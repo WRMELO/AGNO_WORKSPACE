@@ -1,0 +1,103 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_F0_013_MIGRATE_WORKTREES_TO_LOCAL_OPERATION_V1",
+  "generated_at_utc": "2026-02-16T09:57:02.670829+00:00",
+  "local_root": "[LEGACY_ROOT]",
+  "integration_branch": "local/integrated-state-20260215",
+  "head_current": "0e5a122cfebe26feabc5d22f665e3645225e35fd",
+  "bundle_root": "[LEGACY_ROOT]_exports/20260216",
+  "gates": {
+    "S1_GATE_ALLOWLIST": "PASS",
+    "S2_VERIFY_LOCAL_ROOT_DECISION_WITH_EVIDENCE": "PASS",
+    "S3_VERIFY_REMOTE_BRANCHES_AVAILABLE": "PASS",
+    "S4_VERIFY_LOCAL_INTEGRATION_STATE_CREATED": "PASS",
+    "S5_VERIFY_REQUIRED_ARTIFACTS_PRESENT_IN_LOCAL_ROOT": "PASS",
+    "S6_VERIFY_HUMAN_INDEX_CREATED": "PASS",
+    "S7_VERIFY_EXTERNAL_BUNDLE_AND_HASHES": "PASS",
+    "S8_VERIFY_OPERATION_MODE_LOCAL_ROOT": "PASS",
+    "S9_VERIFY_CLEAN_FINAL_STATE": "PASS"
+  },
+  "checks": {
+    "required_artifacts": [
+      {
+        "item": "docs/SESSION_STATE_TRANSFER_PACKAGE.md",
+        "exists": true,
+        "type": "file",
+        "abs_path": "[LEGACY_ROOT]/docs/SESSION_STATE_TRANSFER_PACKAGE.md"
+      },
+      {
+        "item": "docs/SESSION_STATE_TRANSFER_PACKAGE.json",
+        "exists": true,
+        "type": "file",
+        "abs_path": "[LEGACY_ROOT]/docs/SESSION_STATE_TRANSFER_PACKAGE.json"
+      },
+      {
+        "item": "data/ssot/cdi/cdi_daily.parquet",
+        "exists": true,
+        "type": "file",
+        "abs_path": "[LEGACY_ROOT]/data/ssot/cdi/cdi_daily.parquet"
+      },
+      {
+        "item": "data/ssot/cdi/README.md",
+        "exists": true,
+        "type": "file",
+        "abs_path": "[LEGACY_ROOT]/data/ssot/cdi/README.md"
+      },
+      {
+        "item": "outputs/governanca/session_state_transfer/20260215/",
+        "exists": true,
+        "type": "dir",
+        "abs_path": "[LEGACY_ROOT]/outputs/governanca/session_state_transfer/20260215"
+      },
+      {
+        "item": "outputs/governanca/ssot_cdi/20260215/",
+        "exists": true,
+        "type": "dir",
+        "abs_path": "[LEGACY_ROOT]/outputs/governanca/ssot_cdi/20260215"
+      }
+    ],
+    "remote_branch_availability": {
+      "origin/wt/bootstrap": true,
+      "origin/wt/analysis-gaps": true
+    },
+    "operation_mode": {
+      "recommended_repo_root": "[LEGACY_ROOT]",
+      "current_branch": "local/integrated-state-20260215",
+      "hard_requirement_to_use_wt_found_in_repo_config": false,
+      "minimal_adjustment_done": "docs/LOCAL_DOCUMENT_INDEX.md added with explicit LOCAL_ROOT operation guidance",
+      "note": "No runner config mutation required for this migration task."
+    }
+  },
+  "outputs": {
+    "doc_index_md": "docs/LOCAL_DOCUMENT_INDEX.md",
+    "report_md": "outputs/governanca/local_migration/20260216/report.md",
+    "manifest_json": "outputs/governanca/local_migration/20260216/manifest.json",
+    "bundle_manifest_json": "[LEGACY_ROOT]_exports/20260216/bundle_manifest.json",
+    "bundle_manifest_md": "[LEGACY_ROOT]_exports/20260216/bundle_manifest.md"
+  },
+  "hashes_sha256": {
+    "docs/LOCAL_DOCUMENT_INDEX.md": "16d98ce1bcdb7f3729c2bbcb4e92229f9569860defe9ea4c9948a04d9c6cc499",
+    "outputs/governanca/local_migration/20260216/report.md": "658bcb55ca3f89f96d70b7460a1b5504c733feb7ea99a6c919a58529bff181a2",
+    "outputs/governanca/local_migration/20260216/evidence/local_root_decision.json": "6223ca0dd54a804d50f455503b6a7f28e24fbcb29d21e0692c6ae0dcfa757eaf",
+    "outputs/governanca/local_migration/20260216/evidence/remote_branches_check.json": "d5cc1cdc132097d6213424247e0f7465d4d67cb786c17af935e399f72e27f6c3",
+    "outputs/governanca/local_migration/20260216/evidence/integration_branch_check.json": "161c3d2241aec3b7d134e55c1ff64f85bf8b78b430ee4cce26b79129fb8dc6e1",
+    "outputs/governanca/local_migration/20260216/evidence/required_artifacts_check.json": "d3152c10ae961c35213de4fbd594bcce344e3ca97cb519fdad254d98a4df6c85",
+    "outputs/governanca/local_migration/20260216/evidence/operation_mode_local_check.json": "a637b6563edd75e43b34cd5d7d16145628ecc0af8f922506b04f7edfcf7e149a",
+    "outputs/governanca/local_migration/20260216/evidence/git_remote_v.txt": "8819e7e729aa7d51af61b702c854c3a1be798285954d26a5747f3bc59e2b2725",
+    "outputs/governanca/local_migration/20260216/evidence/git_worktree_list.txt": "5e22b9a64239aaf2b94b8d8f16a30d608a69f2bc27b37081c811b782b0fe6deb",
+    "outputs/governanca/local_migration/20260216/evidence/git_branch_all.txt": "2b411c4582e900d1fa0397b2c8a22276d2d600bc9d78f408483bfe547a897274",
+    "outputs/governanca/local_migration/20260216/evidence/status_before.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "outputs/governanca/local_migration/20260216/evidence/sync_fetch.txt": "b1ed75e26c0b0164a3e4308fc4c7bf7576c22288a848d4fa76fd185a94b7d397",
+    "outputs/governanca/local_migration/20260216/evidence/sync_pull_ff_only.txt": "cae7fb3d4c19462ebc5c44dad8d44597a4941cbb8dc88285903ea2bcdfd13c2d",
+    "outputs/governanca/local_migration/20260216/evidence/sync_push.txt": "163702909c97c6e05fb92d2c172b4293a7d54c2992faf8c90453571188050875",
+    "outputs/governanca/local_migration/20260216/evidence/status_after_sync.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "[LEGACY_ROOT]_exports/20260216/bundle_manifest.json": "2a138f467524af9545739fa24f59c6767a68bc9afc3a878db9b4a876eb72887b",
+    "[LEGACY_ROOT]_exports/20260216/bundle_manifest.md": "82fa622c144964138b99ac9e3f49f7ec8dc5ebe57452c344d34ec45d7f58589a"
+  },
+  "head_after_sync": "a8742bd8390bc3a25522e96597a7cc6e3a832b1f",
+  "sync_evidence": {
+    "fetch": "outputs/governanca/local_migration/20260216/evidence/sync_fetch.txt",
+    "pull_ff_only": "outputs/governanca/local_migration/20260216/evidence/sync_pull_ff_only.txt",
+    "push": "outputs/governanca/local_migration/20260216/evidence/sync_push.txt",
+    "status_after_sync": "outputs/governanca/local_migration/20260216/evidence/status_after_sync.txt"
+  }
+}

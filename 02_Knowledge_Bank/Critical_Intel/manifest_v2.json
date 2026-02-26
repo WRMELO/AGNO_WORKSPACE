@@ -1,0 +1,28 @@
+{
+  "generated_at_utc": "2026-02-24T19:34:00.093075+00:00",
+  "policy_version": "V2_FIX_VIVT3",
+  "inputs": {
+    "raw_parquet": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/governanca/corporate_actions/20260224/fullperiod_brapi_v1/ssot/corporate_actions.parquet",
+    "raw_csv": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/governanca/corporate_actions/20260224/fullperiod_brapi_v1/ssot/corporate_actions.csv",
+    "ssot_v1": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/data/ssot/corporate_actions/corporate_actions_ssot.parquet",
+    "ssot_v1_manifest": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/data/ssot/corporate_actions/manifest.json"
+  },
+  "rows": 11703,
+  "schema_minimum": [
+    "ticker",
+    "event_date",
+    "event_type",
+    "ratio_or_factor",
+    "source",
+    "raw_reference"
+  ],
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/data/ssot/corporate_actions/corporate_actions_ssot_v2.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/governanca/corporate_actions/20260224/policy_fix_vivt3_v1/evidence/vivt3_policy_resolution.json"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/data/ssot/corporate_actions/corporate_actions_ssot_v2.parquet": "53684890aa4a661823abecc88f4cc2b56bd40a1e35791ec6441d1656a080bc62",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/governanca/corporate_actions/20260224/policy_fix_vivt3_v1/evidence/vivt3_policy_resolution.json": "1f59e937d14f5dedb00f4a95a3bd15c44a6ccca74171d1a10a89b154ee3e79bd"
+  },
+  "overall": "PASS"
+}

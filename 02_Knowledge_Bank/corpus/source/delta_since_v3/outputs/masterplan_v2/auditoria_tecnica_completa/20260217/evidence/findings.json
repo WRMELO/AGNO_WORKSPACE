@@ -1,0 +1,46 @@
+{
+  "findings": [
+    {
+      "severity": "HIGH",
+      "id": "AUD-001",
+      "title": "Equity V2 economic plausibility breached despite reported PASS",
+      "evidence": [
+        "outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/economic_plausibility_diagnostics.json",
+        "outputs/masterplan_v2/f2_003/evidence/equity_compare_summary.json",
+        "outputs/masterplan_v2/auditoria_tecnica_completa/20260217/plots/audit_equity_baseline_vs_v2.html"
+      ],
+      "detail": "V2 final equity ~183x while baseline ~2.385x; major driver is net sells +117.3 notional with CDI accruing over inflated cash."
+    },
+    {
+      "severity": "HIGH",
+      "id": "AUD-002",
+      "title": "Executor ledger lacks inventory dimensions (ticker/qty), preventing asset-level sell feasibility checks",
+      "evidence": [
+        "outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/economic_plausibility_diagnostics.json",
+        "outputs/masterplan_v2/f2_002/ledger_trades_v2.parquet"
+      ],
+      "detail": "Without ticker/qty in ledger_v2, SELL constraints cannot be validated by position, enabling economically inconsistent cash generation."
+    },
+    {
+      "severity": "MEDIUM",
+      "id": "AUD-003",
+      "title": "CDI accumulated vs daily confusion occurred in gate logic and was patched",
+      "evidence": [
+        "outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/cdi_scale_and_usage_check.json",
+        "outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/cdi_cash_application_summary.json",
+        "outputs/masterplan_v2/f2_004/report.md"
+      ],
+      "detail": "SSOT contains both index level and daily return. Using index directly as daily rate is wrong; current runner patch converts index-like series via pct_change where needed."
+    },
+    {
+      "severity": "MEDIUM",
+      "id": "AUD-004",
+      "title": "Reported PASS statuses are internally consistent but not sufficient for economic validity",
+      "evidence": [
+        "outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/reported_status_matrix.csv",
+        "outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/cash_equity_reconciliation_summary.json"
+      ],
+      "detail": "Reconciliations pass mathematically inside the implemented model, yet model assumptions allow implausible outcomes."
+    }
+  ]
+}

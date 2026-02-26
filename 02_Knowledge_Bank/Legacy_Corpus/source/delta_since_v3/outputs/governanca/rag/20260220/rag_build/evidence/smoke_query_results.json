@@ -1,0 +1,69 @@
+{
+  "results": [
+    {
+      "score": 0.42257712736425823,
+      "source_relpath": "docs/MP002_OBJETIVO_REAL_SSOT.md",
+      "chunk_id": "docs/MP002_OBJETIVO_REAL_SSOT.md::c0",
+      "char_start": 0,
+      "char_end": 195,
+      "text_preview": "MP002 OBJETIVO REAL SSOT\n\n- origem: `docs/MASTERPLAN.md` (secao `## Objetivo real (anti-deriva e anti-bloqueio)`)\n- gerado_em_utc: `2026-02-16T12:28:21.752527+00:00`\n- masterplan_item: `MP-002`\n\n"
+    },
+    {
+      "score": 0.3333333333333333,
+      "source_relpath": "docs/SESSION_STATE_TRANSFER_PACKAGE_V2.md",
+      "chunk_id": "docs/SESSION_STATE_TRANSFER_PACKAGE_V2.md::c7",
+      "char_start": 3831,
+      "char_end": 3921,
+      "text_preview": "7) Inventario de fase\n\n- `outputs/governanca/phase_closeout/20260216/phase_inventory.csv`\n"
+    },
+    {
+      "score": 0.32025630761017426,
+      "source_relpath": "outputs/governanca/ssot_cdi/20260215/report.md",
+      "chunk_id": "outputs/governanca/ssot_cdi/20260215/report.md::c4",
+      "char_start": 1048,
+      "char_end": 1230,
+      "text_preview": "Artefatos\n\n- `data/ssot/cdi/cdi_daily.parquet`\n- `data/ssot/cdi/README.md`\n- `outputs/governanca/ssot_cdi/20260215/report.md`\n- `outputs/governanca/ssot_cdi/20260215/manifest.json`\n\n"
+    },
+    {
+      "score": 0.30316953129541624,
+      "source_relpath": "planning/task_specs/sprint_003/TASK_CEP_BUNDLE_CORE_S3_003_MP002_OBJETIVO_REAL_SSOT.json",
+      "chunk_id": "planning/task_specs/sprint_003/TASK_CEP_BUNDLE_CORE_S3_003_MP002_OBJETIVO_REAL_SSOT.json::c0",
+      "char_start": 0,
+      "char_end": 680,
+      "text_preview": "{\n  \"task_id\": \"TASK_CEP_BUNDLE_CORE_S3_003_MP002_OBJETIVO_REAL_SSOT\",\n  \"masterplan_id\": \"MP-002\",\n  \"intent\": \"Publicar SSOT operacional do objetivo real anti-deriva e anti-bloqueio.\",\n  \"inputs\": {\n    \"masterplan\": \"docs/MASTERPLAN.md\","
+    },
+    {
+      "score": 0.2449489742783178,
+      "source_relpath": "outputs/governanca/phase_closeout/20260216/manifest.json",
+      "chunk_id": "outputs/governanca/phase_closeout/20260216/manifest.json::c1",
+      "char_start": 1400,
+      "char_end": 2397,
+      "text_preview": "8289f8430cc364a1a848672f21ec01821221eb1853f\",\n    \"docs/LOCAL_DOCUMENT_INDEX.md\": \"d9dc01418ef0870d74907c03b7eef641b37e2d048aa9b9b66294e9dbc2a42a5d\",\n    \"outputs/governanca/phase_closeout/20260216/phase_inventory.csv\": \"00558c3d3dd81ad7d30"
+    },
+    {
+      "score": 0.24433888871261045,
+      "source_relpath": "docs/SESSION_STATE_TRANSFER_PACKAGE.json",
+      "chunk_id": "docs/SESSION_STATE_TRANSFER_PACKAGE.json::c3",
+      "char_start": 4200,
+      "char_end": 5800,
+      "text_preview": ": \"Nao aplicar accrual CDI por ausencia de SSOT confiavel no repo.\",\n    \"ssot_candidates_v4\": [],\n    \"new_ssot_created_after_v4\": \"/home/wilson/_wt/CEP_BUNDLE_CORE/analysis/data/ssot/cdi/cdi_daily.parquet\"\n  },\n  \"ssot_registry\": {\n    \"e"
+    },
+    {
+      "score": 0.24253562503633297,
+      "source_relpath": "outputs/governanca/local_execution_structure/20260216/report.md",
+      "chunk_id": "outputs/governanca/local_execution_structure/20260216/report.md::c3",
+      "char_start": 945,
+      "char_end": 1380,
+      "text_preview": "Smoke-run objetivo\n\nComando executado e logado em:\n- `outputs/governanca/local_execution_structure/20260216/evidence/smoke_run_command.log`\n\nProvas geradas:\n- task_spec lido de `planning/task_specs/TASK_CEP_BUNDLE_CORE_LOCAL_SMOKE_20260216."
+    },
+    {
+      "score": 0.23845524161913295,
+      "source_relpath": "outputs/governanca/worktrees/20260215/manifest.json",
+      "chunk_id": "outputs/governanca/worktrees/20260215/manifest.json::c0",
+      "char_start": 0,
+      "char_end": 1600,
+      "text_preview": "{\n  \"task_id\": \"TASK_CEP_BUNDLE_CORE_F0_001C_CREATE_WORKTREES_LAYOUT_V1\",\n  \"generated_at_utc\": \"2026-02-15T14:29:45Z\",\n  \"repo_root\": \"[LEGACY_ROOT]\",\n  \"worktrees_root\": \"/home/wilson/_wt/CEP_BUNDLE_CORE\",\n  \"official_pytho"
+    }
+  ],
+  "ok": true
+}

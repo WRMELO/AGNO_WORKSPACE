@@ -1,0 +1,4 @@
+[LEGACY_ROOT]/_tentativa2_reexecucao_completa_20260220
+[LEGACY_ROOT]/_tentativa2_reexecucao_completa_20260220/ssot_snapshot
+[LEGACY_ROOT]/_tentativa2_reexecucao_completa_20260220/work
+[LEGACY_ROOT]/_tentativa2_reexecucao_completa_20260220/outputs

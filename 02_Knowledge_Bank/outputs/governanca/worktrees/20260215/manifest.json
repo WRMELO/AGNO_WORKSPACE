@@ -1,0 +1,73 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_F0_001C_CREATE_WORKTREES_LAYOUT_V1",
+  "generated_at_utc": "2026-02-15T14:29:45Z",
+  "repo_root": "/home/wilson/CEP_BUNDLE_CORE",
+  "worktrees_root": "/home/wilson/_wt/CEP_BUNDLE_CORE",
+  "official_python": "/home/wilson/PortfolioZero/.venv/bin/python",
+  "git": {
+    "head_sha": "4c84a020fa947401f26f5fd98c551e5f4ae7d59c",
+    "active_branch": "master",
+    "root_worktree_clean": true
+  },
+  "branches": {
+    "bootstrap": "wt/bootstrap",
+    "ssot": "wt/ssot",
+    "experiments": "wt/experiments",
+    "verify_branches_exist": true
+  },
+  "worktrees": [
+    {
+      "name": "root",
+      "path": "/home/wilson/CEP_BUNDLE_CORE",
+      "branch": "master"
+    },
+    {
+      "name": "bootstrap",
+      "path": "/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap",
+      "branch": "wt/bootstrap"
+    },
+    {
+      "name": "ssot",
+      "path": "/home/wilson/_wt/CEP_BUNDLE_CORE/ssot",
+      "branch": "wt/ssot"
+    },
+    {
+      "name": "experiments",
+      "path": "/home/wilson/_wt/CEP_BUNDLE_CORE/experiments",
+      "branch": "wt/experiments"
+    }
+  ],
+  "artifacts": {
+    "out_dir": "outputs/governanca/worktrees/20260215/",
+    "report_md": "outputs/governanca/worktrees/20260215/report.md",
+    "manifest_json": "outputs/governanca/worktrees/20260215/manifest.json",
+    "evidence_dir": "outputs/governanca/worktrees/20260215/evidence/",
+    "evidence_worktree_list": "outputs/governanca/worktrees/20260215/evidence/worktree_list.txt",
+    "evidence_branch_list": "outputs/governanca/worktrees/20260215/evidence/branch_list.txt",
+    "evidence_status_root": "outputs/governanca/worktrees/20260215/evidence/status_repo_root.txt"
+  },
+  "hashes_sha256": {
+    "outputs/governanca/worktrees/20260215/report.md": "739438e4177e71ed408e9185288b212b0d56f942e6d4da735de4490683fbc3f9",
+    "outputs/governanca/worktrees/20260215/evidence/worktree_list.txt": "adf89952fd23702dff52786ad43be31ea5fb79074fbded0335a34a4421dcffdc",
+    "outputs/governanca/worktrees/20260215/evidence/branch_list.txt": "28cea227d89040505b01f9b16ea16fbcf8f9d314ff2cee5c3f9c7621a2c133a2",
+    "outputs/governanca/worktrees/20260215/evidence/status_repo_root.txt": "cee6276572a434dd52302463f6857604202c096e77b6d376f1f349e8170bb6e2",
+    "outputs/governanca/worktrees/20260215/evidence/python_official.txt": "e68d032cffa6848c4ff90d8fe8a63d60e6e2456baf93e5d4df83682ab9938407",
+    "outputs/governanca/worktrees/20260215/evidence/repo_state.txt": "7856135e2e52e7e7e58f7ea749fe726319c7ea7b871082dad6c5efd74c28da2d"
+  },
+  "gates": {
+    "S1_GATE_ALLOWLIST": "PASS",
+    "S2_VERIFY_GIT_INITIALIZED": "PASS",
+    "S3_GATE_VENV_OFFICIAL_PYTHON": "PASS",
+    "S4_VERIFY_BRANCHES_EXIST": "PASS",
+    "S5_VERIFY_WORKTREES_CREATED": "PASS",
+    "S6_VERIFY_ROOT_WORKTREE_CLEAN": "PASS",
+    "S7_WRITE_MANIFEST_HASHES": "PASS"
+  },
+  "acceptance_criteria": {
+    "OVERALL": "PASS",
+    "worktree_list_has_3_additional_entries_under_root": true,
+    "branches_wt_bootstrap_wt_ssot_wt_experiments_exist": true,
+    "repo_root_git_status_porcelain_empty": true,
+    "report_and_manifest_generated": true
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_V2_F2_003_ENVELOPE_PLOTLY_AUDIT",
+  "generated_at_utc": "2026-02-17T08:18:01.388912+00:00",
+  "repo_root": "[LEGACY_ROOT]",
+  "branch": "local/integrated-state-20260215",
+  "head": "a85cf1e2f3e55df6d4234838d653f3630dd0bf31",
+  "task_spec_path": "planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F2_003_ENVELOPE_PLOTLY_AUDIT.json",
+  "overall": "PASS",
+  "validations": {
+    "required_plots_present": true,
+    "enf_overlay_present": true,
+    "metrics_linked": true,
+    "metrics_not_nan": true,
+    "report_contains_numbers": true,
+    "input_hashes_present": true
+  },
+  "missing_plots": [],
+  "hashes_sha256": {
+    "outputs/masterplan_v2/f2_003/report.md": "4e4ecfc51ba09f45479d6eaef822abc9e4f06b2da8e3ff2930239977fe89c38f",
+    "outputs/masterplan_v2/f2_003/manifest.json": "cd03e674eb4874e462f7fec29d944bae5f89109e4ea1f69bd23ee0892dd5d5c5",
+    "outputs/masterplan_v2/f2_003/evidence/preflight.json": "47e8379fb659b3acf7a2450b4aebf7f7441a818d35729931c3c492fbd6562b72",
+    "outputs/masterplan_v2/f2_003/evidence/input_presence.json": "29cac6548234e3049533bf5c8330966873c85c5f3d3b4406db63842fee73c48d",
+    "outputs/masterplan_v2/f2_003/evidence/plot_inventory.json": "1c31836a2f3a1a1c83862c130147b4bbe5ddc5bd6d76700b0e9232f9dec5ceb9",
+    "outputs/masterplan_v2/f2_003/evidence/equity_compare_summary.json": "523bf86e1857f154dc9329e4a6a522fd6787e25643e6a9f1c8e79f8f7d92ad55",
+    "outputs/masterplan_v2/f2_003/evidence/equity_compare_sample.csv": "e3bb6ed6a4280de3c53666c48cb7dbc09f35dd1e9afcb30fffb0b44b2fdcb8da",
+    "outputs/masterplan_v2/f2_003/evidence/equity_compare_columns_inference.json": "e4eea84fcbaf955592997165f2220857d61dbe8d2365d1c6f2859a3edb9ffeca",
+    "outputs/masterplan_v2/f2_001/envelope_daily.csv": "056b6ef9ae67b4a7ca8692a7efdffa2111fbc2656d425b79ab92817bbe9e06b6",
+    "outputs/masterplan_v2/f2_002/daily_portfolio_v2.parquet": "9ba3c183468807b61a2c0f5d2f54d42190fd9d9b45218b0b80e3e4b51110d726",
+    "outputs/masterplan_v2/f2_002/ledger_trades_v2.parquet": "18ef5d4e0a158e09e5bbed0a4a1722044b0d514969d294fd907659555be0ccc9",
+    "outputs/masterplan_v2/f2_002/evidence/enforcement_examples.csv": "54a5926dde9ce4b57eb3c016ec566877ff59cbe8b222c5fb2136014067aebfb6",
+    "outputs/masterplan_v2/f2_002/evidence/metrics_compare_baseline_vs_v2.csv": "4019008986dc8f4e355667bb249b4688c55291a99eac25827a90de5156d9bb26",
+    "outputs/masterplan_v2/f2_001/evidence/guardrails_parameters.json": "7e5409a01003d9c889c5825d9b84fe611d2ffcf01011daf96822f7332b255c2d",
+    "/home/wilson/CEP_COMPRA/outputs/reports/task_017/run_20260212_125255/data/daily_portfolio_m3.parquet": "2b2f3e13ea3a40391779c9d47ac084b5097b9e0a323bfa8b187d3e666d0bdb85",
+    "outputs/masterplan_v2/f2_003/plots/envelope_timeseries.html": "cc89bee5c323ab60c9ac90a16c56453ade87187afac15bf7ce4e934872c870de",
+    "outputs/masterplan_v2/f2_003/plots/guardrails_timeseries.html": "be323f6826b932e9dfad9528b7965d5c90b28f6f38f209e2395c72f9138df7a3",
+    "outputs/masterplan_v2/f2_003/plots/enforcement_events_timeline.html": "6f7dbccc73012fbeab265b38590b57d43cedfe312d9b6ac10c98ca2e123fe24e",
+    "outputs/masterplan_v2/f2_003/plots/baseline_vs_v2_turnover.html": "3cceee98007d69de89d8b2649a49896b5706a12df2281222c904270f599f1660",
+    "outputs/masterplan_v2/f2_003/plots/baseline_vs_v2_cash_ratio.html": "02c89966e6ab99c6aae708969b2801814406b12cd95d543b55ee16a7534cf7b2",
+    "outputs/masterplan_v2/f2_003/plots/baseline_vs_v2_exposure.html": "4df98dad49ad39c47bd5425b0fae09511c34405f596165af8b9d2dddd28a8fd3",
+    "outputs/masterplan_v2/f2_003/plots/baseline_vs_v2_trade_count.html": "113b52ed5f88b5902065fce5918c919db68a9f61ee05ce0d918dd3ed605b5592",
+    "outputs/masterplan_v2/f2_003/plots/baseline_vs_v2_equity_timeseries.html": "06d61c7367f09778b4d3cc8ab19a0dd88b276aa9699833d35434295a2e9750ae",
+    "outputs/masterplan_v2/f2_003/plots/baseline_vs_v2_drawdown_timeseries.html": "40cf9b4348e854d60d36a9df7b74c71bcd2cd670a0419b32f8e4a2182bf7ddd8"
+  },
+  "consumed_inputs": [
+    "outputs/masterplan_v2/f2_001/envelope_daily.csv",
+    "outputs/masterplan_v2/f2_002/daily_portfolio_v2.parquet",
+    "outputs/masterplan_v2/f2_002/ledger_trades_v2.parquet",
+    "outputs/masterplan_v2/f2_002/evidence/enforcement_examples.csv",
+    "outputs/masterplan_v2/f2_002/evidence/metrics_compare_baseline_vs_v2.csv",
+    "outputs/masterplan_v2/f2_001/evidence/guardrails_parameters.json",
+    "/home/wilson/CEP_COMPRA/outputs/reports/task_017/run_20260212_125255/data/daily_portfolio_m3.parquet"
+  ]
+}

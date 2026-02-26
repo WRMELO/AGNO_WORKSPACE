@@ -1,0 +1,21 @@
+{
+  "generated_at_utc": "2026-02-24T19:16:05.476484+00:00",
+  "old_canonical_base": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/base_operacional_canonica_completa_v2_448_cdi_excess_v1/panel/base_operacional_canonica.parquet",
+  "old_canonical_hash": "49a3987f8c2811b97facde234076f3ac7cc333f66d58cae9325257fbc7a20fb8",
+  "new_canonical_base": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s006_operational_base_global/20260224/S006_CANONICAL_BASE_WITH_CORP_ACTIONS_V1/base_operacional_canonica.parquet",
+  "new_canonical_hash": "93829c54b5d11180a8ca11ca87ae8df56b65a2dfd8ec46387caf7c926bd11e2f",
+  "corporate_actions_ssot": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/data/ssot/corporate_actions/corporate_actions_ssot.parquet",
+  "rows": 900928,
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s006_operational_base_global/20260224/S006_CANONICAL_BASE_WITH_CORP_ACTIONS_V1/base_operacional_canonica.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s006_operational_base_global/20260224/S006_CANONICAL_BASE_WITH_CORP_ACTIONS_V1/README_SUPERSEDENCE.md",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s006_operational_base_global/20260224/S006_CANONICAL_BASE_WITH_CORP_ACTIONS_V1/evidence/vivt3_apr2025_validation.json"
+  ],
+  "overall": "PASS",
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s006_operational_base_global/20260224/S006_CANONICAL_BASE_WITH_CORP_ACTIONS_V1/base_operacional_canonica.parquet": "93829c54b5d11180a8ca11ca87ae8df56b65a2dfd8ec46387caf7c926bd11e2f",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s006_operational_base_global/20260224/S006_CANONICAL_BASE_WITH_CORP_ACTIONS_V1/README_SUPERSEDENCE.md": "641919d34700bcdf4f42bc89330aeb6d92bc9b0fae4c2bb38d98992b140dff39",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s006_operational_base_global/20260224/S006_CANONICAL_BASE_WITH_CORP_ACTIONS_V1/evidence/vivt3_apr2025_validation.json": "13237aa7b23702481ff524a4679af85e04569f48f2bf22e4f9c56a7accd26184",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s006_operational_base_global/20260224/S006_CANONICAL_BASE_WITH_CORP_ACTIONS_V1/manifest.json": "b4a63ed966a7967318ec0b04e17219e3628ba72aa433c4fc9eca1c514646a667"
+  }
+}

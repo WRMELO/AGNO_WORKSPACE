@@ -1,0 +1,15 @@
+{
+  "v2_sum_buy_notional": 26.03916630748504,
+  "v2_sum_sell_notional": 143.33984565039287,
+  "v2_net_sell_minus_buy": 117.30067934290784,
+  "v2_cdi_cumulative_gain": 63.55367038656189,
+  "v2_cost_cumulative": 0.04234475298946948,
+  "v2_final_cash": 180.8120049764804,
+  "v2_final_equity": 183.19744460342292,
+  "v2_final_positions_ref": 2.38543962694251,
+  "baseline_sum_buy_notional": 172.96297658430262,
+  "baseline_sum_sell_notional": 171.96297658430262,
+  "baseline_net_sell_minus_buy": -1.0,
+  "ledger_v2_has_inventory_dims": false,
+  "assessment": "Explosão de equity é explicada principalmente por net sells muito positivo (+117.3) em V2, combinado com CDI sobre caixa inflado. Isso é consistente com enforcement que bloqueia BUY e mantém SELL sem reconciliação de inventário por ativo."
+}

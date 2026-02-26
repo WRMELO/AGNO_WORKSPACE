@@ -1,0 +1,8 @@
+{
+  "equity_reconciliation_max_abs_residual": 4.440892098500626e-16,
+  "cash_non_negative_ok": true,
+  "buy_cadence_ok_min_gap_3_sessions": true,
+  "buy_dates_count": 282,
+  "cost_cumulative_final": 0.08623148829213746,
+  "cdi_gain_cumulative_final": 0.1777506358940267
+}

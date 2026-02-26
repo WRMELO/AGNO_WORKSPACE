@@ -1,0 +1,10 @@
+{
+  "generated_at_utc": "2026-02-24T19:48:45.996229+00:00",
+  "overall": "PASS",
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s006_operational_base_global/20260224/S006_CANONICAL_BASE_WITH_CORP_ACTIONS_V2_COMPAT/panel/base_operacional_canonica.parquet"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s006_operational_base_global/20260224/S006_CANONICAL_BASE_WITH_CORP_ACTIONS_V2_COMPAT/panel/base_operacional_canonica.parquet": "5001653b81a90240e27d37822f9504b5534a9c28dbcb63b4e34b3196ac153617"
+  }
+}

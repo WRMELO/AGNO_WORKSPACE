@@ -1,0 +1,226 @@
+{
+  "main": {
+    "id": "008d495ce97991e0",
+    "type": "split",
+    "children": [
+      {
+        "id": "e7f8b6bcb2355c39",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b65ab304fe6c42f4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00_Strategy/TASK_REGISTRY.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "TASK_REGISTRY"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8b76628b4b3b0f29",
+    "type": "split",
+    "children": [
+      {
+        "id": "2f1c7ea4c467ebec",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5e77998117aa0b77",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de arquivos"
+            }
+          },
+          {
+            "id": "585db8e2dcf6bc97",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Procurar"
+            }
+          },
+          {
+            "id": "218145b516e4d0d9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f41ef511f2f94613",
+    "type": "split",
+    "children": [
+      {
+        "id": "a4fc9df9fb3f843b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d4c59c750e4e72f0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "388b20acc09dd5b0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Links de saída"
+            }
+          },
+          {
+            "id": "aa174d9dbf7bbe85",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "a17e7645e71b58d4",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas as propriedades"
+            }
+          },
+          {
+            "id": "f84469c3a366e8fd",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Sumário"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir a troca rápida": false,
+      "graph:Abrir visualização em gráfico": false,
+      "canvas:Criar novo canvas": false,
+      "daily-notes:Abrir a nota de hoje": false,
+      "templates:Inserir modelo": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Criar nova base": false
+    }
+  },
+  "active": "b65ab304fe6c42f4",
+  "lastOpenFiles": [
+    "00_Strategy/PHASE2_EXECUTION_PLAN.md",
+    "02_Knowledge_Bank/Critical_Intel_VectorStore/chroma.sqlite3-journal",
+    "run_task013_reality_based_planning.py",
+    "02_Knowledge_Bank/Critical_Intel_VectorStore/b84ef075-1a97-402b-9c1f-bcb1ba27fb3f/index_metadata.pickle",
+    "02_Knowledge_Bank/Critical_Intel_VectorStore/b84ef075-1a97-402b-9c1f-bcb1ba27fb3f/link_lists.bin",
+    "02_Knowledge_Bank/Critical_Intel_VectorStore/b84ef075-1a97-402b-9c1f-bcb1ba27fb3f/length.bin",
+    "02_Knowledge_Bank/Critical_Intel_VectorStore/b84ef075-1a97-402b-9c1f-bcb1ba27fb3f/header.bin",
+    "02_Knowledge_Bank/Critical_Intel_VectorStore/b84ef075-1a97-402b-9c1f-bcb1ba27fb3f/data_level0.bin",
+    "02_Knowledge_Bank/Critical_Intel_VectorStore/b84ef075-1a97-402b-9c1f-bcb1ba27fb3f",
+    "02_Knowledge_Bank/Critical_Intel_VectorStore/chroma.sqlite3",
+    "02_Knowledge_Bank/Critical_Intel/manifest_ssot_snapshot.json",
+    "02_Knowledge_Bank/Critical_Intel/docs_MASTERPLAN_V2.md",
+    "02_Knowledge_Bank/Critical_Intel/git_sync_20260215_report.md",
+    "02_Knowledge_Bank/Critical_Intel/git_ssh_verify_20260215_report.md",
+    "02_Knowledge_Bank/Critical_Intel/git_ssh_fix_20260215_report.md",
+    "02_Knowledge_Bank/Critical_Intel/20260215_report.md",
+    "02_Knowledge_Bank/Critical_Intel/MASTERPLAN_V2.md",
+    "02_Knowledge_Bank/Critical_Intel/LESSONS_LEARNED.md",
+    "02_Knowledge_Bank/Critical_Intel/s007_ruleflags_global_20260223_report.md",
+    "02_Knowledge_Bank/Critical_Intel/20260223_report.md",
+    "02_Knowledge_Bank/Critical_Intel/ssot_reference_refresh_v1_report.md",
+    "02_Knowledge_Bank/Critical_Intel/slope_top15_2018h2_v1_report.md",
+    "02_Knowledge_Bank/Critical_Intel/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_V1_report.md",
+    "02_Knowledge_Bank/Critical_Intel/E3_20210211_20210630_report.md",
+    "02_Knowledge_Bank/Critical_Intel/E2_20200302_20200310_report.md",
+    "02_Knowledge_Bank/Critical_Intel/E1_20191125_20191202_report.md",
+    "02_Knowledge_Bank/Critical_Intel/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2_report.md",
+    "02_Knowledge_Bank/Critical_Intel/EXP_002_S008_SELLGATE_CEP_RL_ABL345_20180701_20260204_CORPACTION_BRAPI_V1_report.md",
+    "02_Knowledge_Bank/Critical_Intel/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2_report.md",
+    "02_Knowledge_Bank/Critical_Intel/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1_report.md",
+    "02_Knowledge_Bank/Critical_Intel/report_exp1_exp2_w4_det_hyb_after_corp_actions.md",
+    "02_Knowledge_Bank/Critical_Intel/EXP2_W4_COMBINED_report.md",
+    "02_Knowledge_Bank/Critical_Intel/EXP1_UNIQUE_W4_report.md",
+    "02_Knowledge_Bank/Critical_Intel/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1_report.md",
+    "02_Knowledge_Bank/Critical_Intel/stress_reasons_ruleflags_report.md",
+    "02_Knowledge_Bank/Critical_Intel/stress_reasons_report.md",
+    "agno_env/lib/python3.13/site-packages/sympy/plotting/tests/test_region_xor.png",
+    "agno_env/lib/python3.13/site-packages/sympy/plotting/tests/test_region_or.png",
+    "agno_env/lib/python3.13/site-packages/sympy/plotting/tests/test_region_not.png",
+    "agno_env/lib/python3.13/site-packages/sympy/plotting/tests/test_region_and.png"
+  ]
+}

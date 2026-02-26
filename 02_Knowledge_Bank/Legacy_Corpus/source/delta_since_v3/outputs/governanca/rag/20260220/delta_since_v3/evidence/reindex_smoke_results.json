@@ -1,0 +1,69 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "score": 0.27950849718747367,
+      "source_relpath": "outputs/governanca/session_state_transfer/20260215/report.md",
+      "chunk_id": "outputs/governanca/session_state_transfer/20260215/report.md::c0",
+      "char_start": 0,
+      "char_end": 371,
+      "text_preview": "Report - Session State Transfer Package\n\n- task_id: `TASK_CEP_BUNDLE_CORE_F0_999_SESSION_STATE_TRANSFER_PACKAGE_V1`\n- generated_at_utc: `2026-02-16T00:30:19.276367+00:00`\n- worktree_required: `/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap`\n- b"
+    },
+    {
+      "score": 0.2425356250363329,
+      "source_relpath": "docs/SESSION_STATE_TRANSFER_PACKAGE.md",
+      "chunk_id": "docs/SESSION_STATE_TRANSFER_PACKAGE.md::c0",
+      "char_start": 0,
+      "char_end": 239,
+      "text_preview": "SESSION STATE TRANSFER PACKAGE - CEP_BUNDLE_CORE\n\nAtualizado em: `2026-02-16T00:30:19.276063+00:00`\nWorktree de emissao: `/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap`\nBranch: `wt/bootstrap`\nHEAD: `2632ec7f838df93c25a5a397feab0929adf29c26`\n\n"
+    },
+    {
+      "score": 0.19802950859533483,
+      "source_relpath": "docs/SESSION_STATE_TRANSFER_PACKAGE_V3.md",
+      "chunk_id": "docs/SESSION_STATE_TRANSFER_PACKAGE_V3.md::c0",
+      "char_start": 0,
+      "char_end": 324,
+      "text_preview": "SESSION STATE TRANSFER PACKAGE V3\n\n- generated_at_utc: `2026-02-17T00:00:00Z`\n- repo_root: `[LEGACY_ROOT]`\n- branch_expected: `local/integrated-state-20260215`\n- foco: transferir estado operacional do Masterplan V2 para novo "
+    },
+    {
+      "score": 0.1889822365046136,
+      "source_relpath": "delta_since_v3/docs/LOCAL_DOCUMENT_INDEX.md",
+      "chunk_id": "delta_since_v3/docs/LOCAL_DOCUMENT_INDEX.md::c3",
+      "char_start": 1773,
+      "char_end": 1896,
+      "text_preview": "Pacote de transferencia V3\n\n- `docs/SESSION_STATE_TRANSFER_PACKAGE_V3.md`\n- `docs/SESSION_STATE_TRANSFER_PACKAGE_V3.json`\n\n"
+    },
+    {
+      "score": 0.1889822365046136,
+      "source_relpath": "docs/LOCAL_DOCUMENT_INDEX.md",
+      "chunk_id": "docs/LOCAL_DOCUMENT_INDEX.md::c3",
+      "char_start": 1773,
+      "char_end": 1896,
+      "text_preview": "Pacote de transferencia V3\n\n- `docs/SESSION_STATE_TRANSFER_PACKAGE_V3.md`\n- `docs/SESSION_STATE_TRANSFER_PACKAGE_V3.json`\n\n"
+    },
+    {
+      "score": 0.17149858514250882,
+      "source_relpath": "outputs/masterplan_v2/f1_001/evidence/buy_cadence_summary.json",
+      "chunk_id": "outputs/masterplan_v2/f1_001/evidence/buy_cadence_summary.json::c0",
+      "char_start": 0,
+      "char_end": 190,
+      "text_preview": "{\n  \"buy_dates_count\": 282,\n  \"phase_ok\": true,\n  \"selected_phase\": null,\n  \"min_gap_sessions\": 3.0,\n  \"max_gap_sessions\": 29.0,\n  \"criterion\": \"BUY events are at least 3 sessions apart.\"\n}\n"
+    },
+    {
+      "score": 0.1656472891122698,
+      "source_relpath": "outputs/governanca/fix_bootstrap_clean/20260215/report.md",
+      "chunk_id": "outputs/governanca/fix_bootstrap_clean/20260215/report.md::c0",
+      "char_start": 0,
+      "char_end": 376,
+      "text_preview": "Report - Fix bootstrap clean (CONSTITUICAO)\n\n- task_id: `TASK_CEP_BUNDLE_CORE_F1_009B_FIX_BOOTSTRAP_DIRTY_CONSTITUICAO_V1`\n- generated_at_utc: `2026-02-16T00:20:32.578595+00:00`\n- worktree: `/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap`\n- bra"
+    },
+    {
+      "score": 0.16222142113076252,
+      "source_relpath": "outputs/governanca/masterplan_audit/20260216_post_sprint_001/report.md",
+      "chunk_id": "outputs/governanca/masterplan_audit/20260216_post_sprint_001/report.md::c2",
+      "char_start": 487,
+      "char_end": 601,
+      "text_preview": "Progresso atualizado\n\n- itens MP total: `12`\n- itens com status PASS mapeado: `7`\n- progresso estimado: `58.33%`\n\n"
+    }
+  ]
+}

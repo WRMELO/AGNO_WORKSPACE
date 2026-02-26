@@ -1,0 +1,81 @@
+{
+  "task_id": "TASK_TMP_EXP1_UNIQUE_AFTER_CORP_ACTIONS_V1",
+  "generated_at_utc": "2026-02-24T19:48:46.841752+00:00",
+  "experiment_root_work": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/work/experimentos_on_flight/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1",
+  "output_root": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4",
+  "overall": "PASS",
+  "gates": {
+    "S0_PREPARE_OVERWRITE_EXP_001": {
+      "pass": true,
+      "purged_work_count": 1,
+      "purged_output_count": 0
+    },
+    "S1_GATE_ALLOWLIST": {
+      "pass": true
+    },
+    "S2_CHECK_COMPILE": {
+      "pass": true
+    },
+    "S3_RUN": {
+      "pass": true,
+      "error": null
+    },
+    "S4_VERIFY_OUTPUTS": {
+      "pass": true,
+      "conditions": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "S5_VERIFY_HASHES": {
+      "pass": true
+    },
+    "S6_VERIFY_LEDGER_AND_EQUITY_DEFINITION": {
+      "pass": true,
+      "checks": {
+        "period_has_rows": true,
+        "last_day_not_after_config_end_date": true,
+        "equity_rule_d_minus_1_applied": true,
+        "integer_shares_only": true,
+        "cash_never_negative": true
+      }
+    },
+    "S7_VERIFY_CEP_ELIGIBILITY_AND_STRESS_REENTRY_RULE": {
+      "pass": true,
+      "checks": {
+        "cep_buy_violations_zero": true,
+        "same_day_reentry_violations_zero": true
+      }
+    }
+  },
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/ledger_daily.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/ledger_entries.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/equity_curve.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/trades.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/positions_daily.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/signals_used.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/corporate_actions_applied.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/report.md",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/manifest.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/evidence"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/ledger_daily.parquet": "234fbafdecaebf0f4abfa36c7d0f62530888257c04648d88d008c2fe7bf9979a",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/ledger_entries.parquet": "46b066b18d2bca227069c7bfcb280ba70535865d7a1b5ece2d962faef43534b7",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/equity_curve.parquet": "b03e771ebc8a6433b2a42dff8b0b50774769e9b7c477fee1bbf99bf2e7b86577",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/trades.parquet": "da7c867443d915c32313c21da3261cba84f67be5fbc7624677f36fcc519f526c",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/positions_daily.parquet": "7bfb600e99f3685904bc022ff7bc4ee878a207c087771fcca60a56eccdf1b7c1",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/signals_used.parquet": "71f45c228188ce3222638fa49b0ef9dd5b744bb0c07096f379dd03bd09d0b2ad",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/corporate_actions_applied.parquet": "65b2f73168c18cefd6e6a2a0746cd76baeda12c321dfcc64567ca3378a1ebab2",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/report.md": "f4e1485f2729b7d592a182e8959e8169c8b8fd00892a1d3880be3bda7c9d02b0",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4/manifest.json": "ee207e60d69fe2c3d110094da206decae31268fc78e113d69f631707efd6f334"
+  }
+}

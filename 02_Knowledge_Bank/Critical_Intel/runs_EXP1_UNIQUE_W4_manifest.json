@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-02-24T19:48:45.996229+00:00",
+  "run_id": "EXP1_UNIQUE_W4",
+  "mode": "unique_single_policy",
+  "window": "W4_NOT_APPLICABLE",
+  "source_native_output": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP1_UNIQUE_W4",
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/runs/EXP1_UNIQUE_W4/equity_curves.parquet"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/runs/EXP1_UNIQUE_W4/equity_curves.parquet": "8222ab39220c4fec6e73007fac47f31221d696b3bbcfea0f6e2b0cd02dc2c23e"
+  },
+  "overall": "PASS"
+}

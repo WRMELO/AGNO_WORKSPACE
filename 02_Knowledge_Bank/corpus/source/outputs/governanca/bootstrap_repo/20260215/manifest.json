@@ -1,0 +1,61 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_F0_001_BOOTSTRAP_REPO_AND_VENV_GATES_V1",
+  "timestamp_utc": "2026-02-15T14:03:17.613788+00:00",
+  "inputs": {
+    "new_repo_root": "/home/wilson/CEP_BUNDLE_CORE",
+    "official_python": "/home/wilson/PortfolioZero/.venv/bin/python",
+    "legacy_repo_1_root": "/home/wilson/CEP_NA_BOLSA",
+    "legacy_repo_2_root": "/home/wilson/CEP_COMPRA"
+  },
+  "outputs": {
+    "out_dir": "outputs/governanca/bootstrap_repo/20260215",
+    "report_md": "outputs/governanca/bootstrap_repo/20260215/report.md",
+    "manifest_json": "outputs/governanca/bootstrap_repo/20260215/manifest.json",
+    "evidence_dir": "outputs/governanca/bootstrap_repo/20260215/evidence",
+    "requirements_lock": "requirements.lock.txt",
+    "constitution_md": "docs/CONSTITUICAO.md",
+    "amendments_dir": "docs/emendas/"
+  },
+  "hashes_sha256": {
+    "report_md": "9d48591a1a62fc9047b69abd21300edcde21e083d0f76a4434cac63430e6d728",
+    "requirements_lock": "69ef2ff678cb27396ca33f5230fde2790e219e38579611c838bd36878790931e",
+    "evidence/smoke_evidence.txt": "e0a81c57eb649dfad93de9a22ea8e9a8695b1b3bcda3154051bcd23358777f7a",
+    "manifest_json": "99d634e2e787bccef4f19b58d6a39f45d0c33305bb808d0f7af777a243eb6975"
+  },
+  "gate_results": [
+    {
+      "name": "S1_GATE_ALLOWLIST",
+      "passed": true,
+      "details": "repo_root=/home/wilson/CEP_BUNDLE_CORE"
+    },
+    {
+      "name": "S2_CHECK_COMPILE_OR_IMPORTS",
+      "passed": true,
+      "details": "py_compile ok"
+    },
+    {
+      "name": "S3_GATE_VENV_OFFICIAL_PYTHON",
+      "passed": true,
+      "details": "sys.executable=/home/wilson/PortfolioZero/.venv/bin/python"
+    },
+    {
+      "name": "S4_RUN_SMOKE",
+      "passed": true,
+      "details": "smoke ok"
+    },
+    {
+      "name": "S5_VERIFY_OUTPUTS_EXIST_AND_NONEMPTY",
+      "passed": true,
+      "details": "checked=2 arquivos"
+    },
+    {
+      "name": "S6_WRITE_MANIFEST_HASHES",
+      "passed": true,
+      "details": "hashes_registrados=3"
+    }
+  ],
+  "overall_pass": true,
+  "sys.executable": "/home/wilson/PortfolioZero/.venv/bin/python",
+  "python_version": "3.12.12",
+  "git_status": "git status indisponivel (diretorio nao e repo git)"
+}

@@ -1,0 +1,50 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_V2_F2_002_EXECUTOR_CASH_AND_CADENCE_ENFORCEMENT",
+  "generated_at_utc": "2026-02-17T07:49:16.226613+00:00",
+  "repo_root": "[LEGACY_ROOT]",
+  "branch": "local/integrated-state-20260215",
+  "head": "1f7ffd0bd66faea78992f79a962a811580ea0f33",
+  "task_spec_path": "planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F2_002_EXECUTOR_CASH_AND_CADENCE_ENFORCEMENT.json",
+  "overall": "PASS",
+  "validations": {
+    "consumed_envelope_and_guardrails": true,
+    "enforcement_examples_min_3": true,
+    "invariants_ok": true,
+    "outputs_exist": true
+  },
+  "hashes_sha256": {
+    "outputs/masterplan_v2/f2_002/report.md": "c19dedf9679581a3f79062db6bcb14ed76c2a30de889f1f15848fbeb7a2bd8fd",
+    "outputs/masterplan_v2/f2_002/manifest.json": "c7d4d39238dc270aa954a452e7469f02593c0670489460a70fe6ca33e9ce63ac",
+    "outputs/masterplan_v2/f2_002/daily_portfolio_v2.parquet": "9ba3c183468807b61a2c0f5d2f54d42190fd9d9b45218b0b80e3e4b51110d726",
+    "outputs/masterplan_v2/f2_002/ledger_trades_v2.parquet": "18ef5d4e0a158e09e5bbed0a4a1722044b0d514969d294fd907659555be0ccc9",
+    "outputs/masterplan_v2/f2_002/evidence/preflight.json": "47e8379fb659b3acf7a2450b4aebf7f7441a818d35729931c3c492fbd6562b72",
+    "outputs/masterplan_v2/f2_002/evidence/input_presence.json": "29cac6548234e3049533bf5c8330966873c85c5f3d3b4406db63842fee73c48d",
+    "outputs/masterplan_v2/f2_002/evidence/enforcement_events.csv": "66fbb54f3fdfe947c1208481a91bac76967714d4ebbc86bd83331001fdf2045e",
+    "outputs/masterplan_v2/f2_002/evidence/enforcement_examples.csv": "54a5926dde9ce4b57eb3c016ec566877ff59cbe8b222c5fb2136014067aebfb6",
+    "outputs/masterplan_v2/f2_002/evidence/invariants_summary.json": "5b83746d131ec68397c5343f4eced2aedcc5d354223194f36beef9a898ebf565",
+    "outputs/masterplan_v2/f2_002/evidence/metrics_compare_baseline_vs_v2.csv": "4019008986dc8f4e355667bb249b4688c55291a99eac25827a90de5156d9bb26",
+    "outputs/masterplan_v2/f2_002/evidence/enforcement_summary.json": "d3765600fca7310010874a3d0940d9a6f9704eb5e56f99979cebd52fd0af5610",
+    "outputs/masterplan_v2/f2_001/envelope_daily.csv": "056b6ef9ae67b4a7ca8692a7efdffa2111fbc2656d425b79ab92817bbe9e06b6",
+    "outputs/masterplan_v2/f2_001/evidence/guardrails_parameters.json": "7e5409a01003d9c889c5825d9b84fe611d2ffcf01011daf96822f7332b255c2d",
+    "outputs/instrumentation/m3_w1_w2/20260216_cash_cdi_v5/evidence/daily_replay_sample.csv": "dec5cf430d3f9d1dc7ef514250bc4127b4da01649ed4bf32bfe1b4359b915bec",
+    "/home/wilson/CEP_COMPRA/outputs/reports/task_017/run_20260212_125255/data/ledger_trades_m3.parquet": "88e3b3dbcc1100a1a8a470216284be3c808b6cd1a26b2867b8d4589b803be547",
+    "/home/wilson/CEP_COMPRA/outputs/reports/task_017/run_20260212_125255/data/daily_portfolio_m3.parquet": "2b2f3e13ea3a40391779c9d47ac084b5097b9e0a323bfa8b187d3e666d0bdb85",
+    "docs/MASTERPLAN_V2.md": "dc75c7f54666dc9006095186c7925dff8ffe03ee60b5a80c09d951fba3b376e2",
+    "docs/CONSTITUICAO.md": "01c962bba0979e842589e5f8898422c045e43f29d2f970dbfb58147c28605a63",
+    "docs/emendas/EMENDA_COST_MODEL_ARB_0025PCT_V1.md": "27447cc52c6c3a46d13c26a1787989c209b93c6a04e5cb59c5c11e1ba6bceed0",
+    "docs/emendas/EMENDA_CASH_REMUNERACAO_CDI_V1.md": "c8a4968b07a88e3583ded14fb6bc5987c255dc722307e485b15bda8c5523e8e8",
+    "docs/emendas/EMENDA_OPERACAO_LOCAL_EXECUCAO_V1.md": "e7a099f3fca1c4249a0baa10c05d71c369f07c9da9fe6adb47e91755b36cf72e"
+  },
+  "consumed_inputs": [
+    "outputs/masterplan_v2/f2_001/envelope_daily.csv",
+    "outputs/masterplan_v2/f2_001/evidence/guardrails_parameters.json",
+    "outputs/instrumentation/m3_w1_w2/20260216_cash_cdi_v5/evidence/daily_replay_sample.csv",
+    "/home/wilson/CEP_COMPRA/outputs/reports/task_017/run_20260212_125255/data/ledger_trades_m3.parquet",
+    "/home/wilson/CEP_COMPRA/outputs/reports/task_017/run_20260212_125255/data/daily_portfolio_m3.parquet",
+    "docs/MASTERPLAN_V2.md",
+    "docs/CONSTITUICAO.md",
+    "docs/emendas/EMENDA_COST_MODEL_ARB_0025PCT_V1.md",
+    "docs/emendas/EMENDA_CASH_REMUNERACAO_CDI_V1.md",
+    "docs/emendas/EMENDA_OPERACAO_LOCAL_EXECUCAO_V1.md"
+  ]
+}

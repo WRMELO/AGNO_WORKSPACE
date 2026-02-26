@@ -1,0 +1,30 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_EXP_001_TICKER_ROTATION_FULLPERIOD_V1",
+  "generated_at_utc": "2026-02-23T20:00:46.864908+00:00",
+  "exp_outputs_root": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1",
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/report.md",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/ticker_rotation.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/rotation_summary.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/discrepancies.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/manifest.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/evidence",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/plotly_equity_tickers_vs_portfolio_fullperiod.html",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/equity_tickers_vs_portfolio_series.parquet"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/report.md": "b5f50cad46876d7962a49ca279b63a63d1a8c02cc36546914386998ddf849c57",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/ticker_rotation.parquet": "1a235a571c56c1ac4056b03b5422fcf2b9393cac018f6299a56e7aaa868095d8",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/rotation_summary.parquet": "7113e5b2525d4772c5492f97e59f1c66485cac2a20a860a3301cdc2ea212f562",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/discrepancies.parquet": "e9e2cf84f3fa04e10b11cc2f5087689793840e80df9603bd97551b542575b09c",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/manifest.json": "a8d281a5ea83f70727fbbfd1d6600a5f002cdd0f391d4cc1c308592791e77bc4",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/plotly_equity_tickers_vs_portfolio_fullperiod.html": "082c4dc8ee10737fe935765f308308bfb615066ed9f3325ca5b38b91e1e9aa3c",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/equity_tickers_vs_portfolio_series.parquet": "4520463afdd9f259646a1cfeadaeae2e386f9bd419b258d51bd630a3e75e929d"
+  },
+  "updated_at_utc": "2026-02-23T20:09:47.644200+00:00",
+  "visual_complement": {
+    "description": "Plotly com 15 tickers participantes + carteira no periodo completo",
+    "html": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/plotly_equity_tickers_vs_portfolio_fullperiod.html",
+    "series_parquet": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260223/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1/audit_trade_counts/rotation_fullperiod/equity_tickers_vs_portfolio_series.parquet"
+  }
+}

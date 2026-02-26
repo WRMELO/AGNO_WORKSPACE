@@ -1,0 +1,45 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_V2_F2_001_ENVELOPE_CONTINUO_IMPLEMENTATION",
+  "generated_at_utc": "2026-02-17T07:40:36.614126+00:00",
+  "repo_root": "[LEGACY_ROOT]",
+  "branch": "local/integrated-state-20260215",
+  "head": "deb9282d88f08fc1229580db68c1bf514febf739",
+  "task_spec_path": "planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F2_001_ENVELOPE_CONTINUO_IMPLEMENTATION.json",
+  "overall": "PASS",
+  "validations": {
+    "envelope_range_0_1": true,
+    "guardrails_materialized": true,
+    "traceability": true,
+    "envelope_persisted": true
+  },
+  "consumed_inputs": [
+    "outputs/instrumentation/m3_w1_w2/20260216_cash_cdi_v5/evidence/daily_replay_sample.csv",
+    "outputs/controle/anti_deriva_w2/20260216/anti_deriva_w2_summary.json",
+    "outputs/governanca/policy_spc_rl/20260216/policy_spc_rl_summary.json",
+    "/home/wilson/CEP_COMPRA/outputs/reports/task_017/run_20260212_125255/data/daily_portfolio_m3.parquet",
+    "docs/MASTERPLAN_V2.md",
+    "docs/CONSTITUICAO.md",
+    "docs/emendas/EMENDA_COST_MODEL_ARB_0025PCT_V1.md",
+    "docs/emendas/EMENDA_CASH_REMUNERACAO_CDI_V1.md",
+    "docs/emendas/EMENDA_OPERACAO_LOCAL_EXECUCAO_V1.md"
+  ],
+  "hashes_sha256": {
+    "outputs/masterplan_v2/f2_001/report.md": "309d2c6bd50e7707f751cedee32e4dcdd3f5d6b7a94cf661131109657c7e0582",
+    "outputs/masterplan_v2/f2_001/envelope_daily.csv": "056b6ef9ae67b4a7ca8692a7efdffa2111fbc2656d425b79ab92817bbe9e06b6",
+    "outputs/masterplan_v2/f2_001/evidence/preflight.json": "47e8379fb659b3acf7a2450b4aebf7f7441a818d35729931c3c492fbd6562b72",
+    "outputs/masterplan_v2/f2_001/evidence/input_presence.json": "29cac6548234e3049533bf5c8330966873c85c5f3d3b4406db63842fee73c48d",
+    "outputs/masterplan_v2/f2_001/evidence/guardrails_parameters.json": "7e5409a01003d9c889c5825d9b84fe611d2ffcf01011daf96822f7332b255c2d",
+    "outputs/masterplan_v2/f2_001/evidence/envelope_daily_sample.csv": "277377f1c54fa6ea9834b1b25f8e127301f76d98a6533a0a575c8a30d1d1f321",
+    "outputs/masterplan_v2/f2_001/evidence/envelope_validations_summary.json": "3d21cd2f476918d4540e6893af340f1998019bb0f364fbd3b7645a245c23b2f7",
+    "outputs/instrumentation/m3_w1_w2/20260216_cash_cdi_v5/evidence/daily_replay_sample.csv": "dec5cf430d3f9d1dc7ef514250bc4127b4da01649ed4bf32bfe1b4359b915bec",
+    "/home/wilson/CEP_COMPRA/outputs/reports/task_017/run_20260212_125255/data/ledger_trades_m3.parquet": "88e3b3dbcc1100a1a8a470216284be3c808b6cd1a26b2867b8d4589b803be547",
+    "outputs/controle/anti_deriva_w2/20260216/anti_deriva_w2_summary.json": "2cd7ca475fa188f5c32491bf307f9eed00a9716a0fc411599dde89f2c83c4a46",
+    "outputs/governanca/policy_spc_rl/20260216/policy_spc_rl_summary.json": "e07941bf4301b5d6f59aa0ca279d1ac1e0e4970e85331bf0f8f512d1b623ce4b",
+    "docs/MASTERPLAN_V2.md": "dc75c7f54666dc9006095186c7925dff8ffe03ee60b5a80c09d951fba3b376e2",
+    "docs/CONSTITUICAO.md": "01c962bba0979e842589e5f8898422c045e43f29d2f970dbfb58147c28605a63",
+    "docs/emendas/EMENDA_COST_MODEL_ARB_0025PCT_V1.md": "27447cc52c6c3a46d13c26a1787989c209b93c6a04e5cb59c5c11e1ba6bceed0",
+    "docs/emendas/EMENDA_CASH_REMUNERACAO_CDI_V1.md": "c8a4968b07a88e3583ded14fb6bc5987c255dc722307e485b15bda8c5523e8e8",
+    "docs/emendas/EMENDA_OPERACAO_LOCAL_EXECUCAO_V1.md": "e7a099f3fca1c4249a0baa10c05d71c369f07c9da9fe6adb47e91755b36cf72e",
+    "outputs/masterplan_v2/f2_001/manifest.json": "d8dea2ff84035e3940427bd96943b38becbeb664130dd26982518865ccf849f0"
+  }
+}

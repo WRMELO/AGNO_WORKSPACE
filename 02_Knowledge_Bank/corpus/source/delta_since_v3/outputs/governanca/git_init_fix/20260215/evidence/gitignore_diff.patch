@@ -1,0 +1,12 @@
+diff --git a/.gitignore b/.gitignore
+index d818e06..ef87ed5 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -28,6 +28,7 @@ htmlcov/
+ # OS / editor
+ .DS_Store
+ Thumbs.db
++.obsidian/
+ 
+ # Local outputs and generated artifacts
+ outputs/

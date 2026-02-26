@@ -1,0 +1,11 @@
+{
+  "cost_rule_0_00025_ok": true,
+  "cost_rule_max_abs_residual": 0.0,
+  "cdi_cash_daily_ok": true,
+  "cdi_cash_max_abs_residual": 0.0,
+  "t0_liquidation_ok": true,
+  "t0_max_abs_residual_excluding_first": 0.0,
+  "buy_cadence_every_3_sessions_ok": true,
+  "buy_with_cash_only_ok": true,
+  "cash_negative_rows": 0
+}

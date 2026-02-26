@@ -1,0 +1,8 @@
+{
+  "generated_at_utc": "2026-02-24T19:48:45.996229+00:00",
+  "run_id": "EXP1_HYBRID_W4_NA",
+  "status": "N/A",
+  "reason": "EXP_1 has single canonical policy; no hybrid mode in runner",
+  "cto_instruction_error_registered": true,
+  "overall": "N/A"
+}

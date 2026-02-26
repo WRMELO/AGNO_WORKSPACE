@@ -1,0 +1,19 @@
+{
+  "ssot_contains_daily_rate": true,
+  "daily_rate_stats": {
+    "min": 0.0,
+    "median": 0.00039269999999991256,
+    "max": 0.0011029239427162718
+  },
+  "index_level_stats": {
+    "min": 1.0,
+    "median": 1.2039159847425291,
+    "max": 1.8871503400568055
+  },
+  "replay_cdi_ret_t_stats": {
+    "min": 0.0,
+    "median": 0.0003926999999999,
+    "max": 0.0011029239427162
+  },
+  "assessment": "SSOT possui coluna de retorno diário (cdi_ret_t) em ordem de grandeza diária (~0.00039 mediana). cdi_index_norm é nível acumulado e não deve ser usado diretamente como taxa."
+}

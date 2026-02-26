@@ -1,0 +1,48 @@
+{
+  "task_id": "TASK_CEP_DISC_013_REEXEC_EXP_002_SPLITFIX_V2",
+  "generated_at_utc": "2026-02-24T15:08:48.377133+00:00",
+  "experiment_root_work": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/work/experimentos_on_flight/EXP_002_SELL_POLICY_GATE_CEP_RL_V1",
+  "output_root": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2",
+  "overall": "PASS",
+  "gates": {
+    "S1_COMPARABILITY_HARNESS_IDENTICAL": {
+      "pass": true
+    },
+    "S2_FEATURE_LEAK_AUDIT": {
+      "pass": true,
+      "audit_file": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/evidence/feature_leakage_audit.json"
+    },
+    "S3_REPORT_TRADEOFF_ANALYSIS_PRESENT": {
+      "pass": true
+    },
+    "S4_MAX_METRICS_PACKAGE_PRESENT": {
+      "pass": true
+    }
+  },
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/report.md",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/summary.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/tables/equity_curve_all.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/tables/trades_all.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/tables/sell_decisions_all.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/tables/regime_daily_all.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/tables/metrics_by_regime.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/tables/metrics_by_subperiod.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/evidence/resolved_inputs.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/evidence/feature_leakage_audit.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/manifest.json"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/report.md": "398f48fc984f7e2970098b856bc8c33c9b553f2746724b8a405ec4e96b4867a5",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/summary.json": "4a55805f6c5f6781ef2a7305aa6d95e4b08a5e5e095f972245937a04f11e6d6c",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/tables/equity_curve_all.csv": "c87aa45b57f8008cb6dbadf7cec34b8bd83a42d9dabd0f356e44d349f6e8f547",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/tables/trades_all.csv": "a0763227419f0c8f9a4f4e20f1940fec61d86fde471d825934c3efc95993b262",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/tables/sell_decisions_all.csv": "76fd9ffc08df5f3479821f55ed961c43da2cfe972123efdcab44f6aa19ee15cc",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/tables/regime_daily_all.csv": "9ed7485dd9e0dd16d40f1de853cd35e506c600a741a8293ab9ba07633727e3a4",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/tables/metrics_by_regime.csv": "1134e09266f7ba2e5b74083fc49b364ba9ddb929af24cadade45ae34121b71e8",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/tables/metrics_by_subperiod.csv": "1304fdf97998ceb477adf8a58dbf4dff7f800c176d982b61d45c020b5ddffc7f",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/evidence/resolved_inputs.json": "e74e796bf59040c07c8a0617e2322f64d43eee020045e992cc1a8b559df34fac",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/evidence/feature_leakage_audit.json": "29811f371b76a4bccdff40514c7c0ed329bd79c6fb2ad776df2dcf0afe6575cb",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2/manifest.json": "4edb7c4dcf231efaa598fcf71226475aa777752d66f860d47c527bee1c7884b2"
+  }
+}

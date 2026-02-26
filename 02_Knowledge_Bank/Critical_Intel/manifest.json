@@ -1,0 +1,21 @@
+{
+  "generated_at_utc": "2026-02-24T19:16:05.476484+00:00",
+  "source_csv": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/governanca/corporate_actions/20260224/fullperiod_brapi_v1/ssot/corporate_actions.csv",
+  "source_parquet": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/governanca/corporate_actions/20260224/fullperiod_brapi_v1/ssot/corporate_actions.parquet",
+  "rows": 11806,
+  "schema_minimum": [
+    "ticker",
+    "event_date",
+    "event_type",
+    "ratio_or_factor",
+    "source",
+    "raw_reference"
+  ],
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/data/ssot/corporate_actions/corporate_actions_ssot.parquet"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/data/ssot/corporate_actions/corporate_actions_ssot.parquet": "42fe4d1b14c1b10d8cef6c4e3c64ff2e05c16a1d26e0e7245cfbdf3ffe22c595"
+  },
+  "overall": "PASS"
+}

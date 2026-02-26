@@ -1,0 +1,2 @@
+attempt_dir_path=/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220
+exists=False

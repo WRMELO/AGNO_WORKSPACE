@@ -1,0 +1,8 @@
+{
+  "buy_dates_count": 282,
+  "phase_ok": true,
+  "selected_phase": null,
+  "min_gap_sessions": 3.0,
+  "max_gap_sessions": 29.0,
+  "criterion": "BUY events are at least 3 sessions apart."
+}

@@ -1,0 +1,61 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_F0_001F_GIT_SSH_CREDENTIALS_DIAG_AND_FIX_V1",
+  "generated_at_utc": "2026-02-15T14:56:44Z",
+  "repo_root": "[LEGACY_ROOT]",
+  "github_host": "github.com",
+  "ssh_test_user": "git",
+  "expected_remote": "git@github.com:WRMELO/CEP_BUNDLE_CORE.git",
+  "key_policy": {
+    "prefer_ed25519": true,
+    "key_comment": "CEP_BUNDLE_CORE_AGENT",
+    "key_path_default": "~/.ssh/id_ed25519",
+    "do_not_overwrite_existing": true
+  },
+  "diagnostic": {
+    "origin_present": true,
+    "ssh_agent_available": true,
+    "identity_loaded_after_fix": true,
+    "key_created_during_task": true,
+    "key_fingerprint_selected": "SHA256:X146aZGYEHeSLsbco7gOtimFOIYzsrcQgS8I6MtTyjE",
+    "ssh_test_message": "git@github.com: Permission denied (publickey).",
+    "ssh_auth_without_publickey_denied": false
+  },
+  "artifacts": {
+    "out_dir": "outputs/governanca/git_ssh_fix/20260215/",
+    "report_md": "outputs/governanca/git_ssh_fix/20260215/report.md",
+    "manifest_json": "outputs/governanca/git_ssh_fix/20260215/manifest.json",
+    "evidence_dir": "outputs/governanca/git_ssh_fix/20260215/evidence/",
+    "evidence_remote_v": "outputs/governanca/git_ssh_fix/20260215/evidence/remote_v.txt",
+    "evidence_ssh_dir_list": "outputs/governanca/git_ssh_fix/20260215/evidence/ssh_dir_list.txt",
+    "evidence_ssh_keys_fingerprints": "outputs/governanca/git_ssh_fix/20260215/evidence/ssh_key_fingerprints.txt",
+    "evidence_ssh_agent_list": "outputs/governanca/git_ssh_fix/20260215/evidence/ssh_agent_identities.txt",
+    "evidence_ssh_config": "outputs/governanca/git_ssh_fix/20260215/evidence/ssh_config_effective.txt",
+    "evidence_ssh_test": "outputs/governanca/git_ssh_fix/20260215/evidence/ssh_T_test.txt",
+    "public_key_export": "outputs/governanca/git_ssh_fix/20260215/evidence/public_key_to_register.pub"
+  },
+  "hashes_sha256": {
+    "outputs/governanca/git_ssh_fix/20260215/report.md": "0b11e96669d90a9744144b841dd7435a4255382a18028dfdc609ece7eeebab7b",
+    "outputs/governanca/git_ssh_fix/20260215/evidence/remote_v.txt": "8819e7e729aa7d51af61b702c854c3a1be798285954d26a5747f3bc59e2b2725",
+    "outputs/governanca/git_ssh_fix/20260215/evidence/ssh_dir_list.txt": "791b84b5a66d1a0a6686a1add73185c796d28e1a9825a723f9aa0442c1fce285",
+    "outputs/governanca/git_ssh_fix/20260215/evidence/ssh_key_fingerprints.txt": "6db044e63c5786ecae14a2ebeacd7d00535387078cbf24db82b2a0a849b8cdaa",
+    "outputs/governanca/git_ssh_fix/20260215/evidence/ssh_agent_identities.txt": "c7565c7b357a21c9ae5ca8061ba512c61a771bcd5f630129cee4b9fb4b76d933",
+    "outputs/governanca/git_ssh_fix/20260215/evidence/ssh_config_effective.txt": "d0be51af0500dc55e5b71973419218bfb9cd69a7c057372c6e0c10f94f1bebc0",
+    "outputs/governanca/git_ssh_fix/20260215/evidence/ssh_T_test.txt": "0345b5f845d42b7771dd38103d93567721010925d89e87437bb5683539fcc628",
+    "outputs/governanca/git_ssh_fix/20260215/evidence/public_key_to_register.pub": "b9f5fffc059758f53709bb2421e1f1a366843cdac6c617c136fd8cd381345e60"
+  },
+  "gates": {
+    "S1_GATE_ALLOWLIST": "PASS",
+    "S2_VERIFY_REMOTE_PRESENT": "PASS",
+    "S3_CAPTURE_KEYS_AND_FINGERPRINTS": "PASS",
+    "S4_VERIFY_SSH_AGENT_AVAILABLE": "PASS",
+    "S5_VERIFY_IDENTITY_LOADED_OR_CREATED": "PASS",
+    "S6_VERIFY_SSH_AUTH_TEST_NOT_PUBLICKEY_DENIED": "FAIL",
+    "S7_WRITE_MANIFEST_HASHES": "PASS"
+  },
+  "acceptance_criteria": {
+    "OVERALL": "FAIL",
+    "ssh_T_no_publickey_denied": false,
+    "public_key_to_register_generated": true,
+    "report_and_manifest_generated": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_F0_001A_FIX_WORKTREE_CLEAN_OBSIDIAN_V1",
+  "generated_at_utc": "2026-02-15T14:17:00Z",
+  "repo_root": "[LEGACY_ROOT]",
+  "inputs": {
+    "baseline_commit_sha": "ae7b65763159fb05dc36b84bbea735f274f5b579",
+    "policy": {
+      "ignore_obsidian": true,
+      "ignore_scope": ".obsidian/",
+      "do_not_version_ide_state": true
+    }
+  },
+  "git": {
+    "branch": "master",
+    "baseline_commit_sha": "ae7b65763159fb05dc36b84bbea735f274f5b579",
+    "final_head_sha": "4c84a020fa947401f26f5fd98c551e5f4ae7d59c",
+    "worktree_clean": true,
+    "worktree_clean_criteria": "git status --porcelain vazio",
+    "local_skip_worktree_applied": [
+      ".obsidian/workspace.json"
+    ]
+  },
+  "changes": {
+    "fix_commit_sha": "4c84a020fa947401f26f5fd98c551e5f4ae7d59c",
+    "fix_commit_message": "chore: ignore obsidian workspace state",
+    "fix_commit_touched_files": [
+      ".gitignore"
+    ],
+    "gitignore_contains": [
+      ".obsidian/"
+    ]
+  },
+  "artifacts": {
+    "out_dir": "outputs/governanca/git_init_fix/20260215/",
+    "report_md": "outputs/governanca/git_init_fix/20260215/report.md",
+    "manifest_json": "outputs/governanca/git_init_fix/20260215/manifest.json",
+    "evidence_dir": "outputs/governanca/git_init_fix/20260215/evidence/"
+  },
+  "hashes_sha256": {
+    ".gitignore": "1ed4e01586b76c72091ac346c710aa89f78e91b3265de9f09ba90b1e990479ac",
+    "outputs/governanca/git_init_fix/20260215/report.md": "98a04c9f076bfa7dd48dd2a2e4a0358c34da923f6edc8fc4a5a26e84f0d936cd",
+    "outputs/governanca/git_init_fix/20260215/evidence/status_before.txt": "c3f3900be28e318339cf84eccc2d6d6307640713e04753a69cb10d1a8f5a5aa3",
+    "outputs/governanca/git_init_fix/20260215/evidence/status_after.txt": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "outputs/governanca/git_init_fix/20260215/evidence/gitignore_diff.patch": "34389c1c65428b309a90d2dd175659b1eb07097017c3c921295f6fa0416ee7cc",
+    "outputs/governanca/git_init_fix/20260215/evidence/commits_involved.txt": "958d67ad1735fef2024e4d6fa9d9385f69f918deb05f0e94f4d0d275749e4560"
+  },
+  "gates": {
+    "S1_GATE_ALLOWLIST": "PASS",
+    "S2_VERIFY_GIT_INITIALIZED": "PASS",
+    "S3_VERIFY_GITIGNORE_UPDATED": "PASS",
+    "S4_VERIFY_WORKTREE_CLEAN": "PASS",
+    "S5_VERIFY_COMMIT_CREATED": "PASS",
+    "S6_WRITE_MANIFEST_HASHES": "PASS"
+  },
+  "acceptance_criteria": {
+    "OVERALL": "PASS",
+    "obsidian_ignored_in_gitignore": true,
+    "git_status_porcelain_empty": true,
+    "commit_created_only_for_gitignore": true,
+    "report_and_manifest_generated": true
+  }
+}

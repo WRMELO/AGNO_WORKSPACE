@@ -1,0 +1,27 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_S007_INSTRUMENT_RULEFLAGS_NELSON_WE_V1",
+  "overall": "PASS",
+  "generated_at_utc": "2026-02-23T20:32:34.070126+00:00",
+  "output_root": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ruleflags/20260223",
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ruleflags/20260223/s007_ruleflags.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ruleflags/20260223/schema.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ruleflags/20260223/report.md",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ruleflags/20260223/manifest.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ruleflags/20260223/evidence"
+  ],
+  "sources": {
+    "s007_ranking_path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/burners_ranking_oee_lp_cp_daily_v2_warmup_buffer/ranking/burners_ranking_daily.parquet",
+    "cep_states_path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/burners_ranking_oee_lp_cp_daily_v2_warmup_buffer/cep_states/cep_states_daily.parquet",
+    "baseline_path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/burners_ranking_oee_lp_cp_daily_v2_warmup_buffer/baseline_limits/baseline_limits_by_ticker.parquet"
+  },
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ruleflags/20260223/s007_ruleflags.parquet": "451aa25711c151832511cbbe6bce2a19532aa6d159f45ef93331bfecc8697b16",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ruleflags/20260223/schema.json": "027a22402e14d14de37f4a20c52edf51755204ccc52dca2be0e9ab8ff2f29366",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ruleflags/20260223/report.md": "cbd2982739084b3867ec541c72dde1a3c1dcac9bab102d311f5c7430c28d336d",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ruleflags/20260223/evidence/per_ticker_out_counts.csv": "bd6f3e6a67f80b3d7570379bb9941e5a229d61965655135be681be331f420019",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ruleflags/20260223/evidence/smoke_checks.txt": "75f04e0c77667afe0b751b8a3ca0f6d34fa0f5643563e9ed37212f84a8793983",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ruleflags/20260223/evidence/resolved_paths.txt": "4fed0ae7d2064604de3bf710239b4716f4269df308e4023e0feb8e8ab9853c3f",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ruleflags/20260223/manifest.json": "967dd987a54b046730e10c9591de4634a7a14c2cf3a29fee4dcfdf3d4d034aaa"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_F0_001G_VERIFY_GITHUB_SSH_AUTH_POST_REGISTER_V1",
+  "generated_at_utc": "2026-02-15T15:07:48Z",
+  "repo_root": "[LEGACY_ROOT]",
+  "github_host": "github.com",
+  "ssh_test": "git@github.com",
+  "sync_task_to_rerun": "TASK_CEP_BUNDLE_CORE_F0_001E_GIT_SYNC_REMOTE_CREDENTIALS_V1",
+  "git": {
+    "head_sha": "4c84a020fa947401f26f5fd98c551e5f4ae7d59c",
+    "active_branch": "main",
+    "remote_origin": "git@github.com:WRMELO/CEP_BUNDLE_CORE.git",
+    "status_porcelain_final_empty": true
+  },
+  "ssh_verification": {
+    "ssh_T_has_permission_denied_publickey": false,
+    "ssh_T_message": "Hi WRMELO! You've successfully authenticated, but GitHub does not provide shell access.",
+    "ssh_auth_ok": true
+  },
+  "sync_results": {
+    "ls_remote_ok": true,
+    "fetch_ok": true,
+    "set_upstream_ok": true,
+    "pull_ff_only_ok": true,
+    "push_dry_run_ok": true,
+    "push_ok": true
+  },
+  "artifacts": {
+    "out_dir": "outputs/governanca/git_ssh_verify/20260215/",
+    "report_md": "outputs/governanca/git_ssh_verify/20260215/report.md",
+    "manifest_json": "outputs/governanca/git_ssh_verify/20260215/manifest.json",
+    "evidence_dir": "outputs/governanca/git_ssh_verify/20260215/evidence/",
+    "evidence_ssh_T_test": "outputs/governanca/git_ssh_verify/20260215/evidence/ssh_T_test_after_register.txt"
+  },
+  "hashes_sha256": {
+    "outputs/governanca/git_ssh_verify/20260215/report.md": "a19afaa4f975a53573bf0c0ca40483d2f8ab11f934e2cf1751b8117e8013dd95",
+    "outputs/governanca/git_ssh_verify/20260215/evidence/ssh_T_test_after_register.txt": "436f31a731d36ad1948578d8e7f845817bd4c00d9accbb96eb06a2567f4717db",
+    "outputs/governanca/git_ssh_verify/20260215/evidence/remote_v.txt": "24341ec19e53ed1d6b570fdf033cae1f817705f6653270ef76d1f866381de7b6",
+    "outputs/governanca/git_ssh_verify/20260215/evidence/ls_remote.txt": "40cecdf7fdc255946eaf097782cc2ad51086bc366f18f7903c359d87f5603a1d",
+    "outputs/governanca/git_ssh_verify/20260215/evidence/fetch.txt": "00eca3ffaba03f0c4d8da09e52c3fa4d46864d26d5a5fef9131a623bd9162aa4",
+    "outputs/governanca/git_ssh_verify/20260215/evidence/set_upstream.txt": "1e97f467b8b331774044f49ae70402e20b29bab58cd23dc7a7d572185117b9ae",
+    "outputs/governanca/git_ssh_verify/20260215/evidence/pull_ff_only.txt": "afdc5bfb08a08cfa27a6d167f4f3f1c149c13085f259d47fd59e67deca2c13c2",
+    "outputs/governanca/git_ssh_verify/20260215/evidence/push_dry_run.txt": "51c7a8e311a973e44c28e95948e6400a73f4457ae2632d5ca728a4a1256e139b",
+    "outputs/governanca/git_ssh_verify/20260215/evidence/push.txt": "e9916d940fd714d35650f47513733e19d46ebcb10763cb568b78a3c1cc4fefef",
+    "outputs/governanca/git_ssh_verify/20260215/evidence/status_before.txt": "89daeaf46cce69bb4f068ac699923b79355e12abf973cb884d6e39622180d222",
+    "outputs/governanca/git_ssh_verify/20260215/evidence/status_after.txt": "89daeaf46cce69bb4f068ac699923b79355e12abf973cb884d6e39622180d222",
+    "outputs/governanca/git_ssh_verify/20260215/evidence/branch_vv_before.txt": "49cf421e00ba7bd7ba3843abf9be761b5f3229604e64ca526395aec7baeefc79",
+    "outputs/governanca/git_ssh_verify/20260215/evidence/branch_vv_after.txt": "ddd7b43d978ea9658fa9f9781ec60f0da14151fe39caf3bb45e773ca29c3dedd",
+    "outputs/governanca/git_ssh_verify/20260215/evidence/worktree_list.txt": "56d015574d988c1f9cc4464486e090df61ac09df8d09a004ee148df84388b76f"
+  },
+  "gates": {
+    "S1_GATE_ALLOWLIST": "PASS",
+    "S2_VERIFY_SSH_AUTH_OK": "PASS",
+    "S3_VERIFY_SYNC_COMPLETED": "PASS",
+    "S4_WRITE_MANIFEST_HASHES": "PASS"
+  },
+  "acceptance_criteria": {
+    "OVERALL": "PASS",
+    "ssh_T_without_publickey_denied": true,
+    "sync_read_write_passed": true,
+    "report_and_manifest_autocontidos": true
+  }
+}

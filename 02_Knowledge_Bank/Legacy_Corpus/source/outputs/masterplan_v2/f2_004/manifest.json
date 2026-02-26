@@ -1,0 +1,45 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_V2_F2_004_EQUITY_CDI_SANITY_AND_RECONCILIATION_GATE",
+  "generated_at_utc": "2026-02-17T08:48:16.999269+00:00",
+  "repo_root": "[LEGACY_ROOT]",
+  "branch": "local/integrated-state-20260215",
+  "head": "24d5b6adf4df658e2e0c095afb83ebf847876570",
+  "overall": "PASS",
+  "task_spec_path": "planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F2_004_EQUITY_CDI_SANITY_AND_RECONCILIATION_GATE.json",
+  "validations": {
+    "cdi_plausibility": true,
+    "cash_only_benchmark_plausible": true,
+    "cash_flow_reconciliation_ok": true,
+    "equity_reconciliation_ok": true,
+    "equity_normalization_ok": true,
+    "plot_present": true
+  },
+  "block_f3_f4": false,
+  "consumed_inputs": [
+    "outputs/masterplan_v2/f2_002/daily_portfolio_v2.parquet",
+    "outputs/masterplan_v2/f2_002/ledger_trades_v2.parquet",
+    "outputs/masterplan_v2/f2_003/evidence/equity_compare_summary.json",
+    "data/ssot/cdi/cdi_daily.parquet",
+    "/home/wilson/CEP_COMPRA/outputs/reports/task_017/run_20260212_125255/data/daily_portfolio_m3.parquet"
+  ],
+  "hashes_sha256": {
+    "outputs/masterplan_v2/f2_004/report.md": "7c5fb137547201b21fd72d8e4e964608ded813dab80670a233f99b0d3e84c3c6",
+    "outputs/masterplan_v2/f2_004/manifest.json": "3d7c1def460415e6d822fd21051d3b3034eb689217347ffaf501787057c7a70b",
+    "outputs/masterplan_v2/f2_004/evidence/preflight.json": "47e8379fb659b3acf7a2450b4aebf7f7441a818d35729931c3c492fbd6562b72",
+    "outputs/masterplan_v2/f2_004/evidence/input_presence.json": "29cac6548234e3049533bf5c8330966873c85c5f3d3b4406db63842fee73c48d",
+    "outputs/masterplan_v2/f2_004/evidence/cdi_daily_stats.json": "fc773aa58cfc1af79e1ae282d7619f202c0fd6c0860c3241d50371ad8653d0fb",
+    "outputs/masterplan_v2/f2_004/evidence/cash_only_benchmark.csv": "3be55ad321201b0bc8bebb5f1abf7ffc1fb3f982cf3a04c2d6fa703aed5c84a2",
+    "outputs/masterplan_v2/f2_004/evidence/cash_only_benchmark_summary.json": "8f7c711abb4705554527ec5986d6fe061e7dc473269b9c6f959ec21efac1bffa",
+    "outputs/masterplan_v2/f2_004/evidence/cash_flow_reconciliation_sample.csv": "e15c6f9378a10197b5028240bb05c369213c71c5ab2d44657b214d6648d2a96c",
+    "outputs/masterplan_v2/f2_004/evidence/cash_flow_reconciliation_summary.json": "a90df2eaa765ccda6ec7444b27ad955bba4630a20d9c90491e6e1c8a9484d1be",
+    "outputs/masterplan_v2/f2_004/evidence/equity_reconciliation_sample.csv": "ddd09b241a7bf08ee219b217480a243da2e7ea484470ebd65d1396935fad4a30",
+    "outputs/masterplan_v2/f2_004/evidence/equity_reconciliation_summary.json": "1ba1643bdd5ffddc4bd592b2b4594a494a805a75345e9753e12ef463ee5a938f",
+    "outputs/masterplan_v2/f2_004/evidence/equity_normalization_summary.json": "8673ff9b20c3d9c3fd1b9b6573a35ff743db5956171341e52df923e06974f0c2",
+    "outputs/masterplan_v2/f2_004/plots/baseline_vs_v2_equity_timeseries_recomputed.html": "4705c3749dd51c96ab5223b0bb04bbfd8d5ead10b15386a1a3b336239d557a4e",
+    "outputs/masterplan_v2/f2_002/daily_portfolio_v2.parquet": "9ba3c183468807b61a2c0f5d2f54d42190fd9d9b45218b0b80e3e4b51110d726",
+    "outputs/masterplan_v2/f2_002/ledger_trades_v2.parquet": "18ef5d4e0a158e09e5bbed0a4a1722044b0d514969d294fd907659555be0ccc9",
+    "outputs/masterplan_v2/f2_003/evidence/equity_compare_summary.json": "523bf86e1857f154dc9329e4a6a522fd6787e25643e6a9f1c8e79f8f7d92ad55",
+    "data/ssot/cdi/cdi_daily.parquet": "bee97e79e0654ed79f8846558ffab359087080bd84e70d502dd219fee4eab5da",
+    "/home/wilson/CEP_COMPRA/outputs/reports/task_017/run_20260212_125255/data/daily_portfolio_m3.parquet": "2b2f3e13ea3a40391779c9d47ac084b5097b9e0a323bfa8b187d3e666d0bdb85"
+  }
+}

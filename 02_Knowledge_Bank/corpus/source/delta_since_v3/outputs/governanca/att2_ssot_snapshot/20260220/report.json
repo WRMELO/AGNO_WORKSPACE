@@ -1,0 +1,146 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_V2_ATT2_000_SSOT_SNAPSHOT_V1",
+  "status": "PASS",
+  "overall_pass": true,
+  "overall_pass_criteria": "Todos os gates PASS e todos os steps PASS com manifest valido e completo.",
+  "gates": [
+    {
+      "gate_id": "G1_GATE_ALLOWLIST_AND_ROOT",
+      "status": "PASS",
+      "pass_criteria": [
+        "repo_root resolve para /home/wilson/CEP_BUNDLE_CORE",
+        "operacoes restritas ao repo_root e outputs/"
+      ],
+      "evidence": [
+        "outputs/governanca/att2_ssot_snapshot/20260220/evidence/repo_root_resolved.txt"
+      ],
+      "details": "repo_root resolvido corretamente para /home/wilson/CEP_BUNDLE_CORE."
+    },
+    {
+      "gate_id": "G2_PRECHECK_TARGET_NOT_EXISTS",
+      "status": "PASS",
+      "pass_criteria": [
+        "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220 nao existe"
+      ],
+      "evidence": [
+        "outputs/governanca/att2_ssot_snapshot/20260220/evidence/precheck_target_not_exists.txt"
+      ],
+      "details": "Precheck confirmou inexistencia do attempt_dir antes da criacao."
+    },
+    {
+      "gate_id": "G3_PRECHECK_REQUIRED_SSOTS_EXIST",
+      "status": "PASS",
+      "pass_criteria": [
+        "Todos os itens em required_ssots existem na origem",
+        "docs/emendas/ existe e e diretorio"
+      ],
+      "evidence": [
+        "outputs/governanca/att2_ssot_snapshot/20260220/evidence/required_ssots_presence_check.json"
+      ],
+      "details": "Todos os SSOTs obrigatorios foram encontrados na origem."
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "S1_CREATE_ATTEMPT_DIR_STRUCTURE",
+      "status": "PASS",
+      "acceptance_criteria": [
+        "Diretorios existem exatamente nos paths definidos em deliverables"
+      ],
+      "evidence": [
+        "outputs/governanca/att2_ssot_snapshot/20260220/evidence/attempt_dir_tree_after_create.txt"
+      ],
+      "artifacts": [
+        "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220",
+        "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/ssot_snapshot",
+        "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/work",
+        "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs"
+      ],
+      "details": "Estrutura da tentativa 2 criada sem sobrescrita da origem."
+    },
+    {
+      "step_id": "S2_COPY_REQUIRED_AND_OPTIONAL_SSOTS",
+      "status": "PASS",
+      "acceptance_criteria": [
+        "Todos os SSOTs obrigatorios existem no destino com o mesmo path relativo",
+        "Quantidade de arquivos em docs/emendas no destino e igual a origem",
+        "Itens opcionais existentes na origem foram copiados"
+      ],
+      "evidence": [
+        "outputs/governanca/att2_ssot_snapshot/20260220/evidence/source_emendas_file_list.txt",
+        "outputs/governanca/att2_ssot_snapshot/20260220/evidence/dest_emendas_file_list.txt",
+        "outputs/governanca/att2_ssot_snapshot/20260220/evidence/optional_copy_status.json",
+        "outputs/governanca/att2_ssot_snapshot/20260220/evidence/snapshot_tree.txt"
+      ],
+      "details": "Copia efetuada preservando paths relativos em docs/ e sem alterar arquivos originais."
+    },
+    {
+      "step_id": "S3_GENERATE_MANIFEST_SHA256",
+      "status": "PASS",
+      "acceptance_criteria": [
+        "manifest_path existe e e JSON valido",
+        "manifest.num_files > 0",
+        "Todo relpath do manifest aponta para arquivo existente no snapshot_root"
+      ],
+      "evidence": [
+        "outputs/governanca/att2_ssot_snapshot/20260220/evidence/manifest_validation.json"
+      ],
+      "artifacts": [
+        "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/ssot_snapshot/manifest_ssot_snapshot.json"
+      ],
+      "details": "Manifest gerado com relpath, sha256 e bytes para todos os arquivos copiados."
+    },
+    {
+      "step_id": "S4_WRITE_README_AND_DONE_MARKER",
+      "status": "PASS",
+      "acceptance_criteria": [
+        "README existe e cita required_ssots e regra de nao alteracao da origem",
+        "DONE marker existe e contem attempt_dir_name e num_files"
+      ],
+      "evidence": [
+        "outputs/governanca/att2_ssot_snapshot/20260220/evidence/readme_head.txt",
+        "outputs/governanca/att2_ssot_snapshot/20260220/evidence/done_marker.txt"
+      ],
+      "artifacts": [
+        "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/ssot_snapshot/README_SNAPSHOT.md",
+        "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/SSOT_SNAPSHOT_DONE.txt"
+      ],
+      "details": "README e marcador de conclusao gerados com os campos requeridos."
+    }
+  ],
+  "outputs": {
+    "attempt_dir_path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220",
+    "snapshot_root": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/ssot_snapshot",
+    "manifest_path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/ssot_snapshot/manifest_ssot_snapshot.json",
+    "readme_path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/ssot_snapshot/README_SNAPSHOT.md",
+    "done_marker_path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/SSOT_SNAPSHOT_DONE.txt",
+    "report_path": "outputs/governanca/att2_ssot_snapshot/20260220/report.json",
+    "evidence_dir": "outputs/governanca/att2_ssot_snapshot/20260220/evidence/"
+  },
+  "summary": {
+    "copied_required": [
+      "docs/CONSTITUICAO.md",
+      "docs/MASTERPLAN_V2.md",
+      "docs/MP001_VISAO_EXECUTIVA.md",
+      "docs/MP002_OBJETIVO_REAL_SSOT.md",
+      "docs/emendas/"
+    ],
+    "copied_optional": [
+      "docs/SESSION_STATE_TRANSFER_PACKAGE_V3.md",
+      "docs/SESSION_STATE_TRANSFER_PACKAGE_V3.json"
+    ],
+    "optional_status": [
+      {
+        "path": "docs/SESSION_STATE_TRANSFER_PACKAGE_V3.md",
+        "status": "copied"
+      },
+      {
+        "path": "docs/SESSION_STATE_TRANSFER_PACKAGE_V3.json",
+        "status": "copied"
+      }
+    ],
+    "num_files": 11,
+    "missing_required": []
+  },
+  "timestamp": "2026-02-20T19:30:23.629056+00:00"
+}

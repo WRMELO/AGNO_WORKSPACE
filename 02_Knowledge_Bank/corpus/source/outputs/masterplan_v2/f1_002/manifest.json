@@ -1,0 +1,47 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_V2_F1_002_ACCOUNTING_PLOTLY_DECOMPOSITION",
+  "generated_at_utc": "2026-02-16T23:28:46.169667+00:00",
+  "repo_root": "/home/wilson/CEP_BUNDLE_CORE",
+  "branch": "local/integrated-state-20260215",
+  "head": "6d04156d93fd4a10284756b3752d0affe166d0bb",
+  "task_spec_path": "planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F1_002_ACCOUNTING_PLOTLY_DECOMPOSITION.json",
+  "overall": "PASS",
+  "validations": {
+    "equity_reconciliation": true,
+    "cash_non_negative": true,
+    "buy_cadence_min_3_sessions": true,
+    "required_plots_present": true
+  },
+  "missing_plots": [],
+  "consumed_inputs": [
+    "/home/wilson/CEP_COMPRA/outputs/reports/task_017/run_20260212_125255/data/ledger_trades_m3.parquet",
+    "/home/wilson/CEP_COMPRA/outputs/reports/task_017/run_20260212_125255/data/daily_portfolio_m3.parquet",
+    "outputs/instrumentation/m3_w1_w2/20260216_cash_cdi_v5/evidence/daily_replay_sample.csv",
+    "docs/MASTERPLAN_V2.md",
+    "docs/CONSTITUICAO.md",
+    "docs/emendas/EMENDA_COST_MODEL_ARB_0025PCT_V1.md",
+    "docs/emendas/EMENDA_CASH_REMUNERACAO_CDI_V1.md",
+    "docs/emendas/EMENDA_OPERACAO_LOCAL_EXECUCAO_V1.md"
+  ],
+  "hashes_sha256": {
+    "outputs/masterplan_v2/f1_002/report.md": "f4c49007b2a10e52839bc23d72dc07f37629985876f40b74457358dc1e40450a",
+    "outputs/masterplan_v2/f1_002/evidence/preflight.json": "47e8379fb659b3acf7a2450b4aebf7f7441a818d35729931c3c492fbd6562b72",
+    "outputs/masterplan_v2/f1_002/evidence/decomposition_sample.csv": "9def47a9f906f6c10340d5d8a66da6591604599f7a2ac329608d6f22c888907c",
+    "outputs/masterplan_v2/f1_002/evidence/buy_cadence_check.csv": "486b0457d3fcfde762d0176d1b0666c270a962fe6ef2a36bccc9a1cb10c27a1d",
+    "outputs/masterplan_v2/f1_002/evidence/validations_summary.json": "4d0c1e802d9afc740b93239a6bccefec2e368db84c01648b11ab306082353bd3",
+    "outputs/masterplan_v2/f1_002/plots/equity_vs_cash_timeseries.html": "e6a3077a45743a675e355a3c32d55f20f87691fb78c5d163c48ebf0a9b298038",
+    "outputs/masterplan_v2/f1_002/plots/cumulative_costs_timeseries.html": "72d83ba19914177cebc7b1ffa3aa605be98cb92b9e43242d1ae469650703bb2c",
+    "outputs/masterplan_v2/f1_002/plots/cdi_accrual_timeseries.html": "484dccebcda1833fa87b54c71358493f9feec448cc49b1eed4f78e378274f8a4",
+    "outputs/masterplan_v2/f1_002/plots/positions_value_timeseries.html": "21bbe0aeecfddab2eb1ecc782121f358960a980f192ec811fa85e0f27d0327c5",
+    "outputs/masterplan_v2/f1_002/plots/turnover_timeseries.html": "2a4c67a93b3a265799778bfc58bb2fd02276252cdd22e49891220e4297e94162",
+    "outputs/instrumentation/m3_w1_w2/20260216_cash_cdi_v5/evidence/daily_replay_sample.csv": "dec5cf430d3f9d1dc7ef514250bc4127b4da01649ed4bf32bfe1b4359b915bec",
+    "/home/wilson/CEP_COMPRA/outputs/reports/task_017/run_20260212_125255/data/ledger_trades_m3.parquet": "88e3b3dbcc1100a1a8a470216284be3c808b6cd1a26b2867b8d4589b803be547",
+    "/home/wilson/CEP_COMPRA/outputs/reports/task_017/run_20260212_125255/data/daily_portfolio_m3.parquet": "2b2f3e13ea3a40391779c9d47ac084b5097b9e0a323bfa8b187d3e666d0bdb85",
+    "docs/MASTERPLAN_V2.md": "dc75c7f54666dc9006095186c7925dff8ffe03ee60b5a80c09d951fba3b376e2",
+    "docs/CONSTITUICAO.md": "01c962bba0979e842589e5f8898422c045e43f29d2f970dbfb58147c28605a63",
+    "docs/emendas/EMENDA_COST_MODEL_ARB_0025PCT_V1.md": "27447cc52c6c3a46d13c26a1787989c209b93c6a04e5cb59c5c11e1ba6bceed0",
+    "docs/emendas/EMENDA_CASH_REMUNERACAO_CDI_V1.md": "c8a4968b07a88e3583ded14fb6bc5987c255dc722307e485b15bda8c5523e8e8",
+    "docs/emendas/EMENDA_OPERACAO_LOCAL_EXECUCAO_V1.md": "e7a099f3fca1c4249a0baa10c05d71c369f07c9da9fe6adb47e91755b36cf72e",
+    "outputs/masterplan_v2/f1_002/manifest.json": "3b335910d794fd0592c3498e48a7efb9997d0f9a23e881c6b2012eef34adeaf6"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "instruction_id": "INSTR_CEPBC_ATT2_CORPUS_ADD_LESSONS_S008_CHAMPIONSHIP_SLOPE_V1",
+  "output_root": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/corpus_lessons_update_s008_v1",
+  "overall": "PASS",
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/corpus_lessons_update_s008_v1/report.md",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/corpus_lessons_update_s008_v1/manifest.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/corpus_lessons_update_s008_v1/evidence/hash_before_after_lessons.txt",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/corpus_lessons_update_s008_v1/evidence/allowlist_check.txt",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/corpus_lessons_update_s008_v1/evidence/checklist_unchanged_check.txt"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/corpus_lessons_update_s008_v1/report.md": "392bef8b49f41800bb40d90d3e961c75f13dda11e8c8c20a6959aa2b9e3e6217",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/corpus_lessons_update_s008_v1/evidence/hash_before_after_lessons.txt": "48df6295da52fee968e1d0d0d7fa43e35fa98c0168a8b634699b88e73689c586",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/corpus_lessons_update_s008_v1/evidence/allowlist_check.txt": "149645b1959dbb8ad7261fe846509c3294a43812e04cf12982a94a8070b6b817",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/corpus_lessons_update_s008_v1/evidence/checklist_unchanged_check.txt": "6a153520bff1299d99b355ac9f5a20ee13c7908bb0e2a40e6d792e12f6f38586",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/corpus_lessons_update_s008_v1/manifest.json": "81c63452db3b596fa5cd1d40445a42ea6ede1bf3e1ee4e0b0020224dbe3db29e"
+  }
+}

@@ -1,0 +1,11 @@
+TARGET_REPORT_RELPATH=outputs/governanca/constituicao/20260215/report.md
+TARGET_MANIFEST_RELPATH=outputs/governanca/constituicao/20260215/manifest.json
+
+CHECK_1_BOOTSTRAP_WORKTREE_REPORT=/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap/outputs/governanca/constituicao/20260215/report.md [FOUND]
+CHECK_2_BOOTSTRAP_WORKTREE_MANIFEST=/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap/outputs/governanca/constituicao/20260215/manifest.json [FOUND]
+
+CHECK_3_PRIMARY_REPO_REPORT=[LEGACY_ROOT]/outputs/governanca/constituicao/20260215/report.md [NOT_FOUND]
+CHECK_4_PRIMARY_REPO_MANIFEST=[LEGACY_ROOT]/outputs/governanca/constituicao/20260215/manifest.json [NOT_FOUND]
+
+REAL_TARGET_REPORT_PATH=/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap/outputs/governanca/constituicao/20260215/report.md
+REAL_TARGET_MANIFEST_PATH=/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap/outputs/governanca/constituicao/20260215/manifest.json

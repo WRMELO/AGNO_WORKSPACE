@@ -1,0 +1,8 @@
+{
+  "manifest_exists": true,
+  "manifest_json_valid": true,
+  "num_files": 11,
+  "files_list_count": 11,
+  "all_relpaths_resolve": true,
+  "missing_relpaths": []
+}

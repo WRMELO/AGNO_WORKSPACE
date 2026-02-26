@@ -1,0 +1,81 @@
+{
+  "task_id": "TASK_CEP_DISC_013_REEXEC_EXP_001_SPLITFIX_V2",
+  "generated_at_utc": "2026-02-24T15:08:41.488006+00:00",
+  "experiment_root_work": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/work/experimentos_on_flight/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1",
+  "output_root": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2",
+  "overall": "PASS",
+  "gates": {
+    "S0_PREPARE_OVERWRITE_EXP_001": {
+      "pass": true,
+      "purged_work_count": 2,
+      "purged_output_count": 0
+    },
+    "S1_GATE_ALLOWLIST": {
+      "pass": true
+    },
+    "S2_CHECK_COMPILE": {
+      "pass": true
+    },
+    "S3_RUN": {
+      "pass": true,
+      "error": null
+    },
+    "S4_VERIFY_OUTPUTS": {
+      "pass": true,
+      "conditions": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "S5_VERIFY_HASHES": {
+      "pass": true
+    },
+    "S6_VERIFY_LEDGER_AND_EQUITY_DEFINITION": {
+      "pass": true,
+      "checks": {
+        "period_has_rows": true,
+        "last_day_not_after_2021_06_30": true,
+        "equity_rule_d_minus_1_applied": true,
+        "integer_shares_only": true,
+        "cash_never_negative": true
+      }
+    },
+    "S7_VERIFY_CEP_ELIGIBILITY_AND_STRESS_REENTRY_RULE": {
+      "pass": true,
+      "checks": {
+        "cep_buy_violations_zero": true,
+        "same_day_reentry_violations_zero": true
+      }
+    }
+  },
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/ledger_daily.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/ledger_entries.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/equity_curve.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/trades.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/positions_daily.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/signals_used.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/corporate_actions_applied.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/report.md",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/manifest.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/evidence"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/ledger_daily.parquet": "955705cf830b1254ac06c36bbfbcc2d24ec469e3fa9a72e3d7736b3c9ffa9598",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/ledger_entries.parquet": "71ac14a1ac7004270f3dd5a7f28c2ef82daf571f78a1470d40f9112488d26549",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/equity_curve.parquet": "20e51fbf202c7b38a3fc1893c41783e7cf4b92f933b9e69985f7086b82366cc8",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/trades.parquet": "b84141e272213a9efaa5a4a68bafcaaa8f947119f7697056ea02ecf3b277ec1e",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/positions_daily.parquet": "e545c9c606b484d72b24f9e8008e6e05826181295945f25ea0a75c2471da9c81",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/signals_used.parquet": "63bcad0064632869179b27007c134c7d241e690a3f0389dc984cca82d239c9e9",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/corporate_actions_applied.parquet": "31ffbfc06656a47b1fc3c0026c4d6e3693933a92e4b95fe68bd615f9d6320cf0",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/report.md": "0f9ee5a6b824b7065a76de0152b92869a1d08251d64cde912b9ea5275700e99d",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2/manifest.json": "e610ca67197cbfbe31e8feb35ce13627a8c050c597f051eba2e7f9fda53554b3"
+  }
+}

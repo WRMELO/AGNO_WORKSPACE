@@ -1,0 +1,48 @@
+{
+  "task_id": "TASK_TMP_EXP2_W4_AFTER_CORP_ACTIONS_V1",
+  "generated_at_utc": "2026-02-24T19:48:54.227671+00:00",
+  "experiment_root_work": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/work/experimentos_on_flight/EXP_002_SELL_POLICY_GATE_CEP_RL_V1",
+  "output_root": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED",
+  "overall": "PASS",
+  "gates": {
+    "S1_COMPARABILITY_HARNESS_IDENTICAL": {
+      "pass": true
+    },
+    "S2_FEATURE_LEAK_AUDIT": {
+      "pass": true,
+      "audit_file": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/evidence/feature_leakage_audit.json"
+    },
+    "S3_REPORT_TRADEOFF_ANALYSIS_PRESENT": {
+      "pass": true
+    },
+    "S4_MAX_METRICS_PACKAGE_PRESENT": {
+      "pass": true
+    }
+  },
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/report.md",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/summary.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/tables/equity_curve_all.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/tables/trades_all.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/tables/sell_decisions_all.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/tables/regime_daily_all.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/tables/metrics_by_regime.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/tables/metrics_by_subperiod.csv",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/evidence/resolved_inputs.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/evidence/feature_leakage_audit.json",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/manifest.json"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/report.md": "845da1c5a0ca297c2f6f392c0ab8d32ceb10bd6b8703dd88faa2ea9179897d1c",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/summary.json": "0346093c820987880461fc16398fc7cf51c03aba83f4326ce72fc3eef934a71e",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/tables/equity_curve_all.csv": "00d9a51cb521027034d9365795b92e26179571c397c1a623e24a5aeee27d2a97",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/tables/trades_all.csv": "1de430eb5ba705367d9be165dee471f60887ca8bcfb720d606dea9131efc699c",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/tables/sell_decisions_all.csv": "4eadaabfba627b947d4ac7af789cb5083feb1e8a3af13e5c00146d35d26a200f",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/tables/regime_daily_all.csv": "b1365229e42c7472d975f6b979a4e35e2fda002ce159666a00bdabc4a12e8218",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/tables/metrics_by_regime.csv": "6cf03ed2802331ba9984e755872fcd4fb13b1945093c7cfbf7889dc67e6b5f43",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/tables/metrics_by_subperiod.csv": "832f1d3daf84b5c66515732581978bd00668706e35802ad40197ac3f66db5e7f",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/evidence/resolved_inputs.json": "f8f03774518b1d5fc2c14c893fc49547a68a03cdd4bcbe323ae84a90632bff46",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/evidence/feature_leakage_audit.json": "29811f371b76a4bccdff40514c7c0ed329bd79c6fb2ad776df2dcf0afe6575cb",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED/manifest.json": "592e3752a1da53012de0678d2f89ac4f8c522faa5a645dd9b1be9160d100a711"
+  }
+}

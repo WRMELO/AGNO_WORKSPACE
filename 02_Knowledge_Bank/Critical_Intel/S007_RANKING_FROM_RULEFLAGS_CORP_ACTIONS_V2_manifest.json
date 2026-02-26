@@ -1,0 +1,10 @@
+{
+  "generated_at_utc": "2026-02-24T19:48:45.996229+00:00",
+  "overall": "PASS",
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ranking_global/20260224/S007_RANKING_FROM_RULEFLAGS_CORP_ACTIONS_V2/ranking/burners_ranking_daily.parquet"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/state/s007_ranking_global/20260224/S007_RANKING_FROM_RULEFLAGS_CORP_ACTIONS_V2/ranking/burners_ranking_daily.parquet": "fa3b2e4fe1434b308409e2aef5ae380c854ad5a308705f74feb23c898ba9ac7b"
+  }
+}

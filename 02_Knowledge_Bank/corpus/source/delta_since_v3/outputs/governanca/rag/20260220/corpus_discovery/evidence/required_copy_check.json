@@ -1,0 +1,25 @@
+{
+  "required": [
+    "docs/CONSTITUICAO.md",
+    "docs/MASTERPLAN_V2.md",
+    "docs/MP001_VISAO_EXECUTIVA.md",
+    "docs/MP002_OBJETIVO_REAL_SSOT.md",
+    "docs/emendas/",
+    "docs/SESSION_STATE_TRANSFER_PACKAGE_V3.md",
+    "docs/SESSION_STATE_TRANSFER_PACKAGE_V3.json"
+  ],
+  "missing_required": [],
+  "required_copied": [
+    "docs/CONSTITUICAO.md",
+    "docs/MASTERPLAN_V2.md",
+    "docs/MP001_VISAO_EXECUTIVA.md",
+    "docs/MP002_OBJETIVO_REAL_SSOT.md",
+    "docs/SESSION_STATE_TRANSFER_PACKAGE_V3.json",
+    "docs/SESSION_STATE_TRANSFER_PACKAGE_V3.md",
+    "docs/emendas/.gitkeep",
+    "docs/emendas/EMENDA_CASH_REMUNERACAO_CDI_V1.md",
+    "docs/emendas/EMENDA_COST_MODEL_ARB_0025PCT_V1.md",
+    "docs/emendas/EMENDA_OPERACAO_LOCAL_EXECUCAO_V1.md",
+    "docs/emendas/EMENDA_TEMPLATE.md"
+  ]
+}

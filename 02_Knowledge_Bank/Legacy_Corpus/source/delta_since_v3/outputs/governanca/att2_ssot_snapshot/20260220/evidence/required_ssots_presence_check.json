@@ -1,0 +1,36 @@
+{
+  "required_ssots": [
+    {
+      "path": "docs/CONSTITUICAO.md",
+      "exists": true,
+      "is_file": true,
+      "is_dir": false
+    },
+    {
+      "path": "docs/MASTERPLAN_V2.md",
+      "exists": true,
+      "is_file": true,
+      "is_dir": false
+    },
+    {
+      "path": "docs/MP001_VISAO_EXECUTIVA.md",
+      "exists": true,
+      "is_file": true,
+      "is_dir": false
+    },
+    {
+      "path": "docs/MP002_OBJETIVO_REAL_SSOT.md",
+      "exists": true,
+      "is_file": true,
+      "is_dir": false
+    },
+    {
+      "path": "docs/emendas/",
+      "exists": true,
+      "is_file": false,
+      "is_dir": true
+    }
+  ],
+  "all_present": true,
+  "missing": []
+}

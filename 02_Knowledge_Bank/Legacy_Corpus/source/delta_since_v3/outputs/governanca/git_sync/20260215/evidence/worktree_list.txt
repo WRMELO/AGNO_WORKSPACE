@@ -1,0 +1,4 @@
+[LEGACY_ROOT]                  4c84a02 [main]
+/home/wilson/_wt/CEP_BUNDLE_CORE/bootstrap    4c84a02 [wt/bootstrap]
+/home/wilson/_wt/CEP_BUNDLE_CORE/experiments  4c84a02 [wt/experiments]
+/home/wilson/_wt/CEP_BUNDLE_CORE/ssot         4c84a02 [wt/ssot]

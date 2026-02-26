@@ -1,0 +1,9 @@
+{
+  "block_f3_f4_recommended": true,
+  "minimum_fix_path": [
+    "Add inventory-aware enforcement constraints (per-ticker holdings, no sell beyond holdings).",
+    "Persist ticker and quantity in ledger_v2 and daily positions state.",
+    "Recompute F2_002 then re-run F2_003 and F2_004.",
+    "Strengthen F2_004 gate with explicit economic bounds on equity growth vs exposure/cash benchmark."
+  ]
+}

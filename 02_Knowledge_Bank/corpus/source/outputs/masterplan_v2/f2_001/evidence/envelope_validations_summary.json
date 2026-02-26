@@ -1,0 +1,12 @@
+{
+  "rows": 1864,
+  "envelope_range_ok_0_1": true,
+  "envelope_min": 0.0,
+  "envelope_max": 1.0,
+  "guardrails_materialized_ok": true,
+  "hysteresis_active_days": 1077,
+  "anti_reentry_active_days": 0,
+  "fallback_active_days": 0,
+  "turnover_cap_breaches": 229,
+  "traceability_ok": true
+}

@@ -1,0 +1,88 @@
+{
+  "task_id": "TASK_CEP_BUNDLE_CORE_F0_001E_GIT_SYNC_REMOTE_CREDENTIALS_V1",
+  "generated_at_utc": "2026-02-15T14:52:02Z",
+  "repo_root": "[LEGACY_ROOT]",
+  "official_python": "/home/wilson/PortfolioZero/.venv/bin/python",
+  "git": {
+    "head_sha_before": "4c84a020fa947401f26f5fd98c551e5f4ae7d59c",
+    "head_sha_after": "4c84a020fa947401f26f5fd98c551e5f4ae7d59c",
+    "active_branch_after": "main",
+    "status_before_porcelain_empty": true,
+    "status_after_porcelain_empty": true
+  },
+  "remote": {
+    "name": "origin",
+    "url_fetch_sanitized": "git@github.com:WRMELO/CEP_BUNDLE_CORE.git",
+    "url_push_sanitized": "git@github.com:WRMELO/CEP_BUNDLE_CORE.git",
+    "origin_configured": true,
+    "prefer_ssh": true
+  },
+  "branch_policy": {
+    "desired_default_branch": "main",
+    "main_created_if_missing": true,
+    "main_present": true,
+    "master_preserved": true
+  },
+  "sync_results": {
+    "ls_remote_read_auth_ok": false,
+    "fetch_ok": false,
+    "pull_ff_only_ok": false,
+    "push_dry_run_write_auth_ok": false,
+    "push_real_ok": false,
+    "push_real_status": "SKIPPED",
+    "failure_signature": "Permission denied (publickey)"
+  },
+  "artifacts": {
+    "out_dir": "outputs/governanca/git_sync/20260215/",
+    "report_md": "outputs/governanca/git_sync/20260215/report.md",
+    "manifest_json": "outputs/governanca/git_sync/20260215/manifest.json",
+    "evidence_dir": "outputs/governanca/git_sync/20260215/evidence/",
+    "evidence_remote_v": "outputs/governanca/git_sync/20260215/evidence/remote_v.txt",
+    "evidence_branch_vv_before": "outputs/governanca/git_sync/20260215/evidence/branch_vv_before.txt",
+    "evidence_branch_vv_after": "outputs/governanca/git_sync/20260215/evidence/branch_vv_after.txt",
+    "evidence_worktree_list": "outputs/governanca/git_sync/20260215/evidence/worktree_list.txt",
+    "evidence_status_before": "outputs/governanca/git_sync/20260215/evidence/status_before.txt",
+    "evidence_status_after": "outputs/governanca/git_sync/20260215/evidence/status_after.txt",
+    "evidence_ls_remote": "outputs/governanca/git_sync/20260215/evidence/ls_remote.txt",
+    "evidence_fetch": "outputs/governanca/git_sync/20260215/evidence/fetch.txt",
+    "evidence_pull": "outputs/governanca/git_sync/20260215/evidence/pull_ff_only.txt",
+    "evidence_push_dryrun": "outputs/governanca/git_sync/20260215/evidence/push_dry_run.txt",
+    "evidence_push": "outputs/governanca/git_sync/20260215/evidence/push.txt"
+  },
+  "hashes_sha256": {
+    "outputs/governanca/git_sync/20260215/report.md": "3820717973f21d82d023fcf10e170a9564bb047e9ff5e70f0322aee7750a8868",
+    "outputs/governanca/git_sync/20260215/evidence/remote_v.txt": "8819e7e729aa7d51af61b702c854c3a1be798285954d26a5747f3bc59e2b2725",
+    "outputs/governanca/git_sync/20260215/evidence/branch_vv_before.txt": "a9600cc76b5b7cbc7a9b8b5af856334c9fc7793a708b8048b187af0d3fa5e544",
+    "outputs/governanca/git_sync/20260215/evidence/branch_vv_after.txt": "718c3ef92050c2026e55b8006975df4a7e556f60fcef2a817a0fa82025febb0b",
+    "outputs/governanca/git_sync/20260215/evidence/worktree_list.txt": "a5570ca5eaee5a472dcbc22411ed74adfa74a80a91d730a1791c79aab73daeaa",
+    "outputs/governanca/git_sync/20260215/evidence/status_before.txt": "cee6276572a434dd52302463f6857604202c096e77b6d376f1f349e8170bb6e2",
+    "outputs/governanca/git_sync/20260215/evidence/status_after.txt": "cee6276572a434dd52302463f6857604202c096e77b6d376f1f349e8170bb6e2",
+    "outputs/governanca/git_sync/20260215/evidence/ls_remote.txt": "84f752881cb29298e7a4fdc78cb41b1abe088f422fb18b8cae4c6faa3291d753",
+    "outputs/governanca/git_sync/20260215/evidence/fetch.txt": "ec4a2f68a7ddf04c55cae9c2ffe596c5c73f5db7a7945e72476874357c4b25d8",
+    "outputs/governanca/git_sync/20260215/evidence/pull_ff_only.txt": "0da39f89335f53d61a6afdb96d4ce0206859ac79e96de3f1b97e5025b8551638",
+    "outputs/governanca/git_sync/20260215/evidence/push_dry_run.txt": "f1b73a650c109c2db1c4b970961eafaec57861853e5baf752524f6a7600a5d92",
+    "outputs/governanca/git_sync/20260215/evidence/push.txt": "59120cb791085b4ebfe9991bf86baa01e856f1ad45ad40c9859a23189d0a190d"
+  },
+  "gates": {
+    "S1_GATE_ALLOWLIST": "PASS",
+    "S2_VERIFY_GIT_INITIALIZED": "PASS",
+    "S3_GATE_VENV_OFFICIAL_PYTHON": "PASS",
+    "S4_VERIFY_REMOTE_ORIGIN_CONFIGURED": "PASS",
+    "S5_VERIFY_REMOTE_AUTH_READ_LS_REMOTE": "FAIL",
+    "S6_VERIFY_MAINLINE_PRESENT": "PASS",
+    "S7_FETCH_SUCCESS": "FAIL",
+    "S8_PULL_FF_ONLY_SUCCESS": "FAIL",
+    "S9_VERIFY_REMOTE_AUTH_WRITE_PUSH_DRY_RUN": "FAIL",
+    "S10_PUSH_SUCCESS": "FAIL",
+    "S11_VERIFY_WORKTREE_CLEAN": "PASS",
+    "S12_WRITE_MANIFEST_HASHES": "PASS"
+  },
+  "acceptance_criteria": {
+    "OVERALL": "FAIL",
+    "git_ls_remote_origin_success": false,
+    "git_push_dry_run_origin_main_success": false,
+    "push_real_main_concluded": false,
+    "git_status_porcelain_empty_final": true,
+    "report_and_manifest_generated": true
+  }
+}

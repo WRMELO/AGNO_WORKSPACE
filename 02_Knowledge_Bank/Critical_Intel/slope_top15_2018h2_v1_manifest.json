@@ -1,0 +1,38 @@
+{
+  "task_id": "EXPERIMENTO_SLOPE_TOP15_2018H2_V1",
+  "generated_at_utc": "2026-02-23T12:50:58.258036+00:00",
+  "task_spec_path": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/work/task_specs/EXPERIMENTO_SLOPE_TOP15_2018H2_V1.json",
+  "output_root": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/slope_top15_2018h2_v1",
+  "overall": "PASS",
+  "gates": {
+    "S1_GATE_ALLOWLIST": {
+      "pass": true
+    },
+    "S2_CHECK_COMPILE": {
+      "pass": true
+    },
+    "S3_RUN": {
+      "pass": true,
+      "error": null
+    },
+    "S4_VERIFY_OUTPUTS": {
+      "pass": true
+    },
+    "S5_VERIFY_HASHES": {
+      "pass": true,
+      "checklist_unchanged": true
+    }
+  },
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/slope_top15_2018h2_v1/artifacts/slopes_top15.parquet",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/slope_top15_2018h2_v1/visual/plotly_slopes_top15_2018H2.html",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/slope_top15_2018h2_v1/report.md",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/slope_top15_2018h2_v1/manifest.json"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/slope_top15_2018h2_v1/artifacts/slopes_top15.parquet": "3a0a4e2a44654fd0045f23a92bd2a32dde19375fba1801d2dbe7072db15dbd97",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/slope_top15_2018h2_v1/visual/plotly_slopes_top15_2018H2.html": "b50ff6f69cf0216348a8f6112d64cb000bb5ef69ab0d2e1dbd9edc6091d4a643",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/slope_top15_2018h2_v1/report.md": "557972053e5e3dc43184d9890fb18f9f9074e33e214bf0bfd35429f660e72dd0",
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/slope_top15_2018h2_v1/manifest.json": "2ff667796747377ef9cbf66b5a65d10e69c2e00da263948e728148551d1798f4"
+  }
+}

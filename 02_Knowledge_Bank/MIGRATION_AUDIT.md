@@ -1,0 +1,344 @@
+# Migration Audit - Manifest V7 Reconstruction
+
+- task_id: `TASK-009-SMART-CORPUS-RECONSTRUCTION`
+- generated_at_utc: `2026-02-25T19:22:17+00:00`
+- manifest_reference: `/home/wilson/CEP_BUNDLE_CORE/corpus/manifests/corpus_manifest_v7.json`
+- source_root_base: `/home/wilson/CEP_BUNDLE_CORE`
+- source_root_manifest: `/home/wilson/CEP_BUNDLE_CORE/corpus/source`
+- target_root_base: `02_Knowledge_Bank`
+
+## Audit Summary
+
+- expected_file_count: `306`
+- copied_file_count: `306`
+- expected_total_bytes: `2409646`
+- copied_total_bytes: `2474278`
+- count_match: `True`
+- bytes_match: `False`
+- missing_files: `0`
+- byte_mismatches: `3`
+
+## Critical Integrity (Lessons)
+
+- critical_scope: `corpus/lessons/LESSONS_LEARNED.json` + `corpus/lessons/LL-*.json`
+- critical_files_checked: `3`
+- critical_integrity_100_percent: `True`
+
+- `PASS` src=`/home/wilson/CEP_BUNDLE_CORE/corpus/lessons/LESSONS_LEARNED.json` dst=`/home/wilson/AGNO_WORKSPACE/02_Knowledge_Bank/corpus/lessons/LESSONS_LEARNED.json` bytes_src=`224735` bytes_dst=`224735`
+- `PASS` src=`/home/wilson/CEP_BUNDLE_CORE/corpus/lessons/LL-20260220-W1-METHODOLOGY-001.json` dst=`/home/wilson/AGNO_WORKSPACE/02_Knowledge_Bank/corpus/lessons/LL-20260220-W1-METHODOLOGY-001.json` bytes_src=`4144` bytes_dst=`4144`
+- `PASS` src=`/home/wilson/CEP_BUNDLE_CORE/corpus/lessons/LL-20260221-EXECUTION-DUAL-PASS-001.json` dst=`/home/wilson/AGNO_WORKSPACE/02_Knowledge_Bank/corpus/lessons/LL-20260221-EXECUTION-DUAL-PASS-001.json` bytes_src=`4530` bytes_dst=`4530`
+
+## Copied Files (Manifest Relpaths)
+
+- `corpus/lessons/LESSONS_LEARNED.json` | bytes=`224735` | expected=`184284`
+- `corpus/lessons/LESSONS_LEARNED.md` | bytes=`122410` | expected=`100729`
+- `delta_since_v3/docs/LOCAL_DOCUMENT_INDEX.md` | bytes=`2355` | expected=`2355`
+- `delta_since_v3/docs/MASTERPLAN_V2.md` | bytes=`11977` | expected=`11977`
+- `delta_since_v3/docs/SESSION_STATE_TRANSFER_PACKAGE_V3.json` | bytes=`4728` | expected=`4728`
+- `delta_since_v3/outputs/governanca/att2_ssot_snapshot/20260220/evidence/attempt_dir_tree_after_create.txt` | bytes=`307` | expected=`307`
+- `delta_since_v3/outputs/governanca/att2_ssot_snapshot/20260220/evidence/dest_emendas_file_list.txt` | bytes=`135` | expected=`135`
+- `delta_since_v3/outputs/governanca/att2_ssot_snapshot/20260220/evidence/done_marker.txt` | bytes=`87` | expected=`87`
+- `delta_since_v3/outputs/governanca/att2_ssot_snapshot/20260220/evidence/manifest_validation.json` | bytes=`164` | expected=`164`
+- `delta_since_v3/outputs/governanca/att2_ssot_snapshot/20260220/evidence/optional_copy_status.json` | bytes=`183` | expected=`183`
+- `delta_since_v3/outputs/governanca/att2_ssot_snapshot/20260220/evidence/precheck_target_not_exists.txt` | bytes=`100` | expected=`100`
+- `delta_since_v3/outputs/governanca/att2_ssot_snapshot/20260220/evidence/readme_head.txt` | bytes=`504` | expected=`504`
+- `delta_since_v3/outputs/governanca/att2_ssot_snapshot/20260220/evidence/repo_root_resolved.txt` | bytes=`29` | expected=`29`
+- `delta_since_v3/outputs/governanca/att2_ssot_snapshot/20260220/evidence/required_ssots_presence_check.json` | bytes=`674` | expected=`674`
+- `delta_since_v3/outputs/governanca/att2_ssot_snapshot/20260220/evidence/snapshot_tree.txt` | bytes=`392` | expected=`392`
+- `delta_since_v3/outputs/governanca/att2_ssot_snapshot/20260220/evidence/source_emendas_file_list.txt` | bytes=`135` | expected=`135`
+- `delta_since_v3/outputs/governanca/att2_ssot_snapshot/20260220/report.json` | bytes=`6119` | expected=`6119`
+- `delta_since_v3/outputs/governanca/constituicao_forense/20260215/evidence/found_paths.txt` | bytes=`921` | expected=`921`
+- `delta_since_v3/outputs/governanca/constituicao_forense/20260215/evidence/hashes.txt` | bytes=`1005` | expected=`1005`
+- `delta_since_v3/outputs/governanca/constituicao_forense/20260215/extract_constituicao_trechos.md` | bytes=`1502` | expected=`1502`
+- `delta_since_v3/outputs/governanca/constituicao_forense/20260215/legacy_alignment_map.md` | bytes=`2474` | expected=`2474`
+- `delta_since_v3/outputs/governanca/constituicao_forense/20260215/manifest.json` | bytes=`3251` | expected=`3251`
+- `delta_since_v3/outputs/governanca/constituicao_forense/20260215/report.md` | bytes=`2238` | expected=`2238`
+- `delta_since_v3/outputs/governanca/git_init_fix/20260215/evidence/commits_involved.txt` | bytes=`126` | expected=`126`
+- `delta_since_v3/outputs/governanca/git_init_fix/20260215/evidence/gitignore_diff.patch` | bytes=`230` | expected=`230`
+- `delta_since_v3/outputs/governanca/git_init_fix/20260215/evidence/status_after.txt` | bytes=`1` | expected=`1`
+- `delta_since_v3/outputs/governanca/git_init_fix/20260215/evidence/status_before.txt` | bytes=`28` | expected=`28`
+- `delta_since_v3/outputs/governanca/git_init_fix/20260215/manifest.json` | bytes=`2601` | expected=`2601`
+- `delta_since_v3/outputs/governanca/git_init_fix/20260215/report.md` | bytes=`2159` | expected=`2159`
+- `delta_since_v3/outputs/governanca/git_ssh_fix/20260215/manifest.json` | bytes=`3540` | expected=`3540`
+- `delta_since_v3/outputs/governanca/git_ssh_fix/20260215/report.md` | bytes=`2153` | expected=`2153`
+- `delta_since_v3/outputs/governanca/git_ssh_verify/20260215/manifest.json` | bytes=`3737` | expected=`3737`
+- `delta_since_v3/outputs/governanca/git_ssh_verify/20260215/report.md` | bytes=`1763` | expected=`1763`
+- `delta_since_v3/outputs/governanca/git_sync/20260215/evidence/branch_vv_after.txt` | bytes=`452` | expected=`452`
+- `delta_since_v3/outputs/governanca/git_sync/20260215/evidence/branch_vv_before.txt` | bytes=`388` | expected=`388`
+- `delta_since_v3/outputs/governanca/git_sync/20260215/evidence/fetch.txt` | bytes=`222` | expected=`222`
+- `delta_since_v3/outputs/governanca/git_sync/20260215/evidence/ls_remote.txt` | bytes=`234` | expected=`234`
+- `delta_since_v3/outputs/governanca/git_sync/20260215/evidence/pull_ff_only.txt` | bytes=`222` | expected=`222`
+- `delta_since_v3/outputs/governanca/git_sync/20260215/evidence/push.txt` | bytes=`165` | expected=`165`
+- `delta_since_v3/outputs/governanca/git_sync/20260215/evidence/push_dry_run.txt` | bytes=`236` | expected=`236`
+- `delta_since_v3/outputs/governanca/git_sync/20260215/evidence/remote_v.txt` | bytes=`113` | expected=`113`
+- `delta_since_v3/outputs/governanca/git_sync/20260215/evidence/status_after.txt` | bytes=`16` | expected=`16`
+- `delta_since_v3/outputs/governanca/git_sync/20260215/evidence/status_before.txt` | bytes=`16` | expected=`16`
+- `delta_since_v3/outputs/governanca/git_sync/20260215/evidence/worktree_list.txt` | bytes=`265` | expected=`265`
+- `delta_since_v3/outputs/governanca/git_sync/20260215/manifest.json` | bytes=`4924` | expected=`4924`
+- `delta_since_v3/outputs/governanca/git_sync/20260215/report.md` | bytes=`2021` | expected=`2021`
+- `delta_since_v3/outputs/governanca/rag/20260220/corpus_discovery/evidence/discovery_stats.json` | bytes=`135` | expected=`135`
+- `delta_since_v3/outputs/governanca/rag/20260220/corpus_discovery/evidence/required_copy_check.json` | bytes=`800` | expected=`800`
+- `delta_since_v3/outputs/governanca/rag/20260220/corpus_discovery/report.json` | bytes=`1421` | expected=`1421`
+- `delta_since_v3/outputs/governanca/rag/20260220/delta_since_v3/evidence/delta_detection_method.json` | bytes=`135` | expected=`135`
+- `delta_since_v3/outputs/governanca/rag/20260220/delta_since_v3/evidence/reindex_smoke_results.json` | bytes=`3801` | expected=`3801`
+- `delta_since_v3/outputs/governanca/rag/20260220/delta_since_v3/report.json` | bytes=`1820` | expected=`1820`
+- `delta_since_v3/outputs/governanca/rag/20260220/rag_build/evidence/index_stats.json` | bytes=`115` | expected=`115`
+- `delta_since_v3/outputs/governanca/rag/20260220/rag_build/evidence/smoke_query_results.json` | bytes=`4040` | expected=`4040`
+- `delta_since_v3/outputs/governanca/rag/20260220/rag_build/report.json` | bytes=`1407` | expected=`1407`
+- `delta_since_v3/outputs/governanca/worktrees/20260215/evidence/branch_list.txt` | bytes=`51` | expected=`51`
+- `delta_since_v3/outputs/governanca/worktrees/20260215/evidence/python_official.txt` | bytes=`59` | expected=`59`
+- `delta_since_v3/outputs/governanca/worktrees/20260215/evidence/repo_state.txt` | bytes=`96` | expected=`96`
+- `delta_since_v3/outputs/governanca/worktrees/20260215/evidence/status_repo_root.txt` | bytes=`16` | expected=`16`
+- `delta_since_v3/outputs/governanca/worktrees/20260215/evidence/worktree_list.txt` | bytes=`267` | expected=`267`
+- `delta_since_v3/outputs/governanca/worktrees/20260215/manifest.json` | bytes=`3099` | expected=`3099`
+- `delta_since_v3/outputs/governanca/worktrees/20260215/report.md` | bytes=`2175` | expected=`2175`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/cash_equity_reconciliation_sample.csv` | bytes=`51165` | expected=`51165`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/cash_equity_reconciliation_summary.json` | bytes=`184` | expected=`184`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/cdi_cash_application_sample.csv` | bytes=`11291` | expected=`11291`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/cdi_cash_application_summary.json` | bytes=`147` | expected=`147`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/cdi_scale_and_usage_check.json` | bytes=`578` | expected=`578`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/economic_plausibility_diagnostics.json` | bytes=`805` | expected=`805`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/findings.json` | bytes=`2388` | expected=`2388`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/git_state.json` | bytes=`277` | expected=`277`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/inputs_presence.json` | bytes=`27` | expected=`27`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/recommendations.json` | bytes=`400` | expected=`400`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/reported_status_matrix.csv` | bytes=`346` | expected=`346`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/task_specs_inventory_audit.csv` | bytes=`2382` | expected=`2382`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/manifest.json` | bytes=`4016` | expected=`4016`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/plots/audit_cash_vs_positions_v2.html` | bytes=`171429` | expected=`171429`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/plots/audit_cumulative_buy_sell_v2.html` | bytes=`250404` | expected=`250404`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/plots/audit_equity_baseline_vs_v2.html` | bytes=`170776` | expected=`170776`
+- `delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/report.md` | bytes=`3755` | expected=`3755`
+- `delta_since_v3/planning/runs/TASK_CEP_BUNDLE_CORE_RAG_001_DISCOVER_AND_PIN_CORPUS_V1/run_20260220_165609/run_summary.json` | bytes=`1421` | expected=`1421`
+- `delta_since_v3/planning/runs/TASK_CEP_BUNDLE_CORE_RAG_002_BUILD_LOCAL_VECTOR_INDEX_V1/run_20260220_165610/run_summary.json` | bytes=`1407` | expected=`1407`
+- `delta_since_v3/planning/runs/TASK_CEP_BUNDLE_CORE_RAG_003_APPEND_DELTA_SINCE_V3_AND_REINDEX_V1/run_20260220_165610/run_summary.json` | bytes=`1820` | expected=`1820`
+- `delta_since_v3/planning/task_specs/TASK_CEP_BUNDLE_CORE_RAG_001_DISCOVER_AND_PIN_CORPUS_V1.json` | bytes=`1370` | expected=`1370`
+- `delta_since_v3/planning/task_specs/TASK_CEP_BUNDLE_CORE_RAG_002_BUILD_LOCAL_VECTOR_INDEX_V1.json` | bytes=`1182` | expected=`1182`
+- `delta_since_v3/planning/task_specs/TASK_CEP_BUNDLE_CORE_RAG_003_APPEND_DELTA_SINCE_V3_AND_REINDEX_V1.json` | bytes=`1364` | expected=`1364`
+- `delta_since_v3/planning/task_specs/TASK_CEP_TRANSFERENCIA_CEP_DEFINITIVO_V1.json` | bytes=`1986` | expected=`1986`
+- `delta_since_v3/planning/task_specs/TASK_CEP_TRANSFERENCIA_CEP_DEFINITIVO_V2.json` | bytes=`2304` | expected=`2304`
+- `delta_since_v3/planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_AUDITORIA_TECNICA_COMPLETA_CDI_E_EQUITY_V1.json` | bytes=`2078` | expected=`2078`
+- `delta_since_v3/scripts/agno_rag_runner.py` | bytes=`33143` | expected=`33143`
+- `delta_since_v3/tools/rag/build_index.py` | bytes=`444` | expected=`444`
+- `delta_since_v3/tools/rag/query.py` | bytes=`1652` | expected=`1652`
+- `docs/CONSTITUICAO.md` | bytes=`2840` | expected=`2840`
+- `docs/EXECUTION_STRUCTURE_LOCAL.md` | bytes=`1070` | expected=`1070`
+- `docs/LOCAL_DOCUMENT_INDEX.md` | bytes=`2355` | expected=`2355`
+- `docs/MASTERPLAN.md` | bytes=`6247` | expected=`6247`
+- `docs/MASTERPLAN_V2.md` | bytes=`11977` | expected=`11977`
+- `docs/MP001_VISAO_EXECUTIVA.md` | bytes=`1465` | expected=`1465`
+- `docs/MP002_OBJETIVO_REAL_SSOT.md` | bytes=`1464` | expected=`1464`
+- `docs/SESSION_STATE_TRANSFER_PACKAGE.json` | bytes=`6607` | expected=`6607`
+- `docs/SESSION_STATE_TRANSFER_PACKAGE.md` | bytes=`5982` | expected=`5982`
+- `docs/SESSION_STATE_TRANSFER_PACKAGE_V2.json` | bytes=`4583` | expected=`4583`
+- `docs/SESSION_STATE_TRANSFER_PACKAGE_V2.md` | bytes=`3944` | expected=`3944`
+- `docs/SESSION_STATE_TRANSFER_PACKAGE_V3.json` | bytes=`4728` | expected=`4728`
+- `docs/SESSION_STATE_TRANSFER_PACKAGE_V3.md` | bytes=`5841` | expected=`5841`
+- `docs/_evidencias/20260215_support_docs/INDEX.md` | bytes=`5342` | expected=`5342`
+- `docs/_evidencias/20260215_support_docs/cost_model_emenda/EMENDA_COST_MODEL_ARB_0025PCT_V1.md` | bytes=`3367` | expected=`3367`
+- `docs/_evidencias/20260215_support_docs/cost_model_emenda/evidence/affected_artifacts_hashes.txt` | bytes=`356` | expected=`356`
+- `docs/_evidencias/20260215_support_docs/cost_model_emenda/evidence/status_after_sync.txt` | bytes=`0` | expected=`0`
+- `docs/_evidencias/20260215_support_docs/cost_model_emenda/evidence/status_before.txt` | bytes=`52` | expected=`52`
+- `docs/_evidencias/20260215_support_docs/cost_model_emenda/evidence/sync_fetch.txt` | bytes=`12` | expected=`12`
+- `docs/_evidencias/20260215_support_docs/cost_model_emenda/evidence/sync_pull_ff_only.txt` | bytes=`32` | expected=`32`
+- `docs/_evidencias/20260215_support_docs/cost_model_emenda/evidence/sync_push.txt` | bytes=`34` | expected=`34`
+- `docs/_evidencias/20260215_support_docs/cost_model_emenda/manifest.json` | bytes=`2983` | expected=`2983`
+- `docs/_evidencias/20260215_support_docs/cost_model_emenda/report.md` | bytes=`2274` | expected=`2274`
+- `docs/_evidencias/20260215_support_docs/index.json` | bytes=`11811` | expected=`11811`
+- `docs/_evidencias/20260215_support_docs/instrumentation_costs_v3/manifest.json` | bytes=`3542` | expected=`3542`
+- `docs/_evidencias/20260215_support_docs/instrumentation_costs_v3/metrics_m3_w1_w2_v3.json` | bytes=`4603` | expected=`4603`
+- `docs/_evidencias/20260215_support_docs/instrumentation_costs_v3/report.md` | bytes=`2740` | expected=`2740`
+- `docs/corpus/CORPUS_MASTER.md` | bytes=`3543` | expected=`3543`
+- `docs/corpus/corpus_index.json` | bytes=`24308` | expected=`24308`
+- `docs/corpus/experimentos.json` | bytes=`686725` | expected=`686725`
+- `docs/corpus/licoes_aprendidas.json` | bytes=`51597` | expected=`49097`
+- `docs/emendas/.gitkeep` | bytes=`1` | expected=`1`
+- `docs/emendas/EMENDA_CASH_REMUNERACAO_CDI_V1.md` | bytes=`3255` | expected=`3255`
+- `docs/emendas/EMENDA_COST_MODEL_ARB_0025PCT_V1.md` | bytes=`3367` | expected=`3367`
+- `docs/emendas/EMENDA_OPERACAO_LOCAL_EXECUCAO_V1.md` | bytes=`2574` | expected=`2574`
+- `docs/emendas/EMENDA_TEMPLATE.md` | bytes=`1017` | expected=`1017`
+- `external_refs/CEP_COMPRA/CEP_COMPRA/docs/0_Relatório de encerramento do ciclo M0…M6 (CEP_COMPRA v1).md` | bytes=`6391` | expected=`6391`
+- `external_refs/CEP_COMPRA/CEP_COMPRA/docs/compra_semanal_model_selection.md` | bytes=`5978` | expected=`5978`
+- `external_refs/CEP_COMPRA/CEP_COMPRA/docs/protocolo_operacional_modelos.md` | bytes=`4061` | expected=`4061`
+- `external_refs/CEP_COMPRA/CEP_COMPRA/docs/task_006_pos_task.md` | bytes=`2156` | expected=`2156`
+- `external_refs/CEP_COMPRA/CEP_COMPRA/docs/task_006_pre_execucao.md` | bytes=`1290` | expected=`1290`
+- `external_refs/CEP_COMPRA/CEP_COMPRA/docs/task_008_pos_task.md` | bytes=`3217` | expected=`3217`
+- `external_refs/CEP_COMPRA/CEP_COMPRA/docs/task_009_pos_task.md` | bytes=`3122` | expected=`3122`
+- `external_refs/CEP_COMPRA/CEP_COMPRA/docs/task_012_smoke_sell_patch.md` | bytes=`857` | expected=`857`
+- `external_refs/CEP_COMPRA/CEP_COMPRA/docs/template_pos_task.md` | bytes=`1151` | expected=`1151`
+- `external_refs/CEP_COMPRA/CEP_COMPRA/docs/template_task_operacional.md` | bytes=`1546` | expected=`1546`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/docs/00_constituicao/CEP_NA_BOLSA_CONSTITUICAO_V1.md` | bytes=`7293` | expected=`7293`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/docs/00_constituicao/CEP_NA_BOLSA_CONSTITUICAO_V2_20260204.md` | bytes=`21531` | expected=`21531`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/docs/00_constituicao/RETOMADA_PLANO_VS_EXECUCAO.md` | bytes=`7855` | expected=`7855`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/docs/governanca/CEP_NA_BOLSA — Ponto de Situação (snapshot 2026-02-04).md` | bytes=`12697` | expected=`12697`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/docs/templates/runner_xbarr_r_plotly_v1.usage.md` | bytes=`729` | expected=`729`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/experimentos/fase1_calibracao/cal/20260208/decision_baseline_master_in_sample_nk/decision_package.md` | bytes=`2536` | expected=`2536`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/experimentos/fase1_calibracao/cal/20260208/decision_master_backtest_replica_bvsp_kn/decision_package.md` | bytes=`2067` | expected=`2067`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/experimentos/fase1_calibracao/cal/20260209/decision_package_sizing_v2/decision_package.md` | bytes=`1369` | expected=`1369`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/experimentos/fase1_calibracao/exp/20260208/baseline_scan_in_sample_nk/report_baseline_scan_in_sample_nk.md` | bytes=`645` | expected=`645`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/experimentos/fase1_calibracao/exp/20260209/sanitycheck_sizing/sanity_summary.md` | bytes=`235` | expected=`235`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/experimentos/fase1_calibracao/exp/20260209/sanitycheck_sizing_v2/sanity_summary.md` | bytes=`293` | expected=`293`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/fase1/f1_probe_sdk/PROBE_SDK_BRAPI_QUOTE_LIST.md` | bytes=`719` | expected=`719`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/fase1_calibracao/auditorias/20260206/nao_sobrepostos/audit_nao_sobrepostos.md` | bytes=`234` | expected=`234`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/fase1_calibracao/cal/20260208/decision_baseline_master/decision_package.md` | bytes=`929` | expected=`929`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/fase1_calibracao/exp/20260208/baseline_scan_stability/report_baseline_scan_stability.md` | bytes=`632` | expected=`632`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/governanca/decisoes/20260209/freeze_sizing_default_v2/decisao_freeze_sizing_default_v2.md` | bytes=`1244` | expected=`1244`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/governanca/decisoes/20260209/plano_teste_sizing_w_base_w_def_w_cap.md` | bytes=`2342` | expected=`2342`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/governanca/decisoes/20260210/documento_unico_planejador_texto_integral_vigentes.md` | bytes=`33369` | expected=`33369`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/governanca/operacao_rotina/20260209/ROTINA_GESTAO_CARTEIRA_001/artefatos/010_constituicao_v2.md` | bytes=`21531` | expected=`21531`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/governanca/operacao_rotina/20260209/ROTINA_GESTAO_CARTEIRA_001/artefatos/050_decision_package_sizing_v2.md` | bytes=`1369` | expected=`1369`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/master_gate_applicability/20260206/events_overlaps.csv` | bytes=`4156` | expected=`4156`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/master_gate_applicability/20260206/report_master_gate_applicability.md` | bytes=`4298` | expected=`4298`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/planning/runs/TASK_CEP_F1_006_MASTER_BASELINE_N_SELECTION_V1/S1_EVENTOS_EXTRAIDOS.csv` | bytes=`3022` | expected=`3022`
+- `external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/planning/task_specs/TASK_CEP_F1_001_BOOTSTRAP_AGNO_RUNTIME_V1.json` | bytes=`1459` | expected=`1459`
+- `outputs/controle/anti_deriva_w2/20260216/anti_deriva_w2_summary.json` | bytes=`1353` | expected=`1353`
+- `outputs/controle/anti_deriva_w2/20260216/report.md` | bytes=`663` | expected=`663`
+- `outputs/experimentos/ablation_e1_e5/20260216/experiments/E1_BASELINE.manifest.json` | bytes=`206` | expected=`206`
+- `outputs/experimentos/ablation_e1_e5/20260216/experiments/E2_TURNOVER_CAP_BY_REGIME.manifest.json` | bytes=`234` | expected=`234`
+- `outputs/experimentos/ablation_e1_e5/20260216/experiments/E3_ADD_REGIME_HYSTERESIS.manifest.json` | bytes=`232` | expected=`232`
+- `outputs/experimentos/ablation_e1_e5/20260216/experiments/E4_ADD_ANTI_REENTRY_FILTER.manifest.json` | bytes=`236` | expected=`236`
+- `outputs/experimentos/ablation_e1_e5/20260216/manifest.json` | bytes=`3960` | expected=`3960`
+- `outputs/experimentos/ablation_e1_e5/20260216/report.md` | bytes=`2392` | expected=`2392`
+- `outputs/experimentos/ablation_e1_e5/20260216/results_summary.json` | bytes=`8611` | expected=`8611`
+- `outputs/gaps/g1_g4/20260216/manifest.json` | bytes=`2373` | expected=`2373`
+- `outputs/gaps/g1_g4/20260216/report.md` | bytes=`1976` | expected=`1976`
+- `outputs/gaps/m3_w1_w2/20260215/manifest.json` | bytes=`4064` | expected=`4064`
+- `outputs/gaps/m3_w1_w2/20260215/report.md` | bytes=`3008` | expected=`3008`
+- `outputs/governanca/att2_ssot_snapshot/20260220/evidence/manifest_validation.json` | bytes=`164` | expected=`164`
+- `outputs/governanca/att2_ssot_snapshot/20260220/report.json` | bytes=`6119` | expected=`6119`
+- `outputs/governanca/bootstrap_repo/20260215/manifest.json` | bytes=`2177` | expected=`2177`
+- `outputs/governanca/bootstrap_repo/20260215/report.md` | bytes=`1641` | expected=`1641`
+- `outputs/governanca/canonicalize_docs/20260215/manifest.json` | bytes=`5289` | expected=`5289`
+- `outputs/governanca/canonicalize_docs/20260215/report.md` | bytes=`1928` | expected=`1928`
+- `outputs/governanca/constituicao_forense/20260215/manifest.json` | bytes=`3251` | expected=`3251`
+- `outputs/governanca/constituicao_forense/20260215/report.md` | bytes=`2238` | expected=`2238`
+- `outputs/governanca/emendas/20260215_cost_model/manifest.json` | bytes=`2983` | expected=`2983`
+- `outputs/governanca/emendas/20260215_cost_model/report.md` | bytes=`2274` | expected=`2274`
+- `outputs/governanca/fix_bootstrap_clean/20260215/manifest.json` | bytes=`3287` | expected=`3287`
+- `outputs/governanca/fix_bootstrap_clean/20260215/report.md` | bytes=`1981` | expected=`1981`
+- `outputs/governanca/git_init/20260215/manifest.json` | bytes=`2028` | expected=`2028`
+- `outputs/governanca/git_init/20260215/report.md` | bytes=`863` | expected=`863`
+- `outputs/governanca/git_init_fix/20260215/manifest.json` | bytes=`2601` | expected=`2601`
+- `outputs/governanca/git_init_fix/20260215/report.md` | bytes=`2159` | expected=`2159`
+- `outputs/governanca/git_ssh_fix/20260215/manifest.json` | bytes=`3540` | expected=`3540`
+- `outputs/governanca/git_ssh_fix/20260215/report.md` | bytes=`2153` | expected=`2153`
+- `outputs/governanca/git_ssh_verify/20260215/manifest.json` | bytes=`3737` | expected=`3737`
+- `outputs/governanca/git_ssh_verify/20260215/report.md` | bytes=`1763` | expected=`1763`
+- `outputs/governanca/git_sync/20260215/manifest.json` | bytes=`4924` | expected=`4924`
+- `outputs/governanca/git_sync/20260215/report.md` | bytes=`2021` | expected=`2021`
+- `outputs/governanca/local_execution_structure/20260216/evidence/smoke_run_summary.json` | bytes=`559` | expected=`559`
+- `outputs/governanca/local_execution_structure/20260216/manifest.json` | bytes=`3932` | expected=`3932`
+- `outputs/governanca/local_execution_structure/20260216/report.md` | bytes=`2467` | expected=`2467`
+- `outputs/governanca/local_migration/20260216/manifest.json` | bytes=`6061` | expected=`6061`
+- `outputs/governanca/local_migration/20260216/report.md` | bytes=`2198` | expected=`2198`
+- `outputs/governanca/masterplan_audit/20260216/manifest.json` | bytes=`5309` | expected=`5309`
+- `outputs/governanca/masterplan_audit/20260216/report.md` | bytes=`2984` | expected=`2984`
+- `outputs/governanca/masterplan_audit/20260216_post_sprint_001/manifest.json` | bytes=`3086` | expected=`3086`
+- `outputs/governanca/masterplan_audit/20260216_post_sprint_001/report.md` | bytes=`1755` | expected=`1755`
+- `outputs/governanca/masterplan_audit/20260216_post_sprint_002/report.md` | bytes=`773` | expected=`773`
+- `outputs/governanca/masterplan_audit/20260216_post_sprint_003/report.md` | bytes=`496` | expected=`496`
+- `outputs/governanca/phase_closeout/20260216/manifest.json` | bytes=`2397` | expected=`2397`
+- `outputs/governanca/phase_closeout/20260216/phase_inventory.csv` | bytes=`4264` | expected=`4264`
+- `outputs/governanca/phase_closeout/20260216/report.md` | bytes=`1425` | expected=`1425`
+- `outputs/governanca/policy_spc_rl/20260216/policy_spc_rl_summary.json` | bytes=`614` | expected=`614`
+- `outputs/governanca/policy_spc_rl/20260216/report.md` | bytes=`405` | expected=`405`
+- `outputs/governanca/session_state_transfer/20260215/manifest.json` | bytes=`4261` | expected=`4261`
+- `outputs/governanca/session_state_transfer/20260215/report.md` | bytes=`1985` | expected=`1985`
+- `outputs/governanca/sprint_002/20260216/manifest.json` | bytes=`3884` | expected=`3884`
+- `outputs/governanca/sprint_002/20260216/report.md` | bytes=`1932` | expected=`1932`
+- `outputs/governanca/sprint_003/20260216/manifest.json` | bytes=`4013` | expected=`4013`
+- `outputs/governanca/sprint_003/20260216/report.md` | bytes=`1668` | expected=`1668`
+- `outputs/governanca/ssot_cdi/20260215/manifest.json` | bytes=`3958` | expected=`3958`
+- `outputs/governanca/ssot_cdi/20260215/report.md` | bytes=`2058` | expected=`2058`
+- `outputs/governanca/verify_cdi_cash/20260215/manifest.json` | bytes=`2949` | expected=`2949`
+- `outputs/governanca/verify_cdi_cash/20260215/report.md` | bytes=`1854` | expected=`1854`
+- `outputs/governanca/worktrees/20260215/manifest.json` | bytes=`3099` | expected=`3099`
+- `outputs/governanca/worktrees/20260215/report.md` | bytes=`2175` | expected=`2175`
+- `outputs/instrumentation/m3_w1_w2/20260215/manifest.json` | bytes=`4226` | expected=`4226`
+- `outputs/instrumentation/m3_w1_w2/20260215/report.md` | bytes=`3125` | expected=`3125`
+- `outputs/instrumentation/m3_w1_w2/20260215_cash_cdi_v4/manifest.json` | bytes=`3840` | expected=`3840`
+- `outputs/instrumentation/m3_w1_w2/20260215_cash_cdi_v4/report.md` | bytes=`2164` | expected=`2164`
+- `outputs/instrumentation/m3_w1_w2/20260215_costs_v3/manifest.json` | bytes=`3542` | expected=`3542`
+- `outputs/instrumentation/m3_w1_w2/20260215_costs_v3/report.md` | bytes=`2740` | expected=`2740`
+- `outputs/instrumentation/m3_w1_w2/20260216_cash_cdi_v5/evidence/ssot_alignment_summary.json` | bytes=`209` | expected=`209`
+- `outputs/instrumentation/m3_w1_w2/20260216_cash_cdi_v5/manifest.json` | bytes=`3076` | expected=`3076`
+- `outputs/instrumentation/m3_w1_w2/20260216_cash_cdi_v5/report.md` | bytes=`2313` | expected=`2313`
+- `outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/cash_equity_reconciliation_summary.json` | bytes=`184` | expected=`184`
+- `outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/cdi_cash_application_summary.json` | bytes=`147` | expected=`147`
+- `outputs/masterplan_v2/auditoria_tecnica_completa/20260217/evidence/task_specs_inventory_audit.csv` | bytes=`2382` | expected=`2382`
+- `outputs/masterplan_v2/auditoria_tecnica_completa/20260217/manifest.json` | bytes=`4016` | expected=`4016`
+- `outputs/masterplan_v2/auditoria_tecnica_completa/20260217/report.md` | bytes=`3755` | expected=`3755`
+- `outputs/masterplan_v2/f1_001/evidence/buy_cadence_summary.json` | bytes=`190` | expected=`190`
+- `outputs/masterplan_v2/f1_001/evidence/cash_constraint_summary.json` | bytes=`148` | expected=`148`
+- `outputs/masterplan_v2/f1_001/evidence/cdi_validation_summary.json` | bytes=`125` | expected=`125`
+- `outputs/masterplan_v2/f1_001/evidence/cost_validation_summary.json` | bytes=`123` | expected=`123`
+- `outputs/masterplan_v2/f1_001/evidence/equity_reconciliation_summary.json` | bytes=`205` | expected=`205`
+- `outputs/masterplan_v2/f1_001/evidence/t0_liquidity_summary.json` | bytes=`200` | expected=`200`
+- `outputs/masterplan_v2/f1_001/manifest.json` | bytes=`5273` | expected=`5273`
+- `outputs/masterplan_v2/f1_001/report.md` | bytes=`1985` | expected=`1985`
+- `outputs/masterplan_v2/f1_001/validation_report.md` | bytes=`1985` | expected=`1985`
+- `outputs/masterplan_v2/f1_002/evidence/validations_summary.json` | bytes=`272` | expected=`272`
+- `outputs/masterplan_v2/f1_002/manifest.json` | bytes=`3752` | expected=`3752`
+- `outputs/masterplan_v2/f1_002/report.md` | bytes=`1788` | expected=`1788`
+- `outputs/masterplan_v2/f2_001/evidence/envelope_validations_summary.json` | bytes=`291` | expected=`291`
+- `outputs/masterplan_v2/f2_001/manifest.json` | bytes=`3446` | expected=`3446`
+- `outputs/masterplan_v2/f2_001/report.md` | bytes=`1344` | expected=`1344`
+- `outputs/masterplan_v2/f2_002/evidence/enforcement_summary.json` | bytes=`124` | expected=`124`
+- `outputs/masterplan_v2/f2_002/evidence/invariants_summary.json` | bytes=`315` | expected=`315`
+- `outputs/masterplan_v2/f2_002/manifest.json` | bytes=`4109` | expected=`4109`
+- `outputs/masterplan_v2/f2_002/report.md` | bytes=`2042` | expected=`2042`
+- `outputs/masterplan_v2/f2_003/evidence/equity_compare_summary.json` | bytes=`683` | expected=`683`
+- `outputs/masterplan_v2/f2_003/manifest.json` | bytes=`4534` | expected=`4534`
+- `outputs/masterplan_v2/f2_003/report.md` | bytes=`2276` | expected=`2276`
+- `outputs/masterplan_v2/f2_004/evidence/cash_flow_reconciliation_summary.json` | bytes=`83` | expected=`83`
+- `outputs/masterplan_v2/f2_004/evidence/cash_only_benchmark_summary.json` | bytes=`129` | expected=`129`
+- `outputs/masterplan_v2/f2_004/evidence/equity_normalization_summary.json` | bytes=`87` | expected=`87`
+- `outputs/masterplan_v2/f2_004/evidence/equity_reconciliation_summary.json` | bytes=`63` | expected=`63`
+- `outputs/masterplan_v2/f2_004/manifest.json` | bytes=`3606` | expected=`3606`
+- `outputs/masterplan_v2/f2_004/report.md` | bytes=`1429` | expected=`1429`
+- `outputs/simulacoes/compare_m3_plotly/20260216/manifest.json` | bytes=`4726` | expected=`4726`
+- `outputs/simulacoes/compare_m3_plotly/20260216/report.md` | bytes=`2612` | expected=`2612`
+- `planning/runs/S2_001_MP011_CLOSE_G1_G4_REMAINDER/run_20260216_001/run_summary.json` | bytes=`232` | expected=`232`
+- `planning/runs/S2_002_MP007_COMPLETE_ANTI_DERIVA_W2/run_20260216_001/run_summary.json` | bytes=`269` | expected=`269`
+- `planning/runs/S2_003_MP005_MP006_REDUCE_NAO_EXECUTADA/run_20260216_001/run_summary.json` | bytes=`280` | expected=`280`
+- `planning/runs/S2_004_REFRESH_POST_SPRINT_002_AUDIT/run_20260216_001/run_summary.json` | bytes=`218` | expected=`218`
+- `planning/runs/S3_001_MP011_CLOSE_G1_G2_G3/run_20260216_001/run_summary.json` | bytes=`180` | expected=`180`
+- `planning/runs/S3_002_MP001_VISAO_EXECUTIVA/run_20260216_001/run_summary.json` | bytes=`164` | expected=`164`
+- `planning/runs/S3_003_MP002_OBJETIVO_REAL_SSOT/run_20260216_001/run_summary.json` | bytes=`170` | expected=`170`
+- `planning/runs/S3_004_REFRESH_POST_SPRINT_003_AUDIT/run_20260216_001/run_summary.json` | bytes=`210` | expected=`210`
+- `planning/task_specs/TASK_CEP_BUNDLE_CORE_F1_012_SIM_COMPARE_M3_PLOTLY_V1.json` | bytes=`1125` | expected=`1125`
+- `planning/task_specs/TASK_CEP_BUNDLE_CORE_LOCAL_SMOKE_20260216.json` | bytes=`581` | expected=`581`
+- `planning/task_specs/TASK_CEP_BUNDLE_CORE_RAG_001_DISCOVER_AND_PIN_CORPUS_V1.json` | bytes=`1370` | expected=`1370`
+- `planning/task_specs/TASK_CEP_BUNDLE_CORE_RAG_002_BUILD_LOCAL_VECTOR_INDEX_V1.json` | bytes=`1182` | expected=`1182`
+- `planning/task_specs/TASK_CEP_BUNDLE_CORE_RAG_003_APPEND_DELTA_SINCE_V3_AND_REINDEX_V1.json` | bytes=`1364` | expected=`1364`
+- `planning/task_specs/TASK_CEP_TRANSFERENCIA_CEP_DEFINITIVO_V1.json` | bytes=`1986` | expected=`1986`
+- `planning/task_specs/TASK_CEP_TRANSFERENCIA_CEP_DEFINITIVO_V2.json` | bytes=`2304` | expected=`2304`
+- `planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_AUDITORIA_TECNICA_COMPLETA_CDI_E_EQUITY_V1.json` | bytes=`2078` | expected=`2078`
+- `planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F0_001_SSOT_MASTERPLAN_V2_PUBLICATION.json` | bytes=`1621` | expected=`1621`
+- `planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F0_002_GOVERNANCE_INDEX_AND_BOOTSTRAP.json` | bytes=`1698` | expected=`1698`
+- `planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F1_001_LEDGER_DAILY_PORTFOLIO_INTEGRITY.json` | bytes=`1700` | expected=`1700`
+- `planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F1_002_ACCOUNTING_PLOTLY_DECOMPOSITION.json` | bytes=`1725` | expected=`1725`
+- `planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F2_001_ENVELOPE_CONTINUO_IMPLEMENTATION.json` | bytes=`1689` | expected=`1689`
+- `planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F2_002_EXECUTOR_CASH_AND_CADENCE_ENFORCEMENT.json` | bytes=`1718` | expected=`1718`
+- `planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F2_003_ENVELOPE_PLOTLY_AUDIT.json` | bytes=`1707` | expected=`1707`
+- `planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F2_004_EQUITY_CDI_SANITY_AND_RECONCILIATION_GATE.json` | bytes=`2301` | expected=`2301`
+- `planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F3_001_REVALIDATE_ABLATION_E1_E5.json` | bytes=`1679` | expected=`1679`
+- `planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F3_002_NON_REGRESSION_WINDOW_CHECK.json` | bytes=`1684` | expected=`1684`
+- `planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F4_001_RL_INTRA_REGIME_INTERFACE.json` | bytes=`1704` | expected=`1704`
+- `planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F4_002_W2_REJECTION_RULE_VALIDATION.json` | bytes=`1693` | expected=`1693`
+- `planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F5_001_G1_G4_COVERAGE_CLOSEOUT.json` | bytes=`1689` | expected=`1689`
+- `planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F5_002_FINAL_GOVERNANCE_PACKAGE.json` | bytes=`1704` | expected=`1704`
+- `planning/task_specs/sprint_002/TASK_CEP_BUNDLE_CORE_S2_001_MP011_CLOSE_G1_G4_REMAINDER.json` | bytes=`533` | expected=`533`
+- `planning/task_specs/sprint_002/TASK_CEP_BUNDLE_CORE_S2_002_MP007_COMPLETE_ANTI_DERIVA_W2.json` | bytes=`653` | expected=`653`
+- `planning/task_specs/sprint_002/TASK_CEP_BUNDLE_CORE_S2_003_MP005_MP006_SPCCEP_DECISION_POLICY.json` | bytes=`620` | expected=`620`
+- `planning/task_specs/sprint_002/TASK_CEP_BUNDLE_CORE_S2_004_POST_SPRINT_002_AUDIT_REFRESH.json` | bytes=`529` | expected=`529`
+- `planning/task_specs/sprint_003/TASK_CEP_BUNDLE_CORE_S3_001_MP011_CLOSE_G1_G2_G3.json` | bytes=`643` | expected=`643`
+- `planning/task_specs/sprint_003/TASK_CEP_BUNDLE_CORE_S3_002_MP001_VISAO_EXECUTIVA.json` | bytes=`443` | expected=`443`
+- `planning/task_specs/sprint_003/TASK_CEP_BUNDLE_CORE_S3_003_MP002_OBJETIVO_REAL_SSOT.json` | bytes=`680` | expected=`680`
+- `planning/task_specs/sprint_003/TASK_CEP_BUNDLE_CORE_S3_004_POST_SPRINT_003_AUDIT_REFRESH.json` | bytes=`522` | expected=`522`
+
+## Byte Mismatches
+
+- `corpus/lessons/LESSONS_LEARNED.json` expected=`184284` actual=`224735`
+- `corpus/lessons/LESSONS_LEARNED.md` expected=`100729` actual=`122410`
+- `docs/corpus/licoes_aprendidas.json` expected=`49097` actual=`51597`

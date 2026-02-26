@@ -2,10 +2,16 @@
 
 ## Legacy Source Package
 
-- Source MD: `00_Strategy/00_Legacy_Imports/TRANSFER_PACKAGE_ATTEMPT2_PRE_20260224_S001_S008.md`
-- Source JSON: `00_Strategy/00_Legacy_Imports/TRANSFER_PACKAGE_ATTEMPT2_PRE_20260224_S001_S008.json`
+- Source MD: `00_Strategy/00_Legacy_Imports/TRANSFER_PACKAGE_ATTEMPT2_PRE_20260224_S001_S008.md.processed`
+- Source JSON: `00_Strategy/00_Legacy_Imports/TRANSFER_PACKAGE_ATTEMPT2_PRE_20260224_S001_S008.json.processed`
 - generated_at_utc: `2026-02-24T21:17:13.905403+00:00`
 - overall: `PARTIAL_PASS_TOKEN_PENDING`
+
+## External Business Source of Truth
+
+- Fonte de verdade de negocio agora LOCAL: `./02_Knowledge_Bank`.
+- Corpus legado local: `02_Knowledge_Bank/Legacy_Corpus`.
+- Indice local de navegacao: `02_Knowledge_Bank/INDEX.md`.
 
 ## Business Goals (from legacy MD)
 
@@ -23,6 +29,33 @@
 - Regra de dados: `Parquet-first`; `CSV` apenas para leitura humana quando necessario.
 - Estado de segredo: `BRAPI_TOKEN` ausente no ambiente legado (S6/S6A/S6B em `FAIL`).
 - Politica de seed: `corpus_seed` como somente leitura.
+
+## Business Rules & Constraints
+
+### Hard Rules (prioridade maxima)
+
+- Progressao canonica obrigatoria: `S001 -> S002 -> S003 -> S004 -> S005 -> S006 -> S007 -> S008`.
+- Integridade valida por gates e evidencias materiais; nao considerar conclusao com status parcial.
+- Politica de snapshot congelado `PRE_2026_02_24` com exclusoes explicitas.
+- Segredo obrigatorio: `BRAPI_TOKEN` para completar S6/S6A/S6B.
+- Regra de dados: `Parquet-first`; `CSV` apenas para leitura humana.
+- Politica de seed: `corpus_seed` em modo somente leitura.
+
+### Governanca de Papeis
+
+- Owner valida objetivo e gates com evidencia.
+- CTO entrega O QUE/POR QUE/COMO/RESULTADO em linguagem natural antes de JSON.
+- Agente executa com disciplina de manifests, hashes e gates.
+- Padrao operacional combinado: texto para Owner + JSON para Agente.
+
+### Regras Operacionais
+
+- Materializacao por convencoes:
+  - `outputs/<estado>_vN`
+  - `outputs/state/s007_ruleflags_global/YYYYMMDD`
+  - `outputs/experimentos/on_flight/YYYYMMDD`
+- Orquestracao em `work/task_specs` e `planning/task_specs`.
+- Hashes `sha256` como prova de rastreabilidade de artefatos.
 
 ## Narrative Context
 
@@ -80,12 +113,34 @@ O pacote legado registra uma linha de producao orientada a estados, com promocao
 
 ## Governance Notes
 
-- Owner define objetivo e valida gates com evidencia material.
-- CTO entrega O QUE/POR QUE/COMO/RESULTADO ESPERADO em linguagem natural antes do JSON.
-- Agente executa com disciplina de gates, manifests e hashes.
-- Padrao combinado: texto para Owner + JSON para Agente.
+- As regras de governanca ativas foram consolidadas em `## Business Rules & Constraints`.
+- Esta secao permanece apenas como ponte historica para retrocompatibilidade documental.
 
 ## Execution Record
 
 - Protocolo de governanca T001 reexecutado a partir de `00_Strategy/Task_History/T001_Legacy_Bootstrap.json`.
-- Registry atualizado com ciclo completo: `IN_PROGRESS` -> `DONE`.
+- Registry alinhado com politica atual de governanca: apenas tarefas com `Overall PASS` entram como `DONE`.
+
+## Legacy Integration History
+
+### Arquitetura
+
+- Fonte integrada: `00_Strategy/00_Legacy_Imports/TRANSFER_PACKAGE_*`.
+- instruction_id: `TASK_CEP_DISC_026_TRANSFER_PACKAGE_ATTEMPT2_S001_S008_PRE_20260224_NO_CORPACTIONS_V2_20260224_V1`
+- generated_at_utc: `2026-02-24T21:17:13.905403+00:00`
+- grafo de estados: `S001 -> S002 -> S003 -> S004 -> S005 -> S006 -> S007 -> S008`
+- modulos legados integrados: S001, S002, S003, S004, S005, S006, S007, S008
+
+### Regras de Negocio
+
+- Snapshot congelado em politica `PRE_2026_02_24`.
+- Gate summary: `8 PASS` / `3 FAIL`.
+- Pendencias criticas atuais: S6_BUILD_BRAPl_SECRETS_INSTRUCTIONS_REDACTED, S6A_CAPTURE_BRAPl_TOKEN_VALUE_REDACTED, S6B_WRITE_TOKEN_FILE_AND_VALIDATE_NONEMPTY.
+- Regras detalhadas consolidadas em `## Business Rules & Constraints` para evitar redundancia.
+
+### Roadmap
+
+- Curto prazo: resolver gates de segredo (`S6`, `S6A`, `S6B`) para remover estado `TOKEN_PENDING`.
+- Medio prazo: manter consolidacao S001->S008 com hashes e manifests auditaveis.
+- Registro desta ingestao em: `00_Strategy/Task_History/T003/report.md`.
+- Consolidado em: `2026-02-25T18:15:42+00:00`.

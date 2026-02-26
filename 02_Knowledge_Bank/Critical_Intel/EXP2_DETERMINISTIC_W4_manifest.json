@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-02-24T19:48:45.996229+00:00",
+  "run_id": "EXP2_DETERMINISTIC_W4",
+  "mode": "deterministic",
+  "window": "W4",
+  "source_native_output": "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/native/EXP2_W4_COMBINED",
+  "required_files": [
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/runs/EXP2_DETERMINISTIC_W4/equity_curves.parquet"
+  ],
+  "hashes_sha256": {
+    "/home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/experimentos/on_flight/20260224/EXP1_EXP2_W4_DET_HYB_AFTER_CORP_ACTIONS_V1/runs/EXP2_DETERMINISTIC_W4/equity_curves.parquet": "dbbe67afdc3c33718b7f2444a5339681916ed721557b4e1ea329db236fdbdf70"
+  },
+  "overall": "PASS"
+}
