@@ -16,9 +16,10 @@
 | ID | Task Name | Phase | Status | Key Artifacts |
 |---|---|---|---|---|
 | T024 | Diagnostic Engine Strict (Hybrid) | Diagnostics | DONE | SSOT DIAGNOSTICS (Lag D+1) |
+| T025 | Visual Validation Diagnostics | Diagnostics | DONE | T025: Validação Visual da Lógica de Diagnóstico (Amostra 2018). |
 
 ## BACKLOG (PLANNED)
 
 | ID | Task Name | Phase | Status | Objective |
 |---|---|---|---|---|
-| T025 | ... | ... | PENDING | ... |
+| T026 | ... | ... | PENDING | ... |
