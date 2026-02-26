@@ -11,3 +11,6 @@
 | M-001 | Registry Reformat | Maintenance | DONE | Refatoracao do registro para formato de tabela vertical. | 2026-02-26T08:00:00-03:00 |
 | M-002 | Registry Purge | Maintenance | DONE | Separacao entre Core State (`TASK_REGISTRY.md`) e Ops Log (`OPS_LOG.md`). | 2026-02-26T08:15:00-03:00 |
 | M-003 | Semantic Registry Fix | Maintenance | DONE | M-003: Semantic cleanup of Legacy T-Tasks (Split Core vs Ops). | 2026-02-26T08:30:00-03:00 |
+| V001 | Visual Verification (Split-Only) | 2 - Operations | DONE | V001 Final Check: `scripts/v001_heuristic_output_check.py`; plots em `data/verification_plots/heuristic_final/` validando `close_raw` vs `close_operational` (VIVT3 divergente, MGLU3/PETR4 sobrepostos). | 2026-02-27T13:00:00-03:00 |
+| T099 | Phase 1 Knowledge Dump | 2 - Operations (Closing Data Phase) | DONE | T099: Consolidated Phase 1 Knowledge (Heuristics, Physics, and SPC Math) into documentation. | 2026-02-27T14:00:00-03:00 |
+| ORG-001 | Registry Refactor | Maintenance | DONE | ORG-001: Refatoração do Registry para visão baseada em Estados do Produto. | 2026-02-26T18:00:00Z |
