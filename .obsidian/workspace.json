@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "e7f8b6bcb2355c39",
+        "id": "8c8f2788bbe46733",
         "type": "tabs",
         "children": [
           {
-            "id": "b65ab304fe6c42f4",
+            "id": "15cfb5716698651a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00_Strategy/TASK_REGISTRY.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "TASK_REGISTRY"
+              "title": "Nova aba"
             }
           }
         ]
@@ -180,19 +176,27 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "b65ab304fe6c42f4",
+  "active": "15cfb5716698651a",
   "lastOpenFiles": [
+    "00_Strategy/KNOWLEDGE_BASE.md",
+    "00_Strategy/LESSONS_LEARNED.md",
+    "data/verification_plots/heuristic_final/PETR4_Heuristic_Result.html",
+    "data/verification_plots/heuristic_final/MGLU3_Heuristic_Result.html",
+    "data/verification_plots/heuristic_final/VIVT3_Heuristic_Result.html",
+    "data/verification_plots/heuristic_final",
+    "scripts/v001_heuristic_output_check.py",
+    "data/market_data/heuristic_adjustments_t023.csv",
+    "scripts/t023_build_canonical_base_heuristic.py",
+    "data/verification_plots/V001_VIVT3_ONLY_20260226_144852/VIVT3_Split_Verification_ONLY.html",
+    "data/verification_plots/V001_VIVT3_ONLY_20260226_144852",
+    "data/market_data/vivt3_legacy_solution.txt",
+    "agno_env/lib/python3.13/site-packages/narwhals-2.17.0.dist-info/licenses/LICENSE.md",
+    "Sem título.md",
+    "agno_env/lib/python3.13/site-packages/pyarrow/tests/data/orc/README.md",
+    "00_Strategy/00_Legacy_Imports/Sem título.md",
+    "00_Strategy/00_Legacy_Imports/LEGACY_BUNDLE.md",
+    "00_Strategy/TASK_REGISTRY.md",
     "00_Strategy/PHASE2_EXECUTION_PLAN.md",
-    "02_Knowledge_Bank/Critical_Intel_VectorStore/chroma.sqlite3-journal",
-    "run_task013_reality_based_planning.py",
-    "02_Knowledge_Bank/Critical_Intel_VectorStore/b84ef075-1a97-402b-9c1f-bcb1ba27fb3f/index_metadata.pickle",
-    "02_Knowledge_Bank/Critical_Intel_VectorStore/b84ef075-1a97-402b-9c1f-bcb1ba27fb3f/link_lists.bin",
-    "02_Knowledge_Bank/Critical_Intel_VectorStore/b84ef075-1a97-402b-9c1f-bcb1ba27fb3f/length.bin",
-    "02_Knowledge_Bank/Critical_Intel_VectorStore/b84ef075-1a97-402b-9c1f-bcb1ba27fb3f/header.bin",
-    "02_Knowledge_Bank/Critical_Intel_VectorStore/b84ef075-1a97-402b-9c1f-bcb1ba27fb3f/data_level0.bin",
-    "02_Knowledge_Bank/Critical_Intel_VectorStore/b84ef075-1a97-402b-9c1f-bcb1ba27fb3f",
-    "02_Knowledge_Bank/Critical_Intel_VectorStore/chroma.sqlite3",
-    "02_Knowledge_Bank/Critical_Intel/manifest_ssot_snapshot.json",
     "02_Knowledge_Bank/Critical_Intel/docs_MASTERPLAN_V2.md",
     "02_Knowledge_Bank/Critical_Intel/git_sync_20260215_report.md",
     "02_Knowledge_Bank/Critical_Intel/git_ssh_verify_20260215_report.md",
@@ -210,14 +214,6 @@
     "02_Knowledge_Bank/Critical_Intel/E1_20191125_20191202_report.md",
     "02_Knowledge_Bank/Critical_Intel/EXP_002_S008_SELLGATE_CEP_RL_ABL345_2019_20210630_SPLITFIX_REEXEC_V2_report.md",
     "02_Knowledge_Bank/Critical_Intel/EXP_002_S008_SELLGATE_CEP_RL_ABL345_20180701_20260204_CORPACTION_BRAPI_V1_report.md",
-    "02_Knowledge_Bank/Critical_Intel/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_SPLITFIX_REEXEC_V2_report.md",
-    "02_Knowledge_Bank/Critical_Intel/EXP_001_S008_TOP10S45_STRESSSELL_20180701_20260204_CORPACTION_BRAPI_V1_report.md",
-    "02_Knowledge_Bank/Critical_Intel/report_exp1_exp2_w4_det_hyb_after_corp_actions.md",
-    "02_Knowledge_Bank/Critical_Intel/EXP2_W4_COMBINED_report.md",
-    "02_Knowledge_Bank/Critical_Intel/EXP1_UNIQUE_W4_report.md",
-    "02_Knowledge_Bank/Critical_Intel/EXP_001_S008_TOP10S45_STRESSSELL_2019_20210630_V1_report.md",
-    "02_Knowledge_Bank/Critical_Intel/stress_reasons_ruleflags_report.md",
-    "02_Knowledge_Bank/Critical_Intel/stress_reasons_report.md",
     "agno_env/lib/python3.13/site-packages/sympy/plotting/tests/test_region_xor.png",
     "agno_env/lib/python3.13/site-packages/sympy/plotting/tests/test_region_or.png",
     "agno_env/lib/python3.13/site-packages/sympy/plotting/tests/test_region_not.png",

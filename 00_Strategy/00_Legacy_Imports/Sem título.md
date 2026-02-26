@@ -1,0 +1,1 @@
+obsidian://open?vault=CEP_BUNDLE_CORE&file=checklist_orientacoes_owner%201

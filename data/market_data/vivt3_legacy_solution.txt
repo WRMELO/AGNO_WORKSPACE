@@ -1,0 +1,11 @@
+FOUND: /home/wilson/CEP_BUNDLE_CORE/_tentativa2_reexecucao_completa_20260220/outputs/governanca/corporate_actions/20260224/policy_fix_vivt3_v1/evidence/vivt3_policy_resolution.json
+LOGIC EXTRACTED:
+- ticker=VIVT3
+- event_date=2025-04-15
+- candidate_factors={'A_product': 16.0, 'B_min': 2.0, 'C_max': 8.0}
+- chosen_candidate=B_min
+- chosen_factor=2.0
+- chosen_direction=PRE_TO_POST
+- decision_reason=min_abs_logret_tiebreak_pre_to_post_then_A_B_C
+- abs_logret_before=0.6947170395950653
+- abs_logret_after=0.0015698590351199693
