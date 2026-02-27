@@ -51,7 +51,7 @@
 
 | ID | Task Name | Phase | Status | Objective |
 |---|---|---|---|---|
-| T043 | Baseline Review (T041) + Findings Pack | Strategy | PENDING | Analisar T041 (curvas + shading + tabela) e produzir relatório curto com achados/hipóteses e recomendações. |
+| T043 | Local Rule Capture Protocol + Condition Ledger Schema | Strategy | DONE | Protocolo de captura de regras locais (CEP/Nelson/WE) sob condições determinadas + schema do Condition Ledger (blocos Mercado/Master). Terminologia mandatória fixada (Master=Carteira, Mercado=Ibov). Artefatos: `02_Knowledge_Bank/docs/process/STATE3_LOCAL_RULE_CAPTURE_PROTOCOL.md`, `STATE3_CONDITION_LEDGER_SCHEMA.md`. Audit PASS. |
 | T044 | Anti-Drift Guardrails (turnover/cadence caps) | Strategy | PENDING | Implementar guardrails e validar impacto em métricas T040 (sem quebrar reprodutibilidade). |
 | T045 | Plotly Accounting Decomposition (P&L/Cost/Cash) | Visualization | PENDING | Decomposição interativa baseada no ledger (inspirado no spec Masterplan V2 F1_002). |
 | T046 | Envelope / Guardrails Plotly Audit | Visualization | PENDING | Auditoria visual do envelope/fallback (inspirado no spec Masterplan V2 F2_003). |
