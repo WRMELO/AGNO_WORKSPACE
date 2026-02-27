@@ -36,11 +36,13 @@
 | T035 | EXP001 Exact Clone | Portfolio | ARCHIVED | Clone parcial sem Master Gate CEP |
 | T036 | Real Equity Visualization | Portfolio | ARCHIVED | Visualização do clone T035 |
 
-## STATE 3: M3 CANONICAL STRATEGY ENGINE (ACTIVE)
+## STATE 3: M3 CANONICAL STRATEGY ENGINE (STABLE)
 
-**Status:** [ IN PROGRESS ] | **Baseline:** M3 = `z(score_m0) + z(ret_62) - z(vol_62)` | **Governança:** Constituição V2 + MASTERPLAN V2
+**Status:** [ COMPLETED ] | **Baseline:** M3 = `z(score_m0) + z(ret_62) - z(vol_62)` | **Encerramento (Plotly):** `outputs/plots/T041_STATE3_PHASE1_COMPARATIVE.html` | **Governança:** Constituição V2 + MASTERPLAN V2
 | ID | Task Name | Phase | Status | Objective |
 |---|---|---|---|---|
-| T037 | M3 Canonical Engine | Strategy | DONE | Baseline M3 estabelecido. Artefatos: `T037_M3_SCORES_DAILY.parquet` (866K ticker-days), `T037_PORTFOLIO_LEDGER.parquet`, `T037_PORTFOLIO_CURVE.parquet`, `T037_BASELINE_SUMMARY.json`. CAGR=6.4%, MDD=-49.8%, Sharpe=0.43. Audit PASS. |
-| T038 | Master Gate Integration | Strategy | PENDING | Regime da Carteira (Master Gate): slope do `portfolio_logret` com histerese 2-in/3-out sobre T037 (per SPEC-002 e Glossario fixado). |
-| T039 | Severity Score + Partial Sells | Strategy | PENDING | Severity Score (SPEC-001), Partial Sells (SPEC-003), Nelson Proxies (SPEC-004), Anti-Drift: histerese + turnover cap + anti-reentry (MASTERPLAN V2). |
+| T037 | M3 Canonical Engine | Strategy | DONE | Baseline M3 estabelecido. Artefatos: `T037_M3_SCORES_DAILY.parquet` (866K ticker-days), `T037_PORTFOLIO_LEDGER.parquet`, `T037_PORTFOLIO_CURVE.parquet`, `T037_BASELINE_SUMMARY.json`. CAGR=8.8%, MDD=-45.0%, Sharpe=0.56. Audit PASS. |
+| T038 | Master Gate Integration | Strategy | DONE | Master Gate implementado: slope `portfolio_logret` W=4, histerese 2-in/3-out. Artefatos: `T038_PORTFOLIO_LEDGER.parquet`, `T038_PORTFOLIO_CURVE.parquet`, `T038_BASELINE_SUMMARY.json`. CAGR=2.8%, MDD=-47.9%, Sharpe=0.25, days_defensive=71.9%, num_switches=300. Audit PASS. |
+| T039 | Severity Score + Partial Sells | Strategy | DONE | Severity Score multi-fator (SPEC-001) + Partial Sells D+1 em 3 níveis (SPEC-003) + Nelson Proxies (SPEC-004) + Anti-Reentry. Artefatos: `T039_PORTFOLIO_LEDGER.parquet`, `T039_PORTFOLIO_CURVE.parquet`, `T039_BASELINE_SUMMARY.json`, `T039_M3_SCORES_DAILY.parquet`. CAGR=3.0%, MDD=-44.9%, Sharpe=0.25. Sells: 25%=97, 50%=61, 100%=95. Audit PASS. |
+| T040 | Metrics Suite Formal (SPEC-005) | Strategy | DONE | Materialização do pacote de métricas para T037/T038/T039 com `ANN_FACTOR=252`. Artefatos: `T040_METRICS_COMPARATIVE.json`, `T040_METRICS_BY_REGIME.csv`, `T040_METRICS_BY_SUBPERIOD.csv`. Coerência com baselines confirmada (CAGR diff < 0.1pp). Audit PASS. |
+| T041 | Plotly Comparativo STATE 3 Phase 1 | Visualization | DONE | HTML interativo com 5 curvas (T037/T038/T039/CDI/Ibov) normalizadas base R$100k, shading de regime defensivo (150 intervalos), tabela T040 com 11 métricas e anotações de eventos. Artefato: `outputs/plots/T041_STATE3_PHASE1_COMPARATIVE.html` (~419KB). Baseline visual oficial STATE 3 Phase 1. Audit PASS. |

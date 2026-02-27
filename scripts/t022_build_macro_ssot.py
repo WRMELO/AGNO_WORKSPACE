@@ -72,7 +72,9 @@ def main() -> None:
         macro[col] = macro[col].ffill().bfill()
 
     # D) Calculations.
-    macro["cdi_log_daily"] = np.log(np.power(1.0 + (macro["cdi_rate_annual_pct"] / 100.0), 1.0 / 252.0))
+    # BCB série 12 é taxa diária em percentual (% a.d.), não taxa anual.
+    # Converter para log-ret diário diretamente: log(1 + r_d).
+    macro["cdi_log_daily"] = np.log1p(macro["cdi_rate_annual_pct"] / 100.0)
     macro["sp500_log_ret"] = np.log(macro["sp500_close"] / macro["sp500_close"].shift(1))
     macro["ibov_log_ret"] = np.log(macro["ibov_close"] / macro["ibov_close"].shift(1))
     macro["sp500_log_ret"] = macro["sp500_log_ret"].replace([np.inf, -np.inf], np.nan).fillna(0.0)
@@ -98,6 +100,8 @@ def main() -> None:
     print(f"Date range: {output['date'].min()} -> {output['date'].max()}")
     print(f"Target file: {TARGET_FILE}")
     print(f"No NaNs: {not output.isna().any().any()}")
+    cdi_growth = float(np.expm1(output["cdi_log_daily"].astype(float).sum()))
+    print(f"CDI Growth (from cdi_log_daily): {cdi_growth:.6f}")
     print("")
     print("LAST 5 ROWS")
     print(output.tail(5).to_string(index=False))

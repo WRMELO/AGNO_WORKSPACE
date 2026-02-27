@@ -11,6 +11,7 @@ venv/
 
 # IDEs e Obsidian
 .obsidian/workspace
+.obsidian/workspace.json
 .obsidian/cache
 .idea/
 .vscode/
@@ -31,3 +32,9 @@ $RECYCLE.BIN/
 /datasets/
 /models/
 /logs/
+
+# Outputs volateis (baseline oficial permanece versionavel)
+outputs/*
+!outputs/plots/
+outputs/plots/*
+!outputs/plots/T041_STATE3_PHASE1_COMPARATIVE.html

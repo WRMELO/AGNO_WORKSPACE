@@ -29,6 +29,7 @@ BLACKLIST_FILE = Path("src/data_engine/ssot/SSOT_QUALITY_BLACKLIST_A001.json")
 OUT_SCORES = Path("src/data_engine/features/T037_M3_SCORES_DAILY.parquet")
 OUT_LEDGER = Path("src/data_engine/portfolio/T037_PORTFOLIO_LEDGER.parquet")
 OUT_CURVE = Path("src/data_engine/portfolio/T037_PORTFOLIO_CURVE.parquet")
+OUT_SUMMARY = Path("src/data_engine/portfolio/T037_BASELINE_SUMMARY.json")
 
 
 def load_blacklist() -> set[str]:
@@ -438,6 +439,10 @@ def main() -> None:
 
     cdi_wealth = (1.0 + curve["cdi_daily"]).cumprod()
     cdi_final = float(INITIAL_CAPITAL * cdi_wealth.iloc[-1] / cdi_wealth.iloc[0])
+    macro_aligned = macro[macro["date"].isin(curve["date"])].sort_values("date")
+    cdi_growth_simple = float((1.0 + curve["cdi_daily"].astype(float)).iloc[1:].prod() - 1.0)
+    cdi_growth_log = float(np.expm1(macro_aligned["cdi_log_daily"].astype(float).iloc[1:].sum()))
+    cdi_rel_err = abs(cdi_growth_simple - cdi_growth_log) / max(1e-12, abs(cdi_growth_log))
 
     panic_window = curve[
         (curve["date"] >= pd.Timestamp("2020-03-01"))
@@ -451,10 +456,39 @@ def main() -> None:
             & (ledger["date"] <= pd.Timestamp("2020-03-31"))
         ].shape[0])
 
+    summary = {
+        "task_id": "T037",
+        "equity_final": float(curve["equity_end"].iloc[-1]),
+        "cagr": float(portfolio_m["cagr"]),
+        "mdd": float(portfolio_m["mdd"]),
+        "sharpe": float(portfolio_m["sharpe"]),
+        "n_buys": n_buys,
+        "n_sells": n_sells,
+        "n_stress_sells": n_stress_sells,
+        "total_cost": total_cost,
+        "avg_exposure": float(curve["exposure"].mean()),
+        "avg_positions": float(curve["n_positions"].mean()),
+        "benchmark_ibov_final": float(curve["benchmark_ibov"].iloc[-1]),
+        "cdi_final": cdi_final,
+        "dates_simulated": int(len(curve)),
+        "panic_buys_mar2020": panic_buys,
+        "shapes": {
+            "scores_rows": int(len(scores_df)),
+            "ledger_rows": int(len(ledger)),
+            "curve_rows": int(len(curve)),
+        },
+    }
+    with open(OUT_SUMMARY, "w", encoding="utf-8") as f:
+        json.dump(summary, f, ensure_ascii=True, indent=2)
+        f.write("\n")
+
     print(f"  DATES_SIMULATED: {len(curve)}")
     print(f"  FINAL_EQUITY: R$ {curve['equity_end'].iloc[-1]:,.2f}")
     print(f"  FINAL_BENCHMARK_IBOV: R$ {curve['benchmark_ibov'].iloc[-1]:,.2f}")
     print(f"  FINAL_CDI_ACUM: R$ {cdi_final:,.2f}")
+    print(f"  CDI_GROWTH_SIMPLE: {cdi_growth_simple:.6f}")
+    print(f"  CDI_GROWTH_LOGSUM: {cdi_growth_log:.6f}")
+    print(f"  CDI_GROWTH_REL_ERR: {cdi_rel_err:.12f}")
     print(f"  TRADES: {n_buys} BUY + {n_sells} SELL = {n_buys + n_sells} total")
     print(f"  STRESS_SELLS: {n_stress_sells}")
     print(f"  TOTAL_COST: R$ {total_cost:,.2f}")
@@ -480,7 +514,14 @@ def main() -> None:
     print(f"OUT_SCORES: {OUT_SCORES}")
     print(f"OUT_LEDGER: {OUT_LEDGER}")
     print(f"OUT_CURVE: {OUT_CURVE}")
+    print(f"OUT_SUMMARY: {OUT_SUMMARY}")
     print()
+
+    if cdi_rel_err > 1e-6:
+        raise RuntimeError(
+            f"CDI sanity failed: rel_err={cdi_rel_err:.12f} exceeds 1e-6."
+        )
+
     print("OVERALL STATUS: [[ PASS ]]")
 
 

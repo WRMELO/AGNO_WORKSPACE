@@ -7,6 +7,7 @@
 
 ## SSOT e Licoes Aprendidas
 
+- `02_Knowledge_Bank/docs/STATE_3_PHASE1_BASELINE.md`
 - `02_Knowledge_Bank/Legacy_Corpus/lessons/LESSONS_LEARNED.json`
 - `02_Knowledge_Bank/Legacy_Corpus/lessons/LESSONS_LEARNED.md`
 - `02_Knowledge_Bank/Legacy_Corpus/source/corpus/lessons/LESSONS_LEARNED.json`

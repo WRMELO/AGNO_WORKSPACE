@@ -1,0 +1,42 @@
+{
+  "task_id": "T038",
+  "equity_final": 123163.09831590531,
+  "cagr": 0.028003276148067524,
+  "mdd": -0.4788832183913251,
+  "sharpe": 0.24731183464282105,
+  "n_buys": 237,
+  "n_sells": 175,
+  "n_stress_sells": 159,
+  "total_cost": 1155.887918975149,
+  "avg_exposure": 0.8828215997107406,
+  "avg_positions": 9.441640378548897,
+  "benchmark_ibov_final": 262225.425590335,
+  "cdi_final": 191638.86228484998,
+  "dates_simulated": 1902,
+  "panic_buys_mar2020": 10,
+  "num_switches": 300,
+  "days_defensive_pct": 0.7192429022082019,
+  "blocked_buy_events": 450,
+  "t037_baseline": {
+    "task_id": "T037",
+    "equity_final": 188809.16594836037,
+    "cagr": 0.08790342506632687,
+    "mdd": -0.450429503643034,
+    "sharpe": 0.5611575773152222,
+    "n_buys": 326,
+    "n_sells": 166,
+    "n_stress_sells": 156,
+    "total_cost": 1440.3189530251848,
+    "avg_exposure": 0.9494306086571362,
+    "avg_positions": 10.282334384858045,
+    "benchmark_ibov_final": 262225.425590335,
+    "cdi_final": 191638.86228484998,
+    "dates_simulated": 1902,
+    "panic_buys_mar2020": 13,
+    "shapes": {
+      "scores_rows": 866863,
+      "ledger_rows": 492,
+      "curve_rows": 1902
+    }
+  }
+}
