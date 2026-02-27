@@ -52,7 +52,12 @@
 | ID | Task Name | Phase | Status | Objective |
 |---|---|---|---|---|
 | T043 | Local Rule Capture Protocol + Condition Ledger Schema | Strategy | DONE | Protocolo de captura de regras locais (CEP/Nelson/WE) sob condições determinadas + schema do Condition Ledger (blocos Mercado/Master). Terminologia mandatória fixada (Master=Carteira, Mercado=Ibov). Artefatos: `02_Knowledge_Bank/docs/process/STATE3_LOCAL_RULE_CAPTURE_PROTOCOL.md`, `STATE3_CONDITION_LEDGER_SCHEMA.md`. Audit PASS. |
-| T044 | Anti-Drift Guardrails (turnover/cadence caps) | Strategy | PENDING | Implementar guardrails e validar impacto em métricas T040 (sem quebrar reprodutibilidade). |
+| T048 | Condition Ledger Implementation (Mercado vs Master) | Strategy | PENDING | Implementar geração do ledger diário conforme `02_Knowledge_Bank/docs/process/STATE3_CONDITION_LEDGER_SCHEMA.md` com gate terminológico `G0_GLOSSARY_COMPLIANCE` e manifesto SHA256. |
+| T049 | Episode Catalog Builder | Strategy | PENDING | Segmentar episódios por persistência de sinais do Mercado e materializar catálogo com métricas de deriva/custos por episódio. |
+| T050 | State Decisor (Finite State Machine) | Strategy | PENDING | Implementar especificação do decisor (estados mutuamente exclusivos) baseado primariamente em condições do Mercado; sem mistura bull/bear; com histerese apenas em transição. |
+| T051 | Local Rules Candidates (CEP/Nelson/WE) | Strategy | PENDING | Capturar e documentar regras locais fortes por estado, com critérios de promoção/robustez por subperíodo. |
+| T052 | Robustness Report (Subperiods) | Strategy | PENDING | Consolidar relatório de robustez e decisão de promoção de regras locais antes de qualquer ajuste de guardrails. |
 | T045 | Plotly Accounting Decomposition (P&L/Cost/Cash) | Visualization | PENDING | Decomposição interativa baseada no ledger (inspirado no spec Masterplan V2 F1_002). |
 | T046 | Envelope / Guardrails Plotly Audit | Visualization | PENDING | Auditoria visual do envelope/fallback (inspirado no spec Masterplan V2 F2_003). |
-| T047 | Oracle-dependent Metrics (definitions + implementation) | Metrics | PENDING | Definir e implementar métricas `missed_sell_rate`, `false_sell_rate`, `regret_3d` com critérios objetivos e evidência. |
+| T044 | Anti-Drift Guardrails (turnover/cadence caps) | Strategy | PENDING | Implementar guardrails e validar impacto em métricas T040 (sem quebrar reprodutibilidade), somente após `T052`. |
+| T047 | Oracle-dependent Metrics (definitions + implementation) | Metrics | PENDING | Definir e implementar métricas `missed_sell_rate`, `false_sell_rate`, `regret_3d` com critérios objetivos e evidência, após baseline estabilizado. |
