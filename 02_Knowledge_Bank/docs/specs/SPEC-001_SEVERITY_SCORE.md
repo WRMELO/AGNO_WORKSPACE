@@ -18,6 +18,7 @@ Fonte: `run_experiment.py` linhas 130-134, 278-281.
 Fonte: linhas 152-161.
 
 - `band = 0` se `z` nao finito ou `z >= 0`
+- `band = 0` se `-1 <= z < 0` (queda moderada, abaixo do limiar de sinal)
 - `band = 1` se `-2 <= z < -1`
 - `band = 2` se `-3 <= z < -2`
 - `band = 3` se `z < -3`
@@ -74,4 +75,3 @@ Fonte: `summary.json` (ablation W3/W4/W5 e W4 combinado).
 - O Severity Score e ortogonal ao ranking de compra.
 - Migracao F1 -> M3 nao altera a matematica do score.
 - M3 altera o universo de entradas; severidade continua operando sobre burners em carteira.
-

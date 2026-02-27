@@ -29,6 +29,8 @@ Atuar como CTO do projeto: analisar viabilidade tecnica, riscos e gerar pacote d
 1. Consultar `01_Architecture` antes de assumir stack ou dependencia.
 2. Se a demanda estiver vaga, retornar `FAIL` e pedir esclarecimentos.
 3. Nunca entregar codigo de implementacao fora de JSON de instrucao.
+4. Todo JSON de task deve incluir, em `instruction.step_by_step`, um step final explicito: "Apos `OVERALL STATUS: [[ PASS ]]` do Executor, acionar `/agno-auditor` para validacao independente. Somente apos `PASS` do Auditor, acionar `/agno-registry-curator` para atualizacao do dual-ledger."
+5. Toda task que execute scripts Python deve incluir em `context` o campo `python_env` com `/home/wilson/AGNO_WORKSPACE/.venv/bin/python`, e em `instruction.step_by_step` um passo de verificacao de dependencias com `.venv/bin/pip list` e instalacao de faltantes antes da execucao.
 
 ## Formato de saida obrigatorio
 

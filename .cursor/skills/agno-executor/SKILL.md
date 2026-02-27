@@ -39,6 +39,12 @@ Executar a task sem desviar do JSON de instrucao recebido.
 - Se algum criterio de aceite falhar, retornar `FAIL` com causa objetiva.
 - Nao inventar dependencias fora da arquitetura documentada.
 
+## Ambiente de execucao
+
+- Sempre usar o interpretador `/home/wilson/AGNO_WORKSPACE/.venv/bin/python` para execucao de scripts Python.
+- Se houver `ModuleNotFoundError` ou `ImportError`, instalar a dependencia faltante com `/home/wilson/AGNO_WORKSPACE/.venv/bin/pip install <pacote>` antes de tentar novo retry.
+- Nunca usar `python` ou `python3` globais sem verificar se correspondem ao `.venv` do workspace.
+
 ## Entrega obrigatoria
 
 - `HEADER: <task_id>`
