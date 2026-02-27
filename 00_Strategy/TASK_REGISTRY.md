@@ -46,3 +46,13 @@
 | T039 | Severity Score + Partial Sells | Strategy | DONE | Severity Score multi-fator (SPEC-001) + Partial Sells D+1 em 3 níveis (SPEC-003) + Nelson Proxies (SPEC-004) + Anti-Reentry. Artefatos: `T039_PORTFOLIO_LEDGER.parquet`, `T039_PORTFOLIO_CURVE.parquet`, `T039_BASELINE_SUMMARY.json`, `T039_M3_SCORES_DAILY.parquet`. CAGR=3.0%, MDD=-44.9%, Sharpe=0.25. Sells: 25%=97, 50%=61, 100%=95. Audit PASS. |
 | T040 | Metrics Suite Formal (SPEC-005) | Strategy | DONE | Materialização do pacote de métricas para T037/T038/T039 com `ANN_FACTOR=252`. Artefatos: `T040_METRICS_COMPARATIVE.json`, `T040_METRICS_BY_REGIME.csv`, `T040_METRICS_BY_SUBPERIOD.csv`. Coerência com baselines confirmada (CAGR diff < 0.1pp). Audit PASS. |
 | T041 | Plotly Comparativo STATE 3 Phase 1 | Visualization | DONE | HTML interativo com 5 curvas (T037/T038/T039/CDI/Ibov) normalizadas base R$100k, shading de regime defensivo (150 intervalos), tabela T040 com 11 métricas e anotações de eventos. Artefato: `outputs/plots/T041_STATE3_PHASE1_COMPARATIVE.html` (~419KB). Baseline visual oficial STATE 3 Phase 1. Audit PASS. |
+
+### NEXT — STATE 3 Phase 2 (PLANNED)
+
+| ID | Task Name | Phase | Status | Objective |
+|---|---|---|---|---|
+| T043 | Baseline Review (T041) + Findings Pack | Strategy | PENDING | Analisar T041 (curvas + shading + tabela) e produzir relatório curto com achados/hipóteses e recomendações. |
+| T044 | Anti-Drift Guardrails (turnover/cadence caps) | Strategy | PENDING | Implementar guardrails e validar impacto em métricas T040 (sem quebrar reprodutibilidade). |
+| T045 | Plotly Accounting Decomposition (P&L/Cost/Cash) | Visualization | PENDING | Decomposição interativa baseada no ledger (inspirado no spec Masterplan V2 F1_002). |
+| T046 | Envelope / Guardrails Plotly Audit | Visualization | PENDING | Auditoria visual do envelope/fallback (inspirado no spec Masterplan V2 F2_003). |
+| T047 | Oracle-dependent Metrics (definitions + implementation) | Metrics | PENDING | Definir e implementar métricas `missed_sell_rate`, `false_sell_rate`, `regret_3d` com critérios objetivos e evidência. |
