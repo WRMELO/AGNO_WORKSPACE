@@ -178,6 +178,7 @@
   },
   "active": "15cfb5716698651a",
   "lastOpenFiles": [
+    "src/data_engine/portfolio/T037_BASELINE_SUMMARY.json",
     "02_Knowledge_Bank/docs/specs/SPEC-006_RL_FRAMEWORK.md",
     "02_Knowledge_Bank/docs/specs/SPEC-005_METRICS_SUITE.md",
     "02_Knowledge_Bank/docs/specs/SPEC-004_NELSON_RULES_INTEGRATION.md",
@@ -222,7 +223,6 @@
     "00_Strategy/PHASE2_EXECUTION_PLAN.md",
     "02_Knowledge_Bank/Critical_Intel/docs_MASTERPLAN_V2.md",
     "02_Knowledge_Bank/Critical_Intel/git_sync_20260215_report.md",
-    "02_Knowledge_Bank/Critical_Intel/git_ssh_verify_20260215_report.md",
-    "02_Knowledge_Bank/Critical_Intel/git_ssh_fix_20260215_report.md"
+    "02_Knowledge_Bank/Critical_Intel/git_ssh_verify_20260215_report.md"
   ]
 }

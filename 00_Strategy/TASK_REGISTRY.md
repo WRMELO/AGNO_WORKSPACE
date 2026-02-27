@@ -41,6 +41,6 @@
 **Status:** [ IN PROGRESS ] | **Baseline:** M3 = `z(score_m0) + z(ret_62) - z(vol_62)` | **Governança:** Constituição V2 + MASTERPLAN V2
 | ID | Task Name | Phase | Status | Objective |
 |---|---|---|---|---|
-| T037 | M3 Canonical Engine | Strategy | PENDING | Ranking M3 + Burners SPC + custo 0.025% + CDI + blacklist A-001 |
-| T038 | Master Gate Integration | Strategy | PENDING | Master Gate CEP (Ibov Xbarra-R + I-MR) sobre T037 |
-| T039 | Anti-Drift Layer | Strategy | PENDING | Histerese + turnover cap + anti-reentry conforme MASTERPLAN V2 |
+| T037 | M3 Canonical Engine | Strategy | DONE | Baseline M3 estabelecido. Artefatos: `T037_M3_SCORES_DAILY.parquet` (866K ticker-days), `T037_PORTFOLIO_LEDGER.parquet`, `T037_PORTFOLIO_CURVE.parquet`, `T037_BASELINE_SUMMARY.json`. CAGR=6.4%, MDD=-49.8%, Sharpe=0.43. Audit PASS. |
+| T038 | Master Gate Integration | Strategy | PENDING | Regime da Carteira (Master Gate): slope do `portfolio_logret` com histerese 2-in/3-out sobre T037 (per SPEC-002 e Glossario fixado). |
+| T039 | Severity Score + Partial Sells | Strategy | PENDING | Severity Score (SPEC-001), Partial Sells (SPEC-003), Nelson Proxies (SPEC-004), Anti-Drift: histerese + turnover cap + anti-reentry (MASTERPLAN V2). |

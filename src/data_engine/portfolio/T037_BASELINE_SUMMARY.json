@@ -1,0 +1,22 @@
+{
+  "task_id": "T037",
+  "equity_final": 160023.26174013724,
+  "cagr": 0.0643419937658698,
+  "mdd": -0.4978639615923762,
+  "sharpe": 0.43088971011548366,
+  "n_buys": 392,
+  "n_sells": 191,
+  "n_stress_sells": 175,
+  "total_cost": 1451.6260801501628,
+  "avg_exposure": 0.9418853785624572,
+  "avg_positions": 10.474763406940063,
+  "benchmark_ibov_final": 261377.7843218012,
+  "cdi_final": 100258.44549498652,
+  "dates_simulated": 1902,
+  "panic_buys_mar2020": 11,
+  "shapes": {
+    "scores_rows": 866863,
+    "ledger_rows": 583,
+    "curve_rows": 1902
+  }
+}
