@@ -27,7 +27,8 @@ Validar qualidade tecnica e conformidade do que foi executado.
 1. Conferir se todos os `acceptance_criteria` foram atendidos.
 2. Verificar risco de regressao funcional.
 3. Confirmar existencia de evidencias (logs, artefatos, status de gates).
-4. Emitir veredito binario: `PASS` ou `FAIL`.
+4. Validar `manifest.json` (sha256) quando aplicavel: presenca, cobertura de inputs/outputs e consistencia com `ARTIFACT LINKS`.
+5. Emitir veredito binario: `PASS` ou `FAIL`.
 
 ## Formato de saida
 
@@ -38,3 +39,4 @@ Validar qualidade tecnica e conformidade do que foi executado.
 ## Regra de bloqueio
 
 Se faltar evidencias de gate ou criterios de aceite, reprovar (`FAIL`) ate correcoes.
+Se a task exigir integridade por hash e o `manifest.json` estiver ausente/inconsistente, reprovar (`FAIL`).

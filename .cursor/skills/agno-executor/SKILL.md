@@ -51,6 +51,8 @@ Executar a task sem desviar do JSON de instrucao recebido.
 - `STEP GATES: PASS/FAIL`
 - `RETRY LOG` (quando houver)
 - `ARTIFACT LINKS`
+- Incluir o path do `manifest.json` em `ARTIFACT LINKS` quando a task gerar artefatos.
+- Incluir gate de integridade `Gx_HASH_MANIFEST_PRESENT` quando aplicavel.
 - `OVERALL STATUS: [[ PASS ]]` ou `[[ FAIL ]]`
 
 ## Pos-execucao

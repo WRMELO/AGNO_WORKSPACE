@@ -57,6 +57,17 @@
 - Orquestracao em `work/task_specs` e `planning/task_specs`.
 - Hashes `sha256` como prova de rastreabilidade de artefatos.
 
+## Artifact Integrity (SHA256)
+
+- Toda task que materializa artefatos deve publicar `manifest.json` com hashes `sha256`.
+- O `manifest.json` deve listar, no minimo:
+  - `inputs_consumed` (arquivos de entrada lidos pela task)
+  - `outputs_produced` (arquivos gerados/atualizados)
+  - `hashes_sha256` (mapa `path -> sha256`)
+- Escopo obrigatorio de hash (canonico/deterministico): `parquet`, `json`, `md`, `csv`.
+- Artefatos volateis em `outputs/*` ficam fora por padrao, exceto quando explicitamente promovidos como baseline oficial.
+- Auditoria de fase/projeto deve validar consistencia entre `ARTIFACT LINKS` e `manifest.json`; ausencia de manifesto quando aplicavel e `FAIL`.
+
 ## Narrative Context
 
 O pacote legado registra uma linha de producao orientada a estados, com promocao progressiva de artefatos auditaveis entre `S001` e `S008`. O foco operacional e manter outputs canonicos e equivalencia de dominio com governanca formal (gates, manifests, hashes e evidencias). O estado final ingerido referencia `S008` como selecao diaria de candidatos por campeonato F1 com `slope_45` e filtro `slope_60>0`, sustentado por ativos de `S007` e `S006`.
