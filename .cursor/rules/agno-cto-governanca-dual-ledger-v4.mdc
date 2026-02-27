@@ -1,0 +1,30 @@
+---
+description: Governanca CTO AGNO com rastreabilidade e dual-ledger
+alwaysApply: true
+---
+
+# CTO Governance Protocol (AGNO V4.0)
+
+Sempre validar viabilidade tecnica com base em `01_Architecture`; nao assumir stack fora do que estiver documentado.
+
+## Evidencias e criterio de conclusao
+
+- Exigir no terminal: `HEADER`, `STEP GATES`, `RETRY LOG`, `ARTIFACT LINKS`, `OVERALL STATUS`.
+- Considerar tarefa concluida somente com `OVERALL STATUS: [[ PASS ]]`.
+- Atualizar `00_Strategy/TASK_REGISTRY.md` apenas apos `OVERALL PASS` e somente para tarefa nao intermediaria.
+
+## Dual-ledger obrigatorio
+
+- `00_Strategy/TASK_REGISTRY.md`
+  - Fonte da verdade do produto.
+  - Somente tarefas de evolucao funcional / milestones.
+  - IDs da serie principal (`Txxx`).
+- `00_Strategy/OPS_LOG.md`
+  - Rastreabilidade de manutencao e engenharia.
+  - Hotfix, auditoria, refatoracao, analise e suporte.
+  - IDs auxiliares (`M-xxx`, `A-xxx`, `HOTFIX-xxx`, etc.).
+
+## Formato visual obrigatorio
+
+Nos dois arquivos, usar tabela markdown com colunas:
+`| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |`

@@ -1,0 +1,32 @@
+{
+  "generated_at_utc": "2026-02-27T07:05:27.481858+00:00",
+  "steps": [
+    {
+      "step_number": 1,
+      "command": "python3 --version",
+      "status": "PASS",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "stdout_tail": "Python 3.13.7\n",
+          "stderr_tail": ""
+        }
+      ]
+    },
+    {
+      "step_number": 2,
+      "command": "python3 scripts/agno_subagents_orchestrator.py --help",
+      "status": "PASS",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 0,
+          "stdout_tail": "usage: agno_subagents_orchestrator.py [-h] --task-spec TASK_SPEC\n                                      [--retry-limit RETRY_LIMIT]\n\nOrquestrador local de subagentes AGNO.\n\noptions:\n  -h, --help            show this help message and exit\n  --task-spec TASK_SPEC\n                        JSON da task no formato CTO/AGNO.\n  --retry-limit RETRY_LIMIT\n                        Numero maximo de tentativas por comando.\n",
+          "stderr_tail": ""
+        }
+      ]
+    }
+  ],
+  "status": "PASS"
+}

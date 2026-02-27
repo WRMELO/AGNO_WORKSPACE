@@ -1,0 +1,34 @@
+{
+  "task_id": "TASK-EXAMPLE-SUBAGENTS-001",
+  "task_spec": "scripts/examples/subagents_task_spec.example.json",
+  "run_dir": "outputs/governanca/subagents/TASK-EXAMPLE-SUBAGENTS-001/run_20260227_041331",
+  "gates": [
+    {
+      "gate_id": "G1_SPEC_SCHEMA_MIN",
+      "status": "PASS",
+      "details": "missing=[]"
+    },
+    {
+      "gate_id": "G2_FIXED_MODEL_ROUTING",
+      "status": "PASS",
+      "details": "routing_fixed"
+    },
+    {
+      "gate_id": "G3_ARCHITECT_PACKET",
+      "status": "PASS",
+      "details": "architect_packet.json gerado"
+    },
+    {
+      "gate_id": "G4_EXECUTOR",
+      "status": "PASS",
+      "details": "steps=2"
+    },
+    {
+      "gate_id": "G5_AUDITOR",
+      "status": "PASS",
+      "details": "checks=1"
+    }
+  ],
+  "overall_status": "PASS",
+  "timestamp_utc": "2026-02-27T07:13:31.782459+00:00"
+}

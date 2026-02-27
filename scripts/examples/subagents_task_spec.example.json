@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "task_id": "TASK-EXAMPLE-SUBAGENTS-001",
+    "timestamp": "2026-02-27T00:00:00Z",
+    "priority": "Medium"
+  },
+  "context": {
+    "target_files": [
+      "scripts/agno_subagents_orchestrator.py",
+      "00_Strategy/OPS_LOG.md"
+    ],
+    "dependencies_check": "python3 --version"
+  },
+  "instruction": {
+    "step_by_step": [
+      "1. Validar ambiente python e estrutura do repo.",
+      "2. Executar comandos definidos no bloco executor.",
+      "3. Rodar auditoria via checks e consolidar veredito."
+    ],
+    "acceptance_criteria": [
+      "Todos os comandos do executor com exit code 0.",
+      "Todos os checks do auditor com exit code 0."
+    ]
+  },
+  "traceability": {
+    "update_log_file": "00_Strategy/OPS_LOG.md",
+    "log_message": "chore(subagents): run example orchestration gates"
+  },
+  "agent_routing": {
+    "agno-architect": "Opus 4.6 (extended reasoning)",
+    "agno-executor": "GPT-5.3 Codex",
+    "agno-auditor": "Opus 4.6 (extended reasoning)",
+    "agno-registry-curator": "Sonnet 4.6"
+  },
+  "executor": {
+    "commands": [
+      "python3 --version",
+      "python3 scripts/agno_subagents_orchestrator.py --help"
+    ]
+  },
+  "audit": {
+    "checks": [
+      "test -f scripts/agno_subagents_orchestrator.py"
+    ]
+  }
+}

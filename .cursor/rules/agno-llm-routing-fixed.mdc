@@ -1,0 +1,21 @@
+---
+description: Roteamento fixo de LLMs para subagentes AGNO
+alwaysApply: true
+---
+
+# AGNO Fixed LLM Routing
+
+Este projeto usa roteamento fixo de modelos por subagente para manter continuidade tecnica.
+
+## Mapeamento obrigatorio
+
+- `agno-architect`: `Opus 4.6` com raciocinio estendido (sempre).
+- `agno-executor`: `GPT-5.3 Codex`.
+- `agno-auditor`: `Opus 4.6` com raciocinio estendido (sempre).
+- `agno-registry-curator`: `Sonnet 4.6`.
+
+## Regras
+
+- Nao fazer fallback automatico para outros modelos nesses papeis.
+- Se houver indisponibilidade de modelo, pausar e reportar `FAIL` com motivo explicito.
+- Preservar o protocolo AGNO de gates, rastreabilidade e dual-ledger.

@@ -1,0 +1,56 @@
+{
+  "generated_at_utc": "2026-02-27T07:05:17.207250+00:00",
+  "steps": [
+    {
+      "step_number": 1,
+      "command": "python --version",
+      "status": "FAIL",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 127,
+          "stdout_tail": "",
+          "stderr_tail": "bash: linha 1: python: comando n\u00e3o encontrado\n"
+        },
+        {
+          "attempt": 2,
+          "exit_code": 127,
+          "stdout_tail": "",
+          "stderr_tail": "bash: linha 1: python: comando n\u00e3o encontrado\n"
+        },
+        {
+          "attempt": 3,
+          "exit_code": 127,
+          "stdout_tail": "",
+          "stderr_tail": "bash: linha 1: python: comando n\u00e3o encontrado\n"
+        }
+      ]
+    },
+    {
+      "step_number": 2,
+      "command": "python scripts/agno_subagents_orchestrator.py --help",
+      "status": "FAIL",
+      "attempts": [
+        {
+          "attempt": 1,
+          "exit_code": 127,
+          "stdout_tail": "",
+          "stderr_tail": "bash: linha 1: python: comando n\u00e3o encontrado\n"
+        },
+        {
+          "attempt": 2,
+          "exit_code": 127,
+          "stdout_tail": "",
+          "stderr_tail": "bash: linha 1: python: comando n\u00e3o encontrado\n"
+        },
+        {
+          "attempt": 3,
+          "exit_code": 127,
+          "stdout_tail": "",
+          "stderr_tail": "bash: linha 1: python: comando n\u00e3o encontrado\n"
+        }
+      ]
+    }
+  ],
+  "status": "FAIL"
+}

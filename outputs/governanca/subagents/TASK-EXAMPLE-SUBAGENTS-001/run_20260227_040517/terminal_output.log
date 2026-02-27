@@ -1,0 +1,25 @@
+HEADER: TASK-EXAMPLE-SUBAGENTS-001
+
+STEP GATES:
+- G1_SPEC_SCHEMA_MIN: PASS | missing=[]
+- G2_ARCHITECT_PACKET: PASS | architect_packet.json gerado
+- G3_EXECUTOR: FAIL | steps=2
+- G4_AUDITOR: PASS | checks=1
+
+RETRY LOG:
+- step 1 (FAIL): python --version
+  - attempt 1: exit_code=127
+  - attempt 2: exit_code=127
+  - attempt 3: exit_code=127
+- step 2 (FAIL): python scripts/agno_subagents_orchestrator.py --help
+  - attempt 1: exit_code=127
+  - attempt 2: exit_code=127
+  - attempt 3: exit_code=127
+
+ARTIFACT LINKS:
+- architect_packet.json
+- executor_report.json
+- auditor_report.json
+- run_summary.json
+
+OVERALL STATUS: [[ FAIL ]]

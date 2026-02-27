@@ -1,0 +1,24 @@
+{
+  "task_id": "TASK-EXAMPLE-SUBAGENTS-001",
+  "generated_at_utc": "2026-02-27T07:13:31.698530+00:00",
+  "priority": "Medium",
+  "agent_routing": {
+    "agno-architect": "Opus 4.6 (extended reasoning)",
+    "agno-executor": "GPT-5.3 Codex",
+    "agno-auditor": "Opus 4.6 (extended reasoning)",
+    "agno-registry-curator": "Sonnet 4.6"
+  },
+  "target_files": [
+    "scripts/agno_subagents_orchestrator.py",
+    "00_Strategy/OPS_LOG.md"
+  ],
+  "step_by_step": [
+    "1. Validar ambiente python e estrutura do repo.",
+    "2. Executar comandos definidos no bloco executor.",
+    "3. Rodar auditoria via checks e consolidar veredito."
+  ],
+  "acceptance_criteria": [
+    "Todos os comandos do executor com exit code 0.",
+    "Todos os checks do auditor com exit code 0."
+  ]
+}
