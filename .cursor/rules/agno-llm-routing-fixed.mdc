@@ -9,13 +9,18 @@ Este projeto usa roteamento fixo de modelos por subagente para manter continuida
 
 ## Mapeamento obrigatorio
 
-- `agno-architect`: `Opus 4.6` com raciocinio estendido (sempre).
+- `agno-architect`: `GPT-5.2 High` (sempre).
 - `agno-executor`: `GPT-5.3 Codex`.
-- `agno-auditor`: `Opus 4.6` com raciocinio estendido (sempre).
-- `agno-registry-curator`: `Sonnet 4.6`.
+- `agno-auditor`: `Opus 4.6 Max` com raciocinio estendido (sempre).
+- `agno-registry-curator`: `Opus 4.6 Max`.
 
 ## Regras
 
 - Nao fazer fallback automatico para outros modelos nesses papeis.
 - Se houver indisponibilidade de modelo, pausar e reportar `FAIL` com motivo explicito.
 - Preservar o protocolo AGNO de gates, rastreabilidade e dual-ledger.
+
+## Nota operacional (verificacao)
+
+- O roteamento e fixo por papel, mas o agente nao consegue ler a UI do Cursor diretamente via ferramentas.
+- Portanto, a verificacao de “modelo em uso” so pode ser feita quando houver **evidência explícita no chat**; caso contrario, registrar como **UNVERIFIED** sem bloquear o fluxo (falhar apenas em mismatch explícito).

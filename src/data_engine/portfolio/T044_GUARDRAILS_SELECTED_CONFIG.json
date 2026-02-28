@@ -1,0 +1,30 @@
+{
+  "selected_candidate_id": "C021",
+  "selected_params": {
+    "buy_cadence_days": 81,
+    "buy_turnover_cap_ratio": null,
+    "candidate_id": "C021",
+    "params_json": "{\"buy_cadence_days\": 81, \"buy_turnover_cap_ratio\": null}"
+  },
+  "selection_stats": {
+    "CAGR_total": 0.19073259969307532,
+    "MDD_total": -0.1698390382424848,
+    "buy_cadence_days": 81,
+    "buy_turnover_cap_ratio": null,
+    "candidate_id": "C021",
+    "cost_total_total": 230.01696850003177,
+    "days_with_budget_binding": 0,
+    "days_with_cadence_binding": 321,
+    "equity_final_total": 380503.510168669,
+    "median_eq_ratio_vs_t037": 1.504306873834744,
+    "median_mdd_delta_vs_t037": 0.092957852689733,
+    "median_turnover_total": 0.1597029891127267,
+    "n_buy_blocked_by_budget": 0,
+    "n_buy_blocked_by_cadence": 3210,
+    "num_switches_total": 193,
+    "params_json": "{\"buy_cadence_days\": 81, \"buy_turnover_cap_ratio\": null}",
+    "sharpe_total": 1.750337940075267,
+    "turnover_total_total": 3.896927616447639
+  },
+  "task_id": "T044-ANTI-DRIFT-GUARDRAILS-V2"
+}

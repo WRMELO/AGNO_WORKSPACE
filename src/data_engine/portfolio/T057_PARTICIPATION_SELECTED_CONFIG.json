@@ -1,0 +1,41 @@
+{
+  "selected_candidate_id": "C022",
+  "selected_params": {
+    "buy_cadence_days": 81,
+    "buy_turnover_cap_ratio": 0.09996350834743271,
+    "candidate_id": "C022",
+    "params_json": "{\"buy_cadence_days\": 81, \"buy_turnover_cap_ratio\": 0.09996350834743271}"
+  },
+  "selection_stats": {
+    "CAGR_total": 0.09535596327506979,
+    "MDD_total": -0.02198380859482163,
+    "avg_cash_weight_total": 0.9976641799005237,
+    "avg_exposure_total": 0.002335820099476252,
+    "buy_cadence_days": 81,
+    "buy_turnover_cap_ratio": 0.09996350834743271,
+    "candidate_id": "C022",
+    "cost_total_total": 11.656732500000526,
+    "days_cash_ge_090_frac_total": 0.9947423764458465,
+    "days_defensive_frac_total": 0.9584647739221872,
+    "days_with_budget_binding": 2,
+    "days_with_cadence_binding": 78,
+    "equity_final_total": 200859.68414820806,
+    "n_buy_blocked_by_budget": 18,
+    "n_buy_blocked_by_cadence": 780,
+    "num_switches_total": 31,
+    "p50_exposure_total": 0.0,
+    "params_json": "{\"buy_cadence_days\": 81, \"buy_turnover_cap_ratio\": 0.09996350834743271}",
+    "r_avg_exposure_total": 1.0,
+    "r_cash_090_total": 1.0,
+    "r_eq_total": 0.32,
+    "r_mdd_total": 0.04,
+    "r_time_in_market_total": 1.0,
+    "r_turnover_total": 0.04,
+    "robust_score": 0.5466666666666665,
+    "score_total": 0.5666666666666667,
+    "sharpe_total": 5.166605248017456,
+    "time_in_market_frac_total": 0.09726603575184017,
+    "turnover_total_total": 0.3381959799813364
+  },
+  "task_id": "T057-PARTICIPATION-GUARDRAILS-V1"
+}

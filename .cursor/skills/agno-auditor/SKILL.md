@@ -11,8 +11,30 @@ Validar qualidade tecnica e conformidade do que foi executado.
 
 ## Modelo fixo
 
-- Usar sempre `Opus 4.6` com raciocinio estendido.
+- Usar sempre `Opus 4.6 Max` com raciocinio estendido.
 - Nao fazer fallback de modelo para este papel.
+
+## GATE: MODEL ROUTING (OBRIGATORIO)
+
+Antes de QUALQUER auditoria, confirmar que o modelo em uso e o esperado para este papel.
+
+**Fonte de verdade (quando houver evidência disponível no chat):** o label exibido no seletor de modelo da UI do Cursor (ex.: no rodapé), quando o Owner colar/sinalizar explicitamente esse label (ou anexar evidência textual/visual).
+
+**Limitacao operacional:** o agente nao consegue “ler” a UI do Cursor diretamente via ferramentas. Na ausencia de evidência explícita no chat, o gate opera em modo **best-effort** (nao-bloqueante) e deve registrar **UNVERIFIED**.
+
+- Esperado: `Opus 4.6 Max`
+
+Se houver **evidência explícita** de mismatch (ex.: label da UI diferente do esperado, ou o Owner declarar mismatch), deve:
+
+1. **PARAR IMEDIATAMENTE**.
+2. Responder com status **`FAIL_MODEL_ROUTING`** e explicar: modelo esperado vs modelo em uso.
+3. **Nao continuar** ate o Owner mandar explicitamente retomar apos corrigir o modelo (ex.: `OWNER: AUTORIZADO A RETOMAR COM O MODELO CORRETO`).
+
+Se **nao for possível verificar** o modelo em uso (ausência de evidência explícita), deve:
+
+1. **NAO BLOQUEAR** a auditoria.
+2. Marcar o gate como **`PASS_MODEL_ROUTING_UNVERIFIED`** e registrar o risco no output (ex.: “Model routing: UNVERIFIED (sem evidência no chat)”).
+3. **Nao** solicitar ao Owner o label como pre-requisito para continuar; apenas aceitar evidência se ela surgir espontaneamente no contexto.
 
 ## Cadeia de comando
 
