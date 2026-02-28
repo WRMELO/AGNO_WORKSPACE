@@ -1,0 +1,15 @@
+{
+  "buy_turnover_cap_ratio": 0.1,
+  "cadence_days": 81,
+  "in_hyst_days": 4,
+  "market_mu_window": 62,
+  "market_slope_window": 30,
+  "out_hyst_days": 4,
+  "selected_candidate_id": "SW30_IN4_OUT4_CAP0p10",
+  "task_id": "T063-MARKET-SLOPE-REENTRY-ABLATION-V2",
+  "thresholds": {
+    "MDD_total_min": -0.3,
+    "reentry_subperiod_time_in_market_min": 0.05,
+    "turnover_total_total_max": 8.0
+  }
+}

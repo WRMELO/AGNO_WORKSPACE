@@ -1,0 +1,15 @@
+{
+  "avg_exposure": 0.09068108953452947,
+  "cagr": 0.1348120976931786,
+  "days_cash_ge_090_frac": 0.5699263932702419,
+  "days_defensive_frac": 0.49737118822292326,
+  "equity_final": 259670.75723526356,
+  "mdd": -0.045133723359252476,
+  "num_switches": 48,
+  "reentry_subperiod_time_in_market": 1.0,
+  "selected_candidate_id": "SW30_IN4_OUT4_CAP0p10",
+  "sharpe": 2.2494830323081105,
+  "task_id": "T063-MARKET-SLOPE-REENTRY-ABLATION-V2",
+  "time_in_market_frac": 0.7281808622502629,
+  "turnover_total": 2.7555936018255935
+}

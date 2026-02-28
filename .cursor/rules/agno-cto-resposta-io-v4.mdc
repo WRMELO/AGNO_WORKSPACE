@@ -13,6 +13,14 @@ Antes de QUALQUER resposta (incluindo planejamento, auditoria, curadoria ou exec
 
 **Fonte de verdade para o modelo em uso (quando houver evidência disponível no chat):** o label exibido no seletor de modelo da UI do Cursor (ex.: no rodapé), quando o Owner colar/sinalizar explicitamente esse label (ou anexar evidência textual/visual).
 
+**Normalizacao do label (anti-falso-mismatch):** se a evidência vier com um banner do tipo `Powered by ...`, **ignorar/remover** esse prefixo e comparar apenas o **nome do modelo**.
+
+- Regras praticas de extracao:
+  - Remover prefixos case-insensitive: `powered by`, `Powered by`.
+  - Se houver separadores (`—`, `-`, `|`, `:`), usar o **ultimo segmento** como candidato ao nome do modelo.
+  - Trim + colapsar espacos (ex.: multiplos espacos → 1 espaco).
+  - Comparacao: **match exato** do nome extraido vs o modelo esperado do papel (mapeamento abaixo).
+
 **Limitacao operacional:** o agente nao consegue “ler” a UI do Cursor diretamente via ferramentas. Logo, na ausencia de evidência explícita no chat, o gate deve operar em modo **best-effort** (nao-bloqueante), registrando **UNVERIFIED**.
 
 Se houver **evidência explícita** de mismatch (ex.: label da UI diferente do esperado, ou o Owner declarar mismatch), deve:
@@ -62,6 +70,15 @@ Mapeamento mandatado:
   "traceability": { "update_log_file": "path/to/changelog.md", "log_message": "STRING PARA O COMMIT" }
 }
 ```
+
+## Gate adicional: CHANGELOG (OBRIGATORIO)
+
+- O arquivo canônico de timeline operacional do repo é **`00_Strategy/changelog.md`**.
+- **Toda task rodada** (com `OVERALL STATUS: [[ PASS ]]` ou `[[ FAIL ]]`) deve gerar **uma linha** no `00_Strategy/changelog.md` no formato:
+  - `- <ISO8601_UTC> | <CATEGORIA>: <TASK_ID> <Resumo curto>. Artefatos: <paths principais>`
+- Para manter rastreabilidade determinística, o JSON do Architect deve sempre setar:
+  - `traceability.update_log_file = "00_Strategy/changelog.md"`
+  - `traceability.log_message` contendo **a linha exata** a ser anexada.
 
 4. **Pergunta de autorizacao**: `Owner, autoriza execucao?`
 

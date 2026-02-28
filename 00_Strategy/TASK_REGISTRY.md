@@ -1,5 +1,23 @@
 # AGNO TASK REGISTRY & PRODUCT STATE
 
+## ROADMAPS (Planejamento)
+
+- Phase 3 (participação sem reabrir deriva): `00_Strategy/ROADMAP.md` *(seção “STATE 3 — Phase 3”; PENDING/planejamento; promoção aqui somente após PASS do Auditor).*
+
+## STABLE MILESTONES INDEX (stable-only)
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T023 | Canonical Builder (SPC) | STATE 1 | DONE | `SSOT_CANONICAL_BASE.parquet` | N/A |
+| A-001 | SSOT Canonical Base Audit | STATE 2 | DONE | Auditoria forense + gates PASS | N/A |
+| BL-001 | Quality Blacklist A-001 | STATE 2 | DONE | `SSOT_QUALITY_BLACKLIST_A001.json` | N/A |
+| T037 | M3 Canonical Engine | STATE 3 | DONE | `T037_*` parquet/json (baseline canônico) | N/A |
+| T044 | Anti-Drift Guardrails | STATE 3 Phase 2 | DONE | `T044_*` + manifest/report | N/A |
+| T055 | Plotly Phase 2 Final (veredicto visual) | STATE 3 Phase 2 | DONE | `outputs/plots/T055_STATE3_PHASE2_FINAL_COMPARATIVE.html` | N/A |
+| T056 | Phase 2 Lessons Learned (canônico) | STATE 3 Phase 2 | DONE | `STATE3_PHASE2_LESSONS_LEARNED_T056.md` | N/A |
+| T059 | Participation Objective v2 (constraints + selection) | STATE 3 Phase 3 | DONE | `T059_PARTICIPATION_SELECTED_CONFIG_V2.json` + manifest | 2026-02-28T18:12:59Z |
+| T060 | Phase 3 Comparative Plotly Final | STATE 3 Phase 3 | DONE | `T060_STATE3_PHASE3_FINAL_COMPARATIVE.html` + manifest | 2026-02-28T18:30:01Z |
+
 ## STATE 1: CANONICAL DATA ENGINE (STABLE)
 
 **Status:** [ COMPLETED ] | **Artifact:** `SSOT_CANONICAL_BASE.parquet`
@@ -46,6 +64,15 @@
 | T039 | Severity Score + Partial Sells | Strategy | DONE | Severity Score multi-fator (SPEC-001) + Partial Sells D+1 em 3 níveis (SPEC-003) + Nelson Proxies (SPEC-004) + Anti-Reentry. Artefatos: `T039_PORTFOLIO_LEDGER.parquet`, `T039_PORTFOLIO_CURVE.parquet`, `T039_BASELINE_SUMMARY.json`, `T039_M3_SCORES_DAILY.parquet`. CAGR=3.0%, MDD=-44.9%, Sharpe=0.25. Sells: 25%=97, 50%=61, 100%=95. Audit PASS. |
 | T040 | Metrics Suite Formal (SPEC-005) | Strategy | DONE | Materialização do pacote de métricas para T037/T038/T039 com `ANN_FACTOR=252`. Artefatos: `T040_METRICS_COMPARATIVE.json`, `T040_METRICS_BY_REGIME.csv`, `T040_METRICS_BY_SUBPERIOD.csv`. Coerência com baselines confirmada (CAGR diff < 0.1pp). Audit PASS. |
 | T041 | Plotly Comparativo STATE 3 Phase 1 | Visualization | DONE | HTML interativo com 5 curvas (T037/T038/T039/CDI/Ibov) normalizadas base R$100k, shading de regime defensivo (150 intervalos), tabela T040 com 11 métricas e anotações de eventos. Artefato: `outputs/plots/T041_STATE3_PHASE1_COMPARATIVE.html` (~419KB). Baseline visual oficial STATE 3 Phase 1. Audit PASS. |
+
+### STATE 3 Phase 3 (IN PROGRESS)
+
+**Objetivo:** recuperar participação no mercado acionário (exposure / time-in-market) sem reabrir deriva/drawdown, com seleção data-driven (ablação + constraints determinísticas).
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T059 | Participation Objective v2 (constraints + deterministic selection) | Strategy | DONE | Ablação com constraints hard anti-CDI-only (time_in_market>=0.40, avg_exposure>=0.15, days_cash_ge_090<=0.85, MDD>=-0.30, turnover<=8.0). feasible_count=3/25. Vencedor C007 (cadence=18, cap=~10%). time_in_market=1.0, avg_exposure=0.175, MDD=-9.6%, Sharpe=1.23, equity_final=R$192k. Artefatos: `T059_PARTICIPATION_SELECTED_CONFIG_V2.json`, `T059_PORTFOLIO_CURVE_PARTICIPATION_V2.parquet`, `T059_BASELINE_SUMMARY_V2.json`, `T059-PARTICIPATION-OBJECTIVE-V2_manifest.json`, `t059_participation_objective_v2_ablation.py`. Audit PASS. | 2026-02-28T18:12:59Z |
+| T060 | Phase 3 Comparative Plotly Final (T059 vs T044/T039/T037/CDI/Ibov) | Visualization | DONE | Dashboard Plotly final com 6 equity traces (T059/T044/T039/T037/CDI/Ibov) rebased R$100k + 4 drawdown traces + regime shading (T059 roxo, T044 vermelho, T039 azul). common_dates=1902 (2018-07-02..2026-02-26). equity_norm_final: T059=R$192k, T044=R$380k, T039=R$125k, T037=R$189k, CDI=R$192k, IBOV=R$262k. Artefatos: `T060_STATE3_PHASE3_FINAL_COMPARATIVE.html`, `T060-PHASE3-PLOTLY-FINAL-V1_report.md`, `T060-PHASE3-PLOTLY-FINAL-V1_manifest.json`, evidências (`metrics_snapshot.json`, `plot_inventory.json`), `t060_plotly_phase3_final_comparative.py`. Audit PASS. | 2026-02-28T18:30:01Z |
 
 ### STATE 3 Phase 2 (COMPLETED)
 

@@ -4,6 +4,48 @@
 
 Executar a evolucao do ambiente AGNO com foco em portabilidade, reducao de complexidade operacional e governanca orientada a `Overall PASS`.
 
+---
+
+## STATE 3 — Phase 3: participação sem reabrir deriva
+
+**Objetivo do ciclo**: recuperar **participação no mercado acionário** (exposure / time-in-market) **sem** reabrir deriva/drawdown, com **seleção data-driven** (ablação + regra objetiva), evitando parâmetros arbitrários.
+
+> Governança (original): este ROADMAP concentra **planejamento/backlog**. O `00_Strategy/TASK_REGISTRY.md` mantém apenas tarefas que definiram **estados estáveis** (DONE/COMPLETED/ARCHIVED).
+
+### Fase 3A — Diagnóstico: dependência do período inicial (Start 2023)
+
+**Objetivo**: testar **path-dependence** e reavaliar o comportamento a partir do 1º pregão de 2023 (rebasing R$100k), mantendo comparabilidade visual no estilo T055.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T058 | Start-2023 Plotly Comparative (T044/T039/T037 vs CDI/Ibov) | STATE3-P3A (Start 2023) | DONE | `outputs/plots/T058_STATE3_START2023_COMPARATIVE.html` + report + manifest | 2026-02-28 |
+
+### Fase 3B — Solução: participação com constraints (sem “CDI-only”)
+
+**Objetivo**: reprojetar a função-objetivo para impedir que a seleção premie “ficar no CDI”, usando **constraints determinísticas** (piso de participação + guardas de risco) e seleção lexicográfica transparente.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T059 | Participation Objective v2 (constraints + deterministic selection) | STATE3-P3B (Objective) | DONE | `selection_rule_v2.json` + `T059_PARTICIPATION_ABLATION_RESULTS_V2.parquet` + `T059_PARTICIPATION_SELECTED_CONFIG_V2.json` + manifest | 2026-02-28 |
+| T060 | Phase 3 Comparative Plotly Final (solution vs T044/T039/T037) | STATE3-P3B (Closeout) | DONE | `outputs/plots/T060_STATE3_PHASE3_FINAL_COMPARATIVE.html` + report + manifest | 2026-02-28 |
+
+### Fase 3C — Robustez e promoção (anti-overfit)
+
+**Objetivo**: confirmar robustez por subperíodos e promover somente após PASS do Auditor.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T061 | Robustness (subperiods) for participation solution | STATE3-P3C (Robustness) | CANCELLED (MERGED) | Cobertura de robustez será incorporada no novo ciclo de correção de reentrada (armadilha do defensivo) com ablação + evidências por subperíodo. | 2026-02-28 |
+| T062 | Governance closeout (Auditor PASS + Registry promotion) | STATE3-P3C (Governance) | DONE | Auditor PASS + promoção no dual-ledger concluídos (T060 registrado em `TASK_REGISTRY.md` e `OPS_LOG.md`). | 2026-02-28 |
+
+### Fase 3D — Correção: “escape” da armadilha do defensivo (reentrada)
+
+**Objetivo**: eliminar estado absorvente de caixa no T044 (defensivo não reverte quando `n_positions=0`), migrando o decisor de regime para sinal de **Mercado** (slope do Ibov) e calibrando **histerese** de entrada/saída via ablação.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T063 | Market-slope reentry fix + hysteresis ablation | STATE3-P3D (Reentry) | PENDING | ablation results + selection rule + curve/summary + manifest | 2026-02-28 |
+
 ## Fase 1 - Estabilizacao Minima
 
 ### TASK-007-PREFLIGHT-SECRETS

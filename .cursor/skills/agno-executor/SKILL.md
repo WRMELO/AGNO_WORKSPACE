@@ -9,32 +9,10 @@ description: Executar task a partir de um JSON do Arquiteto, aplicar mudancas co
 
 Executar a task sem desviar do JSON de instrucao recebido.
 
-## Modelo fixo
+## GATE: ROTEAMENTO (BEST-EFFORT)
 
-- Usar `GPT-5.3 Codex` para implementacao e execucao.
-- Nao fazer fallback de modelo para este papel.
-
-## GATE: MODEL ROUTING (OBRIGATORIO)
-
-Antes de iniciar qualquer execucao, confirmar que o modelo em uso e o esperado para este papel.
-
-**Fonte de verdade (quando houver evidência disponível no chat):** o label exibido no seletor de modelo da UI do Cursor (ex.: no rodapé), quando o Owner colar/sinalizar explicitamente esse label (ou anexar evidência textual/visual).
-
-**Limitacao operacional:** o agente nao consegue “ler” a UI do Cursor diretamente via ferramentas. Na ausencia de evidência explícita no chat, o gate opera em modo **best-effort** (nao-bloqueante) e deve registrar **UNVERIFIED**.
-
-- Esperado: `GPT-5.3 Codex`
-
-Se houver **evidência explícita** de mismatch (ex.: label da UI diferente do esperado, ou o Owner declarar mismatch), deve:
-
-1. **PARAR IMEDIATAMENTE**.
-2. Responder com status **`FAIL_MODEL_ROUTING`** e explicar: modelo esperado vs modelo em uso.
-3. **Nao continuar** ate o Owner mandar explicitamente retomar apos corrigir o modelo (ex.: `OWNER: AUTORIZADO A RETOMAR COM O MODELO CORRETO`).
-
-Se **nao for possível verificar** o modelo em uso (ausência de evidência explícita), deve:
-
-1. **NAO BLOQUEAR** a execucao por esse motivo sozinho.
-2. Marcar o gate como **`PASS_MODEL_ROUTING_UNVERIFIED`** e registrar o risco no bloco de gates do output (ex.: “Model routing: UNVERIFIED (sem evidência no chat)”).
-3. **Nao** solicitar ao Owner o label como pre-requisito para continuar; apenas aceitar evidência se ela surgir espontaneamente no contexto.
+- Seguir as regras canônicas de roteamento e governança definidas em `.cursor/rules/` (sem bloquear execução por ausência de evidência de UI).
+- Se não houver evidência explícita no chat, registrar **UNVERIFIED** no output e seguir adiante.
 
 ## Cadeia de comando
 
@@ -76,7 +54,15 @@ Se **nao for possível verificar** o modelo em uso (ausência de evidência expl
 - `ARTIFACT LINKS`
 - Incluir o path do `manifest.json` em `ARTIFACT LINKS` quando a task gerar artefatos.
 - Incluir gate de integridade `Gx_HASH_MANIFEST_PRESENT` quando aplicavel.
+- Incluir gate de rastreabilidade temporal `G_CHLOG_UPDATED` confirmando que **uma linha** foi anexada em `00_Strategy/changelog.md` para esta execucao (PASS ou FAIL).
 - `OVERALL STATUS: [[ PASS ]]` ou `[[ FAIL ]]`
+
+### Como atualizar o changelog (mandatorio)
+
+- Arquivo canônico: `00_Strategy/changelog.md`
+- Ao final da execucao (antes de reportar `OVERALL STATUS`), anexar **1 linha** no formato:
+  - `- <ISO8601_UTC> | EXEC: <task_id> <PASS/FAIL>. Artefatos: <paths principais>`
+- Se o JSON do Architect trouxer `traceability.log_message`, usar **exatamente** aquela linha.
 
 ## Pos-execucao
 

@@ -11,3 +11,67 @@
 - 2026-02-25T19:15:00+00:00 | VAL: RAG testado com sucesso e diagrama do Registry refatorado para formato descritivo.
 - 2026-02-25T20:25:00+00:00 | FIX: Limpeza de artefatos corrompidos e extração cirúrgica de inteligência da Tentativa 2.
 - 2026-02-25T20:35:00+00:00 | STRATEGY: Geração do Plano de Execução da Fase 2 baseado na inteligência extraída da Tentativa 2.
+
+## Backfill (fonte: `00_Strategy/OPS_LOG.md`)
+
+- 2026-02-26T11:00:00+00:00 | MAINTENANCE: M-001 Registry Reformat (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-26T11:15:00+00:00 | MAINTENANCE: M-002 Registry Purge (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-26T11:30:00+00:00 | MAINTENANCE: M-003 Semantic Registry Fix (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-26T18:00:00+00:00 | MAINTENANCE: ORG-001 Registry Refactor (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-26T20:00:00+00:00 | OPERATIONS: T029 Portfolio Plotly Visualization (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-26T20:15:00+00:00 | OPERATIONS: T029-FIX Portfolio Plotly Visualization Corrected (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T06:48:00+00:00 | KNOWLEDGE: A-002 Knowledge Recovery EXP_002 Specs + Glossary Fix (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T07:00:00+00:00 | MAINTENANCE: M-008 Correções pós-audit A-002 + governança de skills (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T07:07:00+00:00 | STRATEGY: T037 M3 Canonical Engine Baseline (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T07:40:00+00:00 | AUDIT: A-001 SSOT Canonical Base Audit (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T11:54:00+00:00 | STRATEGY: T038 Master Gate Integration (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T16:00:00+00:00 | OPERATIONS: V001 Visual Verification (Split-Only) (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T16:00:00+00:00 | OPERATIONS: T032 Deep Diagnostics Report (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T19:00:00+00:00 | OPERATIONS: T034 Audit Sizing Logic (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T21:00:00+00:00 | OPERATIONS: T036 Real Equity Visualization Robust (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T22:00:00+00:00 | DATA QUALITY: BL-001 Quality Blacklist A-001 (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T22:10:00+00:00 | MAINTENANCE: ARCH-001 Archive T024-T036 (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T13:15:00+00:00 | STRATEGY: T039 Severity Score + Partial Sells (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T15:27:22+00:00 | STRATEGY: T040 Metrics Suite Formal (SPEC-005) (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T15:45:00+00:00 | VISUALIZATION: T041 Plotly Comparativo STATE 3 Phase 1 (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T17:00:00+00:00 | HOTFIX: T042 Hotfix CDI Semântica + Rebuild T037–T041 (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T17:30:00+00:00 | HOTFIX: T042-FIX Consistência pós-hotfix CDI (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T18:00:00+00:00 | MAINTENANCE: M-010 Consolidação de Baseline STATE 3 Phase 1 (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T18:30:00+00:00 | MAINTENANCE: M-011 Environment Reproducibility (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T18:35:00+00:00 | MAINTENANCE: M-012 Artifact Governance (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T18:40:00+00:00 | MAINTENANCE: M-013 STATE 3 Sanity Checker (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T18:45:50+00:00 | MAINTENANCE: M-014 Post-STATE3 Roadmap Registration (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T18:57:00+00:00 | GOVERNANCE: M-015 SHA256 Artifact Integrity Policy (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T19:53:28+00:00 | STRATEGY: T043 Local Rule Capture Protocol + Ledger Schema (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T20:02:35+00:00 | MAINTENANCE: M-016 Phase 2 Roadmap Replan (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T20:15:00+00:00 | STRATEGY: T048 Condition Ledger Implementation (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T20:30:00+00:00 | STRATEGY: T049 Episode Catalog Builder (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T20:45:00+00:00 | STRATEGY: T050 State Decisor (FSM) (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-27T21:00:00+00:00 | STRATEGY: T053 CEP+SLOPE State Probe (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-28T09:30:00+00:00 | STRATEGY: T051 Local Rules Candidates (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-28T10:00:00+00:00 | STRATEGY: T052 Robustness Report (Subperiods) (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-28T10:30:00+00:00 | VISUALIZATION: T045 Plotly Accounting Decomposition (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-28T11:00:00+00:00 | VISUALIZATION: T054 Plotly Accounting Decomposition T037 (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-28T12:00:00+00:00 | VISUALIZATION: T046 Envelope / Guardrails Plotly Audit (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-28T13:30:00+00:00 | STRATEGY: T044 Anti-Drift Guardrails (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-28T14:00:00+00:00 | MAINTENANCE: M-017 Phase 2 Closing Roadmap Replan (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-28T14:15:00+00:00 | VISUALIZATION: T055 Plotly Phase 2 Final (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-28T15:00:00+00:00 | DOCUMENTATION: T056 Phase 2 Lessons Learned (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+- 2026-02-28T15:30:00+00:00 | MAINTENANCE: M-018 Phase 2 Closeout + T047 Discontinued (DONE). Ref: `00_Strategy/OPS_LOG.md`.
+
+## Execuções e governança (pós-Phase 2)
+
+- 2026-02-28T12:56:44+00:00 | GOVERNANCE: Model routing gate ajustado para modo best-effort (`PASS_MODEL_ROUTING_UNVERIFIED`) para evitar deadlock (UI não acessível ao agente).
+- 2026-02-28T16:31:00+00:00 | STRATEGY: T057 Participation Guardrails ablation executada (OVERALL PASS técnico) com auditoria posterior FAIL lógico (objetivo de participação não atendido; seleção premiou CDI-only). Artefatos: `outputs/governanca/T057-PARTICIPATION-GUARDRAILS-V1_*`.
+- 2026-02-28T17:26:19+00:00 | PLANNING: STATE 3 Phase 3 backlog registrado no `00_Strategy/ROADMAP.md` (T058–T062 como PENDING).
+- 2026-02-28T17:26:22+00:00 | GOVERNANCE: `00_Strategy/TASK_REGISTRY.md` reorganizado com índice stable-only e ponte explícita para o roadmap.
+- 2026-02-28T18:10:00Z | VISUALIZATION: T058-START2023-PLOTLY-V1 EXEC #1 (FAIL técnico — gate G_CHLOG_UPDATED com checagem não robusta). Artefatos gerados mas gate rejeitado.
+- 2026-02-28T18:25:00Z | VISUALIZATION: T058-START2023-PLOTLY-V1 EXEC #2 (PASS — retry com gate corrigido). Artefatos: outputs/plots/T058_STATE3_START2023_COMPARATIVE.html; outputs/governanca/T058-START2023-PLOTLY-V1_report.md; outputs/governanca/T058-START2023-PLOTLY-V1_manifest.json
+- 2026-02-28T19:15:00Z | VISUALIZATION: T058-START2023-PLOTLY-V1 EXEC #3 (PASS — rebuild canônico por ordem do Owner, LLM correta). Artefatos sobrescritos: outputs/plots/T058_STATE3_START2023_COMPARATIVE.html; outputs/governanca/T058-START2023-PLOTLY-V1_report.md; outputs/governanca/T058-START2023-PLOTLY-V1_manifest.json
+- 2026-02-28T18:03:08Z | STRATEGY: T059-PARTICIPATION-OBJECTIVE-V2 EXEC. Artefatos: outputs/governanca/T059-PARTICIPATION-OBJECTIVE-V2_report.md; outputs/governanca/T059-PARTICIPATION-OBJECTIVE-V2_manifest.json; src/data_engine/portfolio/T059_PARTICIPATION_SELECTED_CONFIG_V2.json
+- 2026-02-28T18:30:01Z | VISUALIZATION: T060-PHASE3-PLOTLY-FINAL-V1 EXEC. Artefatos: outputs/plots/T060_STATE3_PHASE3_FINAL_COMPARATIVE.html; outputs/governanca/T060-PHASE3-PLOTLY-FINAL-V1_report.md; outputs/governanca/T060-PHASE3-PLOTLY-FINAL-V1_manifest.json
+- 2026-02-28T19:06:36Z | ANALYSIS: A060-RANKING-VS-REGIME-DIAGNOSTIC-V1 EXEC. Artefatos: outputs/governanca/A060-RANKING-VS-REGIME-DIAGNOSTIC-V1_report.md; outputs/governanca/A060-RANKING-VS-REGIME-DIAGNOSTIC-V1_manifest.json
+- 2026-02-28T19:16:26Z | ANALYSIS: A061-REVERSE-DECISION-2024-10-15 EXEC. Artefatos: outputs/governanca/A061-REVERSE-DECISION-2024-10-15_report.md; outputs/governanca/A061-REVERSE-DECISION-2024-10-15_manifest.json
+- 2026-02-28T19:27:15Z | PLANNING: ROADMAP Phase 3C ajustado (T061 cancelado/mesclado; T062 concluído por evidência de Auditor PASS + promoção no dual-ledger). Artefato: 00_Strategy/ROADMAP.md
+- 2026-02-28T19:30:00Z | STRATEGY: T063-MARKET-SLOPE-REENTRY-ABLATION-V1 EXEC. Artefatos: outputs/governanca/T063-MARKET-SLOPE-REENTRY-ABLATION-V1_report.md; outputs/governanca/T063-MARKET-SLOPE-REENTRY-ABLATION-V1_manifest.json; src/data_engine/portfolio/T063_REENTRY_SELECTED_CONFIG.json
+- 2026-02-28T19:51:31Z | STRATEGY: T063-MARKET-SLOPE-REENTRY-ABLATION-V2 EXEC. Artefatos: outputs/governanca/T063-MARKET-SLOPE-REENTRY-ABLATION-V2_report.md; outputs/governanca/T063-MARKET-SLOPE-REENTRY-ABLATION-V2_manifest.json; src/data_engine/portfolio/T063_REENTRY_SELECTED_CONFIG_V2.json

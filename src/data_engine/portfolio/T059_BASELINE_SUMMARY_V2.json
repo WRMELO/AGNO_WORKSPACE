@@ -1,0 +1,52 @@
+{
+  "enforcement": {
+    "days_with_budget_binding": 20,
+    "days_with_cadence_binding": 324,
+    "n_buy_blocked_by_budget": 174,
+    "n_buy_blocked_by_cadence": 3240,
+    "n_buy_blocked_notional_budget": 1993032.210299999
+  },
+  "guardrails_policy": {
+    "buy_cadence_days": 18,
+    "buy_turnover_cap_ratio": 0.09996350834743271,
+    "selection_mode": "ablation_data_driven_participation_objective_v2_constraints"
+  },
+  "metrics_total": {
+    "CAGR": 0.08909301752159382,
+    "CVaR": -0.010692518769738675,
+    "MDD": -0.09632418098369622,
+    "VaR": -0.005605856641048179,
+    "avg_cash_weight": 0.8249780297616827,
+    "avg_exposure": 0.17502197023831736,
+    "avg_holding_time": 213.2652909264972,
+    "cost_total": 116.03075037501453,
+    "dates_simulated": 1902,
+    "days_cash_ge_090_frac": 0.444794952681388,
+    "days_defensive_frac": 0.8196635120925342,
+    "downside_dev": 0.047658340705293886,
+    "equity_final": 192233.65663536082,
+    "false_sell_rate": null,
+    "missed_sell_rate": null,
+    "num_switches": 163,
+    "p50_exposure": 0.14729302809791683,
+    "period_end": "2026-02-26",
+    "period_start": "2018-07-02",
+    "regret_3d": null,
+    "sharpe": 1.2294585701916014,
+    "time_in_market_frac": 1.0,
+    "time_to_recover": 428,
+    "turnover_reentry": 0.0,
+    "turnover_sell": 1.7362306986621663,
+    "turnover_total": 3.456336082978742,
+    "vol_annual": 0.07260073687945927
+  },
+  "selected_candidate_id": "C007",
+  "task_id": "T059",
+  "thresholds_total_hard": {
+    "MDD_total_min": -0.3,
+    "avg_exposure_total_min": 0.15,
+    "days_cash_ge_090_frac_total_max": 0.85,
+    "time_in_market_frac_total_min": 0.4,
+    "turnover_total_total_max": 8.0
+  }
+}
