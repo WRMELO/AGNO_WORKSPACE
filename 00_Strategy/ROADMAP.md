@@ -97,7 +97,7 @@ Executar a evolucao do ambiente AGNO com foco em portabilidade, reducao de compl
 
 ---
 
-## STATE 3 — Phase 5: Forno Dual-Mode (PLANEJAMENTO)
+## STATE 3 — Phase 5: Forno Dual-Mode (COMPLETED)
 
 **Objetivo-mestre**: produzir uma estratégia que **supere T037 no rali E T044 no trecho CDI-bloqueado, simultaneamente**, unificando os dois modos de operação do forno num único motor com comutação endógena.
 
@@ -107,12 +107,77 @@ Executar a evolucao do ambiente AGNO com foco em portabilidade, reducao de compl
 
 **Evidência de base**: diagnóstico de engenharia de processos (T068/Phase 4 Lessons) demonstrou que T037 ganha +186.7% (base 100) no P1 vs +70.9% do T067, enquanto T067 ganha +101.9% no P2 vs -35.4% do T037. A diferença é estrutural: velocidade de reposição (17% vs 2.8% dos dias com compra), tipo de disjuntor (binário vs gradual) e papel do tank (5% vs 19% cash fraction).
 
-**Tarefas previstas** (a detalhar após T069/T070):
+**Tarefas previstas** (T071–T075 concluídas — Phase 5 encerrada; pivô para ML na Phase 6):
 
 | ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
 |---|---|---|---|---|---|
-| T071 | SPEC: Termostato do Forno (meta-controlador endógeno) | STATE3-P5A (Spec) | PENDING | — | — |
-| T072 | Dual-Mode Engine + ablação de comutação | STATE3-P5B (Engine) | PENDING | — | — |
-| T073 | Phase 5 Comparative Plotly | STATE3-P5C (Visual) | PENDING | — | — |
-| T074 | Phase 5 Lessons Learned | STATE3-P5D (Lessons) | PENDING | — | — |
-| T075 | Phase 5 Governance Closeout | STATE3-P5D (Closeout) | PENDING | — | — |
+| T071 | SPEC: Termostato do Forno (meta-controlador endógeno) | STATE3-P5A (Spec) | DONE | `SPEC-007_THERMOSTAT_FORNO_DUAL_MODE_T071.md` + changelog | 2026-03-01 |
+| T072 | Dual-Mode Engine + ablação de comutação | STATE3-P5B (Engine) | DONE | `T072_DUAL_MODE_SELECTED_CONFIG.json` + `T072_STATE3_PHASE5B_COMPARATIVE.html` + manifest. Vencedor W30_T0p0005_HI2_HO4_SINAL-2_B0: HOLDOUT equity=R$407k, excess_2023plus_vs_T044=+20.7pp. Auditor PASS. | 2026-03-01 |
+| T073 | Phase 5 Comparative Plotly | STATE3-P5C (Visual) | DONE | `T073_STATE3_PHASE5C_COMPARATIVE.html` + `T073-PHASE5-PLOTLY-COMPARATIVE-V1_report.md` + manifest. Diagnóstico explícito: SINAL-1=0 train-feasible e feasibility total=2/324. Auditor PASS. | 2026-03-01 |
+| T074 | Phase 5 Lessons Learned | STATE3-P5D (Lessons) | DONE | `STATE3_PHASE5_LESSONS_LEARNED_T074.md` (8 lições + diagnóstico determinístico esgotado + decisão ML) | 2026-03-01 |
+| T075 | Phase 5 Governance Closeout | STATE3-P5D (Closeout) | DONE | Consistência documental verificada. Phase 5 formalmente encerrada. Pivô para ML (Phase 6) autorizado pelo Owner. | 2026-03-01 |
+
+---
+
+## STATE 3 — Phase 6: ML Trigger para Forno Dual-Mode
+
+**Objetivo-mestre**: substituir o termostato determinístico (threshold + histerese sobre 1 sinal escalar) por um **classificador supervisionado** (XGBoost) que decide diariamente "mercado" vs "caixa", usando exclusivamente dados até D-1 (`shift(1)`), validado por walk-forward estrito com HOLDOUT intocado.
+
+**Motivação**: a abordagem determinística esgotou após 7 tentativas (T039→T072), com feasibility de apenas 0.6% (2/324 candidatos). O conceito do forno dual-mode está provado (T072 = R$407k, +307%), mas o termostato é lento demais. A "martelada" (forçar caixa nos dois períodos de deriva) eleva o equity para R$757k (+657%), provando que o gap é de **detecção**, não de conceito. O Owner decidiu pivotar para ML com classificação supervisionada.
+
+**Formulação do problema**:
+- **Pergunta**: "o forno **esteve** produtivo **até ontem**?" (shift(1) — anti-lookahead estrito)
+- **Label binário**: "caixa" vs "mercado", derivado dos dois períodos da martelada (~33% caixa / ~67% mercado)
+- **Transparência não é requisito** — confiança via validação out-of-sample é
+
+**Walk-forward**:
+- TRAIN: 2018-07-02 a 2022-12-30
+- HOLDOUT: 2023-01-02 a 2026-02-26
+- **Teste ácido**: o segundo período de caixa (nov/2024–nov/2025) está inteiramente no HOLDOUT — se o modelo acertar sem tê-lo visto, é evidência forte de generalização
+
+**Inventário de dados**:
+- `T072_PORTFOLIO_CURVE_DUAL_MODE.parquet`: 1.902 pregões × 23 colunas
+- `T072_PORTFOLIO_LEDGER_DUAL_MODE.parquet`: 765 trades × 13 colunas
+- `T037_M3_SCORES_DAILY.parquet`: 866.863 ticker-days × 10 colunas
+- `SSOT_MACRO.parquet`: 2.025 pregões × 6 colunas (ibov, sp500, cdi)
+- `SSOT_CANONICAL_BASE.parquet`: 631.944 ticker-days × 21 colunas
+- Feature matrix preliminar: ~17 features × 1.964 pregões (expansível para 50-100)
+
+**Referências obrigatórias**:
+- `02_Knowledge_Bank/docs/process/STATE3_PHASE5_LESSONS_LEARNED_T074.md` — diagnóstico + checklist anti-regressão
+- `02_Knowledge_Bank/docs/specs/SPEC-007_THERMOSTAT_FORNO_DUAL_MODE_T071.md` — spec do termostato
+- `02_Knowledge_Bank/docs/process/STATE3_PHASE4_LESSONS_LEARNED_T069.md` — diagnóstico de engenharia de processos
+
+### Fase 6A — EDA + Feature Engineering
+
+**Objetivo**: construir a feature matrix completa (50-100 features), validar anti-lookahead em cada feature, analisar correlações e distribuições, e gerar o label binário a partir dos períodos da martelada.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T076 | EDA + Feature Engineering (feature matrix + label + anti-lookahead) | STATE3-P6A (Features) | DONE | `src/data_engine/features/T076_DATASET_DAILY.parquet` (52 features, TRAIN=1.115 / HOLDOUT=787) + `T076_FEATURE_MATRIX_DAILY.parquet` + `T076_LABELS_DAILY.parquet` + `outputs/plots/T076_STATE3_PHASE6A_EDA.html` + manifest (14 SHA256, 0 mismatches). Anti-lookahead shift(1) global. Teste ácido 100% HOLDOUT. Findings F-001/F-002 → blacklist e gate em T077. Auditor PASS. | 2026-03-01T14:34:31Z |
+
+### Fase 6B — XGBoost Ablation (walk-forward)
+
+**Objetivo**: treinar XGBoost com grid de hiperparâmetros sobre o TRAIN, aplicar hard constraints financeiros (anti-lookahead, estabilidade de previsão, transições mínimas), e selecionar o melhor modelo exclusivamente com métricas do TRAIN. Avaliar no HOLDOUT sem ajuste.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T077 | XGBoost Ablation (grid search + walk-forward + hard constraints) | STATE3-P6B (Model) | PENDING | — | — |
+
+### Fase 6C — Backtest Financeiro
+
+**Objetivo**: integrar as previsões do modelo vencedor no motor dual-mode (T072), rodar backtest completo (TRAIN + HOLDOUT), e comparar equity/MDD/Sharpe contra T072 original, martelada, CDI e Ibov. O segundo período de caixa (nov/24–nov/25) no HOLDOUT é o teste ácido.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T078 | Backtest Financeiro (ML trigger no motor dual-mode vs T072/martelada/CDI/Ibov) | STATE3-P6C (Backtest) | PENDING | — | — |
+
+### Fase 6D — Consolidação e Governança
+
+**Objetivo**: produzir dashboard comparativo final (Plotly), consolidar lições da Phase 6, e fechar a fase com governance closeout.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T079 | Phase 6 Comparative Plotly (ML trigger vs T072/martelada/CDI/Ibov) | STATE3-P6D (Visual) | PENDING | — | — |
+| T080 | Phase 6 Lessons Learned | STATE3-P6D (Lessons) | PENDING | — | — |
+| T081 | Phase 6 Governance Closeout | STATE3-P6D (Closeout) | PENDING | — | — |
