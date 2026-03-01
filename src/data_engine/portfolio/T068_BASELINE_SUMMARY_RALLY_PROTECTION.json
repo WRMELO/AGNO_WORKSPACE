@@ -1,0 +1,19 @@
+{
+  "avg_exposure": 0.8212356134350824,
+  "cagr": 0.181696461714292,
+  "days_cash_ge_090_frac": 0.0,
+  "days_defensive_frac": 0.49737118822292326,
+  "equity_final": 352336.5934193984,
+  "excess_return_2023plus_vs_t044": 0.6844901373291392,
+  "excess_return_rally_vs_t044": -0.5956311481462322,
+  "mdd": -0.2033801024941576,
+  "mode": "ASYM_HYST",
+  "num_switches": 48,
+  "return_2023plus": 1.1448282185263912,
+  "return_rally_2020_06_2021_07": 0.32654996905659694,
+  "selected_candidate_id": "A_IN4_OUT4",
+  "sharpe": 0.9811051141724637,
+  "task_id": "T068-RALLY-PROTECTION-ABLATION-V1",
+  "time_in_market_frac": 1.0,
+  "turnover_total": 17.333613916948302
+}

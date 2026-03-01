@@ -1,0 +1,20 @@
+{
+  "buy_turnover_cap_ratio": null,
+  "cadence_days": 10,
+  "in_hyst_days": 4,
+  "market_mu_window": 62,
+  "market_slope_window": 30,
+  "out_hyst_days": 4,
+  "selected_candidate_id": "CAD10_CAPNONE",
+  "selection_order": [
+    "excess_return_2023plus_vs_t044 DESC",
+    "CAGR DESC",
+    "Sharpe DESC",
+    "turnover_total ASC",
+    "candidate_id ASC"
+  ],
+  "task_id": "T067-AGGRESSIVE-ALLOCATION-ABLATION-V1",
+  "thresholds": {
+    "MDD_total_min": -0.3
+  }
+}

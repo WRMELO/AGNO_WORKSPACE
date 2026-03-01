@@ -1,0 +1,22 @@
+{
+  "buy_turnover_cap_ratio": null,
+  "cadence_days": 10,
+  "in_hyst_days": 4,
+  "market_slope_window": 30,
+  "mode": "ASYM_HYST",
+  "out_hyst_days": 4,
+  "selected_candidate_id": "A_IN4_OUT4",
+  "selection_order": [
+    "equity_final_total DESC",
+    "excess_return_rally_vs_t044 DESC",
+    "Sharpe_total DESC",
+    "turnover_total ASC",
+    "candidate_id ASC"
+  ],
+  "task_id": "T068-RALLY-PROTECTION-ABLATION-V1",
+  "thresholds": {
+    "MDD_total_min": -0.3,
+    "excess_return_2023plus_vs_t044_min": 0.0
+  },
+  "trend_window": null
+}

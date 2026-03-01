@@ -1,0 +1,18 @@
+{
+  "avg_exposure": 0.8212356134350824,
+  "cagr": 0.181696461714292,
+  "days_cash_ge_090_frac": 0.0,
+  "days_defensive_frac": 0.49737118822292326,
+  "equity_final": 352336.5934193984,
+  "excess_return_2023plus_vs_t044": 0.6844901373291392,
+  "mdd": -0.2033801024941576,
+  "num_switches": 48,
+  "reentry_subperiod_time_in_market": 1.0,
+  "return_2023plus": 1.1448282185263912,
+  "selected_candidate_id": "CAD10_CAPNONE",
+  "sharpe": 0.9811051141724637,
+  "t044_return_2023plus_ref": 0.46033808119725195,
+  "task_id": "T067-AGGRESSIVE-ALLOCATION-ABLATION-V1",
+  "time_in_market_frac": 1.0,
+  "turnover_total": 17.333613916948302
+}
