@@ -44,7 +44,7 @@ Executar a evolucao do ambiente AGNO com foco em portabilidade, reducao de compl
 
 | ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
 |---|---|---|---|---|---|
-| T063 | Market-slope reentry fix + hysteresis ablation | STATE3-P3D (Reentry) | PENDING | ablation results + selection rule + curve/summary + manifest | 2026-02-28 |
+| T063 | Market-slope reentry fix + hysteresis ablation V2 | STATE3-P3D (Reentry) | DONE | `T063_REENTRY_SELECTED_CONFIG_V2.json` + `T063_BASELINE_SUMMARY_REENTRY_FIX_V2.json` + manifest. Audit PASS. | 2026-02-28 |
 
 ## Fase 1 - Estabilizacao Minima
 

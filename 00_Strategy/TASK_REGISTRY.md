@@ -17,6 +17,7 @@
 | T056 | Phase 2 Lessons Learned (canônico) | STATE 3 Phase 2 | DONE | `STATE3_PHASE2_LESSONS_LEARNED_T056.md` | N/A |
 | T059 | Participation Objective v2 (constraints + selection) | STATE 3 Phase 3 | DONE | `T059_PARTICIPATION_SELECTED_CONFIG_V2.json` + manifest | 2026-02-28T18:12:59Z |
 | T060 | Phase 3 Comparative Plotly Final | STATE 3 Phase 3 | DONE | `T060_STATE3_PHASE3_FINAL_COMPARATIVE.html` + manifest | 2026-02-28T18:30:01Z |
+| T063 | Market-slope reentry fix + hysteresis ablation V2 | STATE 3 Phase 3 | DONE | `T063_REENTRY_SELECTED_CONFIG_V2.json` + manifest | 2026-02-28T19:51:31Z |
 
 ## STATE 1: CANONICAL DATA ENGINE (STABLE)
 
@@ -73,6 +74,7 @@
 |---|---|---|---|---|---|
 | T059 | Participation Objective v2 (constraints + deterministic selection) | Strategy | DONE | Ablação com constraints hard anti-CDI-only (time_in_market>=0.40, avg_exposure>=0.15, days_cash_ge_090<=0.85, MDD>=-0.30, turnover<=8.0). feasible_count=3/25. Vencedor C007 (cadence=18, cap=~10%). time_in_market=1.0, avg_exposure=0.175, MDD=-9.6%, Sharpe=1.23, equity_final=R$192k. Artefatos: `T059_PARTICIPATION_SELECTED_CONFIG_V2.json`, `T059_PORTFOLIO_CURVE_PARTICIPATION_V2.parquet`, `T059_BASELINE_SUMMARY_V2.json`, `T059-PARTICIPATION-OBJECTIVE-V2_manifest.json`, `t059_participation_objective_v2_ablation.py`. Audit PASS. | 2026-02-28T18:12:59Z |
 | T060 | Phase 3 Comparative Plotly Final (T059 vs T044/T039/T037/CDI/Ibov) | Visualization | DONE | Dashboard Plotly final com 6 equity traces (T059/T044/T039/T037/CDI/Ibov) rebased R$100k + 4 drawdown traces + regime shading (T059 roxo, T044 vermelho, T039 azul). common_dates=1902 (2018-07-02..2026-02-26). equity_norm_final: T059=R$192k, T044=R$380k, T039=R$125k, T037=R$189k, CDI=R$192k, IBOV=R$262k. Artefatos: `T060_STATE3_PHASE3_FINAL_COMPARATIVE.html`, `T060-PHASE3-PLOTLY-FINAL-V1_report.md`, `T060-PHASE3-PLOTLY-FINAL-V1_manifest.json`, evidências (`metrics_snapshot.json`, `plot_inventory.json`), `t060_plotly_phase3_final_comparative.py`. Audit PASS. | 2026-02-28T18:30:01Z |
+| T063 | Market-slope reentry fix + hysteresis ablation V2 | Strategy | DONE | Ablação 144 candidatos (SLOPE_WINDOW×IN_HYST×OUT_HYST×BUY_CAP). feasible=33. Winner SW30_IN4_OUT4_CAP0p10: equity_final=R$259.671, CAGR=13.5%, MDD=-4.5%, Sharpe=2.25, turnover=2.76, reentry_tim=1.0. Artefatos: `T063_REENTRY_SELECTED_CONFIG_V2.json`, `T063_PORTFOLIO_CURVE_REENTRY_FIX_V2.parquet`, `T063_BASELINE_SUMMARY_REENTRY_FIX_V2.json`, `T063-MARKET-SLOPE-REENTRY-ABLATION-V2_manifest.json`, `t063_market_slope_reentry_ablation_v2.py`. Audit PASS. | 2026-02-28T19:51:31Z |
 
 ### STATE 3 Phase 2 (COMPLETED)
 
