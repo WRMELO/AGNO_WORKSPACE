@@ -9,11 +9,6 @@ description: Auditar entregas do Executor com foco em regressao, criterios de ac
 
 Validar qualidade tecnica e conformidade do que foi executado.
 
-## GATE: ROTEAMENTO (BEST-EFFORT)
-
-- Seguir as regras canônicas de roteamento e governança definidas em `.cursor/rules/` (sem bloquear auditoria por ausência de evidência de UI).
-- Se não houver evidência explícita no chat, registrar **UNVERIFIED** no output e seguir adiante.
-
 ## Cadeia de comando
 
 - Recebe resultado do Executor apos execucao.

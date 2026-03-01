@@ -9,11 +9,6 @@ description: Executar task a partir de um JSON do Arquiteto, aplicar mudancas co
 
 Executar a task sem desviar do JSON de instrucao recebido.
 
-## GATE: ROTEAMENTO (BEST-EFFORT)
-
-- Seguir as regras canônicas de roteamento e governança definidas em `.cursor/rules/` (sem bloquear execução por ausência de evidência de UI).
-- Se não houver evidência explícita no chat, registrar **UNVERIFIED** no output e seguir adiante.
-
 ## Cadeia de comando
 
 - So inicia execucao quando o **OWNER** autorizar expressamente.

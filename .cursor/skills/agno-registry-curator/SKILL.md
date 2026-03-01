@@ -9,11 +9,6 @@ description: Aplicar o dual-ledger AGNO para atualizar TASK_REGISTRY e OPS_LOG c
 
 Manter rastreabilidade documental sem misturar evolucao de produto com manutencao.
 
-## GATE: ROTEAMENTO (BEST-EFFORT)
-
-- Seguir as regras canônicas de roteamento e governança definidas em `.cursor/rules/` (sem bloquear curadoria por ausência de evidência de UI).
-- Se não houver evidência explícita no chat, registrar **UNVERIFIED** no output e seguir adiante.
-
 ## Cadeia de comando
 
 - So atualizar registros apos `OVERALL STATUS: [[ PASS ]]` confirmado pelo Auditor.
