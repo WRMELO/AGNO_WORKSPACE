@@ -223,8 +223,8 @@ Executar a evolucao do ambiente AGNO com foco em portabilidade, reducao de compl
 |---|---|---|---|---|---|
 | T083 | SPEC: Pipeline de dados US (ingestão, qualidade, SSOT expandido) | STATE3-P7B (Spec) | DONE | `scripts/t083_spec_us_data_pipeline.py` + `02_Knowledge_Bank/docs/specs/SPEC-083_PIPELINE_DADOS_US_T083.md` + `sp500_current_symbols_snapshot.csv` (503 símbolos). Manifest V2 SHA256: 9 entradas, 0 mismatches. Auditor PASS (V2). | 2026-03-02T17:39:16Z |
 | T084 | Ingestão S&P 500: OHLCV + dividendos + splits (2018-2026) | STATE3-P7B (Ingest) | DONE | `scripts/t084_ingest_sp500_brapi_us_market_data.py` + `src/data_engine/ssot/SSOT_US_MARKET_DATA_RAW.parquet` (1.006.669 linhas, 499 tickers, 2018-01-02..2026-02-26). Fonte: BRAPI. Dividendos derivados via close/adjusted_close. Manifest V2 SHA256: 10 entradas, 0 mismatches. Auditor PASS (V2). | 2026-03-02T19:10:04Z |
-| T085 | Qualidade de dados US: SPC charts + blacklist + universo operacional | STATE3-P7B (Quality) | PENDING | | |
-| T086 | SSOT unificado BR+US: merge canonical base + macro expandido (VIX, DXY, Treasury yield, Fed funds) | STATE3-P7B (SSOT) | PENDING | | |
+| T085 | Qualidade de dados US: SPC charts + blacklist + universo operacional | STATE3-P7B (Quality) | DONE | `scripts/t085_us_data_quality_spc_blacklist.py` + `src/data_engine/ssot/SSOT_US_UNIVERSE_OPERATIONAL.parquet` (496 tickers) + `src/data_engine/ssot/SSOT_US_BLACKLIST_OPERATIONAL.csv` (3 HARD). Manifest SHA256: 11 entradas, 0 mismatches. 12 gates PASS. Auditor PASS. | 2026-03-02T20:58:55Z |
+| T086 | SSOT unificado BR+US: merge canonical base + macro expandido (VIX, DXY, Treasury yield, Fed funds) | STATE3-P7B (SSOT) | DONE | `scripts/t086_build_ssot_br_us_unified.py` + `src/data_engine/ssot/SSOT_MACRO_EXPANDED.parquet` (2.025 linhas × 12 cols, 6 séries FRED) + `src/data_engine/ssot/SSOT_CANONICAL_BASE_BR_US.parquet` (1.620.912 linhas, 1.175 tickers BR+US). Manifest V2 SHA256: 14 entradas, 0 mismatches. 12 gates PASS. Auditor PASS (V2). | 2026-03-02T23:53:05Z |
 
 ### Fase 7C — Feature Engineering Multi-Mercado
 
