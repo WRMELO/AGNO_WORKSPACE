@@ -1,8 +1,12 @@
 #!/home/wilson/AGNO_WORKSPACE/.venv/bin/python
-"""T077-V2 - XGBoost ablation with stratified CV and threshold tuning."""
+"""T077 (versioned) - XGBoost ablation with stratified CV and threshold tuning.
+
+Use `--run_id` (e.g., `T077-V3`) to avoid overwriting artifacts.
+"""
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import itertools
 import json
@@ -23,30 +27,81 @@ ROOT = Path("/home/wilson/AGNO_WORKSPACE")
 
 IN_DATASET = ROOT / "src/data_engine/features/T076_DATASET_DAILY.parquet"
 IN_INV = ROOT / "outputs/governanca/T076-EDA-FEATURE-ENGINEERING-V1_evidence/feature_inventory.csv"
-IN_ABL_V1 = ROOT / "src/data_engine/features/T077_ABLATION_RESULTS.parquet"
-IN_MODEL_V1 = ROOT / "src/data_engine/models/T077_XGB_SELECTED_MODEL.json"
-IN_ACID_V1 = ROOT / "outputs/governanca/T077-XGBOOST-ABLATION-V1_evidence/acid_window_holdout_metrics.json"
-
-OUT_SCRIPT = ROOT / "scripts/t077_xgboost_ablation_walkforward_v2.py"
-OUT_MODEL = ROOT / "src/data_engine/models/T077_V2_XGB_SELECTED_MODEL.json"
-OUT_PREDS = ROOT / "src/data_engine/features/T077_V2_PREDICTIONS_DAILY.parquet"
-OUT_ABL = ROOT / "src/data_engine/features/T077_V2_ABLATION_RESULTS.parquet"
-OUT_PLOT = ROOT / "outputs/plots/T077_V2_STATE3_PHASE6B_MODEL_DIAGNOSTICS.html"
-OUT_REPORT = ROOT / "outputs/governanca/T077-V2-XGBOOST-ABLATION-V1_report.md"
-OUT_MANIFEST = ROOT / "outputs/governanca/T077-V2-XGBOOST-ABLATION-V1_manifest.json"
-OUT_EVID_DIR = ROOT / "outputs/governanca/T077-V2-XGBOOST-ABLATION-V1_evidence"
-OUT_BLACKLIST = OUT_EVID_DIR / "feature_blacklist.json"
-OUT_TIME_SCAN = OUT_EVID_DIR / "time_leakage_scan_train.csv"
-OUT_CV_JUST = OUT_EVID_DIR / "cv_scheme_justification.md"
-OUT_THR_SEARCH = OUT_EVID_DIR / "threshold_search_results.parquet"
-OUT_ACID = OUT_EVID_DIR / "acid_window_holdout_metrics.json"
-OUT_TRANSITIONS = OUT_EVID_DIR / "transition_diagnostics.json"
 
 EXPLICIT_BLACKLIST = ["m3_n_tickers", "spc_n_tickers"]
 TIME_PROXY_CORR_THRESHOLD = 0.95
 THRESH_GRID = [0.05, 0.08, 0.10, 0.12, 0.15, 0.20, 0.30, 0.40, 0.50]
 N_FOLDS = 5
 MIN_PRECISION = 0.20
+
+
+# Feature policy (V3): stable core allowlist (CTO direction)
+CORE_ALLOWLIST = [
+    "equity_mom_63d",
+    "equity_dd_252d",
+    "equity_vol_63d",
+    "equity_vol_21d",
+    "equity_ret_21d",
+    "signal_excess_w",
+    "n_positions",
+    "sp500_vol_21d",
+    "spc_xbar_special_frac",
+    "equity_vs_cdi_21d",
+    "equity_ret_5d",
+    "ibov_ret_21d",
+    "ibov_minus_cdi_21d",
+    "m3_frac_top_decile",
+]
+
+
+@dataclass(frozen=True)
+class RunPaths:
+    run_id: str
+    run_tag: str
+    out_script: Path
+    out_model: Path
+    out_preds: Path
+    out_abl: Path
+    out_plot: Path
+    out_report: Path
+    out_manifest: Path
+    out_evid_dir: Path
+    out_blacklist: Path
+    out_time_scan: Path
+    out_cv_just: Path
+    out_thr_search: Path
+    out_acid: Path
+    out_transitions: Path
+    out_feature_policy: Path
+    out_feature_stability: Path
+    out_generalization_gap: Path
+
+
+def make_run_paths(run_id: str) -> RunPaths:
+    run_id = str(run_id).strip()
+    run_tag = run_id.replace("-", "_")
+    out_evid_dir = ROOT / f"outputs/governanca/{run_id}-XGBOOST-ABLATION-V1_evidence"
+    return RunPaths(
+        run_id=run_id,
+        run_tag=run_tag,
+        out_script=ROOT / "scripts/t077_xgboost_ablation_walkforward_v2.py",
+        out_model=ROOT / f"src/data_engine/models/{run_tag}_XGB_SELECTED_MODEL.json",
+        out_preds=ROOT / f"src/data_engine/features/{run_tag}_PREDICTIONS_DAILY.parquet",
+        out_abl=ROOT / f"src/data_engine/features/{run_tag}_ABLATION_RESULTS.parquet",
+        out_plot=ROOT / f"outputs/plots/{run_tag}_STATE3_PHASE6B_MODEL_DIAGNOSTICS.html",
+        out_report=ROOT / f"outputs/governanca/{run_id}-XGBOOST-ABLATION-V1_report.md",
+        out_manifest=ROOT / f"outputs/governanca/{run_id}-XGBOOST-ABLATION-V1_manifest.json",
+        out_evid_dir=out_evid_dir,
+        out_blacklist=out_evid_dir / "feature_blacklist.json",
+        out_time_scan=out_evid_dir / "time_leakage_scan_train.csv",
+        out_cv_just=out_evid_dir / "cv_scheme_justification.md",
+        out_thr_search=out_evid_dir / "threshold_search_results.parquet",
+        out_acid=out_evid_dir / "acid_window_holdout_metrics.json",
+        out_transitions=out_evid_dir / "transition_diagnostics.json",
+        out_feature_policy=out_evid_dir / "feature_policy_v3.json",
+        out_feature_stability=out_evid_dir / "feature_stability_train_report.csv",
+        out_generalization_gap=out_evid_dir / "generalization_gap.json",
+    )
 
 
 @dataclass
@@ -56,8 +111,15 @@ class Gate:
     detail: str
 
 
-def ensure_dirs() -> None:
-    for p in [OUT_MODEL.parent, OUT_PREDS.parent, OUT_ABL.parent, OUT_PLOT.parent, OUT_REPORT.parent, OUT_EVID_DIR]:
+def ensure_dirs(paths: RunPaths) -> None:
+    for p in [
+        paths.out_model.parent,
+        paths.out_preds.parent,
+        paths.out_abl.parent,
+        paths.out_plot.parent,
+        paths.out_report.parent,
+        paths.out_evid_dir,
+    ]:
         p.mkdir(parents=True, exist_ok=True)
 
 
@@ -144,7 +206,7 @@ def choose_threshold(y_true: np.ndarray, y_proba: np.ndarray) -> Tuple[float, pd
     return best, df
 
 
-def build_plot(preds: pd.DataFrame, importance: pd.DataFrame) -> None:
+def build_plot(preds: pd.DataFrame, importance: pd.DataFrame, out_plot: Path, title: str) -> None:
     fig = make_subplots(
         rows=3,
         cols=1,
@@ -161,21 +223,23 @@ def build_plot(preds: pd.DataFrame, importance: pd.DataFrame) -> None:
     imp = importance.head(20)
     fig.add_trace(go.Bar(x=imp["feature"], y=imp["importance_gain"], name="gain", marker_color="#9467bd"), row=3, col=1)
     fig.update_xaxes(tickangle=30, row=3, col=1)
-    fig.update_layout(height=1100, template="plotly_white", title="T077-V2 Model Diagnostics")
-    fig.write_html(OUT_PLOT, include_plotlyjs="cdn")
+    fig.update_layout(height=1100, template="plotly_white", title=title)
+    fig.write_html(out_plot, include_plotlyjs="cdn")
 
 
 def main() -> int:
-    ensure_dirs()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--run_id", type=str, default="T077-V2", help="Run identifier for versioned artifacts (e.g., T077-V3).")
+    args = parser.parse_args()
+
+    paths = make_run_paths(args.run_id)
+    ensure_dirs(paths)
     retry_log: List[str] = []
     gates: List[Gate] = []
 
     # Input load
     df = pd.read_parquet(IN_DATASET)
     _inv = pd.read_csv(IN_INV)
-    _abl_v1 = pd.read_parquet(IN_ABL_V1)
-    _model_v1 = json.loads(IN_MODEL_V1.read_text(encoding="utf-8"))
-    _acid_v1 = json.loads(IN_ACID_V1.read_text(encoding="utf-8"))
 
     df["date"] = pd.to_datetime(df["date"]).dt.normalize()
     df = df.sort_values("date").reset_index(drop=True)
@@ -186,7 +250,7 @@ def main() -> int:
 
     # Feature governance
     leakage_scan = scan_time_proxy(train, base_features)
-    leakage_scan.to_csv(OUT_TIME_SCAN, index=False)
+    leakage_scan.to_csv(paths.out_time_scan, index=False)
 
     blacklisted: List[Dict[str, object]] = []
     for f in EXPLICIT_BLACKLIST:
@@ -203,12 +267,27 @@ def main() -> int:
             )
 
     blacklisted_features = sorted({x["feature"] for x in blacklisted})
-    OUT_BLACKLIST.write_text(
+    paths.out_blacklist.write_text(
         json.dumps({"blacklisted_features": blacklisted, "threshold_abs_corr_date": TIME_PROXY_CORR_THRESHOLD}, indent=2),
         encoding="utf-8",
     )
 
-    features = [f for f in base_features if f not in blacklisted_features]
+    # Feature policy V3 (allowlist core stable)
+    core_present = [f for f in CORE_ALLOWLIST if f in base_features and f not in blacklisted_features]
+    dropped_by_policy = sorted([f for f in base_features if f not in core_present and f not in blacklisted_features])
+    feature_policy_payload = {
+        "run_id": paths.run_id,
+        "policy": "ALLOWLIST_CORE_V3",
+        "core_allowlist": CORE_ALLOWLIST,
+        "base_features_count": int(len(base_features)),
+        "blacklisted_features": blacklisted_features,
+        "dropped_by_policy_count": int(len(dropped_by_policy)),
+        "dropped_by_policy_sample": dropped_by_policy[:50],
+        "features_used_final": core_present,
+    }
+    paths.out_feature_policy.write_text(json.dumps(feature_policy_payload, indent=2), encoding="utf-8")
+
+    features = core_present.copy()
     X_train = train[features].apply(pd.to_numeric, errors="coerce").fillna(0.0)
     y_train = train["y_cash"].astype(int).copy()
     X_holdout = holdout[features].apply(pd.to_numeric, errors="coerce").fillna(0.0)
@@ -218,17 +297,17 @@ def main() -> int:
     pos = int((y_train == 1).sum())
     scale_pos_weight = float(neg / max(pos, 1))
 
-    cv_just = f"""# CV Scheme Justification (T077-V2)
+    cv_just = f"""# CV Scheme Justification ({paths.run_id})
 
 - T077-V1 falhou com CV temporal expanding-window por distribuição de classe incompatível.
 - Evidência em TRAIN (n={len(y_train)}):
   - cash_frac_total={y_train.mean():.4f}
   - classe positiva concentrada no final do período (a partir de 2021-08).
 - Com folds temporais, houve validações sem classe positiva e validações quase totalmente positivas, inviabilizando otimização robusta de recall_cash.
-- Para medir capacidade discriminativa no TRAIN sem tocar no HOLDOUT, T077-V2 usa `StratifiedKFold(n_splits={N_FOLDS}, shuffle=True, random_state=42)`.
+- Para medir capacidade discriminativa no TRAIN sem tocar no HOLDOUT, este run usa `StratifiedKFold(n_splits={N_FOLDS}, shuffle=True, random_state=42)`.
 - Anti-lookahead permanece preservado pois as features já são `shift(1)` desde T076 e HOLDOUT segue intocado para avaliação final.
 """
-    OUT_CV_JUST.write_text(cv_just, encoding="utf-8")
+    paths.out_cv_just.write_text(cv_just, encoding="utf-8")
 
     skf = StratifiedKFold(n_splits=N_FOLDS, shuffle=True, random_state=42)
 
@@ -321,8 +400,8 @@ def main() -> int:
         ],
         ascending=[False, False, False, False, True],
     ).reset_index(drop=True)
-    ablation.to_parquet(OUT_ABL, index=False)
-    pd.DataFrame(threshold_rows).to_parquet(OUT_THR_SEARCH, index=False)
+    ablation.to_parquet(paths.out_abl, index=False)
+    pd.DataFrame(threshold_rows).to_parquet(paths.out_thr_search, index=False)
 
     feasible = ablation[ablation["is_feasible"]].copy()
     logical_fail = feasible.empty
@@ -362,7 +441,7 @@ def main() -> int:
         {"date": holdout["date"].values, "split": "HOLDOUT", "y_cash": y_holdout.values, "y_proba_cash": proba_hold, "y_pred_cash": pred_hold}
     )
     preds = pd.concat([preds_train, preds_hold], ignore_index=True).sort_values("date")
-    preds.to_parquet(OUT_PREDS, index=False)
+    preds.to_parquet(paths.out_preds, index=False)
 
     importance = pd.DataFrame({"feature": features, "importance_gain": model.feature_importances_.astype(float)}).sort_values(
         "importance_gain", ascending=False
@@ -379,7 +458,7 @@ def main() -> int:
         "y_cash_rate_pred": float(acid["y_pred_cash"].mean()) if not acid.empty else None,
         "metrics": cls_metrics(acid["y_cash"].values, acid["y_pred_cash"].values) if not acid.empty else {},
     }
-    OUT_ACID.write_text(json.dumps(acid_payload, indent=2), encoding="utf-8")
+    paths.out_acid.write_text(json.dumps(acid_payload, indent=2), encoding="utf-8")
 
     trans_payload = {
         "train": {
@@ -395,25 +474,51 @@ def main() -> int:
             "pred_avg_spell": avg_spell_length(pred_hold),
         },
     }
-    OUT_TRANSITIONS.write_text(json.dumps(trans_payload, indent=2), encoding="utf-8")
+    paths.out_transitions.write_text(json.dumps(trans_payload, indent=2), encoding="utf-8")
 
-    build_plot(preds, importance)
+    build_plot(preds, importance, paths.out_plot, title=f"{paths.run_id} Model Diagnostics")
 
     train_m = cls_metrics(y_train.values, pred_train)
     hold_m = cls_metrics(y_holdout.values, pred_hold)
 
-    report = f"""# T077-V2 - XGBoost Ablation (Stratified CV + Threshold Tuning)
+    # Feature stability report (TRAIN only; informational)
+    stab_rows = []
+    for f in features:
+        s = pd.to_numeric(train[f], errors="coerce")
+        if int(s.notna().sum()) < 3:
+            corr_y = np.nan
+        else:
+            corr_y = float(s.corr(y_train.astype(float), method="spearman"))
+        corr_date_row = leakage_scan[leakage_scan["feature"] == f]
+        abs_corr_date = float(corr_date_row["abs_corr"].iloc[0]) if not corr_date_row.empty and pd.notna(corr_date_row["abs_corr"].iloc[0]) else np.nan
+        stab_rows.append({"feature": f, "spearman_corr_y_cash_train": corr_y, "abs_corr_date_ordinal_train": abs_corr_date})
+    pd.DataFrame(stab_rows).sort_values("abs_corr_date_ordinal_train", ascending=False).to_csv(paths.out_feature_stability, index=False)
+
+    # Generalization gap (winner)
+    recall_cv = float(w.get("recall_cash_mean_cv", np.nan))
+    balacc_cv = float(w.get("balanced_accuracy_mean_cv", np.nan))
+    gap_payload = {
+        "run_id": paths.run_id,
+        "winner_candidate_id": str(w.get("candidate_id")),
+        "recall_cash_mean_cv": recall_cv,
+        "holdout_recall_cash": float(hold_m["recall_cash"]),
+        "gap_recall": float(recall_cv - float(hold_m["recall_cash"])) if pd.notna(recall_cv) else None,
+        "balanced_accuracy_mean_cv": balacc_cv,
+        "holdout_balanced_accuracy": float(hold_m["balanced_accuracy"]),
+        "gap_balacc": float(balacc_cv - float(hold_m["balanced_accuracy"])) if pd.notna(balacc_cv) else None,
+    }
+    paths.out_generalization_gap.write_text(json.dumps(gap_payload, indent=2), encoding="utf-8")
+
+    report = f"""# {paths.run_id} - XGBoost Ablation (Stratified CV + Threshold Tuning)
 
 ## Contexto
 - T077-V1: FAIL lógico (feasible_count=0/48), recall_cash_mean_cv ~0.17 e acid window sem detecção de caixa.
-- T077-V2: reprojeto com `scale_pos_weight` + threshold tuning no TRAIN e CV estratificado (justificado em evidência dedicada).
+- Este run: `scale_pos_weight` + threshold tuning no TRAIN e CV estratificado (justificado em evidência dedicada).
+- Feature policy: ALLOWLIST core estável (CTO).
 
 ## Inputs
 - `{IN_DATASET.relative_to(ROOT)}`
 - `{IN_INV.relative_to(ROOT)}`
-- `{IN_ABL_V1.relative_to(ROOT)}`
-- `{IN_MODEL_V1.relative_to(ROOT)}`
-- `{IN_ACID_V1.relative_to(ROOT)}`
 
 ## Governança de features
 - explicit blacklist (F-001): {EXPLICIT_BLACKLIST}
@@ -435,23 +540,27 @@ def main() -> int:
 - TRAIN: {train_m}
 - HOLDOUT: {hold_m}
 - ACID: {acid_payload}
+- Gap (CV -> HOLDOUT): {gap_payload}
 
 ## Artefatos
-- `{OUT_MODEL.relative_to(ROOT)}`
-- `{OUT_PREDS.relative_to(ROOT)}`
-- `{OUT_ABL.relative_to(ROOT)}`
-- `{OUT_PLOT.relative_to(ROOT)}`
-- `{OUT_BLACKLIST.relative_to(ROOT)}`
-- `{OUT_TIME_SCAN.relative_to(ROOT)}`
-- `{OUT_CV_JUST.relative_to(ROOT)}`
-- `{OUT_THR_SEARCH.relative_to(ROOT)}`
-- `{OUT_ACID.relative_to(ROOT)}`
-- `{OUT_TRANSITIONS.relative_to(ROOT)}`
+- `{paths.out_model.relative_to(ROOT)}`
+- `{paths.out_preds.relative_to(ROOT)}`
+- `{paths.out_abl.relative_to(ROOT)}`
+- `{paths.out_plot.relative_to(ROOT)}`
+- `{paths.out_blacklist.relative_to(ROOT)}`
+- `{paths.out_time_scan.relative_to(ROOT)}`
+- `{paths.out_cv_just.relative_to(ROOT)}`
+- `{paths.out_thr_search.relative_to(ROOT)}`
+- `{paths.out_feature_policy.relative_to(ROOT)}`
+- `{paths.out_feature_stability.relative_to(ROOT)}`
+- `{paths.out_generalization_gap.relative_to(ROOT)}`
+- `{paths.out_acid.relative_to(ROOT)}`
+- `{paths.out_transitions.relative_to(ROOT)}`
 """
-    OUT_REPORT.write_text(report, encoding="utf-8")
+    paths.out_report.write_text(report, encoding="utf-8")
 
     model_payload = {
-        "task_id": "T077-V2",
+        "task_id": paths.run_id,
         "model_type": "XGBClassifier",
         "winner_candidate_id": w["candidate_id"],
         "params": winner_params,
@@ -463,47 +572,58 @@ def main() -> int:
         "train_metrics": train_m,
         "holdout_metrics": hold_m,
         "logical_fail_no_feasible_candidates": logical_fail,
+        "feature_policy": feature_policy_payload,
     }
-    OUT_MODEL.write_text(json.dumps(model_payload, indent=2), encoding="utf-8")
+    paths.out_model.write_text(json.dumps(model_payload, indent=2), encoding="utf-8")
 
-    inputs = [IN_DATASET, IN_INV, IN_ABL_V1, IN_MODEL_V1, IN_ACID_V1]
+    inputs = [IN_DATASET, IN_INV]
     outputs = [
-        OUT_SCRIPT,
-        OUT_MODEL,
-        OUT_PREDS,
-        OUT_ABL,
-        OUT_PLOT,
-        OUT_REPORT,
-        OUT_BLACKLIST,
-        OUT_TIME_SCAN,
-        OUT_CV_JUST,
-        OUT_THR_SEARCH,
-        OUT_ACID,
-        OUT_TRANSITIONS,
+        paths.out_script,
+        paths.out_model,
+        paths.out_preds,
+        paths.out_abl,
+        paths.out_plot,
+        paths.out_report,
+        paths.out_blacklist,
+        paths.out_time_scan,
+        paths.out_cv_just,
+        paths.out_thr_search,
+        paths.out_feature_policy,
+        paths.out_feature_stability,
+        paths.out_generalization_gap,
+        paths.out_acid,
+        paths.out_transitions,
     ]
     manifest = {
-        "task_id": "T077-V2",
-        "manifest_id": "T077-V2-XGBOOST-ABLATION-V1",
+        "task_id": paths.run_id,
+        "manifest_id": f"{paths.run_id}-XGBOOST-ABLATION-V1",
         "inputs_consumed": [str(p.relative_to(ROOT)) for p in inputs],
         "outputs_produced": [str(p.relative_to(ROOT)) for p in outputs],
         "hashes_sha256": {str(p.relative_to(ROOT)): sha256_file(p) for p in inputs + outputs},
         "self_hash_excluded": True,
     }
-    OUT_MANIFEST.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+    paths.out_manifest.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
 
-    gates.append(Gate("G1_INPUTS_PRESENT", all(p.exists() for p in inputs), "inputs T076/T077-V1 presentes"))
+    policy_pass = set(features) == set(core_present) and set(features).issubset(set(CORE_ALLOWLIST))
+    gates.append(Gate("G_FEATURE_POLICY_CORE_APPLIED", bool(policy_pass), f"features_used={len(features)} core={len(core_present)}"))
+
+    gap_recall = gap_payload.get("gap_recall")
+    gap_pass = (gap_recall is not None) and (abs(float(gap_recall)) < 0.15)
+    gates.append(Gate("G_GENERALIZATION_GAP_RECALL", bool(gap_pass), f"gap_recall={gap_recall}"))
+
+    gates.append(Gate("G1_INPUTS_PRESENT", all(p.exists() for p in inputs), "inputs T076 presentes"))
     gates.append(Gate("G2_BLACKLIST_APPLIED", all(f in blacklisted_features for f in EXPLICIT_BLACKLIST), f"blacklisted={EXPLICIT_BLACKLIST}"))
-    gates.append(Gate("G3_TIME_PROXY_SCAN_PRESENT", OUT_TIME_SCAN.exists(), str(OUT_TIME_SCAN.relative_to(ROOT))))
-    gates.append(Gate("G4_CV_JUSTIFICATION_PRESENT", OUT_CV_JUST.exists(), str(OUT_CV_JUST.relative_to(ROOT))))
-    gates.append(Gate("G5_THRESHOLD_SEARCH_PRESENT", OUT_THR_SEARCH.exists(), str(OUT_THR_SEARCH.relative_to(ROOT))))
-    gates.append(Gate("G6_ABLATION_RESULTS_PRESENT", OUT_ABL.exists(), f"candidatos={len(ablation)}"))
-    gates.append(Gate("G7_MODEL_PREDS_PRESENT", OUT_MODEL.exists() and OUT_PREDS.exists(), "modelo + predições V2 gerados"))
-    gates.append(Gate("G8_ACID_EVALUATED", OUT_ACID.exists() and acid_payload["n_rows"] > 0, f"acid_n_rows={acid_payload['n_rows']}"))
-    gates.append(Gate("Gx_HASH_MANIFEST_PRESENT", OUT_MANIFEST.exists(), str(OUT_MANIFEST.relative_to(ROOT))))
+    gates.append(Gate("G3_TIME_PROXY_SCAN_PRESENT", paths.out_time_scan.exists(), str(paths.out_time_scan.relative_to(ROOT))))
+    gates.append(Gate("G4_CV_JUSTIFICATION_PRESENT", paths.out_cv_just.exists(), str(paths.out_cv_just.relative_to(ROOT))))
+    gates.append(Gate("G5_THRESHOLD_SEARCH_PRESENT", paths.out_thr_search.exists(), str(paths.out_thr_search.relative_to(ROOT))))
+    gates.append(Gate("G6_ABLATION_RESULTS_PRESENT", paths.out_abl.exists(), f"candidatos={len(ablation)}"))
+    gates.append(Gate("G7_MODEL_PREDS_PRESENT", paths.out_model.exists() and paths.out_preds.exists(), "modelo + predições gerados"))
+    gates.append(Gate("G8_ACID_EVALUATED", paths.out_acid.exists() and acid_payload["n_rows"] > 0, f"acid_n_rows={acid_payload['n_rows']}"))
+    gates.append(Gate("Gx_HASH_MANIFEST_PRESENT", paths.out_manifest.exists(), str(paths.out_manifest.relative_to(ROOT))))
 
     overall_pass = all(g.passed for g in gates) and (not logical_fail)
 
-    print("HEADER: T077-V2")
+    print(f"HEADER: {paths.run_id}")
     print("STEP GATES:")
     for g in gates:
         print(f"- {g.name}: {'PASS' if g.passed else 'FAIL'} | {g.detail}")
@@ -514,7 +634,7 @@ def main() -> int:
     else:
         print("- none")
     print("ARTIFACT LINKS:")
-    for p in outputs + [OUT_MANIFEST]:
+    for p in outputs + [paths.out_manifest]:
         print(f"- {p.relative_to(ROOT)}")
     if logical_fail:
         print("- LOGIC_NOTE: nenhum candidato passou hard constraints no TRAIN-CV")

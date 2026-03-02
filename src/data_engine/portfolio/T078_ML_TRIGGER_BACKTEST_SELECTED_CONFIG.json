@@ -1,0 +1,44 @@
+{
+  "grids": {
+    "h_in_grid": [
+      1,
+      2,
+      3
+    ],
+    "h_out_grid": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "thr_grid": [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25
+    ]
+  },
+  "run_id": "T078-ML-TRIGGER-BACKTEST-V1",
+  "selection_mode": "TRAIN_ONLY",
+  "source_model": "T077_V3",
+  "source_model_path": "/home/wilson/AGNO_WORKSPACE/src/data_engine/models/T077_V3_XGB_SELECTED_MODEL.json",
+  "task_id": "T078",
+  "thresholds": {
+    "MDD_train_min": -0.3,
+    "equity_train_vs_t072_min": 0.0,
+    "max_switches_train": 40
+  },
+  "walk_forward": {
+    "holdout_end": "2026-02-26",
+    "holdout_start": "2023-01-02",
+    "train_end": "2022-12-30",
+    "train_start": "2018-07-02"
+  },
+  "winner_candidate_id": "C057",
+  "winner_params": {
+    "h_in": 3,
+    "h_out": 2,
+    "thr": 0.25
+  }
+}

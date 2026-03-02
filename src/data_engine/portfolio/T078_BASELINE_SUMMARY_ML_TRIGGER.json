@@ -1,0 +1,88 @@
+{
+  "baseline_t072": {
+    "acid": {
+      "cagr": 0.00033037765076104897,
+      "equity_final": 352289.264278234,
+      "mdd": -0.19216648851656792,
+      "sharpe": 0.08853903782688324,
+      "switches": 0.0,
+      "time_in_cash_frac": 0.0
+    },
+    "holdout": {
+      "cagr": 0.17805327355272316,
+      "equity_final": 407082.4889951659,
+      "mdd": -0.19522977594305846,
+      "sharpe": 0.908946185349627,
+      "switches": 0.0,
+      "time_in_cash_frac": 0.0
+    },
+    "train": {
+      "cagr": 0.22429392190728592,
+      "equity_final": 244630.4787957259,
+      "mdd": -0.29779520837259577,
+      "sharpe": 0.9986085870051005,
+      "switches": 0.0,
+      "time_in_cash_frac": 0.0
+    }
+  },
+  "ml_winner": {
+    "acid": {
+      "cagr": 0.10139200671286819,
+      "equity_final": 411130.0207766074,
+      "mdd": -0.07059607547943003,
+      "sharpe": 1.6890366860624209,
+      "switches": 6.0,
+      "time_in_cash_frac": 0.9365671641791045
+    },
+    "holdout": {
+      "cagr": 0.10832917791300534,
+      "equity_final": 475075.0281910199,
+      "mdd": -0.2537034423637078,
+      "sharpe": 0.777140841180982,
+      "switches": 25.0,
+      "time_in_cash_frac": 0.6264294790343075
+    },
+    "train": {
+      "cagr": 0.3228938717331462,
+      "equity_final": 344522.5706843132,
+      "mdd": -0.2977952083725959,
+      "sharpe": 1.4518325738599875,
+      "switches": 1.0,
+      "time_in_cash_frac": 0.31569506726457397
+    }
+  },
+  "oracle_y_cash": {
+    "acid": {
+      "cagr": 0.13868105605258285,
+      "equity_final": 620104.1120466755,
+      "mdd": 0.0,
+      "sharpe": 147.22885445418515,
+      "switches": 0.0,
+      "time_in_cash_frac": 1.0
+    },
+    "holdout": {
+      "cagr": 0.26734300857309856,
+      "equity_final": 716551.8537309979,
+      "mdd": -0.19468185428629636,
+      "sharpe": 1.4557641987366825,
+      "switches": 3.0,
+      "time_in_cash_frac": 0.420584498094028
+    },
+    "train": {
+      "cagr": 0.3207441077401092,
+      "equity_final": 342054.48086628894,
+      "mdd": -0.2977952083725959,
+      "sharpe": 1.4450045732627255,
+      "switches": 1.0,
+      "time_in_cash_frac": 0.31748878923766816
+    }
+  },
+  "run_id": "T078-ML-TRIGGER-BACKTEST-V1",
+  "task_id": "T078",
+  "winner_candidate": {
+    "candidate_id": "C057",
+    "h_in": 3,
+    "h_out": 2,
+    "thr": 0.25
+  }
+}

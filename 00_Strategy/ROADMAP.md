@@ -162,7 +162,7 @@ Executar a evolucao do ambiente AGNO com foco em portabilidade, reducao de compl
 
 | ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
 |---|---|---|---|---|---|
-| T077 | XGBoost Ablation (grid search + walk-forward + hard constraints) | STATE3-P6B (Model) | PENDING | — | — |
+| T077 | XGBoost Ablation — Feature Policy Estável (ALLOWLIST core) | STATE3-P6B (Model) | DONE | `src/data_engine/models/T077_V3_XGB_SELECTED_MODEL.json` + `T077_V3_PREDICTIONS_DAILY.parquet` + `T077_V3_ABLATION_RESULTS.parquet` + manifest (17 SHA256, 0 mismatches). HOLDOUT recall=0.988, acid recall=0.985, gap_recall=0.012. Auditor PASS. Findings F-001/F-003 delegados a T078. | 2026-03-02T00:00:00Z |
 
 ### Fase 6C — Backtest Financeiro
 
@@ -170,7 +170,7 @@ Executar a evolucao do ambiente AGNO com foco em portabilidade, reducao de compl
 
 | ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
 |---|---|---|---|---|---|
-| T078 | Backtest Financeiro (ML trigger no motor dual-mode vs T072/martelada/CDI/Ibov) | STATE3-P6C (Backtest) | PENDING | — | — |
+| T078 | Backtest Financeiro (ML trigger no motor dual-mode vs T072/martelada/CDI/Ibov) | STATE3-P6C (Backtest) | DONE | `src/data_engine/portfolio/T078_ML_TRIGGER_BACKTEST_SELECTED_CONFIG.json` (winner C057, thr=0.25, h_in=3, h_out=2) + `T078_PORTFOLIO_CURVE_ML_TRIGGER.parquet` + `T078_PORTFOLIO_CURVE_MARTELADA_ORACLE.parquet` + `T078_BASELINE_SUMMARY_ML_TRIGGER.json` + `outputs/plots/T078_STATE3_PHASE6C_BACKTEST_COMPARATIVE.html` + manifest (12 SHA256, 0 mismatches). HOLDOUT: ML=R$475k vs T072=R$407k. Acid window MDD=-7.1% (vs -19.2% T072). Seleção TRAIN-only. Auditor PASS. Findings F-001/F-002 delegados a T079. | 2026-03-02T18:00:00Z |
 
 ### Fase 6D — Consolidação e Governança
 
@@ -178,6 +178,106 @@ Executar a evolucao do ambiente AGNO com foco em portabilidade, reducao de compl
 
 | ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
 |---|---|---|---|---|---|
-| T079 | Phase 6 Comparative Plotly (ML trigger vs T072/martelada/CDI/Ibov) | STATE3-P6D (Visual) | PENDING | — | — |
-| T080 | Phase 6 Lessons Learned | STATE3-P6D (Lessons) | PENDING | — | — |
-| T081 | Phase 6 Governance Closeout | STATE3-P6D (Closeout) | PENDING | — | — |
+| T079 | Phase 6 Comparative Plotly (ML trigger vs T072/martelada/CDI/Ibov) | STATE3-P6D (Visual) | DONE | `outputs/plots/T079_STATE3_PHASE6D_COMPARATIVE.html` + manifest (7 SHA256, 0 mismatches). C057 vs C060 comparados. **Winner produto Phase 6 = C060** (thr=0.25, h_in=3, h_out=5): HOLDOUT R$506k, MDD=-18.7%, Sharpe=0.962, switches=13. Auditor PASS. | 2026-03-02T19:20:00Z |
+| T080 | Phase 6 Lessons Learned | STATE3-P6D (Lessons) | DONE | `02_Knowledge_Bank/docs/process/STATE3_PHASE6_LESSONS_LEARNED_T080.md` (253 linhas, 14 lições, 11-item checklist anti-regressão Phase 7). Manifest SHA256 3 entradas, 0 mismatches. Auditor PASS. | 2026-03-02T19:41:00Z |
+| T081 | Phase 6 Governance Closeout | STATE3-P6D (Closeout) | DONE | `outputs/governanca/T081-PHASE6-GOVERNANCE-CLOSEOUT-V1_report.md` + manifest (5 SHA256, 0 mismatches). 7/7 gates PASS. 5 manifests Phase 6 validados (53 entradas, 0 mismatches). Registry 18/18. C060 winner produto confirmado. Auditor PASS. **STATE 3 Phase 6 COMPLETED.** | 2026-03-02T20:00:00Z |
+
+---
+
+## STATE 3 — Phase 7: Expansão Multi-Mercado (BR + US + Tesouro IPCA+)
+
+**Objetivo-mestre**: construir um mecanismo completo que opere sobre um universo expandido de ~1.100 ativos (BR + 500 tickers US), remunere o caixa via Tesouro IPCA+ em vez de CDI, incorpore fricções reais diferenciadas por mercado (settlement, custos de transação, impostos), e **supere o C060** (winner Phase 6: CAGR 23.5%, Sharpe 1.27, HOLDOUT R$506k) em retorno ajustado ao risco.
+
+**Motivação**: análise CTO pós-Phase 6 demonstrou que:
+- O alpha do C060 vem 70% do stock picking (+16.3pp Jensen) e 30% do ML timing (~7pp). Expandir o universo de seleção de ~90 para ~1.100 ativos multiplica o potencial de alpha (top 1.5% de 1.100 >> top 12% de 90).
+- Mercados BR e US têm correlação parcial (0.48): em 79% dos meses pelo menos um está positivo — mais oportunidades de seleção.
+- Trocar CDI por Tesouro IPCA+ no cash gera ~1pp CAGR adicional com risco zero.
+- Owner possui conta BTG Internacional com US$ 183k já dolarizados. Custos operacionais BTG: US$ 1-7.50/ordem, sem câmbio recorrente. Diferença de fricção BR vs US estimada em ~1.4pp/ano — amplamente compensada pelo alpha potencial.
+
+**Baseline de referência (C060)**: CAGR=23.5%, Sharpe=1.27, MDD=-29.8%, HOLDOUT equity=R$506k, 14 switches em 7.7 anos.
+
+**Infraestrutura operacional**: BTG Pactual (BR doméstico + Internacional em USD). Operação manual via app. Mercado US: 11:30-18:00 BRT.
+
+**Regras de fase**:
+- Custo de transação uniforme simplificado no primeiro ciclo; refinamento diferenciado na consolidação.
+- Regra fiscal simplificada: penalizar withholding 30% sobre dividendos US; remover isenção R$20k para ativos US.
+- Anti-lookahead estrito (shift(1)) mantido em todas as features, incluindo cross-market.
+- Walk-forward: TRAIN / HOLDOUT com mesma disciplina da Phase 6.
+- Toda task deve superar C060 ou justificar por que não (com diagnóstico).
+
+### Fase 7A — Cash Upgrade: Tesouro IPCA+ (CANCELADA)
+
+**Objetivo original**: substituir a remuneração do caixa de CDI para Tesouro IPCA+ no motor dual-mode existente (C060).
+
+**Motivo do cancelamento**: análise CTO com dados reais do Tesouro Transparente (PU diário de NTN-B) demonstrou que Tesouro IPCA+ mark-to-market **não é substituto de cash sem risco**. Título curto (venc. ~5 anos): CAGR +2.3pp vs CDI, mas vol 5.2% e MDD -9.3%. Título longo (venc. 2035): vol 16% e MDD -22%. O C060 fica 47% do tempo em cash para proteção — introduzir volatilidade no caixa contradiz a lógica do ML trigger. Decisão do Owner: manter CDI e focar no pipeline US (alpha real).
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T082 | Cash upgrade: CDI → Tesouro IPCA+ (backtest C060 recalculado) | STATE3-P7A (Cash) | CANCELLED | Análise CTO: IPCA+ mark-to-market não é risk-free. NTN-B curta (5y): MDD=-9.3%, vol=5.2%. NTN-B longa (2035): MDD=-22%, vol=16%. Decisão Owner: manter CDI, focar pipeline US. | 2026-03-02T17:30:00Z |
+
+### Fase 7B — Ingestão e Qualidade de Dados US
+
+**Objetivo**: construir pipeline de ingestão para ~500 tickers do S&P 500 (OHLCV diário + dividendos + splits), aplicar o mesmo framework de qualidade de dados do BR (SPC charts, blacklist, universo operacional), e produzir SSOT expandido com tickers BR + US normalizados.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T083 | SPEC: Pipeline de dados US (ingestão, qualidade, SSOT expandido) | STATE3-P7B (Spec) | DONE | `scripts/t083_spec_us_data_pipeline.py` + `02_Knowledge_Bank/docs/specs/SPEC-083_PIPELINE_DADOS_US_T083.md` + `sp500_current_symbols_snapshot.csv` (503 símbolos). Manifest V2 SHA256: 9 entradas, 0 mismatches. Auditor PASS (V2). | 2026-03-02T17:39:16Z |
+| T084 | Ingestão S&P 500: OHLCV + dividendos + splits (2018-2026) | STATE3-P7B (Ingest) | DONE | `scripts/t084_ingest_sp500_brapi_us_market_data.py` + `src/data_engine/ssot/SSOT_US_MARKET_DATA_RAW.parquet` (1.006.669 linhas, 499 tickers, 2018-01-02..2026-02-26). Fonte: BRAPI. Dividendos derivados via close/adjusted_close. Manifest V2 SHA256: 10 entradas, 0 mismatches. Auditor PASS (V2). | 2026-03-02T19:10:04Z |
+| T085 | Qualidade de dados US: SPC charts + blacklist + universo operacional | STATE3-P7B (Quality) | PENDING | | |
+| T086 | SSOT unificado BR+US: merge canonical base + macro expandido (VIX, DXY, Treasury yield, Fed funds) | STATE3-P7B (SSOT) | PENDING | | |
+
+### Fase 7C — Feature Engineering Multi-Mercado
+
+**Objetivo**: expandir a feature matrix para incluir features cross-market (VIX, DXY, Treasury yield spread, momentum relativo BR/US, correlação rolling) e features per-ticker US (mesma lógica BR adaptada). Validar anti-lookahead em todas as features novas.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T087 | Feature engineering US: per-ticker features (momentum, SPC, volume) | STATE3-P7C (Features-US) | PENDING | | |
+| T088 | Feature engineering cross-market: VIX, DXY, Treasury spread, momentum relativo BR/US | STATE3-P7C (Features-Cross) | PENDING | | |
+| T089 | Feature matrix unificada + EDA + validação anti-lookahead | STATE3-P7C (Matrix) | PENDING | | |
+
+### Fase 7D — Stock Picking Multi-Mercado
+
+**Objetivo**: adaptar o motor de seleção de ativos (campeonato F1 / score ranking) para operar sobre o universo unificado de ~1.100 tickers, com custo de transação uniforme simplificado e regra fiscal simplificada (penalização de dividendos US). Rodar ablação de parâmetros de seleção (n_positions, cadence, alocação BR/US).
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T090 | Adaptação do motor de seleção para universo BR+US (custo uniforme) | STATE3-P7D (Selector) | PENDING | | |
+| T091 | Ablação de seleção multi-mercado (n_positions, cadence, split BR/US) | STATE3-P7D (Ablation) | PENDING | | |
+
+### Fase 7E — ML Trigger Multi-Mercado
+
+**Objetivo**: retreinar o ML trigger (XGBoost) com features expandidas (cross-market), mantendo walk-forward estrito e anti-lookahead. Avaliar se o trigger deve ser único (cash/mercado global) ou dual (trigger BR + trigger US independentes). Ablação de hiperparâmetros + threshold + histerese.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T092 | ML trigger retreino com features cross-market (XGBoost walk-forward) | STATE3-P7E (ML-Retrain) | PENDING | | |
+| T093 | Ablação: trigger único vs dual (BR independente + US independente) | STATE3-P7E (ML-Ablation) | PENDING | | |
+| T094 | Threshold + histerese tuning para trigger multi-mercado | STATE3-P7E (ML-Tuning) | PENDING | | |
+
+### Fase 7F — Backtest Integrado e Comparativo
+
+**Objetivo**: integrar stock picking multi-mercado + ML trigger + Tesouro IPCA+ no cash. Rodar backtest completo (TRAIN + HOLDOUT). Comparar contra C060 (baseline), CDI, Ibovespa, S&P 500. O winner Phase 7 deve superar C060 em CAGR e Sharpe, com MDD controlado.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T095 | Backtest integrado: BR+US + ML trigger + IPCA+ cash (vs C060/CDI/Ibov/SP500) | STATE3-P7F (Backtest) | PENDING | | |
+| T096 | Phase 7 Comparative Plotly (winner Phase 7 vs C060 vs benchmarks) | STATE3-P7F (Visual) | PENDING | | |
+
+### Fase 7G — Refinamento de Fricções (condicional)
+
+**Objetivo**: se a diferença entre custo uniforme e custo real diferenciado for > 1pp CAGR, implementar modelo de fricções detalhado (settlement D+2/D+1, custos BTG reais por ordem, modelo fiscal completo com isenção BR e tributação US, withholding de dividendos). Caso contrário, manter simplificação.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T097 | Análise de sensibilidade: custo uniforme vs diferenciado (gate > 1pp) | STATE3-P7G (Friction-Gate) | PENDING | | |
+| T098 | Modelo de fricções diferenciado por mercado (se gate T097 ativado) | STATE3-P7G (Friction-Model) | PENDING | | |
+
+### Fase 7H — Consolidação e Governança
+
+**Objetivo**: consolidar lições da Phase 7, fechar a fase com governance closeout, e promover o winner Phase 7 como novo baseline de produto.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T099 | Phase 7 Lessons Learned | STATE3-P7H (Lessons) | PENDING | | |
+| T100 | Phase 7 Governance Closeout | STATE3-P7H (Closeout) | PENDING | | |
