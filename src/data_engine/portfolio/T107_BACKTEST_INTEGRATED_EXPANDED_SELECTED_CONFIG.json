@@ -1,0 +1,37 @@
+{
+  "dual_mode_signal": {
+    "h_in": 2,
+    "h_out": 4,
+    "initial_mode": "B_T067_CONTROLE_REGIME",
+    "signal_variant": "SINAL-2",
+    "signal_w": 30,
+    "thr": 0.0005
+  },
+  "ml_trigger_winner": {
+    "h_in": 3,
+    "h_out": 2,
+    "thr": 0.05,
+    "winner_candidate_id": "CORE_PLUS_MACRO_EXPANDED_FX_C009",
+    "winner_variant": "CORE_PLUS_MACRO_EXPANDED_FX"
+  },
+  "run_id": "T107-BACKTEST-INTEGRATED-EXPANDED-V1",
+  "source": {
+    "baseline_engine": "T072 dual-mode logic on expanded universe",
+    "ml_predictions": "src/data_engine/features/T105_V1_PREDICTIONS.parquet",
+    "ml_trigger_config": "src/data_engine/portfolio/T106_ML_TRIGGER_EXPANDED_SELECTED_CONFIG.json"
+  },
+  "task_id": "T107",
+  "universe": {
+    "max_pct": 0.1,
+    "order_cost_rate": 0.00025,
+    "target_pct": 0.06666666666666667,
+    "tickers_count_after_blacklist": 1158,
+    "top_n": 15
+  },
+  "walk_forward": {
+    "holdout_end": "2026-02-26",
+    "holdout_start": "2023-01-02",
+    "train_end": "2022-12-30",
+    "train_start": "2018-07-02"
+  }
+}

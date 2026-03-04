@@ -1,0 +1,49 @@
+{
+  "grids": {
+    "h_in_grid": [
+      1,
+      2,
+      3
+    ],
+    "h_out_grid": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "thr_grid": [
+      0.05,
+      0.08,
+      0.1,
+      0.12,
+      0.15,
+      0.2,
+      0.25
+    ]
+  },
+  "run_id": "T106-ML-TRIGGER-TUNING-EXPANDED-V1",
+  "selection_mode": "TRAIN_ONLY",
+  "task_id": "T106",
+  "thresholds": {
+    "MDD_train_min": -0.3,
+    "equity_train_vs_t072_min": 0.0,
+    "max_switches_train": 40
+  },
+  "variants": [
+    "CORE_PLUS_MACRO_EXPANDED_FX",
+    "CORE"
+  ],
+  "walk_forward": {
+    "holdout_end": "2026-02-26",
+    "holdout_start": "2023-01-02",
+    "train_end": "2022-12-30",
+    "train_start": "2018-07-02"
+  },
+  "winner_candidate_id": "CORE_PLUS_MACRO_EXPANDED_FX_C009",
+  "winner_params": {
+    "h_in": 3,
+    "h_out": 2,
+    "thr": 0.05
+  },
+  "winner_variant": "CORE_PLUS_MACRO_EXPANDED_FX"
+}

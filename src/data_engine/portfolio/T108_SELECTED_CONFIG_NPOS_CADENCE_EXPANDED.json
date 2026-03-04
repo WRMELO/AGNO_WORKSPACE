@@ -1,0 +1,49 @@
+{
+  "grids": {
+    "cadence_mode_b_grid": [
+      5,
+      10,
+      15,
+      20
+    ],
+    "top_n_grid": [
+      10,
+      12,
+      15,
+      18,
+      20
+    ]
+  },
+  "ml_trigger_fixed_from_t106": {
+    "h_in": 3,
+    "h_out": 2,
+    "thr": 0.05,
+    "winner_candidate_id": "CORE_PLUS_MACRO_EXPANDED_FX_C009",
+    "winner_variant": "CORE_PLUS_MACRO_EXPANDED_FX"
+  },
+  "run_id": "T108-ABLATION-NPOS-CADENCE-EXPANDED-V1",
+  "selection_mode": "HOLDOUT_PRIMARY_WITH_C060_GATE",
+  "task_id": "T108",
+  "universe": {
+    "order_cost_rate": 0.00025,
+    "tickers_count_after_blacklist": 1158
+  },
+  "walk_forward": {
+    "holdout_end": "2026-02-26",
+    "holdout_start": "2023-01-02",
+    "train_end": "2022-12-30",
+    "train_start": "2018-07-02"
+  },
+  "winner_candidate_id": "C010_N15_CB10",
+  "winner_params": {
+    "cadence_mode_a": 3,
+    "cadence_mode_b": 10,
+    "max_pct": 0.1,
+    "signal_h_in": 2,
+    "signal_h_out": 4,
+    "signal_thr": 0.0005,
+    "signal_w": 30,
+    "target_pct": 0.06666666666666667,
+    "top_n": 15
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "baseline_expanded": {
+    "acid": {
+      "cagr": 0.0525978529018285,
+      "equity_final": 215062.24975742164,
+      "mdd": -0.20141267290888942,
+      "sharpe": 0.32969691619771324,
+      "switches": 0.0,
+      "time_in_cash_frac": 0.0
+    },
+    "holdout": {
+      "cagr": 0.20545502446335617,
+      "equity_final": 290195.8221002074,
+      "mdd": -0.20141267290888942,
+      "sharpe": 1.0131252717535713,
+      "switches": 0.0,
+      "time_in_cash_frac": 0.0
+    },
+    "train": {
+      "cagr": 0.11134136464118405,
+      "equity_final": 159468.52159423966,
+      "mdd": -0.29956675516809406,
+      "sharpe": 0.6150321338409193,
+      "switches": 0.0,
+      "time_in_cash_frac": 0.0
+    }
+  },
+  "c060_acid_equity_final": 445357.0336021011,
+  "c060_holdout_equity_final": 506432.23005006375,
+  "winner_expanded_ml": {
+    "acid": {
+      "cagr": 0.1918415661486692,
+      "equity_final": 383680.2862364172,
+      "mdd": -0.025366573749476484,
+      "sharpe": 3.369473784814721,
+      "switches": 2.0,
+      "time_in_cash_frac": 0.9402985074626866
+    },
+    "holdout": {
+      "cagr": 0.2654071995409062,
+      "equity_final": 516964.05630950653,
+      "mdd": -0.07070787619654428,
+      "sharpe": 3.191865812721084,
+      "switches": 15.0,
+      "time_in_cash_frac": 0.8538754764930114
+    },
+    "train": {
+      "cagr": 0.22804173188826993,
+      "equity_final": 247958.30433385647,
+      "mdd": -0.23974234811995054,
+      "sharpe": 1.2620372387836534,
+      "switches": 1.0,
+      "time_in_cash_frac": 0.3165919282511211
+    }
+  }
+}

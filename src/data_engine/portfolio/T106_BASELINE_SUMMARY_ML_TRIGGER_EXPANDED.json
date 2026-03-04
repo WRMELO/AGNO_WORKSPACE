@@ -1,0 +1,140 @@
+{
+  "baseline_t072": {
+    "acid": {
+      "cagr": 0.00033037765076193715,
+      "equity_final": 352289.2642782339,
+      "mdd": -0.19216648851656726,
+      "sharpe": 0.08853903782689349,
+      "switches": 0.0,
+      "time_in_cash_frac": 0.0
+    },
+    "holdout": {
+      "cagr": 0.1780532735527236,
+      "equity_final": 407082.48899516574,
+      "mdd": -0.19522977594305768,
+      "sharpe": 0.9089461853496308,
+      "switches": 0.0,
+      "time_in_cash_frac": 0.0
+    },
+    "train": {
+      "cagr": 0.22429392190728548,
+      "equity_final": 244630.47879572556,
+      "mdd": -0.2977952083725959,
+      "sharpe": 0.9986085870050965,
+      "switches": 0.0,
+      "time_in_cash_frac": 0.0
+    }
+  },
+  "global_winner": "CORE_PLUS_MACRO_EXPANDED_FX_C009",
+  "run_id": "T106-ML-TRIGGER-TUNING-EXPANDED-V1",
+  "task_id": "T106",
+  "variant_comparison_financial": {
+    "CORE": {
+      "feasible_count": 45,
+      "metrics": {
+        "acid": {
+          "cagr": 0.0748540323779201,
+          "equity_final": 363492.55378605856,
+          "mdd": -0.0642033138547744,
+          "sharpe": 2.107169343626926,
+          "switches": 2.0,
+          "time_in_cash_frac": 0.9813432835820896
+        },
+        "holdout": {
+          "cagr": 0.08571354582052582,
+          "equity_final": 412868.57941666845,
+          "mdd": -0.2732816712226862,
+          "sharpe": 0.6703046441423178,
+          "switches": 20.0,
+          "time_in_cash_frac": 0.6848792884371029
+        },
+        "train": {
+          "cagr": 0.30033303812882584,
+          "equity_final": 319296.18852430215,
+          "mdd": -0.29779520837259543,
+          "sharpe": 1.3938172262990383,
+          "switches": 5.0,
+          "time_in_cash_frac": 0.3488789237668161
+        }
+      },
+      "total_candidates": 84,
+      "winner_candidate_id": "CORE_C058",
+      "winner_params": {
+        "h_in": 3,
+        "h_out": 3,
+        "thr": 0.15
+      }
+    },
+    "CORE_PLUS_MACRO_EXPANDED_FX": {
+      "feasible_count": 84,
+      "metrics": {
+        "acid": {
+          "cagr": 0.07232413982162544,
+          "equity_final": 409383.47273244354,
+          "mdd": -0.0642033138547744,
+          "sharpe": 1.217649495319233,
+          "switches": 2.0,
+          "time_in_cash_frac": 0.9402985074626866
+        },
+        "holdout": {
+          "cagr": 0.10536170038791792,
+          "equity_final": 475217.16118501726,
+          "mdd": -0.11840645533536931,
+          "sharpe": 1.3413408185247513,
+          "switches": 15.0,
+          "time_in_cash_frac": 0.8538754764930114
+        },
+        "train": {
+          "cagr": 0.32548836671197123,
+          "equity_final": 347519.5709632,
+          "mdd": -0.2977952083725959,
+          "sharpe": 1.4616014956002248,
+          "switches": 1.0,
+          "time_in_cash_frac": 0.3165919282511211
+        }
+      },
+      "total_candidates": 84,
+      "winner_candidate_id": "CORE_PLUS_MACRO_EXPANDED_FX_C009",
+      "winner_params": {
+        "h_in": 3,
+        "h_out": 2,
+        "thr": 0.05
+      }
+    },
+    "GLOBAL_WINNER": {
+      "candidate_id": "CORE_PLUS_MACRO_EXPANDED_FX_C009",
+      "metrics": {
+        "acid": {
+          "cagr": 0.07232413982162544,
+          "equity_final": 409383.47273244354,
+          "mdd": -0.0642033138547744,
+          "sharpe": 1.217649495319233,
+          "switches": 2.0,
+          "time_in_cash_frac": 0.9402985074626866
+        },
+        "holdout": {
+          "cagr": 0.10536170038791792,
+          "equity_final": 475217.16118501726,
+          "mdd": -0.11840645533536931,
+          "sharpe": 1.3413408185247513,
+          "switches": 15.0,
+          "time_in_cash_frac": 0.8538754764930114
+        },
+        "train": {
+          "cagr": 0.32548836671197123,
+          "equity_final": 347519.5709632,
+          "mdd": -0.2977952083725959,
+          "sharpe": 1.4616014956002248,
+          "switches": 1.0,
+          "time_in_cash_frac": 0.3165919282511211
+        }
+      },
+      "params": {
+        "h_in": 3,
+        "h_out": 2,
+        "thr": 0.05
+      },
+      "variant": "CORE_PLUS_MACRO_EXPANDED_FX"
+    }
+  }
+}

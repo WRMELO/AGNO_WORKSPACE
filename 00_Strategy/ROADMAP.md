@@ -184,100 +184,140 @@ Executar a evolucao do ambiente AGNO com foco em portabilidade, reducao de compl
 
 ---
 
-## STATE 3 — Phase 7: Expansão Multi-Mercado (BR + US + Tesouro IPCA+)
+## STATE 3 — Phase 7: Expansão Multi-Mercado (ENCERRADA — premissa substituída)
 
-**Objetivo-mestre**: construir um mecanismo completo que opere sobre um universo expandido de ~1.100 ativos (BR + 500 tickers US), remunere o caixa via Tesouro IPCA+ em vez de CDI, incorpore fricções reais diferenciadas por mercado (settlement, custos de transação, impostos), e **supere o C060** (winner Phase 6: CAGR 23.5%, Sharpe 1.27, HOLDOUT R$506k) em retorno ajustado ao risco.
+**Objetivo original**: operar sobre ~1.100 ativos (BR + 500 tickers US diretos em USD), remunerar caixa via Tesouro IPCA+, incorporar fricções cross-border diferenciadas, e superar o C060.
 
-**Motivação**: análise CTO pós-Phase 6 demonstrou que:
-- O alpha do C060 vem 70% do stock picking (+16.3pp Jensen) e 30% do ML timing (~7pp). Expandir o universo de seleção de ~90 para ~1.100 ativos multiplica o potencial de alpha (top 1.5% de 1.100 >> top 12% de 90).
-- Mercados BR e US têm correlação parcial (0.48): em 79% dos meses pelo menos um está positivo — mais oportunidades de seleção.
-- Trocar CDI por Tesouro IPCA+ no cash gera ~1pp CAGR adicional com risco zero.
-- Owner possui conta BTG Internacional com US$ 183k já dolarizados. Custos operacionais BTG: US$ 1-7.50/ordem, sem câmbio recorrente. Diferença de fricção BR vs US estimada em ~1.4pp/ano — amplamente compensada pelo alpha potencial.
+**Motivo do encerramento**: análise CTO (mar/2026) demonstrou que a premissa de execução cross-border (BR em BRL + US em USD) é economicamente destrutiva — custo FX+IOF de ~0.78% one-way (31x o custo de corretagem) poderia consumir até 62% do CAGR em cenários de alto churn. Diagnóstico revelou que **BDRs classe I na B3** oferecem exposição ao S&P 500 em BRL, sem FX, sem IOF, com custo idêntico a ações BR (2.5 bps). Comparação empírica: S&P 500 em BRL (via PTAX) tem mediana de Sharpe 0.52 vs 0.01 das ações BR; no Top 50 combinado por Sharpe, 86% são US. Decisão do Owner: cancelar Phase 7, manter artefatos de ingestão US (T083-T085) como insumo, e iniciar Phase 8 com modelo "BDR Bridge" (100% B3, 100% BRL).
 
-**Baseline de referência (C060)**: CAGR=23.5%, Sharpe=1.27, MDD=-29.8%, HOLDOUT equity=R$506k, 14 switches em 7.7 anos.
+**Artefatos preservados** (insumos para Phase 8):
+- T083: SPEC pipeline US (referência de arquitetura de ingestão)
+- T084: `SSOT_US_MARKET_DATA_RAW.parquet` (496 tickers S&P 500, 2018-2026) — base para síntese de BDRs via PTAX
+- T085: `SSOT_US_UNIVERSE_OPERATIONAL.parquet` (496 tickers) + `SSOT_US_BLACKLIST_OPERATIONAL.csv` (3 HARD) — quality gates reutilizáveis
+- T086: `SSOT_MACRO_EXPANDED.parquet` (VIX, DXY, Treasury yields, Fed funds) — features macro preservadas
 
-**Infraestrutura operacional**: BTG Pactual (BR doméstico + Internacional em USD). Operação manual via app. Mercado US: 11:30-18:00 BRT.
-
-**Regras de fase**:
-- Custo de transação uniforme simplificado no primeiro ciclo; refinamento diferenciado na consolidação.
-- Regra fiscal simplificada: penalizar withholding 30% sobre dividendos US; remover isenção R$20k para ativos US.
-- Anti-lookahead estrito (shift(1)) mantido em todas as features, incluindo cross-market.
-- Walk-forward: TRAIN / HOLDOUT com mesma disciplina da Phase 6.
-- Toda task deve superar C060 ou justificar por que não (com diagnóstico).
+**Artefato desativado**:
+- T086: `SSOT_CANONICAL_BASE_BR_US.parquet` — construído com premissa de dois mercados separados (market=BR/US); será substituído por SSOT unificado em BRL na Phase 8
 
 ### Fase 7A — Cash Upgrade: Tesouro IPCA+ (CANCELADA)
 
-**Objetivo original**: substituir a remuneração do caixa de CDI para Tesouro IPCA+ no motor dual-mode existente (C060).
-
-**Motivo do cancelamento**: análise CTO com dados reais do Tesouro Transparente (PU diário de NTN-B) demonstrou que Tesouro IPCA+ mark-to-market **não é substituto de cash sem risco**. Título curto (venc. ~5 anos): CAGR +2.3pp vs CDI, mas vol 5.2% e MDD -9.3%. Título longo (venc. 2035): vol 16% e MDD -22%. O C060 fica 47% do tempo em cash para proteção — introduzir volatilidade no caixa contradiz a lógica do ML trigger. Decisão do Owner: manter CDI e focar no pipeline US (alpha real).
+**Motivo**: IPCA+ mark-to-market não é risk-free. Decisão Owner: manter CDI.
 
 | ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
 |---|---|---|---|---|---|
-| T082 | Cash upgrade: CDI → Tesouro IPCA+ (backtest C060 recalculado) | STATE3-P7A (Cash) | CANCELLED | Análise CTO: IPCA+ mark-to-market não é risk-free. NTN-B curta (5y): MDD=-9.3%, vol=5.2%. NTN-B longa (2035): MDD=-22%, vol=16%. Decisão Owner: manter CDI, focar pipeline US. | 2026-03-02T17:30:00Z |
+| T082 | Cash upgrade: CDI → Tesouro IPCA+ (backtest C060 recalculado) | STATE3-P7A (Cash) | CANCELLED | Análise CTO: NTN-B curta MDD=-9.3%, vol=5.2%; NTN-B longa MDD=-22%, vol=16%. Decisão Owner: manter CDI. | 2026-03-02T17:30:00Z |
 
-### Fase 7B — Ingestão e Qualidade de Dados US
+### Fase 7B — Ingestão e Qualidade de Dados US (DONE — artefatos preservados)
 
-**Objetivo**: construir pipeline de ingestão para ~500 tickers do S&P 500 (OHLCV diário + dividendos + splits), aplicar o mesmo framework de qualidade de dados do BR (SPC charts, blacklist, universo operacional), e produzir SSOT expandido com tickers BR + US normalizados.
-
-| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
-|---|---|---|---|---|---|
-| T083 | SPEC: Pipeline de dados US (ingestão, qualidade, SSOT expandido) | STATE3-P7B (Spec) | DONE | `scripts/t083_spec_us_data_pipeline.py` + `02_Knowledge_Bank/docs/specs/SPEC-083_PIPELINE_DADOS_US_T083.md` + `sp500_current_symbols_snapshot.csv` (503 símbolos). Manifest V2 SHA256: 9 entradas, 0 mismatches. Auditor PASS (V2). | 2026-03-02T17:39:16Z |
-| T084 | Ingestão S&P 500: OHLCV + dividendos + splits (2018-2026) | STATE3-P7B (Ingest) | DONE | `scripts/t084_ingest_sp500_brapi_us_market_data.py` + `src/data_engine/ssot/SSOT_US_MARKET_DATA_RAW.parquet` (1.006.669 linhas, 499 tickers, 2018-01-02..2026-02-26). Fonte: BRAPI. Dividendos derivados via close/adjusted_close. Manifest V2 SHA256: 10 entradas, 0 mismatches. Auditor PASS (V2). | 2026-03-02T19:10:04Z |
-| T085 | Qualidade de dados US: SPC charts + blacklist + universo operacional | STATE3-P7B (Quality) | DONE | `scripts/t085_us_data_quality_spc_blacklist.py` + `src/data_engine/ssot/SSOT_US_UNIVERSE_OPERATIONAL.parquet` (496 tickers) + `src/data_engine/ssot/SSOT_US_BLACKLIST_OPERATIONAL.csv` (3 HARD). Manifest SHA256: 11 entradas, 0 mismatches. 12 gates PASS. Auditor PASS. | 2026-03-02T20:58:55Z |
-| T086 | SSOT unificado BR+US: merge canonical base + macro expandido (VIX, DXY, Treasury yield, Fed funds) | STATE3-P7B (SSOT) | DONE | `scripts/t086_build_ssot_br_us_unified.py` + `src/data_engine/ssot/SSOT_MACRO_EXPANDED.parquet` (2.025 linhas × 12 cols, 6 séries FRED) + `src/data_engine/ssot/SSOT_CANONICAL_BASE_BR_US.parquet` (1.620.912 linhas, 1.175 tickers BR+US). Manifest V2 SHA256: 14 entradas, 0 mismatches. 12 gates PASS. Auditor PASS (V2). | 2026-03-02T23:53:05Z |
-
-### Fase 7C — Feature Engineering Multi-Mercado
-
-**Objetivo**: expandir a feature matrix para incluir features cross-market (VIX, DXY, Treasury yield spread, momentum relativo BR/US, correlação rolling) e features per-ticker US (mesma lógica BR adaptada). Validar anti-lookahead em todas as features novas.
+**Objetivo**: pipeline de ingestão S&P 500 + quality gates. Artefatos reutilizados na Phase 8.
 
 | ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
 |---|---|---|---|---|---|
-| T087 | Feature engineering US: per-ticker features (momentum, SPC, volume) | STATE3-P7C (Features-US) | PENDING | | |
-| T088 | Feature engineering cross-market: VIX, DXY, Treasury spread, momentum relativo BR/US | STATE3-P7C (Features-Cross) | PENDING | | |
-| T089 | Feature matrix unificada + EDA + validação anti-lookahead | STATE3-P7C (Matrix) | PENDING | | |
+| T083 | SPEC: Pipeline de dados US (ingestão, qualidade, SSOT expandido) | STATE3-P7B (Spec) | DONE | `scripts/t083_spec_us_data_pipeline.py` + `SPEC-083_PIPELINE_DADOS_US_T083.md` + `sp500_current_symbols_snapshot.csv` (503 símbolos). Manifest V2 9 entradas, 0 mismatches. Auditor PASS (V2). | 2026-03-02T17:39:16Z |
+| T084 | Ingestão S&P 500: OHLCV + dividendos + splits (2018-2026) | STATE3-P7B (Ingest) | DONE | `SSOT_US_MARKET_DATA_RAW.parquet` (1.006.669 linhas, 499 tickers). BRAPI. Manifest V2 10 entradas, 0 mismatches. Auditor PASS (V2). **Preservado para Phase 8.** | 2026-03-02T19:10:04Z |
+| T085 | Qualidade de dados US: SPC charts + blacklist + universo operacional | STATE3-P7B (Quality) | DONE | `SSOT_US_UNIVERSE_OPERATIONAL.parquet` (496 tickers) + `SSOT_US_BLACKLIST_OPERATIONAL.csv` (3 HARD). 12 gates PASS. Auditor PASS. **Preservado para Phase 8.** | 2026-03-02T20:58:55Z |
+| T086 | SSOT unificado BR+US: merge canonical base + macro expandido | STATE3-P7B (SSOT) | DONE | `SSOT_MACRO_EXPANDED.parquet` (2.025 × 12 cols) **preservado**. `SSOT_CANONICAL_BASE_BR_US.parquet` **desativado** (premissa cross-border substituída por BDR Bridge). Manifest V2 14 entradas, 0 mismatches. Auditor PASS (V2). | 2026-03-02T23:53:05Z |
 
-### Fase 7D — Stock Picking Multi-Mercado
+### Fases 7C–7H — CANCELADAS (premissa cross-border substituída)
 
-**Objetivo**: adaptar o motor de seleção de ativos (campeonato F1 / score ranking) para operar sobre o universo unificado de ~1.100 tickers, com custo de transação uniforme simplificado e regra fiscal simplificada (penalização de dividendos US). Rodar ablação de parâmetros de seleção (n_positions, cadence, alocação BR/US).
-
-| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
-|---|---|---|---|---|---|
-| T090 | Adaptação do motor de seleção para universo BR+US (custo uniforme) | STATE3-P7D (Selector) | PENDING | | |
-| T091 | Ablação de seleção multi-mercado (n_positions, cadence, split BR/US) | STATE3-P7D (Ablation) | PENDING | | |
-
-### Fase 7E — ML Trigger Multi-Mercado
-
-**Objetivo**: retreinar o ML trigger (XGBoost) com features expandidas (cross-market), mantendo walk-forward estrito e anti-lookahead. Avaliar se o trigger deve ser único (cash/mercado global) ou dual (trigger BR + trigger US independentes). Ablação de hiperparâmetros + threshold + histerese.
+**Motivo**: todas as tasks T087–T100 foram desenhadas para operar com dois mercados separados (BR em BRL + US em USD), com lógica de split BR/US, trigger dual, fricções diferenciadas por mercado, e IPCA+ no cash. A decisão "BDR Bridge" elimina essas necessidades. O escopo é absorvido pela Phase 8 em formato simplificado.
 
 | ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
 |---|---|---|---|---|---|
-| T092 | ML trigger retreino com features cross-market (XGBoost walk-forward) | STATE3-P7E (ML-Retrain) | PENDING | | |
-| T093 | Ablação: trigger único vs dual (BR independente + US independente) | STATE3-P7E (ML-Ablation) | PENDING | | |
-| T094 | Threshold + histerese tuning para trigger multi-mercado | STATE3-P7E (ML-Tuning) | PENDING | | |
+| T087 | Feature engineering US: per-ticker features | STATE3-P7C | CANCELLED | Premissa cross-border substituída por BDR Bridge. Escopo absorvido por Phase 8. | 2026-03-03T16:00:00Z |
+| T088 | Feature engineering cross-market: VIX, DXY, Treasury spread | STATE3-P7C | CANCELLED | Premissa cross-border substituída por BDR Bridge. Features macro preservadas via T086. | 2026-03-03T16:00:00Z |
+| T089 | Feature matrix unificada + EDA + anti-lookahead | STATE3-P7C | CANCELLED | Premissa cross-border substituída. Escopo absorvido por Phase 8. | 2026-03-03T16:00:00Z |
+| T090 | Motor de seleção para universo BR+US (custo uniforme) | STATE3-P7D | CANCELLED | Lógica de split BR/US desnecessária com BDR. Motor BR existente se aplica diretamente. | 2026-03-03T16:00:00Z |
+| T091 | Ablação multi-mercado (n_positions, cadence, split BR/US) | STATE3-P7D | CANCELLED | Split BR/US eliminado. Ablação de n_positions (15 default) absorvida por Phase 8. | 2026-03-03T16:00:00Z |
+| T092 | ML trigger retreino com features cross-market | STATE3-P7E | CANCELLED | Trigger dual BR/US desnecessário. Retreino com universo expandido absorvido por Phase 8. | 2026-03-03T16:00:00Z |
+| T093 | Ablação: trigger único vs dual (BR + US) | STATE3-P7E | CANCELLED | Não há dois mercados para separar. Trigger único se mantém. | 2026-03-03T16:00:00Z |
+| T094 | Threshold + histerese tuning multi-mercado | STATE3-P7E | CANCELLED | Absorvido por Phase 8 (tuning com universo expandido). | 2026-03-03T16:00:00Z |
+| T095 | Backtest integrado: BR+US + ML trigger + IPCA+ cash | STATE3-P7F | CANCELLED | IPCA+ cancelada (T082). Cross-border eliminado. Backtest absorvido por Phase 8. | 2026-03-03T16:00:00Z |
+| T096 | Phase 7 Comparative Plotly | STATE3-P7F | CANCELLED | Absorvido por Phase 8. | 2026-03-03T16:00:00Z |
+| T097 | Sensibilidade: custo uniforme vs diferenciado | STATE3-P7G | CANCELLED | Custo uniforme 2.5 bps mantido para tudo (BDR = mesmo custo que ação BR). | 2026-03-03T16:00:00Z |
+| T098 | Modelo de fricções diferenciado por mercado | STATE3-P7G | CANCELLED | Sem cross-border, sem fricção diferenciada. | 2026-03-03T16:00:00Z |
+| T099 | Phase 7 Lessons Learned | STATE3-P7H | CANCELLED | Lições da Phase 7 incorporadas no encerramento desta seção. | 2026-03-03T16:00:00Z |
+| T100 | Phase 7 Governance Closeout | STATE3-P7H | CANCELLED | Encerramento formalizado neste ROADMAP. | 2026-03-03T16:00:00Z |
 
-### Fase 7F — Backtest Integrado e Comparativo
+---
 
-**Objetivo**: integrar stock picking multi-mercado + ML trigger + Tesouro IPCA+ no cash. Rodar backtest completo (TRAIN + HOLDOUT). Comparar contra C060 (baseline), CDI, Ibovespa, S&P 500. O winner Phase 7 deve superar C060 em CAGR e Sharpe, com MDD controlado.
+## STATE 3 — Phase 8: Universo Expandido via BDR Bridge (100% B3, 100% BRL)
+
+**Objetivo-mestre**: expandir o universo de seleção de ~460 ações BR para ~960 ativos (ações BR + BDRs classe I sintetizados a partir dos ~500 tickers S&P 500), tudo operado na B3 em BRL, e **superar o C060** (winner Phase 6: CAGR 23.5%, Sharpe 1.27, MDD=-29.8%, HOLDOUT equity=R$506k).
+
+**Premissa central — "BDR Bridge"**: a exposição ao mercado americano é obtida via BDRs classe I (Brazilian Depositary Receipts) negociados na B3 em BRL. O preço do BDR embute naturalmente o câmbio (BDR_BRL ≈ US_USD × PTAX × paridade). Resultado: moeda única (R$), custo de fricção uniforme (2.5 bps), zero FX/IOF, settlement uniforme D+2 B3. O motor existente se aplica sem modificação estrutural — apenas com universo maior.
+
+**Decisões do Owner incorporadas**:
+- Queimadores: **15** (target_pct ≈ 6.67%, max_pct ≈ 10%), com ablação no range [10, 12, 15, 18, 20] para confirmação empírica.
+- Moeda-base: **R$** (sem ambiguidade, sem conversão).
+- SSOT de câmbio: **PTAX diária (BCB série 1)** — usado para sintetizar BDRs e como feature macro.
+- Custo de fricção: **2.5 bps uniforme** (emenda `ARB_COST_0_025PCT_MOVED` mantida sem alteração).
+- Cash: **CDI** (mantido da Phase 6).
+- Winner/baseline: **C060** (mantido da Phase 6).
+
+**Justificativa empírica (diagnóstico CTO)**:
+- S&P 500 em BRL: mediana Sharpe 0.52 vs 0.01 ações BR (BRL depreciou 7.8% p.a. desde 2018).
+- No Top 50 por Sharpe (BRL), 86% são US, 14% são BR.
+- No Top 10% do ranking combinado, 90% são US.
+- O motor "se dolariza" naturalmente quando BDRs dominam o ranking em cenários de USD forte.
+
+**Insumos herdados da Phase 7**:
+- `SSOT_US_MARKET_DATA_RAW.parquet` (T084): OHLCV S&P 500, base para síntese de BDRs.
+- `SSOT_US_UNIVERSE_OPERATIONAL.parquet` (T085): 496 tickers aprovados + blacklist.
+- `SSOT_MACRO_EXPANDED.parquet` (T086): VIX, DXY, Treasury yields, Fed funds.
+
+**Walk-forward**: TRAIN 2018-07-02 → 2022-12-30 | HOLDOUT 2023-01-02 → 2026-02-26 (mantido Phase 6).
+
+**Checklist anti-regressão Phase 6**: todas as 14 lições de `STATE3_PHASE6_LESSONS_LEARNED_T080.md` aplicam-se integralmente.
+
+**Regras de fase**:
+- Anti-lookahead estrito (shift(1)) mantido em todas as features.
+- Toda task deve superar C060 ou justificar por que não (com diagnóstico).
+- Custo de transação uniforme 2.5 bps para tudo (ações BR e BDRs).
+- Operação manual via B3 (BTG doméstico). Sem conta internacional necessária.
+
+### Fase 8A — Ingestão PTAX e Síntese de BDRs
+
+**Objetivo**: ingerir PTAX diária (BCB série 1, 2018-2026), construir mapeamento BDR classe I ↔ ticker S&P 500 com razão de paridade, e sintetizar preços BDR históricos em BRL para o período completo (2018+). Materializar o SSOT BR expandido que inclui ações BR + BDRs sintéticos, tudo em BRL.
 
 | ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
 |---|---|---|---|---|---|
-| T095 | Backtest integrado: BR+US + ML trigger + IPCA+ cash (vs C060/CDI/Ibov/SP500) | STATE3-P7F (Backtest) | PENDING | | |
-| T096 | Phase 7 Comparative Plotly (winner Phase 7 vs C060 vs benchmarks) | STATE3-P7F (Visual) | PENDING | | |
+| T101 | Ingestão PTAX diária (BCB série 1) + mapeamento BDR↔S&P500 + síntese de preços BDR | STATE3-P8A (PTAX+BDR) | DONE | `scripts/t101_ingest_ptax_bdr_synth.py` + `SSOT_FX_PTAX_USDBRL.parquet` + `SSOT_BDR_B3_UNIVERSE.parquet` (496: 446 B3 + 50 US_DIRECT) + `SSOT_BDR_SYNTH_MARKET_DATA_RAW.parquet` (988.968 linhas). Manifest V2 SHA256: 11 entradas, 0 mismatches. Auditor PASS. | 2026-03-03T21:00:00Z |
+| T102 | SSOT BR expandido: ações BR + BDRs sintéticos (unificado em BRL) | STATE3-P8A (SSOT-BRL) | DONE | `scripts/t102_build_ssot_br_expanded_brl.py` + `SSOT_CANONICAL_BASE_BR_EXPANDED.parquet` (1.620.910 linhas, 1.174 tickers, schema 21 colunas, 0 dupes, 0 NaN close_operational) + `SSOT_UNIVERSE_OPERATIONAL_EXPANDED.parquet` (1.174 tickers). 9 gates PASS. SHA256 7/7 PASS (reauditoria independente). Reauditoria por troca de LLM: PASS. | 2026-03-03T22:10:00Z |
 
-### Fase 7G — Refinamento de Fricções (condicional)
+### Fase 8B — Feature Engineering (universo expandido)
 
-**Objetivo**: se a diferença entre custo uniforme e custo real diferenciado for > 1pp CAGR, implementar modelo de fricções detalhado (settlement D+2/D+1, custos BTG reais por ordem, modelo fiscal completo com isenção BR e tributação US, withholding de dividendos). Caso contrário, manter simplificação.
-
-| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
-|---|---|---|---|---|---|
-| T097 | Análise de sensibilidade: custo uniforme vs diferenciado (gate > 1pp) | STATE3-P7G (Friction-Gate) | PENDING | | |
-| T098 | Modelo de fricções diferenciado por mercado (se gate T097 ativado) | STATE3-P7G (Friction-Model) | PENDING | | |
-
-### Fase 7H — Consolidação e Governança
-
-**Objetivo**: consolidar lições da Phase 7, fechar a fase com governance closeout, e promover o winner Phase 7 como novo baseline de produto.
+**Objetivo**: recalcular a feature matrix com o universo expandido (~960 tickers em BRL). Incorporar features macro expandidas (VIX, DXY, Treasury spread, USDBRL como feature) ao pipeline existente. Validar anti-lookahead e estabilidade cross-split em todas as features novas.
 
 | ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
 |---|---|---|---|---|---|
-| T099 | Phase 7 Lessons Learned | STATE3-P7H (Lessons) | PENDING | | |
-| T100 | Phase 7 Governance Closeout | STATE3-P7H (Closeout) | PENDING | | |
+| T103 | Feature engineering: features macro expandidas (VIX, DXY, Treasury, USDBRL) + per-ticker BDR | STATE3-P8B (Features) | DONE | `scripts/t103_feature_engineering_expanded_universe.py` + `T103_MACRO_FEATURES_EXPANDED_DAILY.parquet` (2025 linhas, 20 features macro, shift(1), 0 mismatches SHA256) + `T103_BDR_TICKER_METADATA.parquet` (496 tickers: 446 B3 + 50 US_DIRECT). 8 gates PASS. Auditor PASS. | 2026-03-03T23:00:00Z |
+| T104 | Feature matrix unificada (BR+BDR) + EDA + validação anti-lookahead | STATE3-P8B (Matrix) | DONE | `scripts/t104_eda_feature_engineering_ml_trigger_expanded.py` + `T104_FEATURE_MATRIX_DAILY.parquet` (1.902 × 77 cols, 76 features) + `T104_LABELS_DAILY.parquet` (TRAIN=1.115/HOLDOUT=787) + `T104_DATASET_DAILY.parquet` + `T104_STATE3_PHASE8B_EDA.html`. 8 gates PASS. SHA256 11/11 PASS. Anti-lookahead confirmado. Auditor PASS (reauditoria por troca de LLM). | 2026-03-03T23:30:00Z |
+
+### Fase 8C — ML Trigger (universo expandido)
+
+**Objetivo**: retreinar o XGBoost com a feature matrix expandida, mantendo walk-forward estrito. Testar se features macro (VIX, DXY, Treasury spread, USDBRL) melhoram a detecção de regimes. Ablação de threshold + histerese com n_positions=15.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T105 | XGBoost retreino com features expandidas (walk-forward) | STATE3-P8C (ML-Retrain) | DONE | `T105_V1_XGB_SELECTED_MODEL.json` + `T105_V1_PREDICTIONS.parquet` + `T105_V1_ABLATION_RESULTS.parquet` + manifest (17 SHA256, 0 mismatches). Winner: CORE_PLUS_MACRO_EXPANDED_FX_C043 (38 features, thr=0.12). HOLDOUT recall=0.940, acid recall=0.925. Finding F-001: CORE superior no HOLDOUT (decisão Owner: manter winner, testar no T106). Auditor PASS. | 2026-03-03T21:17:16Z |
+| T106 | Ablação threshold + histerese (n_positions=15, universo expandido) | STATE3-P8C (ML-Tuning) | DONE | `scripts/t106_threshold_hysteresis_ablation_expanded_v1.py` + `T106_ML_TRIGGER_EXPANDED_SELECTED_CONFIG.json` (winner CORE_PLUS_MACRO_EXPANDED_FX_C009: thr=0.05, h_in=3, h_out=2) + `T106_PORTFOLIO_CURVE_ML_TRIGGER_EXPANDED.parquet` + `T106_STATE3_PHASE8C_ML_TUNING_COMPARATIVE.html` (791 KB) + manifest (14 SHA256, 0 mismatches). Ablação dupla 168 candidatos (CORE+FX + CORE). HOLDOUT equity=R$475k, MDD=-11.8%, Sharpe=1.34. Acid equity=R$409k, MDD=-6.4%, switches=2. Auditor PASS. | 2026-03-04T00:00:00Z |
+
+### Fase 8D — Backtest e Ablação de Seleção
+
+**Objetivo**: rodar backtest completo com motor dual-mode + ML trigger + universo expandido. Ablação de n_positions [10, 12, 15, 18, 20]. Comparar contra C060, CDI, Ibovespa. Winner Phase 8 deve superar C060 em CAGR e Sharpe.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T107 | Backtest integrado: universo expandido + ML trigger (vs C060/CDI/Ibov) | STATE3-P8D (Backtest) | DONE | `scripts/t107_backtest_integrated_expanded_ml_trigger_v1.py` + `T107_PORTFOLIO_CURVE_DUAL_MODE_EXPANDED.parquet` + `T107_PORTFOLIO_CURVE_DUAL_MODE_EXPANDED_ML_TRIGGER.parquet` + `T107_STATE3_PHASE8D_BACKTEST_INTEGRATED_COMPARATIVE.html`. HOLDOUT: equity=R$516.964, CAGR=26.5%, MDD=-7.1%, Sharpe=3.19. Supera C060 (+2.1%). Acid: equity=R$383.680, MDD=-2.5%. Manifest SHA256 14/14 OK. Auditor PASS. | 2026-03-04T10:00:00Z |
+| T108 | Ablação n_positions [10,12,15,18,20] + cadence [5,10,15,20] — universo expandido + ML trigger fixado | STATE3-P8D (Ablation) | DONE | `T108_SELECTED_CONFIG_NPOS_CADENCE_EXPANDED.json` (winner C010_N15_CB10: top_n=15, cadence_mode_b=10) + `T108_PORTFOLIO_CURVE_DUAL_MODE_EXPANDED_ML_TRIGGER_WINNER.parquet` + `T108_ABLATION_RESULTS_NPOS_CADENCE_EXPANDED.parquet` + `T108_STATE3_PHASE8D_ABLATION_NPOS_CADENCE_COMPARATIVE.html` + `T108-ABLATION-NPOS-CADENCE-EXPANDED-V1_manifest.json` (14 SHA256 OK). HOLDOUT: equity=R$516.964 vs C060=R$506.432 (+2.08%), Sharpe=3.19. Auditor PASS. | 2026-03-04T10:20:00Z |
+
+### Fase 8E — Consolidação e Governança
+
+**Objetivo**: comparativo visual final, lições aprendidas, governance closeout. Promover winner Phase 8 como novo baseline de produto.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T109 | Phase 8 Comparative Plotly (winner Phase 8 vs C060 vs benchmarks) | STATE3-P8E (Visual) | DONE | `outputs/plots/T109_STATE3_PHASE8E_COMPARATIVE.html` + `outputs/governanca/T109-PHASE8-PLOTLY-COMPARATIVE-V1_report.md` + `outputs/governanca/T109-PHASE8-PLOTLY-COMPARATIVE-V1_manifest.json` (8 SHA256 OK). HOLDOUT: Phase8+ML=R$516.964 vs C060=R$506.432 (+2.08%), Sharpe=3.19, MDD=-7.1%. ACID: Phase8=R$383.680, Sharpe=3.37, MDD=-2.5%. Auditor PASS. | 2026-03-04T12:00:00Z |
+| T110 | Phase 8 Lessons Learned | STATE3-P8E (Lessons) | DONE | `02_Knowledge_Bank/docs/process/STATE3_PHASE8_LESSONS_LEARNED_T110.md` (16 lições). Manifest SHA256: 5/5 OK. Auditor PASS. | 2026-03-04T13:00:00Z |
+| T111 | Phase 8 Governance Closeout | STATE3-P8E (Closeout) | DONE | 10/10 tasks verified, 110 SHA256 entries 0 mismatches. Winner C010_N15_CB10 snapshot. Phase 8 CLOSED. Manifest: `outputs/governanca/T111-PHASE8-GOVERNANCE-CLOSEOUT-V1_manifest.json`. | 2026-03-04T14:00:00Z |
