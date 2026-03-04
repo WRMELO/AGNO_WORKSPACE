@@ -321,3 +321,243 @@ Executar a evolucao do ambiente AGNO com foco em portabilidade, reducao de compl
 | T109 | Phase 8 Comparative Plotly (winner Phase 8 vs C060 vs benchmarks) | STATE3-P8E (Visual) | DONE | `outputs/plots/T109_STATE3_PHASE8E_COMPARATIVE.html` + `outputs/governanca/T109-PHASE8-PLOTLY-COMPARATIVE-V1_report.md` + `outputs/governanca/T109-PHASE8-PLOTLY-COMPARATIVE-V1_manifest.json` (8 SHA256 OK). HOLDOUT: Phase8+ML=R$516.964 vs C060=R$506.432 (+2.08%), Sharpe=3.19, MDD=-7.1%. ACID: Phase8=R$383.680, Sharpe=3.37, MDD=-2.5%. Auditor PASS. | 2026-03-04T12:00:00Z |
 | T110 | Phase 8 Lessons Learned | STATE3-P8E (Lessons) | DONE | `02_Knowledge_Bank/docs/process/STATE3_PHASE8_LESSONS_LEARNED_T110.md` (16 lições). Manifest SHA256: 5/5 OK. Auditor PASS. | 2026-03-04T13:00:00Z |
 | T111 | Phase 8 Governance Closeout | STATE3-P8E (Closeout) | DONE | 10/10 tasks verified, 110 SHA256 entries 0 mismatches. Winner C010_N15_CB10 snapshot. Phase 8 CLOSED. Manifest: `outputs/governanca/T111-PHASE8-GOVERNANCE-CLOSEOUT-V1_manifest.json`. | 2026-03-04T14:00:00Z |
+
+---
+
+## STATE 3 — Phase 9: Duas Fábricas (Fábrica US + Consolidação BR/US)
+
+**Status**: [ COMPLETED ]
+
+**Objetivo-mestre**: construir a **Fábrica US** — motor de seleção de ações americanas (S&P 500 em USD) com ML trigger próprio e Treasury como remuneração de caixa — operando em paralelo à **Fábrica BR** (C060X, baseline fixo). Consolidar diariamente em BRL via PTAX. Ao final, produzir dashboard consolidado com ablação de split ótimo BR/US.
+
+**Contexto de entrada**:
+- Phase 8 encerrada (T111 PASS). Winner formal do registro: C010_N15_CB10.
+- Análise CTO pós-Phase 8 recalibrou winner para **C060X** (N=10, thr=0.22, h_in=3, h_out=2, universo BR+BDR): HOLDOUT equity=R$698k, CAGR=31.1%, MDD=-6.3%, Sharpe=2.42.
+- Conceito "troca BR↔US" descartado pelo Owner (custo FX round-trip 1.56% × 16 switches = 25% de custo, proibitivo).
+- Conceito **Duas Fábricas independentes** adotado: capital dividido no dia zero, cada fábrica opera na sua moeda, zero troca BR↔US, consolidação contábil via PTAX.
+- Diagnóstico CTO: motor M3 sobre S&P 500 sem ML trigger = CAGR 26% USD, MDD -20%. Com ML trigger análogo ao BR, potencial de diversificação se materializa.
+
+**Documentação de referência**:
+- `02_Knowledge_Bank/docs/process/STATE3_CTO_ANALYSIS_POST_PHASE8_PRE_PHASE9.md` — análise CTO com 7 achados
+- `02_Knowledge_Bank/docs/process/STATE3_PHASE9_HANDOFF.md` — handoff completo
+- `02_Knowledge_Bank/docs/process/STATE3_PHASE8_LESSONS_LEARNED_T110.md` — checklist anti-regressão (16 itens)
+- `02_Knowledge_Bank/docs/process/STATE3_PHASE6_LESSONS_LEARNED_T080.md` — referência para pipeline ML
+
+**Conceito operacional**:
+
+```
+FÁBRICA BR (BRL)                    FÁBRICA US (USD)
+┌─────────────────────┐             ┌─────────────────────┐
+│ Capital: X% de 100k │             │ Capital: Y% de 100k │
+│ Motor: C060X        │             │ Motor: M3-US        │
+│ Universo: BR+BDR    │             │ Universo: S&P 500   │
+│ ML Trigger: XGB BR  │             │ ML Trigger: XGB US  │
+│ Tank: CDI           │             │ Tank: Treasury/FF   │
+│ Custo: 2.5 bps      │             │ Custo: ~1 bp        │
+│ Moeda: BRL           │             │ Moeda: USD          │
+└────────┬────────────┘             └────────┬────────────┘
+         │         CONSOLIDAÇÃO MATRIZ        │
+         └────────►│ Equity = BR + US×PTAX │◄──┘
+                   │ Relatório diário BRL  │
+                   └───────────────────────┘
+```
+
+**Premissas-chave**:
+- Capital R$100k divididos no dia zero entre BR e US. Split a otimizar via ablação.
+- Conversão FX one-shot no dia zero (FX+IOF 0.78%). Depois cada fábrica opera na sua moeda.
+- Fábrica BR (C060X): já existe, baseline fixo, não é alterada.
+- Walk-forward: TRAIN 2018-07-02 → 2022-12-30, HOLDOUT 2023-01-02 → 2026-02-26.
+
+**Decisões do Owner incorporadas**:
+- C060X é a nova winner oficial (substitui C060 e C010_N15_CB10).
+- Duas fábricas independentes autorizadas.
+- Conceito troca BR↔US descartado (custo FX proibitivo).
+- CDI mantido como tank BR. Treasury (Fed funds rate) como tank US.
+- Custo operação US: 1 bp (conservador).
+
+**Insumos reutilizáveis**:
+
+| Artefato | Conteúdo | Origem |
+|---|---|---|
+| `SSOT_MACRO_EXPANDED.parquet` | S&P 500 close (índice), VIX, DXY, Treasury, Fed funds | T086 |
+| `SSOT_US_MARKET_DATA_RAW.parquet` | OHLCV S&P 500 per-ticker (496 tickers, USD) | T084 |
+| `SSOT_US_UNIVERSE_OPERATIONAL.parquet` | 496 tickers aprovados + blacklist | T085 |
+| `SSOT_FX_PTAX_USDBRL.parquet` | PTAX diária BCB 2018–2026 | T101 |
+| `CTO_C060_EXPANDED_ABLATION_WINNER_CURVE.parquet` | Curva C060X completa | Análise CTO |
+
+**Restrições de fase**:
+1. Anti-lookahead estrito (`shift(1)`) em toda feature US — sem exceção.
+2. Walk-forward idêntico ao projeto (TRAIN/HOLDOUT).
+3. C060X é baseline fixo — Fábrica BR não é alterada.
+4. Custo FX one-shot (0.78% dia zero), não recorrente.
+5. Tank US: Fed funds rate como proxy de T-Bill.
+6. Custo operação US: 1 bp.
+7. Toda task deve superar C060X pura em Sharpe consolidado ou justificar por que não.
+8. Checklist anti-regressão Phase 8 (16 itens de T110) aplicável integralmente.
+
+### Fase 9A — Labels de regime US
+
+**Objetivo**: definir a "martelada americana" — labels oracle de regime (caixa vs mercado) sobre o índice S&P 500 no TRAIN, com ablação de janela forward × threshold de drawdown e seleção objetiva TRAIN-only.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T112 | Labels de regime US (oracle drawdown S&P 500, ablação janela×threshold) | STATE3-P9A (Labels) | DONE | `src/data_engine/features/T112_US_LABELS_DAILY.parquet` · `outputs/plots/T112_STATE3_PHASE9A_US_LABELS_EDA.html` · W63_D08 selecionada · Auditor PASS | 2026-03-04T13:30:00Z |
+
+### Fase 9B — Feature matrix US
+
+**Objetivo**: construir feature matrix US com features macro (VIX, DXY, Treasury spread, Fed funds, S&P slope, volatilidade) e shift(1) anti-lookahead. Reutilizar SSOT_MACRO_EXPANDED.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T113 | Feature matrix US (macro features + shift(1) + EDA) | STATE3-P9B (Features) | DONE | `src/data_engine/features/T113_US_{FEATURE_MATRIX,LABELS,DATASET}_DAILY.parquet` · `outputs/plots/T113_STATE3_PHASE9B_US_FEATURES_EDA.html` · 27 features / 5 blocos · anti-lookahead PASS · Auditor PASS | 2026-03-04T14:30:00Z |
+
+### Fase 9C — ML trigger US (XGBoost)
+
+**Objetivo**: treinar XGBoost US com walk-forward estrito sobre TRAIN, ablação de threshold + histerese. Target: MDD < -10% no HOLDOUT.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T114 | ML trigger US (XGBoost walk-forward + ablação threshold/histerese + dual acid window) | STATE3-P9C (ML-US) | DONE | `scripts/t114_ml_trigger_us_xgboost_ablation_v1.py` · `T114_US_ML_PREDICTIONS_DAILY.parquet` · `T114_US_ML_SELECTED_CONFIG.json` (winner thr=0.45 h_in=1 h_out=3) · dashboard HTML · manifest 12 SHA256 OK · feature_guard PASS · dual acid: acid_br mdd=-13.3% / acid_us mdd=-5.9% · HOLDOUT mdd=-13.25% Sharpe=1.15 · Auditor PASS | 2026-03-04T15:30:00Z |
+
+### Fase 9D — Motor M3-US + backtest isolado
+
+**Objetivo**: backtest completo da Fábrica US isolada (S&P 500, USD, Treasury tank, ~1 bp custo). Comparar contra S&P 500 buy-hold.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T115 | Motor M3-US com ML trigger + backtest isolado (USD, Treasury tank) | STATE3-P9D (Backtest-US) | DONE | `src/data_engine/portfolio/T115_US_FACTORY_CURVE_DAILY.parquet` · `T115_US_FACTORY_SUMMARY.json` · `outputs/plots/T115_STATE3_PHASE9D_US_FACTORY_BACKTEST.html` · manifest 12 SHA256 OK · HOLDOUT: equity=$151.6k MDD=-13.0% Sharpe=1.20 · Auditor PASS | 2026-03-04T16:30:00Z |
+
+### Fase 9E — Consolidação BR+US (CANCELADA — decisão Owner: fábricas independentes)
+
+**Motivo do cancelamento**: Análise CTO exploratória demonstrou que o ganho consolidado é marginal (Sharpe máximo 2.48 a 20% US vs 2.42 puro BR, com perda de 3.2pp CAGR). O Owner decidiu que as duas fábricas operam **independentes**, com capital próprio cada uma, sem split. A consolidação em BRL via PTAX é apenas visualização financeira, não decisão de alocação.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T116 | Consolidação BR+US: ablação split + dashboard BRL + comparativo vs C060X | STATE3-P9E (Consolidation) | CANCELLED | Análise CTO: Sharpe máximo=2.48 a 20%US (+0.06 vs puro BR) com perda de 3.2pp CAGR. Decisão Owner: fábricas independentes sem split. | 2026-03-04T17:00:00Z |
+
+### Fase 9F — Lessons Learned + Governance Closeout (DONE)
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T117 | Phase 9 Lessons Learned | STATE3-P9F (Lessons) | DONE | `02_Knowledge_Bank/docs/process/STATE3_PHASE9_LESSONS_LEARNED_T117.md` (10 lições, 7 seções, checklist 12 itens) | 2026-03-04T17:00:00Z |
+| T118 | Phase 9 Governance Closeout | STATE3-P9F (Closeout) | DONE | T112-T115 DONE, T116 CANCELLED. Phase 9 encerrada. Decisão Owner: Phase 10 = Motor US que bata SP500. | 2026-03-04T17:00:00Z |
+
+**Status**: [ COMPLETED ]
+
+**Resumo**: Phase 9 construiu e validou a **Fábrica US** como capacidade operacional independente. O pipeline ML foi replicado do BR para US em 4 tasks. Motor funciona como escudo de drawdown (MDD -18.9% → -13.0%), mas não gera alfa sobre SP500 (Sharpe 1.20 vs 1.34). Decisão Owner: fábricas independentes com capital próprio, sem split. Lições detalhadas em `02_Knowledge_Bank/docs/process/STATE3_PHASE9_LESSONS_LEARNED_T117.md`.
+
+**Winners Phase 9**:
+- Fábrica BR: **C060X** (inalterada — Sharpe 2.42, MDD -6.3%, CAGR 31.1%)
+- Fábrica US: **T115-ML-US** (Sharpe 1.20, MDD -13.0%, CAGR 14.2% USD — escudo, não alfa)
+
+---
+
+## STATE 3 — Phase 10: Motor US de Seleção de Ações (Bater SP500)
+
+**Status**: [ PLANNING ]
+
+**Objetivo-mestre**: construir um **motor de seleção de ações americanas** que supere o S&P 500 buy-hold em Sharpe no HOLDOUT. A Phase 9 provou que ML trigger sobre índice único (SP500) protege drawdown mas não gera alfa. A Phase 10 muda a abordagem: em vez de timing sobre um índice, aplicar **stock selection** (scoring quantitativo) sobre as ~496 ações do S&P 500, análogo ao que a Fábrica BR faz com sucesso.
+
+**Motivação — diagnóstico CTO Phase 9**:
+- Motor Phase 9 sobre SP500 índice: Sharpe 1.20 vs SP500 BH 1.34 → **destrói valor**
+- Fábrica BR (C060X): Sharpe 2.42 sobre seleção de ações BR → **gera valor massivo**
+- Diferença: a Fábrica BR não faz timing de mercado sobre Ibov — ela **seleciona as melhores ações** por scoring (M3) e usa ML trigger apenas para cash override
+- Hipótese Phase 10: aplicar o mesmo modelo (scoring M3 + ML trigger) sobre as ações individuais do S&P 500 em USD, com Treasury como tank
+
+**Conceito operacional**:
+```
+FÁBRICA US v2 (Phase 10)
+┌──────────────────────────────────────┐
+│ Universo: ~496 ações S&P 500 (USD)   │
+│ Scoring: M3-US = z(score_m0_us) +    │
+│          z(ret_62_us) - z(vol_62_us)  │
+│ Seleção: Top N por M3-US score        │
+│ ML Trigger: XGBoost US (a melhorar)   │
+│ Tank: Fed funds rate                  │
+│ Custo: ~1 bp por transação            │
+│ Moeda: USD                            │
+│ Walk-forward: TRAIN/HOLDOUT mantido   │
+└──────────────────────────────────────┘
+```
+
+**Premissas-chave**:
+- Dados US per-ticker já ingeridos (T084: OHLCV 496 tickers, 2018-2026)
+- Universo operacional já validado (T085: 496 tickers, blacklist 3 HARD)
+- Features macro já disponíveis (T086: SSOT_MACRO_EXPANDED)
+- PTAX disponível (T101: SSOT_FX_PTAX_USDBRL) — para visualização BRL
+- Walk-forward: TRAIN 2018-07-02 → 2022-12-30, HOLDOUT 2023-01-02 → 2026-02-26
+
+**Restrições de fase**:
+1. Anti-lookahead estrito (`shift(1)`) em toda feature — sem exceção
+2. Walk-forward idêntico ao projeto (TRAIN/HOLDOUT)
+3. Fábrica BR (C060X) não é alterada — baseline fixo BR
+4. Tank US: Fed funds rate (SSOT_MACRO_EXPANDED)
+5. Custo operação US: 1 bp
+6. Toda task deve comparar Sharpe vs SP500 buy-hold (benchmark a bater)
+7. Feature guard obrigatório em toda task ML (LL-PH9-008)
+8. Dual acid window obrigatório (LL-PH9-004)
+9. Fábricas BR e US operam com capital próprio, sem split (decisão Owner Phase 9)
+
+**Insumos reutilizáveis**:
+
+| Artefato | Conteúdo | Origem |
+|---|---|---|
+| `SSOT_US_MARKET_DATA_RAW.parquet` | OHLCV per-ticker S&P 500 (496 tickers, USD) | T084 |
+| `SSOT_US_UNIVERSE_OPERATIONAL.parquet` | 496 tickers aprovados + blacklist | T085 |
+| `SSOT_US_BLACKLIST_OPERATIONAL.csv` | 3 tickers blacklistados (DAY/HUBB/MMC) | T085 |
+| `SSOT_MACRO_EXPANDED.parquet` | VIX, DXY, Treasury yields, Fed funds, S&P 500 index | T086 |
+| `SSOT_FX_PTAX_USDBRL.parquet` | PTAX diária BCB 2018-2026 | T101 |
+| `T112_US_LABELS_DAILY.parquet` | Labels oracle US (reutilizável para ML trigger) | T112 |
+| `T113_US_FEATURE_MATRIX_DAILY.parquet` | 27 features macro US (reutilizável para ML trigger) | T113 |
+
+**Referências obrigatórias**:
+- Phase 9 Lessons Learned (10 lições acima)
+- `02_Knowledge_Bank/docs/process/STATE3_PHASE8_LESSONS_LEARNED_T110.md` — checklist anti-regressão 16 itens
+- `02_Knowledge_Bank/docs/process/STATE3_PHASE6_LESSONS_LEARNED_T080.md` — referência pipeline ML
+
+### Fase 10A — SSOT per-ticker US e scoring M3-US
+
+**Objetivo**: construir o SSOT canônico per-ticker para as ~496 ações US (close operacional, SPC metrics) e calcular scoring M3-US (z(score_m0) + z(ret_62) - z(vol_62)) diário, análogo ao M3 BR.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T119 | SSOT canônico per-ticker US + SPC metrics (análogo ao SSOT_CANONICAL_BASE BR) | STATE3-P10A (SSOT-US) | DONE | `scripts/t119_build_ssot_us_canonical_base_v1.py` · `src/data_engine/ssot/SSOT_CANONICAL_BASE_US.parquet` (1.000.601 linhas × 21 cols, 496 tickers) · `src/data_engine/ssot/SSOT_US_UNIVERSE_OPERATIONAL_PHASE10.parquet` · `outputs/governanca/T119-SSOT-US-CANONICAL-V1_{report,manifest}.md` · SHA256 13/13 OK | 2026-03-04T18:00:00Z |
+| T120 | Scoring M3-US diário (z(score_m0_us) + z(ret_62_us) - z(vol_62_us)) para 496 tickers | STATE3-P10A (M3-US) | PENDING | — | — |
+
+### Fase 10B — Motor de seleção US (backtest isolado)
+
+**Objetivo**: rodar o motor de seleção Top N por M3-US sobre o universo US, com rebalanceamento por cadência, Treasury tank, custo 1bp. Sem ML trigger inicialmente — estabelecer baseline quantitativo.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T121 | Backtest motor seleção US (Top N por M3-US, sem ML trigger) | STATE3-P10B (Engine-US) | PENDING | — | — |
+| T122 | Ablação n_positions + cadence (universo US) | STATE3-P10B (Ablation) | PENDING | — | — |
+
+### Fase 10C — Feature engineering US ampliado + ML trigger US v2
+
+**Objetivo**: expandir features para o mercado US além de macro (earnings surprises, credit spreads HY-IG, put/call ratio, ETF flows, sector rotation) e retreinar XGBoost US. Target: Sharpe > SP500 BH (1.34).
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T123 | Feature engineering US v2 (features granulares: earnings, credit spreads, flows) | STATE3-P10C (Features-v2) | PENDING | — | — |
+| T124 | XGBoost US v2 (retreino com features ampliadas + walk-forward) | STATE3-P10C (ML-v2) | PENDING | — | — |
+| T125 | Ablação threshold + histerese US v2 | STATE3-P10C (Tuning-v2) | PENDING | — | — |
+
+### Fase 10D — Backtest integrado e comparativo
+
+**Objetivo**: backtest completo do motor seleção US + ML trigger v2. Comparar vs SP500 BH, vs T115 (motor Phase 9), vs Fábrica BR (C060X).
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T126 | Backtest integrado: motor seleção US + ML trigger v2 (vs SP500/T115/C060X) | STATE3-P10D (Backtest-v2) | PENDING | — | — |
+| T127 | Phase 10 Comparative Plotly (motor US v2 vs SP500 vs T115 vs benchmarks) | STATE3-P10D (Visual) | PENDING | — | — |
+
+### Fase 10E — Consolidação e Governança
+
+**Objetivo**: lessons learned, dashboard de visualização BR+US em BRL (apenas visual, sem split), governance closeout.
+
+| ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
+|---|---|---|---|---|---|
+| T128 | Dashboard visualização BR+US em BRL (apenas visual, sem split) | STATE3-P10E (Visual-BRL) | PENDING | — | — |
+| T129 | Phase 10 Lessons Learned | STATE3-P10E (Lessons) | PENDING | — | — |
+| T130 | Phase 10 Governance Closeout | STATE3-P10E (Closeout) | PENDING | — | — |

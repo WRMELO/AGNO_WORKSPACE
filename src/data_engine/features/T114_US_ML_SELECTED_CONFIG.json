@@ -1,0 +1,26 @@
+{
+  "run_id": "T114-PHASE9C-ML-US-V1",
+  "selection_policy": "TRAIN_ONLY",
+  "task_id": "T114",
+  "winner": {
+    "cash_frac_holdout": 0.14358322744599747,
+    "cash_frac_train": 0.2304932735426009,
+    "equity_holdout": 148873.59883549288,
+    "equity_train": 187518.30365670493,
+    "feasible_train": 1,
+    "h_in": 1,
+    "h_out": 3,
+    "mdd_holdout": -0.13252012189197715,
+    "mdd_train": -0.28520318116286325,
+    "precision_holdout": 0.17699115044247787,
+    "precision_train": 0.5758754863813229,
+    "rank": 1,
+    "recall_holdout": 0.2127659574468085,
+    "recall_train": 0.4805194805194805,
+    "sharpe_holdout": 1.1472149387128776,
+    "sharpe_train": 0.8055124890278144,
+    "switches_holdout": 22,
+    "switches_train": 26,
+    "threshold": 0.45
+  }
+}
