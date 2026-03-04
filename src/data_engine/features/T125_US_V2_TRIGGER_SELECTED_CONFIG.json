@@ -1,0 +1,11 @@
+{
+  "h_in": 3,
+  "h_out": 5,
+  "run_id": "T125-US-TRIGGER-V2-THR-HYST-V1",
+  "selection_rule_path": "outputs/governanca/T125-US-TRIGGER-V2-THR-HYST-V1_evidence/selection_rule.json",
+  "selection_scope": "TRAIN_OOF_ONLY",
+  "source_model": "src/data_engine/models/T124_US_V2_XGB_SELECTED_MODEL.json",
+  "task_id": "T125",
+  "threshold": 0.45,
+  "winner_candidate_id": "C090"
+}

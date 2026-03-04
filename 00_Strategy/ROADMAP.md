@@ -540,8 +540,8 @@ FÁBRICA US v2 (Phase 10)
 | ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
 |---|---|---|---|---|---|
 | T123 | Feature engineering US v2 (credit spreads HY/IG FRED + rotação setorial + volume proxies) | STATE3-P10C (Features-v2) | DONE | `scripts/t123_feature_engineering_us_v2_v1.py`; `T123_US_FEATURE_MATRIX_DAILY.parquet` (1.902 × 64); `T123_US_DATASET_DAILY.parquet` (63 features); `T123_SSOT_US_ALTDATA_FRED_DAILY.parquet`; `T123_STATE3_PHASE10C_US_FEATURES_V2_EDA.html` (160 KB); SHA256 16/16 OK; 2 features blacklistadas (time-proxy); Finding F-01(MOD) sector_ret_dispersion 100% NaN — Architect T124 remover. Auditor PASS (A-T123). | 2026-03-04T21:00:00Z |
-| T124 | XGBoost US v2 (retreino com features ampliadas + walk-forward) | STATE3-P10C (ML-v2) | PENDING | — | — |
-| T125 | Ablação threshold + histerese US v2 | STATE3-P10C (Tuning-v2) | PENDING | — | — |
+| T124 | XGBoost US v2 (walk-forward TRAIN-only, feature policy + time-proxy scan) | STATE3-P10C (ML-v2) | DONE | `scripts/t124_xgboost_us_v2_walkforward_v1.py`; `T124_US_V2_XGB_SELECTED_MODEL.json` (winner C003, 60 features); `T124_US_V2_PREDICTIONS_DAILY.parquet` (1.902 linhas); `T124_US_V2_ABLATION_RESULTS.parquet` (12 candidatos); `T124_STATE3_PHASE10C_US_XGB_V2_MODEL_DIAGNOSTICS.html`; SHA256 14/14 OK (pós-hotfix); Finding F-01(CORRIGIDO) duplo-write report.md; F-02(INFO) gap precision HOLDOUT −31pp — insumo T125. Auditor PASS (A-T124). | 2026-03-04T22:00:00Z |
+| T125 | Ablação threshold + histerese Trigger US v2 (calibração TRAIN-OOF, sinais diários + timing SP500 diagnóstico) | STATE3-P10C (Tuning-v2) | DONE | `scripts/t125_threshold_hysteresis_ablation_us_v2_v1.py`; `T125_US_V2_TRIGGER_OOF_PROBA_TRAIN.parquet` (1.115 linhas, 925 não-NaN); `T125_US_V2_TRIGGER_ABLATION_RESULTS.parquet` (225 candidatos); `T125_US_V2_TRIGGER_SELECTED_CONFIG.json` (winner C090: thr=0.45, h_in=3, h_out=5); `T125_US_V2_TRIGGER_SIGNALS_DAILY.parquet` (1.902 linhas); `T125_STATE3_PHASE10C_US_TRIGGER_V2_THRESHOLD_HYSTERESIS.html`; SHA256 17/17 OK; Timing HOLDOUT diagnóstico: MDD=−10.4%, Sharpe=1.20; Melhoria recall HOLDOUT 0.085→0.128 vs T124 baseline; Finding F-01(RETRY) patch fillna pandas 2.x; F-02(INFO) gap Δprecision=−0.303; F-03(INFO) timing parquet ausente de outputs_produced (hashes OK). Auditor PASS (A-T125). | 2026-03-04T23:30:00Z |
 
 ### Fase 10D — Backtest integrado e comparativo
 
@@ -549,8 +549,8 @@ FÁBRICA US v2 (Phase 10)
 
 | ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
 |---|---|---|---|---|---|
-| T126 | Backtest integrado: motor seleção US + ML trigger v2 (vs SP500/T115/C060X) | STATE3-P10D (Backtest-v2) | PENDING | — | — |
-| T127 | Phase 10 Comparative Plotly (motor US v2 vs SP500 vs T115 vs benchmarks) | STATE3-P10D (Visual) | PENDING | — | — |
+| T126 | Backtest integrado Motor US (TopN=5,Cad=10) + ML Trigger US v2 (C090: thr=0.45,h_in=3,h_out=5) vs SP500/T115/T122 | STATE3-P10D (Backtest-v2) | DONE | `scripts/t126_backtest_us_engine_with_trigger_v2_v1.py` · `src/data_engine/portfolio/T126_US_ENGINE_V2_TRIGGER_CURVE_DAILY.parquet` (1.852 linhas) · `T126_US_ENGINE_V2_TRIGGER_SUMMARY.json` · `T126-..._report.md` + `manifest.json` (SHA256 13/13 OK). HOLDOUT: CAGR=36.30%, MDD=−24.68%, Sharpe=1.182 vs SP500 CAGR=21.51%/Sharpe=1.374. Finding F-02(PRODUTO): MDD HOLDOUT −24.68% não atinge hard constraint −15% — informativo, insumo T127+. Auditor PASS (A-T126). | 2026-03-04T23:59:00Z |
+| T127 | US Winner Declaration + Comparative Plot (T122 winner; T126 trigger abandonado) | STATE3-P10D (Winner-Decl) | DONE | `scripts/t127_us_winner_declaration_and_comparative_plot_v1.py` · `T127_US_WINNER_DECLARATION.json` (T122=winner, T126=abandoned) · `T127_STATE3_PHASE10D_US_WINNER_COMPARATIVE.html` · SHA256 7/7 OK. T122 HOLDOUT: CAGR=35.51%, MDD=−28.25%, Sharpe=1.194. Auditor PASS (A-T127). | 2026-03-05T00:10:00Z |
 
 ### Fase 10E — Consolidação e Governança
 
@@ -558,6 +558,6 @@ FÁBRICA US v2 (Phase 10)
 
 | ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
 |---|---|---|---|---|---|
-| T128 | Dashboard visualização BR+US em BRL (apenas visual, sem split) | STATE3-P10E (Visual-BRL) | PENDING | — | — |
-| T129 | Phase 10 Lessons Learned | STATE3-P10E (Lessons) | PENDING | — | — |
-| T130 | Phase 10 Governance Closeout | STATE3-P10E (Closeout) | PENDING | — | — |
+| T128 | Dashboard visualização BR+US em BRL (apenas visual, sem split) | STATE3-P10E (Visual-BRL) | DONE | `scripts/t128_dashboard_br_us_brl_v2.py` · `outputs/plots/T128_STATE3_PHASE10E_BR_US_BRL_DASHBOARD_V2.html` · `outputs/governanca/T128-BR-US-BRL-DASHBOARD-V2_{report,manifest}.json` | 2026-03-04T21:28:03Z |
+| T129 | Phase 10 Lessons Learned | STATE3-P10E (Lessons) | DONE | `02_Knowledge_Bank/docs/process/STATE3_PHASE10_LESSONS_LEARNED_T129.md` | 2026-03-04T21:42:26Z |
+| T130 | Phase 10 Governance Closeout | STATE3-P10E (Closeout) | DONE | `scripts/t130_phase10_governance_closeout.py` · `outputs/governanca/T130-PHASE10-GOVERNANCE-CLOSEOUT-V1_report.md` · `outputs/governanca/T130-PHASE10-GOVERNANCE-CLOSEOUT-V1_manifest.json` | 2026-03-04T21:51:46Z |

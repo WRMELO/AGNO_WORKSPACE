@@ -1,0 +1,27 @@
+{
+  "decision_reference": {
+    "decision_date_utc": "2026-03-04T20:54:52Z",
+    "owner_decision": "Ap\u00f3s discuss\u00e3o da auditoria de T126, Owner definiu abandono do trigger e ado\u00e7\u00e3o de T122 como winner americana."
+  },
+  "run_id": "T127-US-WINNER-COMPARATIVE-V1",
+  "status_note": "T126 mantido somente como baseline informativo para rastreabilidade.",
+  "task_id": "T127",
+  "trigger_rejected": {
+    "component": "ML trigger",
+    "decision": "abandoned",
+    "rationale": "ganho marginal em HOLDOUT vs complexidade operacional significativamente maior",
+    "t126_config_snapshot": {
+      "h_in": 3,
+      "h_out": 5,
+      "threshold": 0.45
+    },
+    "task_id": "T126"
+  },
+  "winner_config": {
+    "cadence_days": 10,
+    "cost_rate_one_way": 0.0001,
+    "top_n": 5
+  },
+  "winner_label": "US Winner (T122 pure engine)",
+  "winner_task_id": "T122"
+}

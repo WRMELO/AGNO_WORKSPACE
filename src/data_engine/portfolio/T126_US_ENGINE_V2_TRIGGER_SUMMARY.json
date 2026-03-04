@@ -1,0 +1,160 @@
+{
+  "config": {
+    "cadence_days": 10,
+    "cost_rate_one_way": 0.0001,
+    "h_in": 3,
+    "h_out": 5,
+    "top_n": 5,
+    "trigger_threshold": 0.45,
+    "trigger_winner": "C090"
+  },
+  "mdd_hard_constraint_check": {
+    "hard_constraint": "MDD_HOLDOUT >= -0.15",
+    "mdd_holdout_integrated": -0.2468278944585104,
+    "note": "Informativo para decis\u00e3o de produto; n\u00e3o bloqueia PASS t\u00e9cnico da execu\u00e7\u00e3o.",
+    "passes_hard_constraint": 0
+  },
+  "metrics": {
+    "cash_fedfunds": {
+      "acid_us": {
+        "cagr": 0.04322019847029601,
+        "equity_end": 117724.50419844399,
+        "mdd": 0.0,
+        "rows": 44.0,
+        "sharpe": 102.90640054305305
+      },
+      "holdout": {
+        "cagr": 0.04849151450703726,
+        "equity_end": 121498.86834541774,
+        "mdd": 0.0,
+        "rows": 765.0,
+        "sharpe": 130.32983750953122
+      },
+      "train": {
+        "cagr": 0.011832212007983456,
+        "equity_end": 105212.75551530764,
+        "mdd": 0.0,
+        "rows": 1087.0,
+        "sharpe": 16.297626700111085
+      }
+    },
+    "integrated_strategy": {
+      "acid_us": {
+        "cagr": -0.27929942542517927,
+        "equity_end": 501685.59486500936,
+        "mdd": -0.0679128563500494,
+        "rows": 44.0,
+        "sharpe": -2.8092060040042233
+      },
+      "cash_frac_holdout": 0.13594771241830064,
+      "cash_frac_train": 0.3091076356945722,
+      "holdout": {
+        "cagr": 0.36300709481248705,
+        "equity_end": 873321.2782712817,
+        "mdd": -0.2468278944585104,
+        "rows": 765.0,
+        "sharpe": 1.1820642076958523
+      },
+      "switches_total": 24,
+      "total_cost_paid": 5943.106339220887,
+      "train": {
+        "cagr": 0.3340848158755876,
+        "equity_end": 346710.71528977115,
+        "mdd": -0.2527216778710777,
+        "rows": 1087.0,
+        "sharpe": 1.3237674696207837
+      }
+    },
+    "sp500_bh": {
+      "acid_us": {
+        "cagr": -0.07595833620244596,
+        "equity_end": 207572.87123798105,
+        "mdd": -0.1374291148387582,
+        "rows": 44.0,
+        "sharpe": -0.052445126999873755
+      },
+      "holdout": {
+        "cagr": 0.21511354117278625,
+        "equity_end": 253377.1454337534,
+        "mdd": -0.1890220618428401,
+        "rows": 765.0,
+        "sharpe": 1.3740938641673466
+      },
+      "train": {
+        "cagr": 0.08321449600233732,
+        "equity_end": 141169.39771523818,
+        "mdd": -0.3392496000265327,
+        "rows": 1087.0,
+        "sharpe": 0.4663562505948635
+      }
+    },
+    "t115_reference": {
+      "acid_us": {
+        "cagr": -0.1440277960698969,
+        "equity_end": 250512.07932975318,
+        "mdd": -0.05709614505466554,
+        "rows": 44.0,
+        "sharpe": -1.0160830678393027
+      },
+      "holdout": {
+        "cagr": 0.1424708625848088,
+        "equity_end": 288412.1309012214,
+        "mdd": -0.12994573017973665,
+        "rows": 787.0,
+        "sharpe": 1.1967659562140414
+      },
+      "train": {
+        "cagr": 0.15648066235160418,
+        "equity_end": 190266.46775550625,
+        "mdd": -0.2852031811628635,
+        "rows": 1115.0,
+        "sharpe": 0.8218840839450494
+      }
+    },
+    "t122_reference": {
+      "acid_us": {
+        "cagr": -0.2633633876589754,
+        "equity_end": 673146.8474830078,
+        "mdd": -0.0875065821448554,
+        "rows": 44.0,
+        "sharpe": -1.2727071619340238
+      },
+      "holdout": {
+        "cagr": 0.3551241488001917,
+        "equity_end": 1108541.352579379,
+        "mdd": -0.2825044882876099,
+        "rows": 765.0,
+        "sharpe": 1.193652568126431
+      },
+      "train": {
+        "cagr": 0.41510000014570836,
+        "equity_end": 447148.73700371257,
+        "mdd": -0.39796994143246434,
+        "rows": 1087.0,
+        "sharpe": 1.225614677266972
+      }
+    }
+  },
+  "regressions": {
+    "t122": {
+      "equity_end_t122": 1108541.352579379,
+      "equity_end_t126": 873321.2782712817,
+      "max_abs_diff_equity": 313094.0577547053,
+      "mean_abs_diff_equity": 118204.74144578923,
+      "n_selected_equal_ratio": 0.7624190064794817,
+      "rows_joined": 1852,
+      "rows_t122": 1852,
+      "rows_t126": 1852
+    },
+    "t125_timing": {
+      "max_abs_diff_drawdown": 0.0,
+      "max_abs_diff_equity": 0.0,
+      "max_abs_diff_strategy_ret": 0.0,
+      "rows_joined": 1902,
+      "rows_new": 1902,
+      "rows_ref_t125": 1902
+    }
+  },
+  "run_id": "T126-US-ENGINE-V2-TRIGGER-BACKTEST-V1",
+  "task_id": "T126"
+}
