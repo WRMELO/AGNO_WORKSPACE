@@ -1,0 +1,58 @@
+{
+  "config_fixed": {
+    "cost_rate_one_way": 0.0001,
+    "initial_capital_usd": 100000.0,
+    "selection_source": "score_m3_us_exec,m3_rank_us_exec_only"
+  },
+  "run_id": "T122-US-ENGINE-ABLATION-NPOS-CADENCE-V1",
+  "task_id": "T122",
+  "winner_cadence_days": 10,
+  "winner_candidate_id": "C004",
+  "winner_coverage": {
+    "days_n_selected_lt_topn": 0,
+    "n_days": 1852,
+    "n_rebalance_days": 169,
+    "n_selected_max": 5,
+    "n_selected_min": 5,
+    "n_selected_p50": 5.0,
+    "switches": 166,
+    "total_cost_paid": 8757.449076347404,
+    "total_cost_paid_holdout": 5277.929457610897,
+    "total_cost_paid_train": 3479.5196187365073
+  },
+  "winner_metrics_benchmarks": {
+    "cash_holdout": {
+      "cagr": 0.04849151450703726,
+      "equity_final": 121498.86834541774,
+      "mdd": 0.0,
+      "sharpe": 130.32983750953122
+    },
+    "sp500_holdout": {
+      "cagr": 0.21511354117278625,
+      "equity_final": 253377.1454337534,
+      "mdd": -0.1890220618428401,
+      "sharpe": 1.3740938641673468
+    }
+  },
+  "winner_metrics_strategy": {
+    "acid_us": {
+      "cagr": -0.2633633876589754,
+      "equity_final": 673146.8474830078,
+      "mdd": -0.0875065821448554,
+      "sharpe": -1.272707161934024
+    },
+    "holdout": {
+      "cagr": 0.3551241488001917,
+      "equity_final": 1108541.352579379,
+      "mdd": -0.2825044882876099,
+      "sharpe": 1.1936525681264307
+    },
+    "train": {
+      "cagr": 0.41510000014570836,
+      "equity_final": 447148.73700371257,
+      "mdd": -0.39796994143246434,
+      "sharpe": 1.225614677266972
+    }
+  },
+  "winner_top_n": 5
+}

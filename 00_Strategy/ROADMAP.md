@@ -522,7 +522,7 @@ FÁBRICA US v2 (Phase 10)
 | ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
 |---|---|---|---|---|---|
 | T119 | SSOT canônico per-ticker US + SPC metrics (análogo ao SSOT_CANONICAL_BASE BR) | STATE3-P10A (SSOT-US) | DONE | `scripts/t119_build_ssot_us_canonical_base_v1.py` · `src/data_engine/ssot/SSOT_CANONICAL_BASE_US.parquet` (1.000.601 linhas × 21 cols, 496 tickers) · `src/data_engine/ssot/SSOT_US_UNIVERSE_OPERATIONAL_PHASE10.parquet` · `outputs/governanca/T119-SSOT-US-CANONICAL-V1_{report,manifest}.md` · SHA256 13/13 OK | 2026-03-04T18:00:00Z |
-| T120 | Scoring M3-US diário (z(score_m0_us) + z(ret_62_us) - z(vol_62_us)) para 496 tickers | STATE3-P10A (M3-US) | PENDING | — | — |
+| T120 | Scoring M3-US diário (z(score_m0_us) + z(ret_62_us) - z(vol_62_us)) para 496 tickers | STATE3-P10A (M3-US) | DONE | `scripts/t120_score_m3_us_daily_v1.py` · `src/data_engine/features/T120_M3_US_SCORES_DAILY.parquet` (969.849 linhas × 12 cols, 496 tickers) · `outputs/governanca/T120-M3-US-SCORES-V1_{report,manifest}.md` · SHA256 10/10 OK | 2026-03-04T15:30:34Z |
 
 ### Fase 10B — Motor de seleção US (backtest isolado)
 
@@ -530,8 +530,8 @@ FÁBRICA US v2 (Phase 10)
 
 | ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
 |---|---|---|---|---|---|
-| T121 | Backtest motor seleção US (Top N por M3-US, sem ML trigger) | STATE3-P10B (Engine-US) | PENDING | — | — |
-| T122 | Ablação n_positions + cadence (universo US) | STATE3-P10B (Ablation) | PENDING | — | — |
+| T121 | Backtest motor seleção US (Top N por M3-US, sem ML trigger) | STATE3-P10B (Engine-US) | DONE | `scripts/t121_backtest_us_selection_engine_v1.py` · `src/data_engine/portfolio/T121_US_ENGINE_CURVE_DAILY.parquet` (1.852 linhas) · `src/data_engine/portfolio/T121_US_ENGINE_SUMMARY.json` · `outputs/plots/T121_STATE3_PHASE10B_US_ENGINE_BACKTEST.html` · SHA256 14/14 OK. HOLDOUT: CAGR=27,9% / MDD=-21,2% / Sharpe=1,17 vs SP500 CAGR=21,5% / Sharpe=1,37. Baseline Phase 10B. | 2026-03-04T18:30:00Z |
+| T122 | Ablação n_positions + cadence (universo US) — baseline informativo | STATE3-P10B (Ablation) | DONE | `scripts/t122_ablation_us_engine_npos_cadence_v1.py` · `T122_SELECTED_CONFIG_US_ENGINE_NPOS_CADENCE.json` (winner C004: TopN=5, Cad=10) · SHA256 18/18 OK. HOLDOUT: CAGR=35.5%, MDD=-28.3%, Sharpe=1.19 vs SP500 Sharpe=1.37. Baseline informativo — hard constraint MDD≤-15% delegado à T126. Auditor PASS (A-T122). | 2026-03-04T18:14:00Z |
 
 ### Fase 10C — Feature engineering US ampliado + ML trigger US v2
 
@@ -539,7 +539,7 @@ FÁBRICA US v2 (Phase 10)
 
 | ID | Task Name | Phase | Status | Key Artifacts / Logs | Timestamp |
 |---|---|---|---|---|---|
-| T123 | Feature engineering US v2 (features granulares: earnings, credit spreads, flows) | STATE3-P10C (Features-v2) | PENDING | — | — |
+| T123 | Feature engineering US v2 (credit spreads HY/IG FRED + rotação setorial + volume proxies) | STATE3-P10C (Features-v2) | DONE | `scripts/t123_feature_engineering_us_v2_v1.py`; `T123_US_FEATURE_MATRIX_DAILY.parquet` (1.902 × 64); `T123_US_DATASET_DAILY.parquet` (63 features); `T123_SSOT_US_ALTDATA_FRED_DAILY.parquet`; `T123_STATE3_PHASE10C_US_FEATURES_V2_EDA.html` (160 KB); SHA256 16/16 OK; 2 features blacklistadas (time-proxy); Finding F-01(MOD) sector_ret_dispersion 100% NaN — Architect T124 remover. Auditor PASS (A-T123). | 2026-03-04T21:00:00Z |
 | T124 | XGBoost US v2 (retreino com features ampliadas + walk-forward) | STATE3-P10C (ML-v2) | PENDING | — | — |
 | T125 | Ablação threshold + histerese US v2 | STATE3-P10C (Tuning-v2) | PENDING | — | — |
 

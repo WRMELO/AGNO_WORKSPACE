@@ -176,6 +176,7 @@ def main() -> None:
     extreme_rows = (
         logret.where(extreme_mask)
         .stack()
+        .dropna()
         .rename("logret_original")
         .reset_index()
         .rename(columns={"level_0": "date", "level_1": "ticker"})
