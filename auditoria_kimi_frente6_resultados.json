@@ -1,0 +1,19 @@
+{
+  "findings": [
+    {
+      "frente": "6",
+      "severidade": "CRITICO",
+      "descricao": "Universo US baseado em sp500_current_symbols_snapshot.csv = composi\u00e7\u00e3o futura",
+      "evidencia": "t084_ingest_sp500_brapi_us_market_data.py linha com sp500_current_symbols_snapshot.csv"
+    }
+  ],
+  "universes": {
+    "BR": {
+      "n_tickers": 697
+    },
+    "US": {
+      "n_tickers": 496
+    }
+  },
+  "timestamp": "2026-03-05T08:02:24.692077"
+}

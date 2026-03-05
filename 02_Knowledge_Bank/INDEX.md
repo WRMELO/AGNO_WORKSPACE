@@ -1,102 +1,70 @@
-# Knowledge Bank Index
+# 02_Knowledge_Bank — Índice
 
-- source_migration: `TASK-008-CORPUS-MIGRATION`
-- source_root: `[LEGACY_ROOT]/corpus`
-- local_root: `02_Knowledge_Bank/Legacy_Corpus`
-- total_files_copied: `325`
+> Última atualização: 2026-03-05
+> Reorganização temática: lições consolidadas por tema do projeto, não por fase.
 
-## SSOT e Licoes Aprendidas
+---
 
-- `02_Knowledge_Bank/docs/STATE_3_PHASE1_BASELINE.md`
-- `02_Knowledge_Bank/Legacy_Corpus/lessons/LESSONS_LEARNED.json`
-- `02_Knowledge_Bank/Legacy_Corpus/lessons/LESSONS_LEARNED.md`
-- `02_Knowledge_Bank/Legacy_Corpus/source/corpus/lessons/LESSONS_LEARNED.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/corpus/lessons/LESSONS_LEARNED.md`
-- `02_Knowledge_Bank/Legacy_Corpus/source/delta_since_v3/outputs/governanca/att2_ssot_snapshot/20260220/evidence/required_ssots_presence_check.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/docs/MP002_OBJETIVO_REAL_SSOT.md`
-- `02_Knowledge_Bank/Legacy_Corpus/source/docs/corpus/licoes_aprendidas.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/instrumentation/m3_w1_w2/20260216_cash_cdi_v5/evidence/ssot_alignment_summary.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/planning/task_specs/masterplan_v2/TASK_CEP_BUNDLE_CORE_V2_F0_001_SSOT_MASTERPLAN_V2_PUBLICATION.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/planning/task_specs/sprint_003/TASK_CEP_BUNDLE_CORE_S3_003_MP002_OBJETIVO_REAL_SSOT.json`
+## Lessons Learned (SSOT)
 
-## Regras de Compra
+Base de conhecimento consolidada do projeto. Cada documento agrupa **todas** as lições de **todas as fases** sobre um tema.
 
-- `02_Knowledge_Bank/Legacy_Corpus/source/external_refs/CEP_COMPRA/CEP_COMPRA/docs/0_Relatório de encerramento do ciclo M0…M6 (CEP_COMPRA v1).md`
-- `02_Knowledge_Bank/Legacy_Corpus/source/external_refs/CEP_COMPRA/CEP_COMPRA/docs/compra_semanal_model_selection.md`
-- `02_Knowledge_Bank/Legacy_Corpus/source/external_refs/CEP_COMPRA/CEP_COMPRA/docs/protocolo_operacional_modelos.md`
-- `02_Knowledge_Bank/Legacy_Corpus/source/external_refs/CEP_COMPRA/CEP_COMPRA/docs/task_006_pos_task.md`
-- `02_Knowledge_Bank/Legacy_Corpus/source/external_refs/CEP_COMPRA/CEP_COMPRA/docs/task_006_pre_execucao.md`
-- `02_Knowledge_Bank/Legacy_Corpus/source/external_refs/CEP_COMPRA/CEP_COMPRA/docs/task_008_pos_task.md`
-- `02_Knowledge_Bank/Legacy_Corpus/source/external_refs/CEP_COMPRA/CEP_COMPRA/docs/task_009_pos_task.md`
-- `02_Knowledge_Bank/Legacy_Corpus/source/external_refs/CEP_COMPRA/CEP_COMPRA/docs/task_012_smoke_sell_patch.md`
-- `02_Knowledge_Bank/Legacy_Corpus/source/external_refs/CEP_COMPRA/CEP_COMPRA/docs/template_pos_task.md`
-- `02_Knowledge_Bank/Legacy_Corpus/source/external_refs/CEP_COMPRA/CEP_COMPRA/docs/template_task_operacional.md`
-- `02_Knowledge_Bank/Legacy_Corpus/source/external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/governanca/operacao_rotina/20260209/ROTINA_GESTAO_CARTEIRA_001/artefatos/010_constituicao_v2.md`
-- `02_Knowledge_Bank/Legacy_Corpus/source/external_refs/CEP_NA_BOLSA/CEP_NA_BOLSA/outputs/governanca/operacao_rotina/20260209/ROTINA_GESTAO_CARTEIRA_001/artefatos/050_decision_package_sizing_v2.md`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/masterplan_v2/f1_001/evidence/buy_cadence_summary.json`
+| # | Documento | Escopo | Lições |
+|---|---|---|---|
+| 01 | [`lessons_learned/01_GOVERNANCA.md`](lessons_learned/01_GOVERNANCA.md) | Manifest, changelog, registry, auditoria, cadeia de comando | 12 regras + checklist |
+| 02 | [`lessons_learned/02_ML_MODEL.md`](lessons_learned/02_ML_MODEL.md) | Treino, CV, threshold, overfitting, generalização | 10 regras + checklist |
+| 03 | [`lessons_learned/03_FEATURE_ENGINEERING.md`](lessons_learned/03_FEATURE_ENGINEERING.md) | Construção, seleção, validação de features | 6 regras + checklist |
+| 04 | [`lessons_learned/04_BACKTEST.md`](lessons_learned/04_BACKTEST.md) | Ablação, histerese, custos, constraints, motor | 11 regras + checklist |
+| 05 | [`lessons_learned/05_ARQUITETURA.md`](lessons_learned/05_ARQUITETURA.md) | Motor, forno dual-mode, fábricas, sinais | 9 princípios |
+| 06 | [`lessons_learned/06_DADOS.md`](lessons_learned/06_DADOS.md) | Ingestão, SSOT, qualidade, anti-lookahead | 7 regras + tabela SSOTs + checklist |
+| 07 | [`lessons_learned/07_PROCESSO.md`](lessons_learned/07_PROCESSO.md) | Workflow, evidência visual, ciclo de execução | 8 princípios |
+| 08 | [`lessons_learned/08_PRODUTO.md`](lessons_learned/08_PRODUTO.md) | Winners, decisões do Owner, operação real | Estado do produto + diagrama |
 
-## Regras de Venda
+---
 
-- `02_Knowledge_Bank/Legacy_Corpus/source/external_refs/CEP_COMPRA/CEP_COMPRA/docs/task_012_smoke_sell_patch.md`
+## Documentação ativa
 
-## Manifestos Legados
+### Normas e emendas
+| Documento | Escopo | Status |
+|---|---|---|
+| [`docs/CONSTITUICAO.md`](docs/CONSTITUICAO.md) | Constituição V1 — princípios normativos e decisões seed | ATIVO |
+| [`docs/emendas/EMENDA_COST_MODEL_ARB_0025PCT_V1.md`](docs/emendas/EMENDA_COST_MODEL_ARB_0025PCT_V1.md) | Custo 2.5 bps sobre notional | ATIVO |
+| [`docs/emendas/EMENDA_CASH_REMUNERACAO_CDI_V1.md`](docs/emendas/EMENDA_CASH_REMUNERACAO_CDI_V1.md) | Remuneração de caixa por CDI | ATIVO |
 
-- `02_Knowledge_Bank/Legacy_Corpus/manifests/corpus_manifest_v1.json`
-- `02_Knowledge_Bank/Legacy_Corpus/manifests/corpus_manifest_v2.json`
-- `02_Knowledge_Bank/Legacy_Corpus/manifests/corpus_manifest_v3.json`
-- `02_Knowledge_Bank/Legacy_Corpus/manifests/corpus_manifest_v4.json`
-- `02_Knowledge_Bank/Legacy_Corpus/manifests/corpus_manifest_v5.json`
-- `02_Knowledge_Bank/Legacy_Corpus/manifests/corpus_manifest_v6.json`
-- `02_Knowledge_Bank/Legacy_Corpus/manifests/corpus_manifest_v7.json`
-- `02_Knowledge_Bank/Legacy_Corpus/manifests/external_refs_manifest_v1.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/delta_since_v3/outputs/governanca/att2_ssot_snapshot/20260220/evidence/manifest_validation.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/delta_since_v3/outputs/governanca/constituicao_forense/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/delta_since_v3/outputs/governanca/git_init_fix/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/delta_since_v3/outputs/governanca/git_ssh_fix/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/delta_since_v3/outputs/governanca/git_ssh_verify/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/delta_since_v3/outputs/governanca/git_sync/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/delta_since_v3/outputs/governanca/worktrees/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/delta_since_v3/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/docs/_evidencias/20260215_support_docs/cost_model_emenda/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/docs/_evidencias/20260215_support_docs/instrumentation_costs_v3/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/experimentos/ablation_e1_e5/20260216/experiments/E1_BASELINE.manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/experimentos/ablation_e1_e5/20260216/experiments/E2_TURNOVER_CAP_BY_REGIME.manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/experimentos/ablation_e1_e5/20260216/experiments/E3_ADD_REGIME_HYSTERESIS.manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/experimentos/ablation_e1_e5/20260216/experiments/E4_ADD_ANTI_REENTRY_FILTER.manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/experimentos/ablation_e1_e5/20260216/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/gaps/g1_g4/20260216/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/gaps/m3_w1_w2/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/att2_ssot_snapshot/20260220/evidence/manifest_validation.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/bootstrap_repo/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/canonicalize_docs/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/constituicao_forense/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/emendas/20260215_cost_model/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/fix_bootstrap_clean/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/git_init/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/git_init_fix/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/git_ssh_fix/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/git_ssh_verify/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/git_sync/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/local_execution_structure/20260216/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/local_migration/20260216/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/masterplan_audit/20260216/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/masterplan_audit/20260216_post_sprint_001/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/phase_closeout/20260216/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/session_state_transfer/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/sprint_002/20260216/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/sprint_003/20260216/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/ssot_cdi/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/verify_cdi_cash/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/governanca/worktrees/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/instrumentation/m3_w1_w2/20260215/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/instrumentation/m3_w1_w2/20260215_cash_cdi_v4/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/instrumentation/m3_w1_w2/20260215_costs_v3/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/instrumentation/m3_w1_w2/20260216_cash_cdi_v5/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/masterplan_v2/auditoria_tecnica_completa/20260217/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/masterplan_v2/f1_001/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/masterplan_v2/f1_002/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/masterplan_v2/f2_001/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/masterplan_v2/f2_002/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/masterplan_v2/f2_003/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/masterplan_v2/f2_004/manifest.json`
-- `02_Knowledge_Bank/Legacy_Corpus/source/outputs/simulacoes/compare_m3_plotly/20260216/manifest.json`
+### Specs técnicas
+| Documento | Escopo |
+|---|---|
+| [`docs/specs/SPEC-007_THERMOSTAT_FORNO_DUAL_MODE_T071.md`](docs/specs/SPEC-007_THERMOSTAT_FORNO_DUAL_MODE_T071.md) | Termostato endógeno do forno dual-mode |
+| [`docs/specs/SPEC-083_PIPELINE_DADOS_US_T083.md`](docs/specs/SPEC-083_PIPELINE_DADOS_US_T083.md) | Pipeline de dados US (S&P 500) |
+| [`docs/specs/SPEC-001_SEVERITY_SCORE.md`](docs/specs/SPEC-001_SEVERITY_SCORE.md) | Severity Score multi-fator |
+| [`docs/specs/SPEC-002_MASTER_GATE_REGIME.md`](docs/specs/SPEC-002_MASTER_GATE_REGIME.md) | Master Gate de regime |
+| [`docs/specs/SPEC-003_PARTIAL_SELLS.md`](docs/specs/SPEC-003_PARTIAL_SELLS.md) | Partial Sells D+1 |
+| [`docs/specs/SPEC-004_NELSON_RULES_INTEGRATION.md`](docs/specs/SPEC-004_NELSON_RULES_INTEGRATION.md) | Nelson Rules para SPC |
+| [`docs/specs/SPEC-005_METRICS_SUITE.md`](docs/specs/SPEC-005_METRICS_SUITE.md) | Suite de métricas formais |
+| [`docs/specs/SPEC-006_RL_FRAMEWORK.md`](docs/specs/SPEC-006_RL_FRAMEWORK.md) | Framework RL (descartado — ver LL-PH6-012) |
+| [`docs/specs/GLOSSARY_OPERATIONAL.md`](docs/specs/GLOSSARY_OPERATIONAL.md) | Glossário operacional |
+
+### Análises e handoffs
+| Documento | Escopo |
+|---|---|
+| [`docs/process/STATE3_CTO_ANALYSIS_POST_PHASE8_PRE_PHASE9.md`](docs/process/STATE3_CTO_ANALYSIS_POST_PHASE8_PRE_PHASE9.md) | Análise CTO com 7 achados (fundamenta Phase 9) |
+| [`docs/process/STATE3_PHASE9_HANDOFF.md`](docs/process/STATE3_PHASE9_HANDOFF.md) | Handoff Phase 8→9 (conceito Duas Fábricas) |
+
+### Referências fundacionais
+| Documento | Escopo |
+|---|---|
+| [`docs/fundacional/LL-20260220-W1-METHODOLOGY-001.json`](docs/fundacional/LL-20260220-W1-METHODOLOGY-001.json) | Gênese da regra "sem pacote governado = inválido" |
+| [`docs/fundacional/LL-20260221-EXECUTION-DUAL-PASS-001.json`](docs/fundacional/LL-20260221-EXECUTION-DUAL-PASS-001.json) | Origem do critério dual-pass |
+
+---
+
+## Arquivo histórico
+
+### Por fase (lessons learned originais)
+`archive/by_phase/` — 8 documentos originais de lessons learned por fase (phases 2, 3, 4, 5, 6, 8, 9, 10). Preservados para rastreabilidade cronológica.
+
+### Supersedidos
+`archive/superseded/` — documentos que foram substituídos por evolução do projeto: Masterplan V1/V2, FSM decisor V1, specs de regras locais, transfer packages.
+
+### Legado
+`archive/legacy/` — corpus legado do CEP_BUNDLE_CORE: Critical_Intel, Legacy_Corpus, VectorStore RAG, outputs e planning legados. Valor apenas como audit trail.

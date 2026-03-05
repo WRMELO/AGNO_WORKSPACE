@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-03-05T07:59:57.056552",
+  "BR": {
+    "reported": {
+      "sharpe": 2.42,
+      "mdd": -0.063,
+      "cagr": 0.311
+    },
+    "recalculated_no_rf": {
+      "sharpe": 3.191945320763399,
+      "mdd": -0.07070787619654431,
+      "cagr": 0.2650287691996618
+    },
+    "recalculated_with_rf": {
+      "sharpe": 1.5711037011415725
+    },
+    "switches": 7,
+    "cash_frac": 0.8538754764930114
+  },
+  "US": {
+    "reported": {
+      "sharpe": 1.19,
+      "mdd": -0.283,
+      "cagr": 0.355
+    },
+    "recalculated_no_rf": {
+      "sharpe": 1.1944369012586342,
+      "mdd": -0.2825044882876098,
+      "cagr": 0.3551241488001917
+    },
+    "recalculated_with_rf": {
+      "sharpe": 1.0309273705426911
+    },
+    "switches": "N/A",
+    "cash_frac": "N/A"
+  }
+}

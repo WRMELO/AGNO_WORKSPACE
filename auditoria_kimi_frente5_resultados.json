@@ -1,0 +1,21 @@
+{
+  "findings": [
+    {
+      "frente": "5",
+      "severidade": "ALTO",
+      "descricao": "AC(1) significativo no HOLDOUT: 0.1247",
+      "evidencia": "AC(1) > |0.05| sugere lookahead ou timing imposs\u00edvel"
+    }
+  ],
+  "stats": {
+    "BR": {
+      "ac1_holdout": 0.12469274685716875,
+      "ks_pvalue": 7.513164049203446e-56
+    },
+    "US": {
+      "ac1_holdout": 0.009707436642179637,
+      "ks_pvalue": 0.32999781666274086
+    }
+  },
+  "timestamp": "2026-03-05T08:01:39.697541"
+}
